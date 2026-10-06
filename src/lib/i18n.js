@@ -50,7 +50,7 @@ export const waLink = (text) => `https://wa.me/${site.whatsapp}${text ? `?text=$
 export const t = {
   en: {
     dir: 'ltr',
-    nav: { home: 'Home', properties: 'Properties', projects: 'New Projects', sold: 'Sold', about: 'About', contact: 'Contact' },
+    nav: { home: 'Home', properties: 'Properties', map: 'Map', projects: 'New Projects', sold: 'Sold', about: 'About', contact: 'Contact' },
     switchLang: 'עברית',
     heroKicker: 'Jerusalem Real Estate',
     heroTitle: 'Distinguished homes in Jerusalem’s finest neighborhoods',
@@ -82,6 +82,8 @@ export const t = {
     projectsTitle: 'New Projects',
     projectsSub: 'Boutique developments and pre-sale opportunities across Jerusalem.',
     viewAll: 'View all properties',
+    mapView: 'Map view',
+    approxArea: 'Approximate area. Exact address on request.',
     neighborhoods: 'Explore by Neighborhood',
     listings: 'listings',
     soldTitle: 'Recently Sold & Rented',
@@ -132,7 +134,7 @@ export const t = {
   },
   he: {
     dir: 'rtl',
-    nav: { home: 'דף הבית', properties: 'נכסים', projects: 'פרויקטים חדשים', sold: 'נכסים שנמכרו', about: 'אודות', contact: 'צור קשר' },
+    nav: { home: 'דף הבית', properties: 'נכסים', map: 'מפת נכסים', projects: 'פרויקטים חדשים', sold: 'נכסים שנמכרו', about: 'אודות', contact: 'צור קשר' },
     switchLang: 'English',
     heroKicker: 'נדל״ן בירושלים',
     heroTitle: 'נכסי יוקרה בשכונות המבוקשות של ירושלים',
@@ -164,6 +166,8 @@ export const t = {
     projectsTitle: 'פרויקטים חדשים',
     projectsSub: 'פרויקטי בוטיק והזדמנויות בשלב המכירה המוקדמת ברחבי ירושלים.',
     viewAll: 'לכל הנכסים',
+    mapView: 'תצוגת מפה',
+    approxArea: 'אזור משוער. כתובת מדויקת תימסר בפנייה.',
     neighborhoods: 'חיפוש לפי שכונה',
     listings: 'נכסים',
     soldTitle: 'נכסים שנמכרו והושכרו',

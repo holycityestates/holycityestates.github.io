@@ -1,7 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import PropertyCard from '../../../components/PropertyCard.astro';
-import { t, getLang, langPaths, L, visible } from '../../../lib/i18n.js';
+import { t, getLang, langPaths, L, visible, href } from '../../../lib/i18n.js';
 
 export const getStaticPaths = langPaths;
 const lang = getLang(Astro.params.lang);
@@ -42,7 +42,7 @@ const list = visible.filter((p) => !p.offMarket);
           <option value="high">{s.sortHigh}</option>
         </select>
       </form>
-      <p class="muted count"><span id="count">{list.length}</span> {s.results}</p>
+      <div class="count-row"><p class="muted count"><span id="count">{list.length}</span> {s.results}</p><a class="link-arrow" href={href(lang, '/map/')}>{s.mapView}</a></div>
       <div class="grid" id="grid">{list.map((p) => <PropertyCard p={p} lang={lang} />)}</div>
       <p class="muted empty" id="empty" hidden>{s.noResults}</p>
     </div>

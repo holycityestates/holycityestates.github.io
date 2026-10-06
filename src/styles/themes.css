@@ -119,7 +119,7 @@
 [data-theme='signature'] .search select option { color: #111; }
 [data-theme='signature'] .btn-gold { background: linear-gradient(135deg, #c9a862, #a8853f); color: #fff; }
 /* Cards: tall, image-first (from B) */
-[data-theme='signature'] .card-media { aspect-ratio: 4/5; border-radius: 2px; }
+[data-theme='signature'] .card-media { border-radius: 2px; }
 [data-theme='signature'] .card-title { font-size: 1.4rem; }
 [data-theme='signature'] .grid { gap: 48px 28px; }
 [data-theme='signature'] .chip { border-radius: 2px; }

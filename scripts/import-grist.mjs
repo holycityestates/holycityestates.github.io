@@ -12,10 +12,11 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
-import { featureHe, typeHe, neighborhoodHe } from '../src/lib/glossary.js';
+import { featureHe, typeHe, neighborhoodHe, fixStreetHe } from '../src/lib/glossary.js';
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = path.join(ROOT, 'src/data/properties.json');
 const PHOTO_DIR = path.join(ROOT, 'public/photos');
 
@@ -101,6 +102,9 @@ async function photos(value) {
 }
 
 const records = await loadRecords();
+// Map positions: Grist Latitude/Longitude if filled, else data/geocode.json (street-level, or neighborhood center when no street).
+let geo = {};
+try { geo = JSON.parse(await fs.readFile(path.join(ROOT, 'data/geocode.json'), 'utf8')); } catch {}
 const props = [];
 for (const { id, fields: f } of records) {
   if (!f || !clean(f.Name)) continue;
@@ -130,13 +134,16 @@ for (const { id, fields: f } of records) {
     floor: f.Floor ?? null,
     type: { en: typeEn, he: typeHe[typeEn] || clean(f.Property_Type_Hebrew) },
     neighborhood: { en: hoodEn, he: neighborhoodHe[hoodEn] || clean(f.Neighborhood_Hebrew) },
-    street: { en: clean(f.Street1), he: clean(f.Street1_Hebrew) },
+    street: { en: clean(f.Street1), he: fixStreetHe(clean(f.Street1_Hebrew)) },
     title: { en: clean(f.Name), he: clean(f.Name_Hebrew) },
     description: { en: clean(f.About), he: clean(f.About_Hebrew) },
     features,
     cover,
     gallery: [...new Set([cover, ...gallery].filter(Boolean))],
     video: clean(f.VideoUrl) || null,
+    geo: Number(f.Latitude) > 29 && Number(f.Longitude) > 34
+      ? { lat: Number(f.Latitude), lng: Number(f.Longitude), approx: false }
+      : geo[id] || null,
   });
 }
 

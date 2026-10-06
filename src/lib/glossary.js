@@ -69,3 +69,11 @@ export const neighborhoodHe = {
   'Nachlaot': 'נחלאות',
   'Yemin Moshe': 'ימין משה',
 };
+
+// Common misspellings in Hebrew street names coming from Grist.
+const streetFixes = [
+  [/הנביאם/g, 'הנביאים'],
+  [/לינקון/g, 'לינקולן'],
+  [/גורג(?!['׳])/g, 'ג׳ורג׳'],
+];
+export const fixStreetHe = (s) => streetFixes.reduce((v, [re, to]) => v.replace(re, to), s || '');

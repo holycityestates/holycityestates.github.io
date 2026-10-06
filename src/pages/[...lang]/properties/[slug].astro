@@ -67,7 +67,7 @@ const statusLabel = p.offMarket ? s.offMarket[p.status] : s.status[p.status];
       <div class:list={['mosaic', `n${Math.min(photos.length, 5)}`]}>
         {thumbs.slice(0, 5).map((src, i) => (
           <button type="button" class="mosaic-item" data-i={i} aria-label={`${s.gallery} ${i + 1}`}>
-            <img src={src} alt="" loading={i ? 'lazy' : 'eager'} />
+            <img class="media-bg" src={src} alt="" aria-hidden="true" loading={i ? 'lazy' : 'eager'} /><img class="media-main" src={src} alt="" loading={i ? 'lazy' : 'eager'} />
             {i === 4 && photos.length > 5 && <span class="more">+{photos.length - 5}</span>}
           </button>
         ))}
@@ -94,7 +94,12 @@ const statusLabel = p.offMarket ? s.offMarket[p.status] : s.status[p.status];
       )}
       <div class="block">
         <h2>{s.location}</h2>
-        <iframe class="map map-sm" title={s.location} loading="lazy" src={`https://www.google.com/maps?q=${mapQ}&output=embed`}></iframe>
+        {p.geo ? (
+          <>
+            <div class="minimap" id="minimap" data-lat={p.geo.lat} data-lng={p.geo.lng} data-approx={String(p.geo.approx)}></div>
+            <p class="muted small">{s.approxArea} · <a href={href(lang, '/map/')}>{s.nav.map}</a></p>
+          </>
+        ) : <p class="muted">{L(p.neighborhood, lang)}, {lang === 'he' ? 'ירושלים' : 'Jerusalem'}</p>}
       </div>
     </div>
     <aside class="contact-card">
@@ -115,6 +120,11 @@ const statusLabel = p.offMarket ? s.offMarket[p.status] : s.status[p.status];
       </div>
     </section>
   )}
+
+  <script>
+    import { mountMiniMap } from '../../../lib/map.js';
+    mountMiniMap(document.getElementById('minimap'));
+  </script>
 
   <dialog class="lightbox" id="lightbox">
     <button class="lb-close" aria-label="Close">×</button>

@@ -334,3 +334,148 @@ html[dir='rtl'] .fx-pick { padding: 3px 10px 3px 4px; }
 .transparent .fx-select { color: #fff; }
 .fx-select option { color: #111; }
 .facts em { font-style: normal; font-size: .72rem; color: var(--muted); line-height: 1.3; margin-top: 2px; }
+
+/* ---- v4: map ---- */
+.small { font-size: .85rem; margin-top: 10px; }
+.count-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin: 20px 0 24px; }
+.count-row .count { margin: 0; }
+.seg button { font: inherit; font-size: .92rem; border: 0; background: transparent; color: var(--ink-2); padding: .6em 1.1em; cursor: pointer; }
+.seg button + button { border-inline-start: 1px solid var(--line); }
+.seg button[aria-pressed='true'] { background: var(--ink); color: #fff; }
+.seg-sm button { font-size: .82rem; padding: .45em .85em; }
+.map-page { display: grid; grid-template-columns: minmax(380px, 46%) 1fr; height: calc(100vh - 85px); min-height: 520px; }
+.map-list { overflow-y: auto; padding: 28px 28px 40px; border-inline-end: 1px solid var(--line); }
+.map-list-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.map-list-head h1 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin: 0; }
+.map-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 32px 20px; }
+.map-cards .card-media { aspect-ratio: 4/3 !important; }
+.map-cards .card-title { font-size: 1.15rem !important; }
+.map-card-wrap .card-media { outline: 2px solid transparent; outline-offset: 3px; transition: outline-color .25s; }
+.map-card-wrap.is-hot .card-media { outline-color: var(--gold); }
+.map-canvas, .minimap { position: relative; isolation: isolate; background: var(--tint); }
+.minimap { height: 320px; border-radius: var(--radius); overflow: hidden; }
+.pin-wrap { background: none; border: 0; }
+.pin { position: relative; display: inline-block; transform: translate(-50%, calc(-100% - 6px)); background: #fff; color: var(--ink); font: 600 .8rem/1 var(--sans); padding: 7px 10px; border-radius: 99px; white-space: nowrap; box-shadow: 0 4px 14px rgba(16,18,23,.22); transition: background .2s, color .2s, scale .2s; cursor: pointer; }
+.pin::after { content: ''; position: absolute; left: 50%; bottom: -5px; width: 10px; height: 10px; background: inherit; transform: translateX(-50%) rotate(45deg); border-radius: 0 0 2px 0; z-index: -1; }
+.pin-wrap:hover .pin, .pin-wrap.is-hot .pin { background: var(--night); color: var(--gold-2); scale: 1.08; }
+.pin-wrap.is-hot { z-index: 1000 !important; }
+.map-canvas .leaflet-popup-content-wrapper { border-radius: var(--radius); padding: 0; overflow: hidden; box-shadow: 0 16px 40px rgba(16,18,23,.25); }
+.map-canvas .leaflet-popup-content { margin: 0; width: auto !important; }
+.pops { max-height: 320px; overflow-y: auto; }
+.pop { display: grid; grid-template-columns: 88px 1fr; gap: 12px; padding: 10px; align-items: center; color: var(--ink) !important; font-family: var(--sans); }
+.pop + .pop { border-top: 1px solid var(--line); }
+.pop:hover { background: var(--tint); }
+.pop img { width: 88px; height: 66px; object-fit: cover; border-radius: 2px; }
+.pop span { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.pop em { font-style: normal; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-dark); font-weight: 600; }
+html[dir='rtl'] .pop em { letter-spacing: 0; font-size: .78rem; }
+.pop strong { font-family: var(--serif); font-weight: 500; font-size: 1.05rem; line-height: 1.2; }
+.pop b { font-weight: 600; font-size: .88rem; }
+.leaflet-container { font-family: var(--sans); }
+@media (max-width: 900px) {
+  .map-page { grid-template-columns: 1fr; height: auto; }
+  .map-canvas { order: -1; height: 58vh; min-height: 340px; }
+  .map-list { overflow: visible; border: 0; padding: 24px 16px 48px; }
+}
+@media (max-width: 600px) {
+  .map-cards { grid-template-columns: 1fr 1fr; gap: 20px 12px; }
+  .count-row { flex-wrap: wrap; }
+}
+
+/* ---- v4: motion (only active when motion.js adds .motion to <html>) ---- */
+.site-header { transition: background .4s ease, box-shadow .4s ease; }
+.header-inner, .brand img { transition: height .35s ease; }
+.site-header.scrolled { box-shadow: 0 6px 24px rgba(16,18,23,.06); }
+[data-theme='signature'] .site-header.transparent { position: fixed; }
+[data-theme='signature'] .site-header.transparent.scrolled { background: rgba(16,18,23,.84); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(214,184,120,.18); }
+.site-header.scrolled .header-inner { height: 68px; }
+.site-header.scrolled .brand img { height: 56px; }
+@media (max-width: 820px) { .site-header.scrolled .main-nav { top: 68px; } }
+
+
+
+.btn-gold, .wa-float, .fx-pick { transition: transform .25s ease-out, background .2s, color .2s; }
+.ripple { position: absolute; border-radius: 50%; background: rgba(201,168,98,.35); pointer-events: none; transform: scale(0); animation: ripple .6s ease-out forwards; z-index: 2; }
+@keyframes ripple { to { transform: scale(1); opacity: 0; } }
+
+.leaflet-tile-pane { filter: grayscale(.85) sepia(.18) brightness(1.04) contrast(.92); }
+.map-list-head .count { margin: 0; }
+.map-filters { gap: 8px; margin-bottom: 24px; }
+.map-filters select { font-size: .85rem; padding-block: .5em; }
+.seg-sm span { font-size: .82rem; padding: .45em .85em; }
+
+/* ---- v5: whole photos, never cropped. The same photo, blurred, fills any leftover space. ---- */
+html[data-theme] .card-media { aspect-ratio: 4/3; }
+.media-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(22px) saturate(1.15) brightness(.88); scale: 1.25; }
+img.media-main { position: relative; width: 100%; height: 100%; object-fit: contain !important; transform: none !important; translate: none !important; }
+.project img.media-main { position: absolute; inset: 0; }
+.mosaic-item .media-bg, .project .media-bg { opacity: 1 !important; }
+.card:hover .card-media .media-bg, .mosaic-item:hover .media-bg, .project:hover .media-bg { transform: scale(1.06); }
+.lightbox img { width: auto; }
+
+/* ---- v6: photography (Unsplash, free licence): hero = sunset from Mount of Olives, duo band = same view at night ---- */
+.hero-media img { object-position: center 62%; }
+.duo-night { position: relative; overflow: hidden; padding: 120px 0; background: var(--night); }
+.duo-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 70%; }
+.duo-night::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(8,9,12,.62) 0%, rgba(8,9,12,.28) 50%, rgba(8,9,12,.62) 100%); }
+.duo-night > .wrap { position: relative; z-index: 2; }
+.duo-night .duo-card { background: rgba(16,18,23,.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-color: rgba(214,184,120,.3); }
+@media (max-width: 600px) { .duo-night { padding: 72px 0; } }
+html[data-theme='signature'] .hero-shade { background: radial-gradient(ellipse 55% 45% at 50% 52%, rgba(8,9,12,.42) 0%, transparent 100%), linear-gradient(180deg, rgba(8,9,12,.45) 0%, rgba(8,9,12,.08) 30%, rgba(8,9,12,.2) 60%, rgba(8,9,12,.82) 100%); }
+.hero h1, .hero .lead { text-shadow: 0 2px 24px rgba(0,0,0,.45); }
+
+
+/* ---- v7: cursor dot, scroll choreography, property-open transition ---- */
+/* Cursor: a small gold dot; over links it becomes a hollow ring, over properties a compact "View →" tag */
+.cursor-dot { position: fixed; left: 0; top: 0; width: 0; height: 0; z-index: 9999; pointer-events: none; opacity: 0; transition: opacity .25s; }
+.cursor-dot.on { opacity: 1; }
+.cursor-dot i { position: absolute; width: 7px; height: 7px; left: -3.5px; top: -3.5px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 1px rgba(255,255,255,.55), 0 0 12px rgba(201,168,98,.55); transition: width .25s, height .25s, left .25s, top .25s, background .25s, box-shadow .25s, scale .15s; }
+.cursor-dot.link i { width: 16px; height: 16px; left: -8px; top: -8px; background: transparent; box-shadow: inset 0 0 0 1.5px var(--gold); }
+.cursor-dot.on-dark i { box-shadow: 0 0 0 1px rgba(0,0,0,.2), 0 0 14px rgba(214,184,120,.7); }
+.cursor-dot.on-dark.link i { box-shadow: inset 0 0 0 1.5px var(--gold-2); }
+.cursor-dot.press i { scale: .6; }
+.cursor-dot span { position: absolute; left: 12px; top: -13px; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 11px; border-radius: 99px; background: rgba(16,18,23,.82); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: #fff; font: 500 .68rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; opacity: 0; translate: -6px 0; transition: opacity .2s, translate .25s; }
+html[dir='rtl'] .cursor-dot span { left: auto; right: 12px; translate: 6px 0; letter-spacing: 0; font-size: .78rem; }
+.cursor-dot span b { color: var(--gold-2); font-weight: 400; }
+.cursor-dot.view span { opacity: 1; translate: 0 0; }
+.cursor-dot.view i { background: var(--gold-2); }
+
+/* Scroll progress hairline */
+.scroll-progress { position: fixed; top: 0; inset-inline: 0; height: 2px; z-index: 70; background: linear-gradient(90deg, var(--gold-dark), var(--gold-2)); transform-origin: 0 50%; transform: scaleX(0); pointer-events: none; }
+html[dir='rtl'] .scroll-progress { transform-origin: 100% 50%; }
+
+.page-veil { position: fixed; inset: 0; z-index: 9998; pointer-events: none; background: var(--night); transform-origin: 50% 100%; animation: veil var(--m-dur-fast) var(--m-ease) forwards; }
+.page-veil::after { content: ''; position: absolute; inset-inline: 0; top: 0; height: 2px; background: var(--gold-2); }
+@keyframes veil { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+.mosaic-item:first-child { view-transition-name: prop-photo; }
+.detail-head h1 { view-transition-name: prop-title; }
+::view-transition-old(prop-photo), ::view-transition-new(prop-photo) { height: 100%; object-fit: cover; }
+
+
+/* ---- v8: one motion language. Every reveal is the same gentle fade-up, same speed, same easing.
+   Things that come into view together follow each other in reading order, 90ms apart. ---- */
+:root { --m-ease: cubic-bezier(.22,.61,.36,1); --m-dur: .8s; --m-dur-fast: .45s; --m-rise: 22px; }
+.motion [data-reveal] { opacity: 0; transform: translateY(var(--m-rise)); transition: opacity var(--m-dur) var(--m-ease), transform var(--m-dur) var(--m-ease); transition-delay: var(--d, 0ms); }
+.motion [data-reveal].in { opacity: 1; transform: none; }
+/* hero: the same fade-up on load, photo settles in at the same pace */
+.motion .hero-content > * { animation: m-rise var(--m-dur) var(--m-ease) both; }
+.motion .hero-content > :nth-child(2) { animation-delay: 90ms; }
+.motion .hero-content > :nth-child(3) { animation-delay: 180ms; }
+.motion .hero-content > :nth-child(n+4) { animation-delay: 270ms; }
+.motion .hero-media img { translate: 0 var(--py, 0); animation: m-fade 1.6s var(--m-ease) both; }
+@keyframes m-rise { from { opacity: 0; transform: translateY(var(--m-rise)); } to { opacity: 1; transform: none; } }
+@keyframes m-fade { from { opacity: 0; } to { opacity: 1; } }
+.motion .hero-content { opacity: calc(1 - var(--hero-out, 0)); translate: 0 calc(var(--hero-out, 0) * -40px); }
+/* images: a quiet fade as they load; one hover zoom used everywhere */
+.motion main img { transition: opacity var(--m-dur) var(--m-ease), transform var(--m-dur) var(--m-ease); }
+.motion main img.loading { opacity: 0; }
+.card .media-bg, .project .media-bg, .hood img, .mosaic-item .media-bg { transition: transform var(--m-dur) var(--m-ease), opacity var(--m-dur) var(--m-ease); }
+.card:hover .card-media .media-bg, .project:hover .media-bg, .hood:hover img, .mosaic-item:hover .media-bg { transform: scale(1.04); }
+.card-media img, .project img, .hood img, .mosaic-item img { translate: none; }
+/* opening a property: the photo glides into the gallery at the same pace */
+.motion .card.opening .card-media, .motion .project.opening { transform: scale(.98); transition: transform var(--m-dur-fast) var(--m-ease); }
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-group(*) { animation-duration: var(--m-dur-fast); animation-timing-function: var(--m-ease); }
+  ::view-transition-group(prop-photo), ::view-transition-group(prop-title) { animation-duration: .6s; }
+}

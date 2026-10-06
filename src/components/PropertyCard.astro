@@ -17,7 +17,7 @@ const chip = p.offMarket ? s.offMarket[p.status] : p.newProject ? s.newProject :
   data-off={p.offMarket ? 1 : 0}
 >
   <div class="card-media">
-    {p.cover ? <img src={img(p.cover, 800)} alt={L(p.title, lang)} loading="lazy" decoding="async" /> : <div class="ph"></div>}
+    {p.cover ? <><img class="media-bg" src={img(p.cover, 800)} alt="" aria-hidden="true" loading="lazy" decoding="async" /><img class="media-main" src={img(p.cover, 800)} alt={L(p.title, lang)} loading="lazy" decoding="async" /></> : <div class="ph"></div>}
     <span class:list={['chip', p.offMarket ? 'chip-dark' : 'chip-light']}>{chip}</span>
   </div>
   <div class="card-body">
