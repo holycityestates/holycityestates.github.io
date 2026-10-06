@@ -1,0 +1,27 @@
+---
+import Base from '../../layouts/Base.astro';
+import { t, getLang, langPaths, L, testimonial } from '../../lib/i18n.js';
+export const getStaticPaths = langPaths;
+const lang = getLang(Astro.params.lang);
+const s = t[lang];
+---
+<Base lang={lang} title={s.nav.about}>
+  <section class="page-head"><div class="wrap"><h1>{s.nav.about}</h1></div></section>
+  <section class="section">
+    <div class="wrap about-split">
+      <div>
+        <p class="kicker">{s.aboutKicker}</p>
+        <h2>{s.aboutTitle}</h2>
+        <p class="lead-dark">{s.aboutBody}</p>
+        <div class="services">
+          {s.services.map(([h, d]) => <div class="service"><h3>{h}</h3><p>{d}</p></div>)}
+        </div>
+      </div>
+      <blockquote class="quote">
+        <p class="kicker">{s.testimonialTitle}</p>
+        <p class="quote-text">“{L(testimonial.text, lang)}”</p>
+        <footer>— {L(testimonial.name, lang)}</footer>
+      </blockquote>
+    </div>
+  </section>
+</Base>

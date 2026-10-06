@@ -1,0 +1,34 @@
+---
+import { t, href, L, sizeLine, img } from '../lib/i18n.js';
+import Price from './Price.astro';
+const { p, lang } = Astro.props;
+const s = t[lang];
+const chip = p.offMarket ? s.offMarket[p.status] : p.newProject ? s.newProject : s.status[p.status];
+---
+<a
+  class:list={['card', { 'is-off': p.offMarket }]}
+  href={href(lang, `/properties/${p.slug}/`)}
+  data-status={p.status}
+  data-neighborhood={p.neighborhood.en}
+  data-type={p.type.en}
+  data-beds={p.bedrooms ?? 0}
+  data-price={p.price ?? 0}
+  data-date={p.date}
+  data-off={p.offMarket ? 1 : 0}
+>
+  <div class="card-media">
+    {p.cover ? <img src={img(p.cover, 800)} alt={L(p.title, lang)} loading="lazy" decoding="async" /> : <div class="ph"></div>}
+    <span class:list={['chip', p.offMarket ? 'chip-dark' : 'chip-light']}>{chip}</span>
+  </div>
+  <div class="card-body">
+    <div class="card-loc">{L(p.neighborhood, lang)}</div>
+    <h3 class="card-title">{L(p.title, lang)}</h3>
+    <div class="card-meta">
+      {sizeLine(p, lang).map((x) => <span>{x}</span>)}
+      {p.type.en && <span>{L(p.type, lang)}</span>}
+    </div>
+    {!p.offMarket && (
+      <Price p={p} lang={lang} cls="card-price" />
+    )}
+  </div>
+</a>

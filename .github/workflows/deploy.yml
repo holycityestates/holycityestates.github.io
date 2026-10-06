@@ -1,0 +1,64 @@
+# Builds the site from Grist and publishes it to GitHub Pages.
+# Runs: on every push, every hour, and on demand (Actions tab → "Run workflow").
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+  repository_dispatch:
+    types: [grist-update]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Reuse already-optimized photos
+        uses: actions/cache@v4
+        with:
+          path: public/photos
+          key: photos-${{ github.run_id }}
+          restore-keys: photos-
+      - name: Pull listings from Grist
+        env:
+          GRIST_API_KEY: ${{ secrets.GRIST_API_KEY }}
+          GRIST_DOC_ID: ${{ secrets.GRIST_DOC_ID }}
+          GRIST_TABLE: ${{ vars.GRIST_TABLE || 'Properties' }}
+        run: |
+          if [ -n "$GRIST_API_KEY" ]; then
+            node scripts/import-grist.mjs
+          else
+            echo "No Grist key yet — using saved export"
+            node scripts/import-grist.mjs --file data/grist-export.json
+          fi
+      - run: npx astro build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

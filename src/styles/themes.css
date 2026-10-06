@@ -1,0 +1,135 @@
+/* ============================================================
+   Option A — "Jerusalem Stone" (heritage): the default styles.
+   Warm limestone ivory, gold, classic serif.  (JRE / Oren Cohen lineage)
+   ============================================================ */
+[data-theme='heritage'] { --bg: #fbf8f2; --tint: #f2ece1; --line: #e5dccd; }
+
+/* ============================================================
+   Option B — "Gallery": editorial, image-first, very restrained.
+   (Prosperity / Sotheby's lineage)
+   ============================================================ */
+[data-theme='gallery'] {
+  --bg: #ffffff; --tint: #f5f4f1; --line: #e8e6e1; --ink: #111111; --ink-2: #3f3f3f; --muted: #8a8a8a;
+  --gold: #111111; --gold-dark: #000; --gold-2: #9a7b4f; --night: #111111; --radius: 0px;
+}
+[data-theme='gallery'] h1, [data-theme='gallery'] h2 { font-weight: 500; letter-spacing: -.02em; }
+[data-theme='gallery'] .site-header.transparent { position: sticky; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); }
+[data-theme='gallery'] .transparent .main-nav a:not(.btn) { color: var(--ink-2); }
+[data-theme='gallery'] .transparent .main-nav a.active:not(.btn), [data-theme='gallery'] .transparent .main-nav a:not(.btn):hover { color: var(--ink); }
+[data-theme='gallery'] .transparent .tools { border-color: var(--line); }
+[data-theme='gallery'] .transparent .cur-toggle { border-color: var(--line); }
+[data-theme='gallery'] .transparent .cur-toggle span { color: var(--ink-2); }
+[data-theme='gallery'] .transparent .cur-toggle .c-ils { background: var(--ink); color: #fff; }
+[data-theme='gallery'] .transparent .burger { color: var(--ink); }
+[data-theme='gallery'] .transparent .brand img { filter: none; }
+[data-theme='gallery'] .hero { min-height: 0; display: flex; flex-direction: column; color: var(--ink); background: var(--bg); padding-bottom: 0; }
+[data-theme='gallery'] .hero-shade { display: none; }
+[data-theme='gallery'] .hero-content { order: 1; padding: 72px 0 40px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+[data-theme='gallery'] .hero h1 { max-width: 20ch; font-size: clamp(2.6rem, 5.4vw, 4.4rem); }
+[data-theme='gallery'] .hero .lead { color: var(--ink-2); margin-inline: auto; }
+[data-theme='gallery'] .hero-kicker { color: var(--gold-2); }
+[data-theme='gallery'] .hero-media { order: 2; position: relative; width: min(1200px, 100% - 32px); margin: 0 auto; height: min(58vh, 560px); }
+[data-theme='gallery'] .search { box-shadow: none; border: 1px solid var(--ink); padding: 0; width: 100%; }
+[data-theme='gallery'] .search .btn { margin: 0; border-radius: 0; }
+[data-theme='gallery'] .btn-gold { background: var(--ink); }
+[data-theme='gallery'] .btn-gold:hover { background: #333; }
+[data-theme='gallery'] .link-arrow { color: var(--ink); }
+[data-theme='gallery'] .kicker, [data-theme='gallery'] .card-loc { color: var(--gold-2); }
+[data-theme='gallery'] .card-media { aspect-ratio: 4/5; }
+[data-theme='gallery'] .card-price { border: 0; padding-top: 4px; margin-top: 6px; font-weight: 500; }
+[data-theme='gallery'] .card-title { font-size: 1.45rem; }
+[data-theme='gallery'] .chip { background: #fff; color: var(--ink); border-radius: 0; }
+[data-theme='gallery'] .chip-dark { background: var(--ink); color: #fff; }
+[data-theme='gallery'] .grid { gap: 48px 28px; }
+[data-theme='gallery'] .section { padding: 104px 0; }
+[data-theme='gallery'] .section-head { flex-direction: column; align-items: center; text-align: center; }
+[data-theme='gallery'] .section > .wrap > h2 { text-align: center; }
+[data-theme='gallery'] .hood { aspect-ratio: 4/5; }
+[data-theme='gallery'] .service { border-color: var(--ink); }
+[data-theme='gallery'] .quote { background: transparent; border-inline-start: 1px solid var(--ink); padding: 8px 0 8px 36px; }
+[data-theme='gallery'] html[dir='rtl'] .quote, html[dir='rtl'][data-theme='gallery'] .quote { padding: 8px 36px 8px 0; }
+[data-theme='gallery'] .duo { background: var(--tint); color: var(--ink); }
+[data-theme='gallery'] .duo-card { border-color: var(--line); background: #fff; }
+[data-theme='gallery'] .duo-card p { color: var(--ink-2); }
+[data-theme='gallery'] .inline-form input { border-color: var(--line); color: var(--ink); }
+[data-theme='gallery'] .inline-form input::placeholder { color: var(--muted); }
+[data-theme='gallery'] .btn-outline-light { border-color: var(--ink); color: var(--ink); }
+[data-theme='gallery'] .btn-outline-light:hover { background: var(--ink); color: #fff; }
+[data-theme='gallery'] .site-footer { background: #fff; color: var(--ink-2); border-top: 1px solid var(--line); }
+[data-theme='gallery'] .site-footer h4 { color: var(--ink); }
+[data-theme='gallery'] .footer-bottom { border-color: var(--line); color: var(--muted); }
+
+/* ============================================================
+   Option C — "Prestige Night": dark, cinematic, gold logo glows.
+   (Sotheby's navy / Daniel Bouzaglo black lineage)
+   ============================================================ */
+[data-theme='prestige'] {
+  --bg: #0e1014; --tint: #151820; --line: #262a33; --ink: #f2ede3; --ink-2: #c9c3b6; --muted: #8d8778;
+  --gold: #b8955a; --gold-dark: #d2b072; --gold-2: #d6b878; --night: #08090c;
+}
+[data-theme='prestige'] body { background: var(--bg); color: var(--ink); }
+[data-theme='prestige'] .site-header { background: rgba(14,16,20,.92); border-color: var(--line); }
+[data-theme='prestige'] .main-nav a:not(.btn) { color: var(--ink-2); }
+[data-theme='prestige'] .main-nav a.active:not(.btn), [data-theme='prestige'] .main-nav a:not(.btn):hover { color: var(--ink); }
+[data-theme='prestige'] .cur-toggle span { color: var(--ink-2); }
+[data-theme='prestige'] .cur-toggle .c-ils { background: var(--ink); color: var(--bg); }
+[data-theme='prestige'] .hero { min-height: 100vh; align-items: center; text-align: center; }
+[data-theme='prestige'] .hero-shade { background: radial-gradient(ellipse at center, rgba(8,9,12,.35) 0%, rgba(8,9,12,.85) 100%); }
+[data-theme='prestige'] .hero-content { display: flex; flex-direction: column; align-items: center; padding: 140px 0 80px; }
+[data-theme='prestige'] .hero h1 { max-width: 18ch; font-size: clamp(2.6rem, 5.6vw, 4.6rem); }
+[data-theme='prestige'] .hero .lead { margin-inline: auto; }
+[data-theme='prestige'] .search { background: rgba(14,16,20,.6); backdrop-filter: blur(14px); border: 1px solid rgba(214,184,120,.35); box-shadow: none; text-align: start; }
+[data-theme='prestige'] .search label { border-color: rgba(255,255,255,.12); color: var(--ink); }
+[data-theme='prestige'] .search select { color: var(--ink); }
+[data-theme='prestige'] .search select option { color: #111; }
+[data-theme='prestige'] .btn-gold { color: #0e1014; background: linear-gradient(135deg, #c9a862, #a8853f); }
+[data-theme='prestige'] .btn-outline { border-color: var(--ink-2); color: var(--ink); }
+[data-theme='prestige'] .btn-outline:hover { background: var(--ink); color: var(--bg); }
+[data-theme='prestige'] .card-media { background: var(--tint); }
+[data-theme='prestige'] .chip-light { background: rgba(14,16,20,.75); color: var(--gold-2); border: 1px solid rgba(214,184,120,.4); }
+[data-theme='prestige'] .card-price { color: var(--gold-2); }
+[data-theme='prestige'] .quote { background: var(--bg); border: 1px solid var(--line); }
+[data-theme='prestige'] .service { border-color: var(--gold); }
+[data-theme='prestige'] .filters select, [data-theme='prestige'] .seg { background: var(--tint); color: var(--ink); border-color: var(--line); }
+[data-theme='prestige'] .seg input:checked + span { background: var(--gold); color: var(--bg); }
+[data-theme='prestige'] .contact-card { background: var(--tint); border-color: var(--line); box-shadow: none; }
+[data-theme='prestige'] .facts { border-color: var(--line); }
+[data-theme='prestige'] .facts li { border-color: var(--line); }
+[data-theme='prestige'] .duo { background: var(--tint); border-top: 1px solid var(--line); }
+[data-theme='prestige'] .site-footer { background: var(--night); }
+[data-theme='prestige'] .main-nav { background: transparent; }
+@media (max-width: 820px) { [data-theme='prestige'] .main-nav { background: var(--bg); } [data-theme='prestige'] .main-nav a:not(.btn) { color: var(--ink) !important; } }
+
+/* ============================================================
+   "Signature" — the mix: Prestige Night hero & dark accents,
+   Jerusalem Stone warm body, Gallery-style tall photo cards.
+   ============================================================ */
+[data-theme='signature'] { --bg: #fbf8f2; --tint: #f2ece1; --line: #e5dccd; --night: #101217; }
+/* Hero: dark, cinematic, centered, glass search (from C) */
+[data-theme='signature'] .site-header.transparent { background: linear-gradient(rgba(8,9,12,.7), transparent); }
+[data-theme='signature'] .hero { min-height: min(100vh, 900px); align-items: center; text-align: center; background: var(--night); }
+[data-theme='signature'] .hero-shade { background: radial-gradient(ellipse at center, rgba(8,9,12,.3) 0%, rgba(8,9,12,.82) 100%); }
+[data-theme='signature'] .hero-content { display: flex; flex-direction: column; align-items: center; padding: 140px 0 80px; }
+[data-theme='signature'] .hero h1 { max-width: 18ch; font-size: clamp(2.6rem, 5.6vw, 4.6rem); }
+[data-theme='signature'] .hero .lead { margin-inline: auto; }
+[data-theme='signature'] .search { background: rgba(16,18,23,.55); backdrop-filter: blur(14px); border: 1px solid rgba(214,184,120,.4); box-shadow: none; text-align: start; }
+[data-theme='signature'] .search label { border-color: rgba(255,255,255,.14); color: #f2ede3; }
+[data-theme='signature'] .search label span { color: rgba(242,237,227,.6); }
+[data-theme='signature'] .search select { color: #f2ede3; }
+[data-theme='signature'] .search select option { color: #111; }
+[data-theme='signature'] .btn-gold { background: linear-gradient(135deg, #c9a862, #a8853f); color: #fff; }
+/* Cards: tall, image-first (from B) */
+[data-theme='signature'] .card-media { aspect-ratio: 4/5; border-radius: 2px; }
+[data-theme='signature'] .card-title { font-size: 1.4rem; }
+[data-theme='signature'] .grid { gap: 48px 28px; }
+[data-theme='signature'] .chip { border-radius: 2px; }
+/* Centered section titles (from B) */
+[data-theme='signature'] .section-head { flex-direction: column; align-items: center; text-align: center; gap: 12px; }
+[data-theme='signature'] .section > .wrap > h2 { text-align: center; }
+[data-theme='signature'] .section-head h2::after, [data-theme='signature'] .section > .wrap > h2::after { content: ''; display: block; width: 48px; height: 1px; background: var(--gold); margin: 18px auto 0; }
+/* New Projects band goes dark (from C) */
+[data-theme='signature'] .section-tint:has(.projects) { background: var(--night); color: #f2ede3; }
+[data-theme='signature'] .section-tint:has(.projects) .muted { color: rgba(242,237,227,.6); }
+[data-theme='signature'] .section-tint:has(.projects) .link-arrow { color: var(--gold-2); }
+/* Header tools on hero */
+[data-theme='signature'] .hood { aspect-ratio: 4/5; }

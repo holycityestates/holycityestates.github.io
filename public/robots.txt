@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://holycity-realestate.com/sitemap-index.xml

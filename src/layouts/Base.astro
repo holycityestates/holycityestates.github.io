@@ -1,0 +1,138 @@
+---
+import '@fontsource/cormorant-garamond/500.css';
+import '@fontsource/cormorant-garamond/600.css';
+import '@fontsource-variable/inter';
+import '@fontsource/frank-ruhl-libre/400.css';
+import '@fontsource/frank-ruhl-libre/500.css';
+import '@fontsource-variable/heebo';
+import '../styles/global.css';
+import '../styles/themes.css';
+import { t, site, href, L, waLink, THEME, currencies, fxFallback } from '../lib/i18n.js';
+
+const { lang = 'en', title, description, image, transparent = false, jsonld } = Astro.props;
+const canonical = new URL(Astro.url.pathname, 'https://holycity-realestate.com').href;
+const orgLd = { '@context': 'https://schema.org', '@type': 'RealEstateAgent', name: 'Holy City Jerusalem Real Estate', url: 'https://holycity-realestate.com/', telephone: site.phoneIntl, email: site.email, image: 'https://holycity-realestate.com/img/logo.png', address: { '@type': 'PostalAddress', streetAddress: '26 King George St', addressLocality: 'Jerusalem', addressCountry: 'IL' } };
+const s = t[lang];
+const path = Astro.url.pathname.startsWith('/404') ? '/' : Astro.url.pathname.replace(/^\/he(\/|$)/, '/');
+const otherLang = lang === 'he' ? 'en' : 'he';
+const pageTitle = title ? `${title} | ${L(site.name, lang)}` : L(site.name, lang);
+const nav = [
+  ['/properties/', s.nav.properties],
+  ['/projects/', s.nav.projects],
+  ['/sold/', s.nav.sold],
+  ['/about/', s.nav.about],
+  ['/contact/', s.nav.contact],
+];
+const isActive = (p) => path.startsWith(p);
+---
+<!doctype html>
+<html lang={lang} dir={s.dir} data-theme={THEME}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description || s.heroSub} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description || s.heroSub} />
+    <meta property="og:image" content={image || 'https://holycity-realestate.com/img/hero.jpg'} />
+    <link rel="alternate" hreflang="en" href={href('en', path)} />
+    <link rel="alternate" hreflang="he" href={href('he', path)} />
+    <link rel="icon" href="/img/logo.png" />
+    <link rel="canonical" href={canonical} />
+    {process.env.PREVIEW && <meta name="robots" content="noindex, nofollow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'he' ? 'he_IL' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonld || orgLd)} />
+        <slot name="head" />
+  </head>
+  <body class={transparent ? 'has-hero' : ''}>
+    <header class:list={['site-header', { transparent }]}>
+      <div class="wrap header-inner">
+        <a href={href(lang, '/')} class="brand" aria-label={L(site.name, lang)}>
+          <img src="/img/logo.png" alt="" width="112" height="72" />
+        </a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menu" />
+        <label for="nav-toggle" class="burger"><span></span></label>
+        <nav class="main-nav">
+          {nav.map(([p, label]) => (
+            <a href={href(lang, p)} class:list={{ active: isActive(p) }}>{label}</a>
+          ))}
+          <div class="tools">
+            <label class="fx-pick" title={s.fxLabel}>
+              <span>₪ +</span>
+              <select class="fx-select" aria-label={s.fxLabel}>
+                {currencies.map(([c]) => <option value={c}>{c}</option>)}
+              </select>
+            </label>
+            <a href={href(otherLang, path)} class="lang" hreflang={otherLang}>{s.switchLang}</a>
+          </div>
+          <a href={waLink('')} class="btn btn-gold btn-sm" target="_blank" rel="noopener">{s.whatsapp}</a>
+        </nav>
+      </div>
+    </header>
+
+    <main><slot /></main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <img src="/img/logo.png" alt={L(site.name, lang)} width="150" height="96" class="footer-logo" />
+        </div>
+        <div>
+          <h4>{s.nav.contact}</h4>
+          <p><a href={`tel:${site.phoneIntl}`} dir="ltr">{site.phone}</a></p>
+          <p><a href={waLink('')} target="_blank" rel="noopener">WhatsApp</a></p>
+          <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+        </div>
+        <div>
+          <h4>{s.office}</h4>
+          <p>{L(site.address, lang)}</p>
+        </div>
+        <div>
+          <h4>{s.nav.properties}</h4>
+          <p><a href={href(lang, '/properties/?status=sale')}>{s.status.sale}</a></p>
+          <p><a href={href(lang, '/properties/?status=rent')}>{s.status.rent}</a></p>
+          <p><a href={href(lang, '/properties/?status=short-term')}>{s.status['short-term']}</a></p>
+          <p><a href={href(lang, '/projects/')}>{s.nav.projects}</a></p>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">© {new Date().getFullYear()} {L(site.name, lang)}. {s.rights}</div>
+    </footer>
+
+    <a class="wa-float" href={waLink('')} target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7Zm5.9-8c-.3-.2-1.9-1-2.2-1-.3-.2-.5-.2-.7.1l-1 1.3c-.2.2-.4.2-.7 0a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.6-.4Z"/></svg>
+    </a>
+    <script is:inline define:vars={{ currencies, fxFallback }}>
+      (() => {
+        const sym = Object.fromEntries(currencies);
+        let cur = 'USD';
+        try { cur = localStorage.getItem('fx') || 'USD'; } catch (e) {}
+        let rates = fxFallback;
+        const nf = new Intl.NumberFormat('en-US');
+        const paint = () => {
+          document.querySelectorAll('.fx-select').forEach((s) => (s.value = cur));
+          document.querySelectorAll('.price[data-ils]').forEach((el) => {
+            const v = +el.dataset.ils; const fx = el.querySelector('.p-fx');
+            if (!v || !fx || !rates[cur]) return;
+            const raw = v * rates[cur];
+            const r = el.dataset.kind === 'sale' ? Math.round(raw / 1000) * 1000 : Math.round(raw / 10) * 10;
+            fx.textContent = `≈ ${sym[cur]}${nf.format(r)}`;
+          });
+        };
+        document.querySelectorAll('.fx-select').forEach((s) => s.addEventListener('change', () => {
+          cur = s.value; try { localStorage.setItem('fx', cur); } catch (e) {} paint();
+        }));
+        paint();
+        // Live rates, cached for the browsing session
+        let cached = null;
+        try { cached = JSON.parse(sessionStorage.getItem('fxRates') || 'null'); } catch (e) {}
+        if (cached) { rates = cached; paint(); return; }
+        fetch('https://open.er-api.com/v6/latest/ILS').then((r) => r.json()).then((j) => {
+          if (j && j.rates) { rates = j.rates; try { sessionStorage.setItem('fxRates', JSON.stringify(j.rates)); } catch (e) {} paint(); }
+        }).catch(() => {});
+      })();
+    </script>
+  </body>
+</html>

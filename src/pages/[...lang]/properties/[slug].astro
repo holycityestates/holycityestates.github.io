@@ -1,0 +1,144 @@
+---
+import Base from '../../../layouts/Base.astro';
+import PropertyCard from '../../../components/PropertyCard.astro';
+import { t, getLang, href, L, visible, active, waLink, site, img } from '../../../lib/i18n.js';
+import Price from '../../../components/Price.astro';
+
+export function getStaticPaths() {
+  return visible.flatMap((p) => [
+    { params: { lang: undefined, slug: p.slug }, props: { p } },
+    { params: { lang: 'he', slug: p.slug }, props: { p } },
+  ]);
+}
+const { p } = Astro.props;
+const lang = getLang(Astro.params.lang);
+const s = t[lang];
+const title = L(p.title, lang);
+const desc = L(p.description, lang);
+const plain = desc.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+const facts = [
+  [s.type, L(p.type, lang)],
+  [s.rooms, p.rooms, s.roomsHint],
+  [s.bedrooms, p.bedrooms],
+  [s.size, p.sizeSqm && `${p.sizeSqm} ${s.sqm}`],
+  [s.floor, p.floor === 0 ? s.ground : p.floor],
+  [s.propertyNo, p.id],
+].filter(([, v]) => v !== null && v !== undefined && v !== '');
+const similar = active
+  .filter((x) => x.id !== p.id && (x.status === p.status || x.neighborhood.en === p.neighborhood.en))
+  .slice(0, 3);
+const photos = p.gallery.map((x) => img(x, 1600));
+const thumbs = p.gallery.map((x, i) => img(x, i ? 800 : 1600));
+const mapQ = encodeURIComponent(`${p.street.en || ''} ${p.neighborhood.en || ''} Jerusalem`.trim());
+const ld = {
+  '@context': 'https://schema.org',
+  '@type': 'RealEstateListing',
+  name: title,
+  description: plain.slice(0, 300),
+  url: `https://holycity-realestate.com${Astro.url.pathname}`,
+  image: p.gallery.slice(0, 6).map((x) => (x.startsWith('/') ? `https://holycity-realestate.com${img(x, 1600)}` : x)),
+  datePosted: p.date || undefined,
+  offers: p.price ? { '@type': 'Offer', price: p.price, priceCurrency: 'ILS', availability: p.offMarket ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock' } : undefined,
+  about: {
+    '@type': p.type.en?.includes('House') ? 'House' : 'Apartment',
+    numberOfRooms: p.rooms || undefined,
+    numberOfBedrooms: p.bedrooms || undefined,
+    floorSize: p.sizeSqm ? { '@type': 'QuantitativeValue', value: p.sizeSqm, unitCode: 'MTK' } : undefined,
+    address: { '@type': 'PostalAddress', streetAddress: p.street.en || undefined, addressLocality: 'Jerusalem', addressCountry: 'IL' },
+  },
+};
+const statusLabel = p.offMarket ? s.offMarket[p.status] : s.status[p.status];
+---
+<Base lang={lang} title={title} jsonld={ld} description={plain.slice(0, 155)} image={p.cover && (p.cover.startsWith('/') ? `https://holycity-realestate.com${img(p.cover, 1600)}` : p.cover)}>
+  <section class="wrap detail-top">
+    <a class="back" href={href(lang, '/properties/')}>{s.back}</a>
+    <div class="detail-head">
+      <div>
+        <p class="kicker">{statusLabel} · {L(p.neighborhood, lang)}</p>
+        <h1>{title}</h1>
+        <p class="muted">{L(p.street, lang)}{L(p.street, lang) ? ', ' : ''}{lang === 'he' ? 'ירושלים' : 'Jerusalem'}</p>
+      </div>
+      {!p.offMarket && (
+        <Price p={p} lang={lang} cls="detail-price" />
+      )}
+    </div>
+
+    {photos.length > 0 && (
+      <div class:list={['mosaic', `n${Math.min(photos.length, 5)}`]}>
+        {thumbs.slice(0, 5).map((src, i) => (
+          <button type="button" class="mosaic-item" data-i={i} aria-label={`${s.gallery} ${i + 1}`}>
+            <img src={src} alt="" loading={i ? 'lazy' : 'eager'} />
+            {i === 4 && photos.length > 5 && <span class="more">+{photos.length - 5}</span>}
+          </button>
+        ))}
+      </div>
+    )}
+  </section>
+
+  <section class="wrap detail-body">
+    <div class="detail-main">
+      <ul class="facts">
+        {facts.map(([k, v, hint]) => <li title={hint}><span>{k}</span><strong>{v}</strong>{hint && <em>{hint}</em>}</li>)}
+      </ul>
+      {desc && (
+        <div class="block">
+          <h2>{s.description}</h2>
+          <div class="prose" set:html={desc} />
+        </div>
+      )}
+      {p.features.length > 0 && (
+        <div class="block">
+          <h2>{s.features}</h2>
+          <ul class="features">{p.features.map((f) => <li>{L(f, lang)}</li>)}</ul>
+        </div>
+      )}
+      <div class="block">
+        <h2>{s.location}</h2>
+        <iframe class="map map-sm" title={s.location} loading="lazy" src={`https://www.google.com/maps?q=${mapQ}&output=embed`}></iframe>
+      </div>
+    </div>
+    <aside class="contact-card">
+      <img src="/img/logo.png" alt="" class="agent-logo" />
+      <h3>{s.interested}</h3>
+      <a class="btn btn-gold btn-block" href={waLink(s.waProperty(p))} target="_blank" rel="noopener">{s.book}</a>
+      <a class="btn btn-outline btn-block" href={`tel:${site.phoneIntl}`}>{s.call} <span dir="ltr">{site.phone}</span></a>
+      <a class="btn btn-ghost btn-block" href={waLink(`${s.video}: ${s.waProperty(p)}`)} target="_blank" rel="noopener">{s.video}</a>
+      <a class="share" href={waLink(`${title} – https://holycity-realestate.com${Astro.url.pathname}`)} target="_blank" rel="noopener">{s.share} ↗</a>
+    </aside>
+  </section>
+
+  {similar.length > 0 && (
+    <section class="section section-tint">
+      <div class="wrap">
+        <h2>{s.similar}</h2>
+        <div class="grid">{similar.map((x) => <PropertyCard p={x} lang={lang} />)}</div>
+      </div>
+    </section>
+  )}
+
+  <dialog class="lightbox" id="lightbox">
+    <button class="lb-close" aria-label="Close">×</button>
+    <button class="lb-prev" aria-label="Previous">‹</button>
+    <img id="lb-img" alt="" />
+    <button class="lb-next" aria-label="Next">›</button>
+    <div class="lb-count" id="lb-count"></div>
+  </dialog>
+
+  <script is:inline define:vars={{ photos }}>
+    const dlg = document.getElementById('lightbox');
+    const img = document.getElementById('lb-img');
+    const cnt = document.getElementById('lb-count');
+    let i = 0;
+    const show = (n) => { i = (n + photos.length) % photos.length; img.src = photos[i]; cnt.textContent = `${i + 1} / ${photos.length}`; };
+    document.querySelectorAll('.mosaic-item').forEach((b) => b.addEventListener('click', () => { show(+b.dataset.i); dlg.showModal(); }));
+    dlg.querySelector('.lb-close').onclick = () => dlg.close();
+    dlg.querySelector('.lb-prev').onclick = () => show(i - 1);
+    dlg.querySelector('.lb-next').onclick = () => show(i + 1);
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    document.addEventListener('keydown', (e) => {
+      if (!dlg.open) return;
+      if (e.key === 'ArrowRight') show(i + 1);
+      if (e.key === 'ArrowLeft') show(i - 1);
+    });
+  </script>
+</Base>

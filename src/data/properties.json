@@ -1,0 +1,2023 @@
+[
+  {
+    "id": 27,
+    "slug": "new-luxury-1-bedroom-old-city-view-27",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": true,
+    "date": "2025-01-21",
+    "status": "rent",
+    "price": 8200,
+    "bedrooms": 1,
+    "rooms": 2,
+    "sizeSqm": 50,
+    "floor": 22,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "3 Raoul Wallenberg / 64 Yafo",
+      "he": "3 ראול ולנברג / יפו 64"
+    },
+    "title": {
+      "en": "New Luxury 1 Bedroom Old City View",
+      "he": "דירת יוקרה חדשה עם חדר שינה אחד ונוף לעיר העתיקה"
+    },
+    "description": {
+      "en": "**Brand-New 1-Bedroom Apartment for Rent in Savyon View**<br> \n\nLocated in an amazing central location, this gorgeous, fully furnished 1-bedroom apartment offers modern living in one of Jerusalem’s most sought-after high-end buildings. With 47 square meters of space, a cozy living room, and a 5-meter private balcony, this apartment is perfect for those seeking style and convenience.<br>   \n\nThe building features 24/7 security, 4 fast elevators, and exclusive tenant access to two spacious shared balconies on the 10th and 21st floors.<br>   \n\n**Rent:** ₪8,200 month (Agent Fee Applies)<br>   \n\nFor more details or to schedule a viewing, contact Aryeh at **+972-52-678-3539**.",
+      "he": "דירת 1 חדר שינה חדשה להשכרה בנוף סביון \n\nממוקמת במיקום מרכזי מדהים, דירת 1 חדר שינה זו מציעה מגורים מודרניים באחד הבניינים היוקרתיים המבוקשים ביותר בירושלים. עם 47 מטרים רבועים של שטח, סלון נעים ומרפסת פרטית בגודל 5 מטרים, דירה זו מושלמת עבור מי שמחפש סגנון ונוחות.\n\nהבניין כולל אבטחה 24/7, 4 מעליות מהירות וגישה בלעדית לדיירים לשני מרפסות משותפות בקומות 10 ו-21.\n\nשכירות: ₪8,200 לחודש (דמי תיווך יש לשלם בנפרד)\n\nלפרטים נוספים או לתיאום פגישה, ניתן לפנות לאריה ב-+972-52-678-3539."
+    },
+    "features": [
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "Balcony",
+        "he": "מרפסת"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Fully Furnished",
+        "he": "מרוהטת קומפלט"
+      },
+      {
+        "en": "Concierge",
+        "he": "שירותי קונסיירז׳"
+      },
+      {
+        "en": "Security",
+        "he": "שמירה 24/7"
+      },
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "Gym",
+        "he": "חדר כושר"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Shabbat Lift",
+        "he": "מעלית שבת"
+      },
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      }
+    ],
+    "cover": "https://iili.io/2Pgh9P1.jpg",
+    "gallery": [
+      "https://iili.io/2Pgh9P1.jpg",
+      "https://iili.io/2PghGUu.jpg",
+      "https://iili.io/2Pgh1f9.jpg",
+      "https://iili.io/2PghCoN.jpg",
+      "https://iili.io/2PgXrnS.jpg",
+      "https://iili.io/2PgXSwl.jpg",
+      "https://iili.io/2PgX8u4.jpg",
+      "https://iili.io/2PgXv9f.jpg",
+      "https://iili.io/2PgXOas.jpg",
+      "https://iili.io/2PgXj6X.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 32,
+    "slug": "kfar-david-penthouse-for-sale-32",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": true,
+    "date": "2025-01-21",
+    "status": "sale",
+    "price": 34000000,
+    "bedrooms": 3,
+    "rooms": 4,
+    "sizeSqm": 300,
+    "floor": 4,
+    "type": {
+      "en": "Penthouse",
+      "he": "פנטהאוז"
+    },
+    "neighborhood": {
+      "en": "Mamilla",
+      "he": "ממילא"
+    },
+    "street": {
+      "en": "Yismach Hamelech",
+      "he": "ישמח המלך"
+    },
+    "title": {
+      "en": "Kfar David Penthouse For Sale",
+      "he": "פנטהאוז חדש בכפר דוד"
+    },
+    "description": {
+      "en": "Please call for more information",
+      "he": "תתקשרו לפרטים נוספים"
+    },
+    "features": [
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "Rooftop",
+        "he": "גג פרטי"
+      },
+      {
+        "en": "Luxury",
+        "he": "סטנדרט יוקרה"
+      },
+      {
+        "en": "Smart Home",
+        "he": "בית חכם"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "Storage",
+        "he": "מחסן"
+      }
+    ],
+    "cover": "https://iili.io/2ihvSku.jpg",
+    "gallery": [
+      "https://iili.io/2ihvSku.jpg",
+      "https://iili.io/2ihvDkg.jpg",
+      "https://iili.io/2ihvtYF.jpg",
+      "https://iili.io/2ihvZ21.jpg",
+      "https://iili.io/2ihvLrP.jpg",
+      "https://iili.io/2ihvsEB.jpg",
+      "https://iili.io/2ihviBV.jpg",
+      "https://iili.io/2ihv6LQ.jpg",
+      "https://iili.io/2ihv4hx.jpg",
+      "https://iili.io/2ihvUmb.jpg",
+      "https://iili.io/2ihv87e.jpg",
+      "https://iili.io/2ihvv29.jpg",
+      "https://iili.io/2ihver7.jpg",
+      "https://iili.io/2ihvO1S.jpg",
+      "https://iili.io/2ihvNB2.jpg",
+      "https://iili.io/2ihvjLl.jpg",
+      "https://iili.io/2ihvhX4.jpg",
+      "https://iili.io/2ihvXIf.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 33,
+    "slug": "new-3-bedroom-for-sale-33",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": false,
+    "date": "2025-01-21",
+    "status": "sale",
+    "price": 6450000,
+    "bedrooms": 3,
+    "rooms": 4,
+    "sizeSqm": 155,
+    "floor": 6,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "Haneviim Street",
+      "he": "הנביאם"
+    },
+    "title": {
+      "en": "New 3 Bedroom For Sale",
+      "he": "דירת 4 חדרים בבניין חדש למכירה"
+    },
+    "description": {
+      "en": "Please call for more information",
+      "he": "תתקשרו לפרטים נוספים"
+    },
+    "features": [
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      },
+      {
+        "en": "Shabbat Lift",
+        "he": "מעלית שבת"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      }
+    ],
+    "cover": "https://iili.io/2ihNFM7.jpg",
+    "gallery": [
+      "https://iili.io/2ihNFM7.jpg",
+      "https://iili.io/2ihNAMP.jpg",
+      "https://iili.io/2ihNuoB.jpg",
+      "https://iili.io/2ihNItV.jpg",
+      "https://iili.io/2ihNxAx.jpg",
+      "https://iili.io/2ihNo9j.jpg",
+      "https://iili.io/2ihNqFe.jpg",
+      "https://iili.io/2ihNKP9.jpg",
+      "https://iili.io/2ihN3nS.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 17,
+    "slug": "new-luxury-penthouse-for-rent-17",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": true,
+    "date": "2025-01-20",
+    "status": "rent",
+    "price": 18000,
+    "bedrooms": 4,
+    "rooms": 5,
+    "sizeSqm": 250,
+    "floor": 11,
+    "type": {
+      "en": "Penthouse",
+      "he": "פנטהאוז"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "-",
+      "he": ""
+    },
+    "title": {
+      "en": "New Luxury Penthouse For Rent",
+      "he": "פנטהאוז יוקרה חדש למכירה"
+    },
+    "description": {
+      "en": "**A rare opportunity to own a luxurious penthouse in the heart of Jerusalem's City Center**<br>. This newly listed, meticulously designed property boasts 4 spacious bedrooms, 3 modern bathrooms, and 160 sqm of elegant living space. The highlight of this home is the expansive 140 sqm open balcony, offering panoramic, breathtaking views of the entire city**Rare Luxury Penthouse in Jerusalem's City Center – A Must-See!<br>\n\nThis is your chance to own a **luxurious penthouse** in one of the most coveted locations in Jerusalem. Nestled in the heart of the City Center, this newly listed property is a true masterpiece, featuring **4 spacious bedrooms**, **3 sleek bathrooms**, and **160 sqm** of sophisticated living space. The standout feature? A **140 sqm open balcony** offering **panoramic, jaw-dropping views** of the entire city — an entertainer's dream or the perfect spot to relax and take in the breathtaking scenery.<br>\n\nWith its **prime location**, stunning design, and **top-tier finishes**, this penthouse is the ultimate blend of **style**, **comfort**, and **convenience**. Priced at ₪10,800,000, this is a rare opportunity for those seeking an exclusive and prestigious home in one of the world’s most iconic cities.<br>\n\n**For more details or to schedule a private tour**, contact Aryeh at **+972-678-3539**. With its prime location and top-tier finishes, this penthouse provides the perfect blend of comfort, style, and convenience. <br>Priced at ₪10,800,000, it’s an exceptional investment for those seeking a unique and prestigious property in one of the world’s most sought-after cities.<br> For more information or to schedule a private viewing, please contact Aryeh at +972-678-3539.",
+      "he": "פנטהאוז יוקרתי נדיר למכירה במרכז העיר ירושלים<br>\n\nהזדמנות חד-פעמית לרכוש פנטהאוז מעוצב בקפידה במיקום הנחשק ביותר בירושלים. דירה זו כוללת 4 חדרי שינה מרווחים, 3 חדרי רחצה מודרניים ו-160 מ\"ר של שטח מגורים אלגנטי. הדובדבן שבקצפת? מרפסת פתוחה בגודל 140 מ\"ר עם נוף עוצר נשימה של כל העיר.<br>\n\nמחיר: 10,800,000 ש\"ח<br>\n\nלפרטים נוספים או לתיאום סיור פרטי, צרו קשר עם אריה בטלפון +972-52-678-3539."
+    },
+    "features": [
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "Rooftop",
+        "he": "גג פרטי"
+      },
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "Renovated",
+        "he": "משופצת"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Shabbat Lift",
+        "he": "מעלית שבת"
+      }
+    ],
+    "cover": "https://iili.io/2wYrOox.jpg",
+    "gallery": [
+      "https://iili.io/2wYrOox.jpg",
+      "https://iili.io/2wYrwtj.jpg",
+      "https://iili.io/2wYreMQ.jpg",
+      "https://iili.io/2wYrkPV.jpg",
+      "https://iili.io/2wYr8KB.jpg",
+      "https://iili.io/2wYrScP.jpg",
+      "https://iili.io/2wYrUS1.jpg",
+      "https://iili.io/2wYrrHF.jpg",
+      "https://iili.io/2wYr4Ag.jpg",
+      "https://iili.io/2wYr6Na.jpg",
+      "https://iili.io/2wYrPDJ.jpg",
+      "https://iili.io/2wYrsov.jpg",
+      "https://iili.io/2wYrLVR.jpg",
+      "https://iili.io/2wYrQPp.jpg",
+      "https://iili.io/2wY4HDG.jpg",
+      "https://iili.io/2wY42V4.jpg",
+      "https://iili.io/2wY43il.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 25,
+    "slug": "new-luxury-2-bedroom-apartment-25",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": true,
+    "date": "2025-01-20",
+    "status": "rent",
+    "price": 9500,
+    "bedrooms": 2,
+    "rooms": 3,
+    "sizeSqm": 85,
+    "floor": 4,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "Lincoln Street",
+      "he": "לינקון"
+    },
+    "title": {
+      "en": "New luxury 2 bedroom apartment",
+      "he": "דירת 2 חדרי שינה יוקרתית חדשה"
+    },
+    "description": {
+      "en": "**Luxury 2-Bedroom Apartment for Rent in Talbiya**<br>\n\n📍 Located in Jerusalem’s Talbiya neighborhood, this exquisite apartment boasts private parking and a Shabbat elevator. With 2 spacious bedrooms, 2 bathrooms, and the possibility of furnished interiors, this residence is ideal for those seeking both comfort and elegance in a prestigious neighbourhood.<br>\n\nThe building offers top-notch amenities, ensuring a secure and stylish living experience.<br>\n\nRent: ₪9,500/month + utilities (Agent Fee Applies)<br>\n\n📩 For more details or to schedule a viewing, contact Aryeh at +972-52-678-3539.",
+      "he": "**דירת יוקרה 2 חדרי שינה להשכרה בטלביה**<br>  \n\n📍 ממוקמת בשכונת טלביה היוקרתית בירושלים, דירה מרשימה זו כוללת חניה פרטית ומעלית שבת. עם 2 חדרי שינה מרווחים, 2 חדרי רחצה ואפשרות לריהוט מלא, הדירה מושלמת למי שמחפש נוחות ואלגנטיות בשכונה נחשבת.<br>  \n\nהבניין מציע שירותים ברמה גבוהה, המבטיחים חווית מגורים בטוחה ומסוגננת.<br>  \n\nשכ\"ד: ₪9,500 לחודש + הוצאות (חל עלות דמי תיווך)<br>  \n\n📩 למידע נוסף או לתיאום צפייה, צרו קשר עם אריה בטל׳ +972-52-678-3539."
+    },
+    "features": [
+      {
+        "en": "Balcony",
+        "he": "מרפסת"
+      },
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "Shabbat Lift",
+        "he": "מעלית שבת"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      }
+    ],
+    "cover": "https://iili.io/26LRZHg.jpg",
+    "gallery": [
+      "https://iili.io/26LRZHg.jpg",
+      "https://iili.io/26L5nWl.jpg",
+      "https://iili.io/26L5fOG.jpg",
+      "https://iili.io/26L5KRs.jpg",
+      "https://iili.io/26L5JfI.jpg",
+      "https://iili.io/26L59iN.jpg",
+      "https://iili.io/26LRpxR.jpg",
+      "https://iili.io/26LRDOJ.jpg",
+      "https://iili.io/26LRsl1.jpg",
+      "https://iili.io/26LRUDx.jpg",
+      "https://iili.io/26LRvHu.jpg",
+      "https://iili.io/26LReSe.jpg",
+      "https://iili.io/26LRGAG.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 29,
+    "slug": "brand-new-project-in-talbiyah-29",
+    "display": true,
+    "offMarket": false,
+    "newProject": true,
+    "featured": false,
+    "date": "2025-01-19",
+    "status": "sale",
+    "price": null,
+    "bedrooms": 2,
+    "rooms": 3,
+    "sizeSqm": 85,
+    "floor": 3,
+    "type": {
+      "en": "New project",
+      "he": "פרויקט חדש"
+    },
+    "neighborhood": {
+      "en": "Talbiya",
+      "he": "טלביה"
+    },
+    "street": {
+      "en": "",
+      "he": ""
+    },
+    "title": {
+      "en": "Brand new project in Talbiyah",
+      "he": "פרויקט חדש בטלביה"
+    },
+    "description": {
+      "en": "Please call for more information",
+      "he": "תתקשרו לפרטים נוספים"
+    },
+    "features": [
+      {
+        "en": "Pre-sale",
+        "he": "מכירה מוקדמת (פריסייל)"
+      }
+    ],
+    "cover": "https://iili.io/2PZCoIn.jpg",
+    "gallery": [
+      "https://iili.io/2PZCoIn.jpg",
+      "https://iili.io/2PZzNcv.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 30,
+    "slug": "brand-new-project-in-rehavia-30",
+    "display": true,
+    "offMarket": false,
+    "newProject": true,
+    "featured": false,
+    "date": "2025-01-19",
+    "status": "sale",
+    "price": null,
+    "bedrooms": 3,
+    "rooms": 4,
+    "sizeSqm": 200,
+    "floor": 4,
+    "type": {
+      "en": "Penthouse",
+      "he": "פנטהאוז"
+    },
+    "neighborhood": {
+      "en": "Rehavia",
+      "he": "רחביה"
+    },
+    "street": {
+      "en": "",
+      "he": ""
+    },
+    "title": {
+      "en": "Brand new project in Rehavia",
+      "he": "פרויקט חדש ברחביה"
+    },
+    "description": {
+      "en": "Please call for more information",
+      "he": "תתקשרו לפרטים נוספים"
+    },
+    "features": [
+      {
+        "en": "Pre-sale",
+        "he": "מכירה מוקדמת (פריסייל)"
+      }
+    ],
+    "cover": "https://iili.io/2PZIXbS.jpg",
+    "gallery": [
+      "https://iili.io/2PZIXbS.jpg",
+      "https://iili.io/2PZTapV.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 31,
+    "slug": "building-for-sale-for-urban-renewal-31",
+    "display": true,
+    "offMarket": false,
+    "newProject": true,
+    "featured": false,
+    "date": "2025-01-19",
+    "status": "sale",
+    "price": null,
+    "bedrooms": null,
+    "rooms": null,
+    "sizeSqm": 1300,
+    "floor": 0,
+    "type": {
+      "en": "Building",
+      "he": "בניין"
+    },
+    "neighborhood": {
+      "en": "Shaarei Chesed",
+      "he": "שערי חסד"
+    },
+    "street": {
+      "en": "",
+      "he": ""
+    },
+    "title": {
+      "en": "BUILDING FOR SALE FOR URBAN RENEWAL",
+      "he": "בניין למכירה להתחדשות עירונית"
+    },
+    "description": {
+      "en": "Please call for more information",
+      "he": "תתקשרו לפרטים נוספים"
+    },
+    "features": [],
+    "cover": "https://iili.io/2PZ7V5b.jpg",
+    "gallery": [
+      "https://iili.io/2PZ7V5b.jpg",
+      "https://iili.io/2PZ7Mdu.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 22,
+    "slug": "new-luxury-apartment-studio-22",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": false,
+    "date": "2025-01-16",
+    "status": "short-term",
+    "price": 350,
+    "bedrooms": 1,
+    "rooms": 2,
+    "sizeSqm": null,
+    "floor": 1,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "King George 26 Street",
+      "he": "המלך גורג 26"
+    },
+    "title": {
+      "en": "New Luxury Apartment studio",
+      "he": "דירת יוקרה חדשה מרכז העיר"
+    },
+    "description": {
+      "en": "This stunning 1-bedroom apartment offers a comfortable and luxurious stay in a fantastic central location. It’s just a short walk to the Old City, Machne Yehuda Market, Rehavia, and Ben Yehuda Street, putting you close to all the best spots in Jerusalem. The apartment features a spacious room, modern amenities, and a warm atmosphere for a relaxing stay. It’s perfect for couples looking to experience the city in style. Enjoy a peaceful retreat while being close to vibrant attractions. A great place to stay during your visit to Jerusalem!",
+      "he": "הדירה המהממת הזו עם חדר שינה אחד מציעה שהות נוחה ויוקרתית במיקום מרכזי מצוין. היא נמצאת במרחק הליכה קצרה מהעיר העתיקה, שוק מחנה יהודה, רחביה ורחוב בן יהודה, קרוב לכל המקומות הכי טובים בירושלים. הדירה כוללת חדר מרווח, מתקנים מודרניים ואווירה חמימה לנופש נעים. היא מושלמת לזוגות שרוצים לחוות את העיר בסטייל. תהנו מהשקט בזמן שאתם קרובים לאטרקציות תוססות. מקום נהדר לשהות בו במהלך הביקור שלכם בירושלים!"
+    },
+    "features": [
+      {
+        "en": "Luxury",
+        "he": "סטנדרט יוקרה"
+      },
+      {
+        "en": "Fully Furnished",
+        "he": "מרוהטת קומפלט"
+      },
+      {
+        "en": "A/C",
+        "he": "מיזוג אוויר"
+      },
+      {
+        "en": "Washer/Dryer",
+        "he": "מכונת כביסה ומייבש"
+      }
+    ],
+    "cover": "https://iili.io/26L7m6N.jpg",
+    "gallery": [
+      "https://iili.io/26L7m6N.jpg",
+      "https://iili.io/26LYH8X.jpg",
+      "https://iili.io/26LY9at.jpg",
+      "https://iili.io/26L7yFI.jpg",
+      "https://iili.io/26L7bGp.jpg",
+      "https://iili.io/26L7DnR.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 23,
+    "slug": "new-luxury-apartment-studio-23",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": false,
+    "date": "2025-01-16",
+    "status": "short-term",
+    "price": 350,
+    "bedrooms": 1,
+    "rooms": 2,
+    "sizeSqm": null,
+    "floor": 1,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "King George 26 Street",
+      "he": "המלך גורג 26"
+    },
+    "title": {
+      "en": "New Luxury Apartment studio",
+      "he": "דירת יוקרה חדשה מרכז העיר"
+    },
+    "description": {
+      "en": "This stunning 1-bedroom apartment offers a comfortable and luxurious stay in a fantastic central location. It’s just a short walk to the Old City, Machne Yehuda Market, Rehavia, and Ben Yehuda Street, putting you close to all the best spots in Jerusalem. The apartment features a spacious room, modern amenities, and a warm atmosphere for a relaxing stay. It’s perfect for couples looking to experience the city in style. Enjoy a peaceful retreat while being close to vibrant attractions. A great place to stay during your visit to Jerusalem!",
+      "he": "הדירה המהממת הזו עם חדר שינה אחד מציעה שהות נוחה ויוקרתית במיקום מרכזי מצוין. היא נמצאת במרחק הליכה קצרה מהעיר העתיקה, שוק מחנה יהודה, רחביה ורחוב בן יהודה, קרוב לכל המקומות הכי טובים בירושלים. הדירה כוללת חדר מרווח, מתקנים מודרניים ואווירה חמימה לנופש נעים. היא מושלמת לזוגות שרוצים לחוות את העיר בסטייל. תהנו מהשקט בזמן שאתם קרובים לאטרקציות תוססות. מקום נהדר לשהות בו במהלך הביקור שלכם בירושלים!"
+    },
+    "features": [
+      {
+        "en": "Luxury",
+        "he": "סטנדרט יוקרה"
+      },
+      {
+        "en": "Fully Furnished",
+        "he": "מרוהטת קומפלט"
+      },
+      {
+        "en": "A/C",
+        "he": "מיזוג אוויר"
+      },
+      {
+        "en": "Washer/Dryer",
+        "he": "מכונת כביסה ומייבש"
+      }
+    ],
+    "cover": "https://iili.io/26L1EZu.jpg",
+    "gallery": [
+      "https://iili.io/26L1EZu.jpg",
+      "https://iili.io/26L1P8N.jpg",
+      "https://iili.io/26L1UMJ.jpg",
+      "https://iili.io/26L1W6x.jpg",
+      "https://iili.io/26L1cy7.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 20,
+    "slug": "new-luxury-2-bedroom-apartment-20",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": false,
+    "date": "2025-01-14",
+    "status": "short-term",
+    "price": 850,
+    "bedrooms": 2,
+    "rooms": 3,
+    "sizeSqm": 75,
+    "floor": 2,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "King George 35 Street",
+      "he": "המלך גורג 35"
+    },
+    "title": {
+      "en": "New Luxury 2 Bedroom Apartment",
+      "he": "דירת יוקרה חדשה עם 2 חדרי שינה"
+    },
+    "description": {
+      "en": "This stylish 2-bedroom apartment is 70 sqm and offers a comfortable, luxurious stay in a fantastic central location. It’s just a short walk to the Old City, Machne Yehuda Market, Rehavia, and Ben Yehuda Street, putting you close to all the best spots in Jerusalem. The apartment features spacious rooms, modern amenities, and a cozy atmosphere, with the added luxury of a bathtub jacuzzi for ultimate relaxation. It’s perfect for couples or small groups looking to experience the city in style. Enjoy a peaceful retreat while being near lively attractions. A great place to stay during your visit to Jerusalem!",
+      "he": "הדירה המהממת הזו עם 2 חדרי שינה בשטח של 70 מ\"ר מציעה שהות נוחה ויוקרתית במיקום מרכזי מצוין. היא נמצאת במרחק הליכה קצרה מהעיר העתיקה, שוק מחנה יהודה, רחביה ורחוב בן יהודה, קרוב לכל המקומות הכי טובים בירושלים. הדירה כוללת חדרים מרווחים, מתקנים מודרניים ואווירה חמימה, עם תוספת של ג'קוזי אמבטיה לנופש מושלם ומרגיע. היא מושלמת לזוגות או קבוצות קטנות שרוצות לחוות את העיר בסטייל. תהנו מהשקט בזמן שאתם קרובים לאטרקציות תוססות. מקום נהדר לשהות בו במהלך הביקור שלכם בירושלים!"
+    },
+    "features": [
+      {
+        "en": "Luxury",
+        "he": "סטנדרט יוקרה"
+      },
+      {
+        "en": "Fully Furnished",
+        "he": "מרוהטת קומפלט"
+      },
+      {
+        "en": "A/C",
+        "he": "מיזוג אוויר"
+      },
+      {
+        "en": "Washer/Dryer",
+        "he": "מכונת כביסה ומייבש"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      }
+    ],
+    "cover": "https://iili.io/2PgCvcJ.jpg",
+    "gallery": [
+      "https://iili.io/2PgCvcJ.jpg",
+      "https://iili.io/2PgCytS.jpg",
+      "https://iili.io/2PgCpN2.jpg",
+      "https://iili.io/2PgCmAl.jpg",
+      "https://iili.io/2PgCtSf.jpg",
+      "https://iili.io/2PgCiMX.jpg",
+      "https://iili.io/2PgCPnt.jpg",
+      "https://iili.io/2PgCrwN.jpg",
+      "https://iili.io/2PgCU9R.jpg",
+      "https://iili.io/2PgC88v.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 21,
+    "slug": "new-luxury-2-bedroom-apartment-21",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": false,
+    "date": "2025-01-14",
+    "status": "short-term",
+    "price": 700,
+    "bedrooms": 2,
+    "rooms": 3,
+    "sizeSqm": 70,
+    "floor": 2,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "King George 33 Street",
+      "he": "המלך גורג 35"
+    },
+    "title": {
+      "en": "New Luxury 2 Bedroom Apartment",
+      "he": "דירת 2 חדרי שינה חדשה"
+    },
+    "description": {
+      "en": "This stunning 2-bedroom apartment, covering 70 sqm, offers a comfortable and luxurious stay in a fantastic central location. It’s just a short walk to the Old City, Machne Yehuda Market, Rehavia, and Ben Yehuda Street, putting you close to all the best spots in Jerusalem. The apartment features spacious rooms, modern amenities, and a warm atmosphere for a relaxing stay. It’s perfect for couples or small groups looking to experience the city in style. Enjoy a peaceful retreat while being near lively attractions. A great place to stay during your visit to Jerusalem!",
+      "he": "הדירה המהממת הזו עם 2 חדרי שינה בשטח של 70 מ\"ר מציעה שהות נוחה ויוקרתית במיקום מרכזי מצוין. היא נמצאת במרחק הליכה קצרה מהעיר העתיקה, שוק מחנה יהודה, רחביה ורחוב בן יהודה, קרוב לכל המקומות הכי טובים בירושלים. הדירה כוללת חדרים מרווחים, מתקנים מודרניים ואווירה חמימה לנופש נעים. היא מושלמת לזוגות או קבוצות קטנות שרוצות לחוות את העיר בסטייל. תהנו מהשקט בזמן שאתם קרובים לאטרקציות תוססות. מקום נהדר לשהות בו במהלך הביקור שלכם בירושלים!"
+    },
+    "features": [
+      {
+        "en": "Luxury",
+        "he": "סטנדרט יוקרה"
+      },
+      {
+        "en": "Fully Furnished",
+        "he": "מרוהטת קומפלט"
+      },
+      {
+        "en": "A/C",
+        "he": "מיזוג אוויר"
+      },
+      {
+        "en": "Washer/Dryer",
+        "he": "מכונת כביסה ומייבש"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      }
+    ],
+    "cover": "https://iili.io/2PgHAsR.jpg",
+    "gallery": [
+      "https://iili.io/2PgHAsR.jpg",
+      "https://iili.io/2PgHeee.jpg",
+      "https://iili.io/2PgHO79.jpg",
+      "https://iili.io/2PgHjgS.jpg",
+      "https://iili.io/2PgHh12.jpg",
+      "https://iili.io/2PgHXql.jpg",
+      "https://iili.io/2PgHVs4.jpg",
+      "https://iili.io/2PgHGzG.jpg",
+      "https://iili.io/2PgH1bs.jpg",
+      "https://iili.io/2PgH0en.jpg",
+      "https://iili.io/2PgHl5X.jpg",
+      "https://iili.io/2PgHYgI.jpg",
+      "https://iili.io/2PgH70N.jpg",
+      "https://iili.io/2PgH5fp.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 19,
+    "slug": "new-luxury-4-bedroom-apartment-19",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": true,
+    "date": "2025-01-13",
+    "status": "short-term",
+    "price": 1350,
+    "bedrooms": 4,
+    "rooms": 5,
+    "sizeSqm": 140,
+    "floor": 0,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "Hamaalot 2 Street",
+      "he": "המעלות 2"
+    },
+    "title": {
+      "en": "New Luxury 4 Bedroom Apartment",
+      "he": "דירת 4 חדרי שינה חדשה במרכז ירושלים"
+    },
+    "description": {
+      "en": "New luxury apartment in Central Jerusalem<br>\nThis stylish 4-bedroom apartment is 140 sqm and offers a comfortable, luxurious stay in a great central location. It’s just a short walk to the Old City, Machne Yehuda Market, Rehavia, and Ben Yehuda Street, putting you close to all the best spots in Jerusalem. The apartment features spacious rooms, modern amenities, and a cozy atmosphere for a relaxing stay. It’s perfect for families or groups who want to experience the city in style. Enjoy a peaceful retreat while being near lively attractions. A great place to stay during your visit to Jerusalem!",
+      "he": "דירת 4 חדרי שינה מעוצבת בשטח של 140 מ\"ר, מציעה שהות נוחה ויוקרתית במיקום מרכזי מעולה. היא נמצאת במרחק הליכה קצרה מהעיר העתיקה, שוק מחנה יהודה, רחביה ורחוב בן יהודה, מה שקרוב לכל המקומות הכי טובים בירושלים. הדירה כוללת חדרים מרווחים, מתקנים מודרניים ואווירה חמימה לנופש נעים. מושלמת למשפחות או קבוצות שרוצות לחוות את העיר בסטייל. תהנו מהשקט בזמן שאתם קרובים לאטרקציות תוססות. מקום נהדר לשהות בו במהלך הביקור שלכם בירושלים!"
+    },
+    "features": [
+      {
+        "en": "Luxury",
+        "he": "סטנדרט יוקרה"
+      },
+      {
+        "en": "Fully Furnished",
+        "he": "מרוהטת קומפלט"
+      },
+      {
+        "en": "A/C",
+        "he": "מיזוג אוויר"
+      },
+      {
+        "en": "Washer/Dryer",
+        "he": "מכונת כביסה ומייבש"
+      }
+    ],
+    "cover": "https://iili.io/2Pg9Bus.jpg",
+    "gallery": [
+      "https://iili.io/2Pg9Bus.jpg",
+      "https://iili.io/2Pg9EPV.jpg",
+      "https://iili.io/2Pg91MQ.jpg",
+      "https://iili.io/2Pg90ox.jpg",
+      "https://iili.io/2Pg9awb.jpg",
+      "https://iili.io/2Pg979e.jpg",
+      "https://iili.io/2Pg9RS9.jpg",
+      "https://iili.io/2Pg9Ac7.jpg",
+      "https://iili.io/2Pg9IP2.jpg",
+      "https://iili.io/2Pg9zMl.jpg",
+      "https://iili.io/2Pg9xn4.jpg",
+      "https://iili.io/2Pg9ntf.jpg",
+      "https://iili.io/2Pg9CwG.jpg",
+      "https://iili.io/2Pg9q9n.jpg",
+      "https://iili.io/2Pg9Fat.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 24,
+    "slug": "the-best-penthouse-in-jerusalem-24",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": true,
+    "date": "2025-01-12",
+    "status": "short-term",
+    "price": null,
+    "bedrooms": 3,
+    "rooms": 4,
+    "sizeSqm": 250,
+    "floor": 6,
+    "type": {
+      "en": "Penthouse",
+      "he": "פנטהאוז"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "Mordichai Eliash Street",
+      "he": "מורדכי אליאש"
+    },
+    "title": {
+      "en": "The best penthouse in jerusalem",
+      "he": "פנטהאוז יוקרתי חדש מרכז העיר"
+    },
+    "description": {
+      "en": "This luxurious penthouse spans an impressive 250 sqm and offers an exquisite stay in a prime central location. It’s just a short walk to the Old City, Machne Yehuda Market, Rehavia, and Ben Yehuda Street, placing you near all the best attractions in Jerusalem. The penthouse features three spacious bedrooms, modern amenities, and a warm atmosphere for an enjoyable and relaxing experience. Additionally, you can unwind by your private pool, making it perfect for families or groups looking to explore the city in style. Enjoy a tranquil retreat with the luxury of a pool while being close to vibrant cultural hotspots. A superb choice for your visit to Jerusalem!",
+      "he": "הפנטהאוז המפואר הזה משתרע על פני 250 מ\"ר ומציע שהות יוצאת דופן במיקום מרכזי, הוא נמצא במרחק הליכה קצרה מהעיר העתיקה, שוק מחנה יהודה, רחוב רהביה ורחוב בן יהודה, וממקם אתכם קרוב לכל האטרקציות הטובות בירושלים. הפנטהאוז כולל שלושה חדרי שינה מרווחים, מתקנים מודרניים ואווירה חמימה לשהות מהנה ומרגיעה. בנוסף, תוכלו להירגע ליד בריכת השחייה הפרטית שלכם, מה שהופך אותו למושלם עבור משפחות או קבוצות שמעוניינות לחקור את העיר בסטייל. תיהנו מאווירת נחת עם luxurious שלבריכה תוך כדי קרבה לאטרקציות תרבותיות תוססות. בחירה מצוינת לביקור שלכם בירושלים!"
+    },
+    "features": [
+      {
+        "en": "Rooftop",
+        "he": "גג פרטי"
+      },
+      {
+        "en": "Pool",
+        "he": "בריכה"
+      },
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "BBQ Area",
+        "he": "פינת מנגל"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Fully Furnished",
+        "he": "מרוהטת קומפלט"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      }
+    ],
+    "cover": "https://iili.io/2PgIxkJ.jpg",
+    "gallery": [
+      "https://iili.io/2PgIxkJ.jpg",
+      "https://iili.io/2PgIj49.jpg",
+      "https://iili.io/2PgIhE7.jpg",
+      "https://iili.io/2PgIXBS.jpg",
+      "https://iili.io/2PgIVQ2.jpg",
+      "https://iili.io/2PgIGI4.jpg",
+      "https://iili.io/2PgI1pf.jpg",
+      "https://iili.io/2PgIc2n.jpg",
+      "https://iili.io/2PgIYrX.jpg",
+      "https://iili.io/2PgI71t.jpg",
+      "https://iili.io/2PgIALN.jpg",
+      "https://iili.io/2PgIuXp.jpg",
+      "https://iili.io/2PgIo7a.jpg",
+      "https://iili.io/2PgIBrF.jpg",
+      "https://iili.io/2PgIq11.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 8,
+    "slug": "big-2-bedroom-apartment-luxury-renovation-8",
+    "display": false,
+    "offMarket": true,
+    "newProject": false,
+    "featured": false,
+    "date": "2025-01-02",
+    "status": "rent",
+    "price": 8700,
+    "bedrooms": 2,
+    "rooms": 3,
+    "sizeSqm": 85,
+    "floor": 3,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "Talbiya",
+      "he": "טלביה"
+    },
+    "street": {
+      "en": "3 Mapu Street",
+      "he": "רחוב מאפו 3"
+    },
+    "title": {
+      "en": "Big 2 Bedroom Apartment (Luxury Renovation)",
+      "he": "דירת 2 חדרי שינה גדולה (שיפוץ יוקרתי)"
+    },
+    "description": {
+      "en": "**Newly Renovated 2-Bedroom Apartment in Talbiyeh**<br> \n\nLocated on Mapu/King David Street, this beautifully renovated and fully furnished 2-bedroom apartment offers modern luxury in the heart of Jerusalem. Featuring 3 rooms, 2 full bathrooms, a closed balcony, and private parking, this property combines elegance with convenience. The high-end renovation ensures a comfortable and stylish living experience in one of the city’s most desirable neighborhoods.<br>  \n\n**Rent:** ₪8,700/month (Agent Fee Applies)<br>   \n\nFor more details, contact Aryeh at **+972-52-678-3539**.",
+      "he": "דירה חדשה ומשופצת בטלביה<br>\n\nממוקמת ברחוב מאפו/קינג דיוויד, דירה זו כוללת 2 חדרי שינה, 3 חדרים, 2 חדרי רחצה מלאים, מרפסת סגורה וחניה פרטית. השיפוץ היוקרתי מבטיח חוויית מגורים נוחה ואלגנטית באחת השכונות המבוקשות בירושלים.<br>\n\nשכירות: 8,700 ש\"ח לחודש (דמי תיווך חלים)<br>\n\nלפרטים נוספים, צרו קשר עם אריה בטלפון +972-52-678-3539."
+    },
+    "features": [
+      {
+        "en": "A/C",
+        "he": "מיזוג אוויר"
+      },
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Renovated",
+        "he": "משופצת"
+      },
+      {
+        "en": "Fully Furnished",
+        "he": "מרוהטת קומפלט"
+      },
+      {
+        "en": "Balcony",
+        "he": "מרפסת"
+      }
+    ],
+    "cover": "https://iili.io/2wuKlqX.jpg",
+    "gallery": [
+      "https://iili.io/2wuKlqX.jpg",
+      "https://iili.io/2wuKM7f.jpg",
+      "https://iili.io/2wuKhI2.jpg",
+      "https://iili.io/2wuKFOQ.jpg",
+      "https://iili.io/2wuK35x.jpg",
+      "https://iili.io/2wuKKbV.jpg",
+      "https://iili.io/2wuKoqF.jpg",
+      "https://iili.io/2wuKu5v.jpg",
+      "https://iili.io/2wuK1gs.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 10,
+    "slug": "brand-new-studio-10",
+    "display": true,
+    "offMarket": true,
+    "newProject": false,
+    "featured": false,
+    "date": "2025-01-02",
+    "status": "rent",
+    "price": 4000,
+    "bedrooms": 1,
+    "rooms": 2,
+    "sizeSqm": 20,
+    "floor": 5,
+    "type": {
+      "en": "Studio Apartment",
+      "he": "דירת סטודיו"
+    },
+    "neighborhood": {
+      "en": "Mahane Yehuda",
+      "he": "מחנה יהודה"
+    },
+    "street": {
+      "en": "Navon 3 Street",
+      "he": "נבון 3"
+    },
+    "title": {
+      "en": "Brand New Studio",
+      "he": "סטודיו חדש לגמרי"
+    },
+    "description": {
+      "en": "**Brand New Luxury Studio for Rent in Jerusalem's City Center**\n\nDiscover the perfect blend of comfort, style, and convenience with this **brand new, fully furnished studio** in the heart of Jerusalem’s **City Center**. Situated in an **amazing location** that’s both vibrant and **quiet**, this studio is ideal for those looking for a peaceful retreat with everything you need right at your doorstep.\n\nEnjoy modern living in a newly built, **luxury space** with all the essentials included – **everything** is covered except for electricity.\n\n**Rent:** ₪4,200/month (includes everything except electricity)  \n**Agent Fee** applies.\n\nFor more details or to schedule a viewing, contact Aryeh at **+972-52-678-3539**.",
+      "he": "סטודיו יוקרתי חדש להשכרה במרכז העיר ירושלים<br>\n\nבואו ליהנות משילוב מושלם של נוחות, סטייל ונוחות בדירת סטודיו חדשה לחלוטין במיקום מעולה במרכז העיר. הדירה כוללת ריהוט מלא ועיצוב יוקרתי, עם כל הציוד הדרוש, פרט לחשמל.<br>\n\nשכירות: 4,200 ש\"ח לחודש (כולל הכל פרט לחשמל) (דמי תיווך חלים)<br>\n\nלפרטים נוספים או לתיאום צפייה, צרו קשר עם אריה בטלפון +972-52-678-3539."
+    },
+    "features": [
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Shabbat Lift",
+        "he": "מעלית שבת"
+      },
+      {
+        "en": "Fully Furnished",
+        "he": "מרוהטת קומפלט"
+      },
+      {
+        "en": "A/C",
+        "he": "מיזוג אוויר"
+      },
+      {
+        "en": "Storage",
+        "he": "מחסן"
+      }
+    ],
+    "cover": "https://iili.io/2wYk16X.jpg",
+    "gallery": [
+      "https://iili.io/2wYk16X.jpg",
+      "https://iili.io/2wYkOnS.jpg",
+      "https://iili.io/2wYwKX9.jpg",
+      "https://iili.io/2wYwAzP.jpg",
+      "https://iili.io/2wYw8p2.jpg",
+      "https://iili.io/2wYwUIS.jpg",
+      "https://iili.io/2wYwZkQ.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 2,
+    "slug": "new-authentic-garden-apartment-2",
+    "display": true,
+    "offMarket": true,
+    "newProject": false,
+    "featured": false,
+    "date": "2025-01-01",
+    "status": "rent",
+    "price": 8900,
+    "bedrooms": 2,
+    "rooms": 3,
+    "sizeSqm": 85,
+    "floor": 0,
+    "type": {
+      "en": "Garden Apartment",
+      "he": "דירת גן"
+    },
+    "neighborhood": {
+      "en": "Talbiya",
+      "he": "טלביה"
+    },
+    "street": {
+      "en": "10 Moshe Hess Street",
+      "he": "רחוב משה הס 10"
+    },
+    "title": {
+      "en": "New Authentic Garden Apartment",
+      "he": "דירת גן אותנטית חדשה"
+    },
+    "description": {
+      "en": "Discover this charming garden apartment for rent in the desirable Talbiyah neighborhood on Hess Street<br> \nThis spacious 2.5-room unit features a large private garden, perfect for outdoor relaxation and entertaining. Recently renovated, it boasts a modern kitchen and bathroom, combining comfort with style. With its generous space and unique character, this apartment is a must-see!<br>\n\nAsking Price: 8,900/month.<br> \n\nContact us to schedule a viewing today!",
+      "he": "דירת גן מקסימה להשכרה בטלביה ברחוב הס<br>\n\nדירה מרווחת זו, בעלת 2.5 חדרים, כוללת גינה פרטית גדולה, מושלמת להרפיה ובילויים חיצוניים. הדירה עברה שיפוץ לאחרונה וכוללת מטבח וחדר רחצה מודרניים. עם עיצוב ייחודי ושטח נדיב, זוהי דירה שחובה לראות!<br>\n\nשכירות: 8,900 ש\"ח לחודש<br>\n\nצרו קשר לתיאום צפייה."
+    },
+    "features": [
+      {
+        "en": "Private Garden",
+        "he": "גינה פרטית"
+      },
+      {
+        "en": "Private Entrance",
+        "he": "כניסה פרטית"
+      },
+      {
+        "en": "High Ceilings",
+        "he": "תקרות גבוהות"
+      },
+      {
+        "en": "Kitchen Appliances",
+        "he": "מטבח מאובזר"
+      },
+      {
+        "en": "A/C",
+        "he": "מיזוג אוויר"
+      },
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      }
+    ],
+    "cover": "https://iili.io/2jLSQx1.jpg",
+    "gallery": [
+      "https://iili.io/2jLSQx1.jpg",
+      "https://iili.io/2jQzomu.jpg",
+      "https://iili.io/2jQzR1V.jpg",
+      "https://iili.io/2jQzFql.jpg",
+      "https://iili.io/2jQzEhJ.jpg",
+      "https://iili.io/2jQzNkX.jpg",
+      "https://iili.io/2jQzW1p.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 6,
+    "slug": "brand-new-garden-apartment-with-a-private-pool-6",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": true,
+    "date": "2024-12-22",
+    "status": "short-term",
+    "price": 750,
+    "bedrooms": 1,
+    "rooms": 2,
+    "sizeSqm": 70,
+    "floor": 0,
+    "type": {
+      "en": "Garden",
+      "he": "בית עם גינה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "46 Haneviim Street",
+      "he": "רחוב הנביאים 46"
+    },
+    "title": {
+      "en": "Brand New Garden Apartment With A Private Pool",
+      "he": "דירת גן חדשה לגמרי עם בריכה פרטית"
+    },
+    "description": {
+      "en": "A brand new 1-bedroom apartment in the heart of the City Center, featuring top-of-the-line furnishings and luxury amenities. This modern 2-room unit includes a private garden with a heated pool, providing a perfect retreat for relaxation. Enjoy the convenience of private parking and a dedicated storage unit. Don't miss the opportunity to live in this exquisite space!\n\nContact us for more information or to schedule a viewing!",
+      "he": "דירת חדר חדשה לגמרי בלב מרכז העיר<br>\n\nדירה זו כוללת ריהוט יוקרתי ומודרני, עם 2 חדרים ובריכת שחייה מחוממת בגינה פרטית. הדירה מציעה גם חניה פרטית ויחידת אחסון נפרדת. הזדמנות לגור במרחב יוקרתי ונעים!\n\nצרו קשר לפרטים נוספים או לתיאום צפייה."
+    },
+    "features": [
+      {
+        "en": "Pool",
+        "he": "בריכה"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "Fully Furnished",
+        "he": "מרוהטת קומפלט"
+      },
+      {
+        "en": "Storage",
+        "he": "מחסן"
+      },
+      {
+        "en": "Garden",
+        "he": "גינה"
+      },
+      {
+        "en": "No Stairs",
+        "he": "ללא מדרגות"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      }
+    ],
+    "cover": "https://iili.io/2hNVcJt.jpg",
+    "gallery": [
+      "https://iili.io/2hNVcJt.jpg",
+      "https://iili.io/2hNV5fp.jpg",
+      "https://iili.io/2hNV70N.jpg",
+      "https://iili.io/2hNVYgI.jpg",
+      "https://iili.io/2wJe3gI.jpg",
+      "https://iili.io/2wJef5X.jpg",
+      "https://iili.io/2wJeqen.jpg",
+      "https://iili.io/2wJZ3rX.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 4,
+    "slug": "new-1-bedroom-with-private-parking-4",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": true,
+    "date": "2024-12-18",
+    "status": "rent",
+    "price": 7000,
+    "bedrooms": 1,
+    "rooms": 2,
+    "sizeSqm": 55,
+    "floor": 1,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "46 Haneviim Street",
+      "he": "רחוב הנביאים 46"
+    },
+    "title": {
+      "en": "New 1 Bedroom With Private Parking",
+      "he": "דירת חדר חדשה עם חניה פרטית"
+    },
+    "description": {
+      "en": "**Brand-New 1-Bedroom Apartment with Parking in Jerusalem’s City Center**<br> \n\nDiscover modern living in this stylish and fully furnished 1-bedroom apartment located in a prime location in Jerusalem’s City Center. Featuring a spacious 2-room layout and the convenience of private parking, this property offers the perfect combination of comfort and practicality.<br> \n\n**Rent:** ₪7,000/month + bills<br>\n**Agent Fee** applies.<br>  \n\nFor more details or to schedule a viewing, contact Aryeh at **+972-52-678-3539**.",
+      "he": "דירת חדר חדשה עם חניה במרכז העיר ירושלים<br>\n\nדירה מודרנית ומרוהטת לחלוטין זו מציעה עיצוב חכם עם 2 חדרים מרווחים, כולל חדר שינה אחד, במיקום מרכזי ונוח במרכז העיר ירושלים. הדירה כוללת חניה פרטית לנוחות מירבית.<br>\n\nשכירות: 7,000 ש\"ח לחודש + הוצאות (דמי תיווך חלים)<br>\n\nלפרטים נוספים או לתיאום צפייה, צרו קשר עם אריה בטלפון +972-52-678-3539."
+    },
+    "features": [
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Fully Furnished",
+        "he": "מרוהטת קומפלט"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "Accessible",
+        "he": "גישה לנכים"
+      },
+      {
+        "en": "A/C",
+        "he": "מיזוג אוויר"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Shabbat Lift",
+        "he": "מעלית שבת"
+      },
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "Balcony",
+        "he": "מרפסת"
+      }
+    ],
+    "cover": "https://iili.io/2w3QTua.jpg",
+    "gallery": [
+      "https://iili.io/2w3QTua.jpg",
+      "https://iili.io/2w3LUEN.jpg",
+      "https://iili.io/2w3ZnV4.jpg",
+      "https://iili.io/2w3QGus.jpg",
+      "https://iili.io/2w3Zg5X.jpg",
+      "https://iili.io/2w3Zm79.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 7,
+    "slug": "new-1-bedroom-in-city-center-7",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": false,
+    "date": "2024-12-18",
+    "status": "rent",
+    "price": 6200,
+    "bedrooms": 1,
+    "rooms": 2,
+    "sizeSqm": 68,
+    "floor": 1,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "7 Histadrut Street",
+      "he": "רחוב ההסתדרות 7"
+    },
+    "title": {
+      "en": "New 1 Bedroom In City Center",
+      "he": "דירת חדר חדשה במרכז העיר"
+    },
+    "description": {
+      "en": "**Brand-New 1-Bedroom Apartment for Rent in Jerusalem’s City Center**<br>\n\nThis modern and fully furnished apartment is located in a luxury new building in the heart of Jerusalem’s City Center. With a spacious layout featuring 2 rooms (1 bedroom and a large living room), 2 balconies—including an option for a sukkah balcony—and 55 square meters of living space, it’s the perfect blend of style and practicality. The building also includes an elevator for added convenience.<br> \n\n**Rent:** ₪6,500/month (Agent Fee Applies)<br>  \n\nFor more details, contact Aryeh at **+972-52-678-3539**.",
+      "he": "דירת חדר חדשה בלב מרכז העיר ירושלים<br>\n\nדירה חדשה לחלוטין ומרוהטת בעיצוב יוקרתי בלב מרכז העיר ירושלים. כוללת 2 חדרים (חדר שינה וסלון), 2 מרפסות (כולל אפשרות למרפסת סוכה) ו-55 מ\"ר של שטח מגורים מודרני ונעים.<br>\n\nשכירות: 6,500 ש\"ח לחודש (דמי תיווך חלים)<br>\n\nלפרטים נוספים צרו קשר עם אריה בטלפון +972-52-678-3539."
+    },
+    "features": [
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Fully Furnished",
+        "he": "מרוהטת קומפלט"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Balcony",
+        "he": "מרפסת"
+      }
+    ],
+    "cover": "https://iili.io/2wTgqe2.jpg",
+    "gallery": [
+      "https://iili.io/2wTgqe2.jpg",
+      "https://iili.io/2wTgHsn.jpg",
+      "https://iili.io/2wTg3gf.jpg",
+      "https://iili.io/2wTgKJ4.jpg",
+      "https://iili.io/2wTgf5l.jpg",
+      "https://iili.io/2wTgBbS.jpg",
+      "https://iili.io/2wTg20G.jpg",
+      "https://iili.io/2wTg9WX.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 9,
+    "slug": "new-1-bedroom-in-the-savyon-view-14th-floor-9",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": false,
+    "date": "2024-12-18",
+    "status": "rent",
+    "price": 6500,
+    "bedrooms": 1,
+    "rooms": 2,
+    "sizeSqm": 55,
+    "floor": 14,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "3 Raoul Wallenberg / 64 Yafo",
+      "he": "רחוב ראול ולנברג 3 / יפו 64"
+    },
+    "title": {
+      "en": "New 1 Bedroom In The \"Savyon View\" 14th Floor",
+      "he": "דירת חדר חדשה בסביון ויו בקומה 14"
+    },
+    "description": {
+      "en": "**Brand-New 1-Bedroom Apartment for Rent in Savyon View**<br> \n\nLocated in an amazing central location, this gorgeous, fully furnished 1-bedroom apartment offers modern living in one of Jerusalem’s most sought-after high-end buildings. With 47 square meters of space, a cozy living room, and a 5-meter private balcony, this apartment is perfect for those seeking style and convenience.<br>   \n\nThe building features 24/7 security, 4 fast elevators, and exclusive tenant access to two spacious shared balconies on the 10th and 21st floors.<br>   \n\n**Rent:** ₪6,500/month (Agent Fee Applies)<br>   \n\nFor more details or to schedule a viewing, contact Aryeh at **+972-52-678-3539**.",
+      "he": "דירת חדר יוקרתית חדשה להשכרה בסביון ויו<br>\n\nבמיקום מרכזי מעולה, דירת חדר מפוארת זו כוללת ריהוט מלא, 47 מ\"ר של שטח מגורים מעוצב, סלון נעים ומרפסת פרטית בגודל 5 מ\"ר.<br>\n\nבניין סביון ויו מציע אבטחה 24/7, 4 מעליות מהירות ושתי מרפסות משותפות בקומות 10 ו-21.<br>\n\nשכירות: 6,500 ש\"ח לחודש (דמי תיווך חלים)<br>\n\nלפרטים נוספים או לתיאום צפייה, צרו קשר עם אריה בטלפון +972-52-678-3539."
+    },
+    "features": [
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Shabbat Lift",
+        "he": "מעלית שבת"
+      },
+      {
+        "en": "A/C",
+        "he": "מיזוג אוויר"
+      },
+      {
+        "en": "Concierge",
+        "he": "שירותי קונסיירז׳"
+      },
+      {
+        "en": "Balcony",
+        "he": "מרפסת"
+      }
+    ],
+    "cover": "https://iili.io/2wTDUen.jpg",
+    "gallery": [
+      "https://iili.io/2wTDUen.jpg",
+      "https://iili.io/2wTDof2.jpg",
+      "https://iili.io/2wTDuRe.jpg",
+      "https://iili.io/2wTDBV4.jpg",
+      "https://iili.io/2wTDTJ9.jpg",
+      "https://iili.io/2wTDaiQ.jpg",
+      "https://iili.io/2wTDGJ1.jpg",
+      "https://iili.io/2wTDjWv.jpg",
+      "https://iili.io/2wTDwsR.jpg",
+      "https://iili.io/2wTDkgI.jpg",
+      "https://iili.io/2wTDS5X.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 11,
+    "slug": "new-luxury-penthouse-for-sale-11",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": false,
+    "date": "2024-12-18",
+    "status": "sale",
+    "price": 10800000,
+    "bedrooms": 4,
+    "rooms": 5,
+    "sizeSqm": 250,
+    "floor": 11,
+    "type": {
+      "en": "Penthouse",
+      "he": "פנטהאוז"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "-",
+      "he": ""
+    },
+    "title": {
+      "en": "New Luxury Penthouse For Sale",
+      "he": "פנטהאוז יוקרה חדש למכירה"
+    },
+    "description": {
+      "en": "**A rare opportunity to own a luxurious penthouse in the heart of Jerusalem's City Center**<br>. This newly listed, meticulously designed property boasts 4 spacious bedrooms, 3 modern bathrooms, and 160 sqm of elegant living space. The highlight of this home is the expansive 140 sqm open balcony, offering panoramic, breathtaking views of the entire city**Rare Luxury Penthouse in Jerusalem's City Center – A Must-See!<br>\n\nThis is your chance to own a **luxurious penthouse** in one of the most coveted locations in Jerusalem. Nestled in the heart of the City Center, this newly listed property is a true masterpiece, featuring **4 spacious bedrooms**, **3 sleek bathrooms**, and **160 sqm** of sophisticated living space. The standout feature? A **140 sqm open balcony** offering **panoramic, jaw-dropping views** of the entire city — an entertainer's dream or the perfect spot to relax and take in the breathtaking scenery.<br>\n\nWith its **prime location**, stunning design, and **top-tier finishes**, this penthouse is the ultimate blend of **style**, **comfort**, and **convenience**. Priced at ₪10,800,000, this is a rare opportunity for those seeking an exclusive and prestigious home in one of the world’s most iconic cities.<br>\n\n**For more details or to schedule a private tour**, contact Aryeh at **+972-678-3539**. With its prime location and top-tier finishes, this penthouse provides the perfect blend of comfort, style, and convenience. <br>Priced at ₪10,800,000, it’s an exceptional investment for those seeking a unique and prestigious property in one of the world’s most sought-after cities.<br> For more information or to schedule a private viewing, please contact Aryeh at +972-678-3539.",
+      "he": "פנטהאוז יוקרתי נדיר למכירה במרכז העיר ירושלים<br>\n\nהזדמנות חד-פעמית לרכוש פנטהאוז מעוצב בקפידה במיקום הנחשק ביותר בירושלים. דירה זו כוללת 4 חדרי שינה מרווחים, 3 חדרי רחצה מודרניים ו-160 מ\"ר של שטח מגורים אלגנטי. הדובדבן שבקצפת? מרפסת פתוחה בגודל 140 מ\"ר עם נוף עוצר נשימה של כל העיר.<br>\n\nמחיר: 10,800,000 ש\"ח<br>\n\nלפרטים נוספים או לתיאום סיור פרטי, צרו קשר עם אריה בטלפון +972-52-678-3539."
+    },
+    "features": [
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "Rooftop",
+        "he": "גג פרטי"
+      },
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "Renovated",
+        "he": "משופצת"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Shabbat Lift",
+        "he": "מעלית שבת"
+      }
+    ],
+    "cover": "https://iili.io/2wYrOox.jpg",
+    "gallery": [
+      "https://iili.io/2wYrOox.jpg",
+      "https://iili.io/2wYrwtj.jpg",
+      "https://iili.io/2wYreMQ.jpg",
+      "https://iili.io/2wYrkPV.jpg",
+      "https://iili.io/2wYr8KB.jpg",
+      "https://iili.io/2wYrScP.jpg",
+      "https://iili.io/2wYrUS1.jpg",
+      "https://iili.io/2wYrrHF.jpg",
+      "https://iili.io/2wYr4Ag.jpg",
+      "https://iili.io/2wYr6Na.jpg",
+      "https://iili.io/2wYrPDJ.jpg",
+      "https://iili.io/2wYrsov.jpg",
+      "https://iili.io/2wYrLVR.jpg",
+      "https://iili.io/2wYrQPp.jpg",
+      "https://iili.io/2wY4HDG.jpg",
+      "https://iili.io/2wY42V4.jpg",
+      "https://iili.io/2wY43il.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 13,
+    "slug": "brand-new-luxury-1-bedroom-for-sale-perfect-for-airbnb-13",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": true,
+    "date": "2024-12-18",
+    "status": "sale",
+    "price": 2870000,
+    "bedrooms": 2,
+    "rooms": 3,
+    "sizeSqm": 52,
+    "floor": 16,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "3 Raoul Wallenberg / 64 Yafo",
+      "he": "רחוב ראול ולנברג 3 / יפו 64"
+    },
+    "title": {
+      "en": "Brand New Luxury 1 Bedroom For Sale (Perfect For Airbnb)",
+      "he": "דירת חדר יוקרתית חדשה למכירה (מושלמת ל-Airbnb)"
+    },
+    "description": {
+      "en": "**New Luxury Apartment for Sale in Savyon View – Breathtaking Views Await!**<br>\n\nLooking for modern elegance with stunning views? This newly listed apartment on a **high floor** in the prestigious **Savyon View** building offers just that and more. With **1 spacious bedroom**, a sleek **bathroom**, and **47 sqm** of beautifully designed living space, this apartment is perfect for those seeking comfort and style.<br>\n\nEnjoy **amazing panoramic views** from your windows, and take advantage of the **two large balconies** available to all tenants on the 21st and 10th floors – perfect for relaxing or entertaining.<br>\n\nThe **Savyon View** building is a gem, offering **24/7 security**, **4 high-speed elevators**, and an exceptional level of luxury and convenience. <br>\n\n**Asking Price:** ₪2,870,000<br>\n\nFor more information or to schedule a private viewing, contact us today!",
+      "he": "דירה חדשה למכירה בסביון ויו – נופים עוצרי נשימה מחכים לכם!<br>\n\nממוקמת בקומה גבוהה בבניין היוקרתי סביון ויו, דירה זו כוללת חדר שינה מרווח, חדר רחצה מעוצב ו-47 מ\"ר של שטח מגורים מודרני ומעוצב.\n\nמחיר מבוקש: 2,870,000 ש\"ח<br>\n\nלפרטים נוספים או לתיאום סיור, צרו קשר היום!"
+    },
+    "features": [
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Shabbat Lift",
+        "he": "מעלית שבת"
+      },
+      {
+        "en": "Balcony",
+        "he": "מרפסת"
+      },
+      {
+        "en": "Concierge",
+        "he": "שירותי קונסיירז׳"
+      },
+      {
+        "en": "Pre-sale",
+        "he": "מכירה מוקדמת (פריסייל)"
+      }
+    ],
+    "cover": "https://iili.io/2wYLF8N.jpg",
+    "gallery": [
+      "https://iili.io/2wYLF8N.jpg",
+      "https://iili.io/2wYs6Cb.jpg",
+      "https://iili.io/2wYsPGj.jpg",
+      "https://iili.io/2wYsL3Q.jpg",
+      "https://iili.io/2wYsQaV.jpg",
+      "https://iili.io/2wYsZ8B.jpg",
+      "https://iili.io/2wYsbu1.jpg",
+      "https://iili.io/2wYsmwF.jpg",
+      "https://iili.io/2wYspZg.jpg",
+      "https://iili.io/2wYLHMJ.jpg",
+      "https://iili.io/2wYLJ6v.jpg",
+      "https://iili.io/2wYL2FR.jpg",
+      "https://iili.io/2wYLqut.jpg",
+      "https://iili.io/2wYLBwX.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 14,
+    "slug": "new-duplex-penthouse-in-new-tama-project-14",
+    "display": true,
+    "offMarket": false,
+    "newProject": true,
+    "featured": false,
+    "date": "2024-12-18",
+    "status": "sale",
+    "price": null,
+    "bedrooms": 5,
+    "rooms": 6,
+    "sizeSqm": 260,
+    "floor": 6,
+    "type": {
+      "en": "Duplex Penthouse",
+      "he": "פנטהאוז דופלקס"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "15 Shmuel Hanagid Street",
+      "he": "רחוב שמואל הנגיד 15"
+    },
+    "title": {
+      "en": "New Duplex Penthouse In New Tama Project",
+      "he": "פנטהאוז דופלקס חדש בפרויקט תמ\"א חדש"
+    },
+    "description": {
+      "en": "Please call for more information",
+      "he": "תתקשרו לפרטים נוספים"
+    },
+    "features": [
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "Rooftop",
+        "he": "גג פרטי"
+      },
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      },
+      {
+        "en": "New Project",
+        "he": "פרויקט חדש"
+      }
+    ],
+    "cover": "https://iili.io/2wYm7AQ.jpg",
+    "gallery": [
+      "https://iili.io/2wYm7AQ.jpg",
+      "https://iili.io/2wYm5Hx.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 16,
+    "slug": "new-luxury-2-bedroom-savyon-view-16",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": false,
+    "date": "2024-12-18",
+    "status": "rent",
+    "price": 13500,
+    "bedrooms": 2,
+    "rooms": 3,
+    "sizeSqm": 90,
+    "floor": 20,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "3 Raoul Wallenberg / 64 Yafo",
+      "he": "רחוב ראול ולנברג 3 / יפו 64"
+    },
+    "title": {
+      "en": "New Luxury 2 Bedroom Savyon View",
+      "he": "דירת יוקרה חדשה עם 2 חדרי שינה בסביון ויו"
+    },
+    "description": {
+      "en": "Luxury 2-Bedroom Apartment for Rent in Savyon View<br> \n\n📍 Located in Jerusalem’s City Center, this stunning high-floor apartment offers breathtaking views and a sleek, modern design. With 2 spacious bedrooms, 2 bathrooms, and a fully furnished interior, this home is perfect for those seeking comfort and style in a prestigious setting.<br> \n\nThe Savyon View building features 24/7 security, 4 high-speed elevators, and two expansive sukkah balconies for tenants to enjoy on the 10th and 21st floors.<br>  \n\n**Rent:** ₪13,500/month + utilities (Agent Fee Applies)<br> \n\n📩 For more details or to schedule a viewing, contact Aryeh at **+972-52-678-3539**.<br>",
+      "he": "דירת יוקרה עם 2 חדרי שינה להשכרה בסביון ויו<br>\n\n📍 מיקום: במרכז העיר ירושלים, דירה מהממת זו בקומה גבוהה מציעה נוף עוצר נשימה ועיצוב מודרני ואלגנטי. עם 2 חדרי שינה מרווחים, 2 חדרי רחצה, וריהוט מלא, דירה זו מושלמת למי שמחפש נוחות וסטייל בסביבה יוקרתית.<br>\n\nבניין סביון ויו כולל אבטחה 24/7, 4 מעליות מהירות ושתי מרפסות סוכה גדולות בקומות 10 ו-21.<br>\n\nשכירות: 13,500 ש\"ח לחודש + הוצאות (דמי תיווך חלים)<br>\n\n📩 לפרטים נוספים או לתיאום צפייה, צרו קשר עם אריה בטלפון +972-52-678-3539<br>"
+    },
+    "features": [
+      {
+        "en": "Fully Furnished",
+        "he": "מרוהטת קומפלט"
+      },
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "Security",
+        "he": "שמירה 24/7"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Shabbat Lift",
+        "he": "מעלית שבת"
+      },
+      {
+        "en": "A/C",
+        "he": "מיזוג אוויר"
+      }
+    ],
+    "cover": "https://iili.io/2k7LhAb.jpg",
+    "gallery": [
+      "https://iili.io/2k7LhAb.jpg",
+      "https://iili.io/2k7L4Ra.jpg",
+      "https://iili.io/2k7LrHg.jpg",
+      "https://iili.io/2k7LUUF.jpg",
+      "https://iili.io/2k7LkiB.jpg",
+      "https://iili.io/2k7LwDx.jpg",
+      "https://iili.io/2k7LjNj.jpg",
+      "https://iili.io/2k7LXHu.jpg",
+      "https://iili.io/2k7LMl9.jpg",
+      "https://iili.io/2k7LGK7.jpg",
+      "https://iili.io/2k7L1PS.jpg",
+      "https://iili.io/2k7LYNf.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 15,
+    "slug": "new-large-2-bedroom-in-city-center-15",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": true,
+    "date": "2024-12-17",
+    "status": "rent",
+    "price": 11300,
+    "bedrooms": 2,
+    "rooms": 3,
+    "sizeSqm": 100,
+    "floor": 1,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "Ben Sira Street",
+      "he": "רחוב בן סירא"
+    },
+    "title": {
+      "en": "New Large 2 Bedroom In City Center",
+      "he": "דירת 2 חדרי שינה גדולה חדשה במרכז העיר"
+    },
+    "description": {
+      "en": "Spacious 2-Bedroom Apartment for Rent in Jerusalem’s City Center<br>\n\nThis large and charming apartment offers over 100 square meters of living space, featuring 3.5 rooms, 2 generously sized bedrooms, and 2 full bathrooms. Located on the first floor, it also boasts a 25-meter sukkah balcony, perfect for outdoor relaxation. With its unique character and fully furnished interior, this apartment is ideal for those looking for comfort and style in a prime City Center location.<br>\n**Rent:** ₪11,500/month (Agent Fee Applies)  <br>\n\nFor more details or to schedule a viewing, contact Aryeh at **+972-52-678-3539**.",
+      "he": "דירה מרווחת עם 2 חדרי שינה להשכרה במרכז העיר ירושלים<br>\n\nדירה גדולה ומקסימה זו מציעה מעל 100 מ\"ר של שטח מגורים, עם 3.5 חדרים, 2 חדרי שינה מרווחים ו-2 חדרי רחצה מלאים. ממוקמת בקומה הראשונה, הדירה כוללת גם מרפסת סוכה בגודל 25 מ\"ר, מושלמת להרפיה חיצונית. עם עיצוב ייחודי וריהוט מלא, דירה זו אידיאלית למי שמחפש נוחות וסטייל במיקום פריים במרכז העיר.<br>\n\nשכירות: 11,500 ש\"ח לחודש (דמי תיווך חלים)<br>\n\nלפרטים נוספים או לתיאום צפייה, צרו קשר עם אריה בטלפון +972-52-678-3539"
+    },
+    "features": [
+      {
+        "en": "Renovated",
+        "he": "משופצת"
+      },
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      },
+      {
+        "en": "Fully Furnished",
+        "he": "מרוהטת קומפלט"
+      },
+      {
+        "en": "High Ceilings",
+        "he": "תקרות גבוהות"
+      }
+    ],
+    "cover": "https://iili.io/2k7gPGn.jpg",
+    "gallery": [
+      "https://iili.io/2k7gPGn.jpg",
+      "https://iili.io/2k7r1Pn.jpg",
+      "https://iili.io/2k7rYwN.jpg",
+      "https://iili.io/2k7ron1.jpg",
+      "https://iili.io/2k7rCZP.jpg",
+      "https://iili.io/2k7r23b.jpg",
+      "https://iili.io/2k7rJ6u.jpg",
+      "https://iili.io/2k7rHGe.jpg",
+      "https://iili.io/2k7r9n9.jpg",
+      "https://iili.io/2k7gpZ7.jpg",
+      "https://iili.io/2k7gbu2.jpg",
+      "https://iili.io/2k7gQaf.jpg",
+      "https://iili.io/2k7gL3G.jpg",
+      "https://iili.io/2k7gi4s.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 5,
+    "slug": "new-1-bedroom-for-rent-in-new-building-5",
+    "display": true,
+    "offMarket": false,
+    "newProject": false,
+    "featured": true,
+    "date": "2024-12-11",
+    "status": "rent",
+    "price": 5800,
+    "bedrooms": 1,
+    "rooms": 2,
+    "sizeSqm": 45,
+    "floor": 9,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "Mahane Yehuda",
+      "he": "מחנה יהודה"
+    },
+    "street": {
+      "en": "3 Navon Street",
+      "he": "רחוב נבון 3"
+    },
+    "title": {
+      "en": "New 1 Bedroom For Rent In New Building",
+      "he": "דירת חדר חדשה להשכרה בבניין חדש"
+    },
+    "description": {
+      "en": "**For Rent – Brand New 1-Bedroom Apartment in Machne Yehuda**<br>\n\nLooking for a stylish, fully furnished apartment in one of Jerusalem's most vibrant neighborhoods? This brand-new **1-bedroom apartment** on **Navon Street** in **Machne Yehuda** is the perfect place to call home.<br>\n\nFeaturing **2 rooms** (including 1 spacious bedroom), a modern **bathroom**, and stunning **views**, this apartment offers both comfort and convenience. Located in a **new building**, it’s perfect for anyone seeking a fresh, contemporary space with easy access to the excitement of the Machne Yehuda market and surrounding areas.<br>\n\n**Rent:** ₪5,800/month<br>\n**Agent Fee** applicable.<br>\n\n**For more details or to schedule a viewing**, contact Aryeh at **+972-52-678-3539** or send a DM!",
+      "he": "להשכרה – דירת חדר חדשה בשוק מחנה יהודה<br>\n\nמחפשים דירה מסוגננת ומרוהטת בלב שכונת מחנה יהודה התוססת? דירת חדר זו ברחוב נבון בבניין חדש מציעה נוחות ועיצוב מודרני במרחק נגיעה מהשוק ומהסביבה.<br>\n\nשכירות: 5,800 ש\"ח לחודש (דמי תיווך חלים)<br>\n\nלפרטים נוספים או לתיאום צפייה, צרו קשר עם אריה בטלפון +972-52-678-3539 או שלחו הודעה פרטית!"
+    },
+    "features": [
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Accessible",
+        "he": "גישה לנכים"
+      },
+      {
+        "en": "A/C",
+        "he": "מיזוג אוויר"
+      },
+      {
+        "en": "Pool",
+        "he": "בריכה"
+      },
+      {
+        "en": "Garden",
+        "he": "גינה"
+      },
+      {
+        "en": "Concierge",
+        "he": "שירותי קונסיירז׳"
+      },
+      {
+        "en": "Rooftop",
+        "he": "גג פרטי"
+      },
+      {
+        "en": "Rooftop",
+        "he": "גג פרטי"
+      },
+      {
+        "en": "Sauna",
+        "he": "סאונה"
+      }
+    ],
+    "cover": "https://iili.io/2wKl3Ss.jpg",
+    "gallery": [
+      "https://iili.io/2wKl3Ss.jpg"
+    ],
+    "video": null
+  },
+  {
+    "id": 28,
+    "slug": "brand-new-project-in-city-center-28",
+    "display": true,
+    "offMarket": false,
+    "newProject": true,
+    "featured": false,
+    "date": "2024-12-11",
+    "status": "sale",
+    "price": null,
+    "bedrooms": 3,
+    "rooms": 4,
+    "sizeSqm": 110,
+    "floor": 0,
+    "type": {
+      "en": "New project",
+      "he": "פרויקט חדש"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "",
+      "he": ""
+    },
+    "title": {
+      "en": "Brand new project in City center",
+      "he": "פרויקט חדש במרכז העיר"
+    },
+    "description": {
+      "en": "Please call for more information",
+      "he": "תתקשרו לפרטים נוספים"
+    },
+    "features": [
+      {
+        "en": "Pre-sale",
+        "he": "מכירה מוקדמת (פריסייל)"
+      }
+    ],
+    "cover": "https://iili.io/2PZ3X29.jpg",
+    "gallery": [
+      "https://iili.io/2PZ3X29.jpg",
+      "https://iili.io/2PZ3SEB.jpg",
+      "https://iili.io/2PZ38BV.jpg",
+      "https://iili.io/2PZ3kLQ.jpg",
+      "https://iili.io/2PZ3ehx.jpg",
+      "https://iili.io/2PZ3jku.jpg",
+      "https://iili.io/2PZ3h7e.jpg",
+      "https://iili.io/2PZ3Vr7.jpg"
+    ],
+    "video": null
+  }
+]

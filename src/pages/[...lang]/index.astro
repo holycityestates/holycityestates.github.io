@@ -1,0 +1,168 @@
+---
+import Base from '../../layouts/Base.astro';
+import PropertyCard from '../../components/PropertyCard.astro';
+import { t, getLang, langPaths, href, L, active, visible, sold, projects, testimonial, waLink, site, img } from '../../lib/i18n.js';
+
+export const getStaticPaths = langPaths;
+const lang = getLang(Astro.params.lang);
+const s = t[lang];
+
+const notProject = active.filter((p) => !p.newProject);
+const featured = [...notProject.filter((p) => p.featured), ...notProject.filter((p) => !p.featured && p.price)].slice(0, 6);
+const hoods = Object.values(
+  visible.reduce((acc, p) => {
+    const k = p.neighborhood.en;
+    if (!k) return acc;
+    acc[k] ??= { name: p.neighborhood, count: 0, cover: p.cover };
+    acc[k].count += p.offMarket ? 0 : 1;
+    return acc;
+  }, {})
+).sort((a, b) => b.count - a.count).slice(0, 6);
+const uniq = (arr) => [...new Map(arr.map((x) => [x.en, x])).values()];
+const hoodOpts = uniq(active.map((p) => p.neighborhood).filter((x) => x.en));
+---
+<Base lang={lang} transparent>
+  <section class="hero">
+    <div class="hero-media"><img src="/img/hero.jpg" alt="" fetchpriority="high" /></div>
+    <div class="hero-shade"></div>
+    <div class="wrap hero-content">
+      <p class="kicker hero-kicker">{s.heroKicker}</p>
+      <h1>{s.heroTitle}</h1>
+      <p class="lead">{s.heroSub}</p>
+      <form class="search" action={href(lang, '/properties/')} method="get">
+        <label>
+          <span>{s.dealType}</span>
+          <select name="status">
+            <option value="">{s.any}</option>
+            <option value="sale">{s.status.sale}</option>
+            <option value="rent">{s.status.rent}</option>
+            <option value="short-term">{s.status['short-term']}</option>
+          </select>
+        </label>
+        <label>
+          <span>{s.neighborhood}</span>
+          <select name="neighborhood">
+            <option value="">{s.any}</option>
+            {hoodOpts.map((n) => <option value={n.en}>{L(n, lang)}</option>)}
+          </select>
+        </label>
+        <label>
+          <span>{lang === 'he' ? s.rooms : s.bedrooms}</span>
+          <select name="beds">
+            <option value="">{s.any}</option>
+            {[1, 2, 3, 4].map((b) => <option value={b}>{lang === 'he' ? `${b + 1}+` : `${b}+`}</option>)}
+          </select>
+        </label>
+        <button class="btn btn-gold" type="submit">{s.search}</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>{s.featured}</h2>
+          <p class="muted">{s.featuredSub}</p>
+        </div>
+        <a class="link-arrow" href={href(lang, '/properties/')}>{s.viewAll}</a>
+      </div>
+      <div class="grid">{featured.map((p) => <PropertyCard p={p} lang={lang} />)}</div>
+    </div>
+  </section>
+
+  {projects.length > 0 && (
+    <section class="section section-tint">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>{s.projectsTitle}</h2>
+            <p class="muted">{s.projectsSub}</p>
+          </div>
+          <a class="link-arrow" href={href(lang, '/projects/')}>{s.nav.projects}</a>
+        </div>
+        <div class="projects">
+          {projects.slice(0, 4).map((p, i) => (
+            <a class:list={['project', { big: i === 0 }]} href={href(lang, `/properties/${p.slug}/`)}>
+              {p.cover && <img src={img(p.cover, i === 0 ? 1600 : 800)} alt="" loading="lazy" />}
+              <div class="project-label">
+                <span class="kicker">{L(p.neighborhood, lang)}</span>
+                <strong>{L(p.title, lang)}</strong>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="wrap">
+      <h2>{s.neighborhoods}</h2>
+      <div class="hoods">
+        {hoods.map((h) => (
+          <a class="hood" href={href(lang, `/properties/?neighborhood=${encodeURIComponent(h.name.en)}`)}>
+            {h.cover && <img src={img(h.cover, 800)} alt="" loading="lazy" />}
+            <div class="hood-label">
+              <strong>{L(h.name, lang)}</strong>
+              <span>{h.count} {s.listings}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="wrap about-split">
+      <div>
+        <p class="kicker">{s.aboutKicker}</p>
+        <h2>{s.aboutTitle}</h2>
+        <p class="lead-dark">{s.aboutBody}</p>
+        <div class="services">
+          {s.services.map(([h, d]) => (
+            <div class="service"><h3>{h}</h3><p>{d}</p></div>
+          ))}
+        </div>
+      </div>
+      <blockquote class="quote">
+        <p class="kicker">{s.testimonialTitle}</p>
+        <p class="quote-text">“{L(testimonial.text, lang)}”</p>
+        <footer>— {L(testimonial.name, lang)}</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  {sold.length > 0 && (
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>{s.soldTitle}</h2>
+            <p class="muted">{s.soldSub}</p>
+          </div>
+          <a class="link-arrow" href={href(lang, '/sold/')}>{s.nav.sold}</a>
+        </div>
+        <div class="grid grid-4">{sold.slice(0, 4).map((p) => <PropertyCard p={p} lang={lang} />)}</div>
+      </div>
+    </section>
+  )}
+
+  <section class="duo">
+    <div class="wrap duo-inner">
+      <div class="duo-card">
+        <h3>{s.sellTitle}</h3>
+        <p>{s.sellSub}</p>
+        <a class="btn btn-gold" href={waLink(lang === 'he' ? 'שלום, אשמח לקבל הערכת שווי לנכס שלי.' : "Hi, I'd like a valuation for my property.")} target="_blank" rel="noopener">{s.sellCta}</a>
+      </div>
+      <form class="duo-card" action={`mailto:${site.email}`} method="post" enctype="text/plain">
+        <h3>{s.offTitle}</h3>
+        <p>{s.offSub}</p>
+        <div class="inline-form">
+          <input name="contact" required placeholder={s.offPlaceholder} />
+          <button class="btn btn-outline-light" type="submit">{s.offCta}</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</Base>

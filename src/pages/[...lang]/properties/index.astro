@@ -1,0 +1,88 @@
+---
+import Base from '../../../layouts/Base.astro';
+import PropertyCard from '../../../components/PropertyCard.astro';
+import { t, getLang, langPaths, L, visible } from '../../../lib/i18n.js';
+
+export const getStaticPaths = langPaths;
+const lang = getLang(Astro.params.lang);
+const s = t[lang];
+const uniq = (arr) => [...new Map(arr.filter((x) => x.en).map((x) => [x.en, x])).values()];
+const hoods = uniq(visible.map((p) => p.neighborhood));
+const types = uniq(visible.map((p) => p.type));
+// Active listings first, then sold/rented as social proof.
+const list = visible.filter((p) => !p.offMarket);
+---
+<Base lang={lang} title={s.nav.properties}>
+  <section class="page-head">
+    <div class="wrap"><h1>{s.nav.properties}</h1></div>
+  </section>
+  <section class="section section-tight">
+    <div class="wrap">
+      <form class="filters" id="filters">
+        <div class="seg" role="radiogroup">
+          {['', 'sale', 'rent', 'short-term'].map((v) => (
+            <label><input type="radio" name="status" value={v} checked={v === ''} /><span>{v ? s.status[v] : s.any}</span></label>
+          ))}
+        </div>
+        <select name="neighborhood" aria-label={s.neighborhood}>
+          <option value="">{s.neighborhood}: {s.any}</option>
+          {hoods.map((n) => <option value={n.en}>{L(n, lang)}</option>)}
+        </select>
+        <select name="type" aria-label={s.type}>
+          <option value="">{s.type}: {s.any}</option>
+          {types.map((n) => <option value={n.en}>{L(n, lang)}</option>)}
+        </select>
+        <select name="beds" aria-label={s.bedrooms}>
+          <option value="">{lang === 'he' ? s.rooms : s.bedrooms}: {s.any}</option>
+          {[1, 2, 3, 4].map((b) => <option value={b}>{lang === 'he' ? b + 1 : b}+</option>)}
+        </select>
+        <select name="sort" aria-label={s.sort}>
+          <option value="new">{s.sortNew}</option>
+          <option value="low">{s.sortLow}</option>
+          <option value="high">{s.sortHigh}</option>
+        </select>
+      </form>
+      <p class="muted count"><span id="count">{list.length}</span> {s.results}</p>
+      <div class="grid" id="grid">{list.map((p) => <PropertyCard p={p} lang={lang} />)}</div>
+      <p class="muted empty" id="empty" hidden>{s.noResults}</p>
+    </div>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const form = document.getElementById('filters');
+      const grid = document.getElementById('grid');
+      const cards = [...grid.children];
+      const qs = new URLSearchParams(location.search);
+      for (const [k, v] of qs) {
+        const el = form.elements[k];
+        if (el) el.value = v;
+      }
+      function apply() {
+        const f = Object.fromEntries(new FormData(form));
+        let shown = cards.filter((c) => {
+          const d = c.dataset;
+          return (!f.status || d.status === f.status) &&
+            (!f.neighborhood || d.neighborhood === f.neighborhood) &&
+            (!f.type || d.type === f.type) &&
+            (!f.beds || +d.beds >= +f.beds);
+        });
+        const key = (c) => +c.dataset.price || (f.sort === 'low' ? Infinity : -1);
+        shown.sort((a, b) => {
+          if (a.dataset.off !== b.dataset.off) return a.dataset.off - b.dataset.off;
+          if (f.sort === 'low') return key(a) - key(b);
+          if (f.sort === 'high') return key(b) - key(a);
+          return b.dataset.date.localeCompare(a.dataset.date);
+        });
+        cards.forEach((c) => (c.hidden = true));
+        shown.forEach((c) => { c.hidden = false; grid.appendChild(c); });
+        document.getElementById('count').textContent = shown.length;
+        document.getElementById('empty').hidden = shown.length > 0;
+        const out = new URLSearchParams(Object.entries(f).filter(([k, v]) => v && !(k === 'sort' && v === 'new')));
+        history.replaceState(null, '', out.toString() ? `?${out}` : location.pathname);
+      }
+      form.addEventListener('change', apply);
+      apply();
+    })();
+  </script>
+</Base>
