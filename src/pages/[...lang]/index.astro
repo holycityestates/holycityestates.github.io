@@ -25,7 +25,7 @@ const uniq = (arr) => [...new Map(arr.map((x) => [x.en, x])).values()];
 ---
 <Base lang={lang} transparent>
   <section class="hero">
-    <div class="hero-media"><img src="/img/hero-2400.webp" srcset="/img/hero-1200.webp 1200w, /img/hero-2400.webp 2400w" sizes="100vw" alt="" fetchpriority="high" /></div>
+    <div class="hero-media"><img src="/img/hero-1920.webp" srcset="/img/hero-1280.webp 1280w, /img/hero-1920.webp 1920w, /img/hero-2880.webp 2880w, /img/hero-3840.webp 3840w" sizes="(max-aspect-ratio: 181/100) 181vh, 100vw" alt="" fetchpriority="high" /></div>
     <div class="hero-shade"></div>
     <div class="wrap hero-content">
       <p class="kicker hero-kicker">{s.heroKicker}</p>
