@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Signature Motion Demos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root {
+  --ink: #1d1f24; --muted: #7b7e86; --line: #e6e1d8; --bg: #fdfcf9; --tint: #f5f1ea;
+  --gold: #a8853f; --gold-2: #c9a95c; --night: #16181d; --stone: #e7dcc6; --stone-2: #d6c7a8;
+  --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'Inter', system-ui, sans-serif;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.6 var(--sans); }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; margin: 0; }
+
+/* Demo switcher */
+.demo-bar { position: fixed; z-index: 50; left: 50%; bottom: 18px; translate: -50% 0; display: flex; gap: 6px; align-items: center; padding: 6px; border-radius: 99px; background: rgba(22,24,29,.88); backdrop-filter: blur(10px); box-shadow: 0 8px 30px rgba(0,0,0,.3); max-width: calc(100vw - 24px); overflow-x: auto; }
+.demo-bar span { color: #b9b4a8; font-size: .75rem; padding: 0 10px 0 12px; white-space: nowrap; }
+.demo-bar button { border: 0; border-radius: 99px; padding: 9px 16px; font: 600 .82rem var(--sans); background: transparent; color: #eee; cursor: pointer; white-space: nowrap; }
+.demo-bar button[aria-pressed='true'] { background: linear-gradient(135deg, #c9a45c, #a8823a); color: #fff; }
+
+/* Header */
+.top { position: absolute; z-index: 10; inset: 0 0 auto; padding: 18px 0; }
+.top .wrap { display: flex; justify-content: space-between; align-items: center; }
+.top img { height: 56px; width: auto; }
+.top nav { display: flex; gap: 26px; color: #fff; font-size: .9rem; }
+@media (max-width: 760px) { .top nav { display: none; } }
+
+/* Hero (shared) */
+.hero { position: relative; height: 100vh; min-height: 560px; overflow: hidden; background: var(--night); color: #fff; }
+.hero img.ph { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,14,.45), rgba(10,10,14,.1) 40%, rgba(10,10,14,.55)); pointer-events: none; }
+.hero-copy { position: absolute; z-index: 3; left: 0; right: 0; bottom: 16vh; text-align: center; padding: 0 24px; }
+.hero-copy h1 { font-size: clamp(2.4rem, 6vw, 4.6rem); }
+.hero-copy p { margin: 14px auto 0; max-width: 560px; color: rgba(255,255,255,.88); }
+
+/* Content (shared, calm) */
+.intro { padding: 110px 0 60px; text-align: center; }
+.intro h2 { font-size: clamp(2rem, 4vw, 3rem); }
+.intro p { max-width: 620px; margin: 16px auto 0; color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; padding-bottom: 100px; }
+@media (max-width: 900px) { .cards { grid-template-columns: 1fr; } }
+.card .media { position: relative; aspect-ratio: 4/3; overflow: hidden; border-radius: 4px; background: var(--tint); }
+.card .media img { width: 100%; height: 100%; object-fit: cover; }
+.card .loc { margin-top: 16px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+.card h3 { font-size: 1.45rem; margin-top: 4px; }
+.card .price { margin-top: 10px; font-weight: 600; }
+.band { position: relative; height: 70vh; min-height: 420px; overflow: hidden; }
+.band img { width: 100%; height: 100%; object-fit: cover; }
+.band .cap { position: absolute; left: 0; right: 0; bottom: 48px; text-align: center; color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,.5); }
+.band .cap h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+.outro { padding: 110px 0 160px; text-align: center; }
+.outro h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+.outro p { color: var(--muted); }
+.note { max-width: 680px; margin: 28px auto 0; padding: 16px 20px; border: 1px dashed var(--gold-2); border-radius: 6px; font-size: .92rem; color: var(--ink); background: #fff; text-align: left; }
+
+/* ========== 1 · Dusk to night ========== */
+.m1 .hero { height: 260vh; overflow: visible; background: none; }
+.m1 .hero::after { display: none; }
+.m1 .stage { position: sticky; top: 0; height: 100vh; min-height: 560px; overflow: hidden; background: var(--night); }
+.m1 .stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; will-change: opacity, transform; }
+.m1 .stage .night { opacity: 0; }
+.m1 .stage .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,14,.45), rgba(10,10,14,.08) 40%, rgba(10,10,14,.55)); }
+.m1 .hero-copy { position: absolute; }
+.m1 .line-b { opacity: 0; }
+.m1 .hero-copy .lines { display: grid; }
+.m1 .hero-copy .lines > * { grid-area: 1 / 1; transition: opacity .6s var(--ease), translate .6s var(--ease); }
+.m1 .clock { position: absolute; z-index: 3; right: 28px; top: 50%; translate: 0 -50%; display: flex; flex-direction: column; align-items: center; gap: 10px; color: rgba(255,255,255,.75); font-size: .72rem; letter-spacing: .1em; }
+.m1 .clock i { width: 1px; height: 140px; background: rgba(255,255,255,.25); position: relative; }
+.m1 .clock i b { position: absolute; left: -4px; top: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--gold-2); box-shadow: 0 0 14px var(--gold-2); }
+@media (max-width: 760px) { .m1 .clock { display: none; } }
+
+/* ========== 2 · Stone reveal ========== */
+.stone-wrap { position: relative; overflow: hidden; }
+.stone { position: absolute; inset: 0; z-index: 4; background-color: var(--stone);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .27 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='384'%3E%3Crect x='0' y='0' width='210' height='96' fill='%23fff' fill-opacity='0.076'/%3E%3Cpath d='M0.75 0V96' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='210' y='0' width='150' height='96' fill='%23fff' fill-opacity='0.114'/%3E%3Cpath d='M210.75 0V96' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='360' y='0' width='150' height='96' fill='%235a4526' fill-opacity='0.092'/%3E%3Cpath d='M360.75 0V96' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='510' y='0' width='170' height='96' fill='%23fff' fill-opacity='0.043'/%3E%3Cpath d='M510.75 0V96' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='680' y='0' width='40' height='96' fill='%235a4526' fill-opacity='0.046'/%3E%3Cpath d='M680.75 0V96' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Cpath d='M0 95.25H720' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Cpath d='M0 1H720' stroke='%23fff' stroke-opacity='.35'/%3E%3Crect x='0' y='96' width='150' height='80' fill='%23fff' fill-opacity='0.078'/%3E%3Cpath d='M0.75 96V176' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='150' y='96' width='170' height='80' fill='%23fff' fill-opacity='0.125'/%3E%3Cpath d='M150.75 96V176' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='320' y='96' width='200' height='80' fill='%23fff' fill-opacity='0.125'/%3E%3Cpath d='M320.75 96V176' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='520' y='96' width='170' height='80' fill='%23fff' fill-opacity='0.076'/%3E%3Cpath d='M520.75 96V176' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='690' y='96' width='30' height='80' fill='%23fff' fill-opacity='0.09'/%3E%3Cpath d='M690.75 96V176' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Cpath d='M0 175.25H720' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Cpath d='M0 97H720' stroke='%23fff' stroke-opacity='.35'/%3E%3Crect x='0' y='176' width='180' height='112' fill='%235a4526' fill-opacity='0.078'/%3E%3Cpath d='M0.75 176V288' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='180' y='176' width='170' height='112' fill='%23fff' fill-opacity='0.091'/%3E%3Cpath d='M180.75 176V288' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='350' y='176' width='170' height='112' fill='%23fff' fill-opacity='0.049'/%3E%3Cpath d='M350.75 176V288' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='520' y='176' width='170' height='112' fill='%23fff' fill-opacity='0.074'/%3E%3Cpath d='M520.75 176V288' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='690' y='176' width='30' height='112' fill='%23fff' fill-opacity='0.091'/%3E%3Cpath d='M690.75 176V288' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Cpath d='M0 287.25H720' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Cpath d='M0 177H720' stroke='%23fff' stroke-opacity='.35'/%3E%3Crect x='0' y='288' width='170' height='96' fill='%23fff' fill-opacity='0.085'/%3E%3Cpath d='M0.75 288V384' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='170' y='288' width='170' height='96' fill='%235a4526' fill-opacity='0.11'/%3E%3Cpath d='M170.75 288V384' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='340' y='288' width='240' height='96' fill='%23fff' fill-opacity='0.123'/%3E%3Cpath d='M340.75 288V384' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Crect x='580' y='288' width='140' height='96' fill='%235a4526' fill-opacity='0.062'/%3E%3Cpath d='M580.75 288V384' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Cpath d='M0 383.25H720' stroke='%237a6240' stroke-opacity='.38' stroke-width='1.5'/%3E%3Cpath d='M0 289H720' stroke='%23fff' stroke-opacity='.35'/%3E%3C/svg%3E"),
+    radial-gradient(120% 80% at 30% 20%, rgba(255,250,238,.5), transparent 60%);
+  background-size: 240px 240px, 720px 384px, 100% 100%;
+  transform-origin: top; will-change: transform; }
+.stone::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold-2), transparent); }
+.m2 .stone { transition: transform 1.25s var(--ease); }
+.m2 .open > .stone { transform: translateY(-101%); }
+.m2 .stone-wrap > img { transform: scale(1.14); transition: transform 1.8s var(--ease); }
+.m2 .open > img { transform: scale(1); }
+.m2 .hero .stone { z-index: 6; display: grid; place-items: center; }
+.m2 .hero .stone h1 { color: rgba(110,88,50,.55); font-size: clamp(2.4rem, 7vw, 5.2rem); letter-spacing: .02em; text-shadow: 0 1px 0 rgba(255,255,255,.55), 0 -1px 0 rgba(80,60,30,.25); }
+.m2 .hero .hero-copy { opacity: 0; translate: 0 18px; transition: opacity 1s var(--ease) .9s, translate 1s var(--ease) .9s; }
+.m2 .hero.open .hero-copy { opacity: 1; translate: 0 0; }
+
+/* ========== 3 · Golden skyline ========== */
+.sky { position: absolute; z-index: 4; left: 0; right: 0; bottom: 6vh; width: 100%; height: 120px; pointer-events: none; }
+.sky { filter: drop-shadow(0 0 6px rgba(201,169,92,.6)); }
+.sky path { fill: none; stroke: var(--gold-2); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.m3 .hero .hero-copy { bottom: calc(6vh + 150px); }
+.sky-prog { position: fixed; z-index: 40; left: 0; right: 0; top: 0; height: 46px; pointer-events: none; }
+.sky-prog path { fill: none; stroke: var(--gold); stroke-width: 1.4; stroke-linejoin: round; stroke-linecap: round; }
+.sky-prog .base { stroke: rgba(168,133,63,.16); }
+.divider { display: block; width: min(900px, 90%); height: 70px; margin: 0 auto; }
+.divider path { fill: none; stroke: var(--gold); stroke-width: 1.4; stroke-linejoin: round; }
+
+.m1 .only2, .m1 .only3, .m2 .only1, .m2 .only3, .m3 .only1, .m3 .only2 { display: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .m2 .stone { display: none; }
+  .m2 .hero .hero-copy { opacity: 1; translate: none; }
+}
+</style>
+</head>
+<body class="m1">
+
+<div class="demo-bar" role="group" aria-label="Choose a demo">
+  <span>Demo</span>
+  <button data-m="1" aria-pressed="true">1 · Dusk to night</button>
+  <button data-m="2" aria-pressed="false">2 · Stone reveal</button>
+  <button data-m="3" aria-pressed="false">3 · Golden skyline</button>
+</div>
+
+<header class="top"><div class="wrap"><img src="/img/logo.png" alt="Holy City"><nav><span>Home</span><span>Properties</span><span>New Projects</span><span>Map</span><span>About</span><span>Contact</span></nav></div></header>
+
+<!-- Hero 1: dusk to night (scroll-driven) -->
+<section class="hero only1" id="h1">
+  <div class="stage">
+    <img class="day" src="/img/hero-1920.webp" srcset="/img/hero-1920.webp 1920w, /img/hero-2880.webp 2880w" sizes="(max-aspect-ratio: 181/100) 181vh, 100vw" alt="">
+    <img class="night" src="/img/night-2000.webp" alt="">
+    <div class="shade"></div>
+    <div class="hero-copy">
+      <div class="lines">
+        <div class="line-a"><h1>Distinguished homes in Jerusalem</h1><p>Sales, rentals and property management in Talbiya, Rehavia, Mamilla and the City Center.</p></div>
+        <div class="line-b"><h1>Day or night, it's home</h1><p>Keep scrolling to see the listings.</p></div>
+      </div>
+    </div>
+    <div class="clock" aria-hidden="true"><span>DUSK</span><i><b></b></i><span>NIGHT</span></div>
+  </div>
+</section>
+
+<!-- Hero 2: stone reveal (on load) -->
+<section class="hero stone-wrap only2" id="h2">
+  <img class="ph" src="/img/hero-1920.webp" srcset="/img/hero-1920.webp 1920w, /img/hero-2880.webp 2880w" sizes="(max-aspect-ratio: 181/100) 181vh, 100vw" alt="">
+  <div class="stone"><h1>Holy City</h1></div>
+  <div class="hero-copy"><h1>Distinguished homes in Jerusalem</h1><p>Sales, rentals and property management in Talbiya, Rehavia, Mamilla and the City Center.</p></div>
+</section>
+
+<!-- Hero 3: golden skyline (on load, then follows the scroll) -->
+<section class="hero only3" id="h3">
+  <img class="ph" src="/img/hero-1920.webp" srcset="/img/hero-1920.webp 1920w, /img/hero-2880.webp 2880w" sizes="(max-aspect-ratio: 181/100) 181vh, 100vw" alt="">
+  <div class="hero-copy"><h1>Distinguished homes in Jerusalem</h1><p>Sales, rentals and property management in Talbiya, Rehavia, Mamilla and the City Center.</p></div>
+  <svg class="sky" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true"><path id="sky-hero"/></svg>
+</section>
+<svg class="sky-prog only3" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true"><path class="base"/><path id="sky-prog"/></svg>
+
+<section class="intro"><div class="wrap">
+  <h2>Featured properties</h2>
+  <p>A selection of homes currently on the market with Holy City Jerusalem Real Estate.</p>
+</div></section>
+
+<section class="wrap cards">
+  <article class="card"><div class="media stone-wrap"><img src="/photos/93d6210207e7-800.webp" alt=""><div class="stone only2"></div></div><div class="loc">Mamilla</div><h3>Kfar David Penthouse</h3><div class="price">₪30,000,000</div></article>
+  <article class="card"><div class="media stone-wrap"><img src="/photos/52d9a6e502b2-800.webp" alt=""><div class="stone only2"></div></div><div class="loc">City Center</div><h3>New Luxury 1 Bedroom, Old City View</h3><div class="price">₪8,200 / month</div></article>
+  <article class="card"><div class="media stone-wrap"><img src="/photos/9538ea470b78-800.webp" alt=""><div class="stone only2"></div></div><div class="loc">Talbiya</div><h3>New Luxury 2 Bedroom Apartment</h3><div class="price">₪9,500 / month</div></article>
+</section>
+
+<svg class="divider only3" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true"><path data-draw/></svg>
+
+<section class="band stone-wrap">
+  <img src="/photos/45fc22baee2f-1600.webp" alt="">
+  <div class="stone only2"></div>
+  <div class="cap"><h2>New Projects</h2><p>Boutique developments across Jerusalem</p></div>
+</section>
+
+<section class="outro"><div class="wrap">
+  <h2>Looking to buy, sell or rent in Jerusalem?</h2>
+  <p>This is only a demo page to compare animation ideas. Your real site is unchanged.</p>
+  <div class="note only1"><strong>1 · Dusk to night.</strong> As you scroll down the homepage, the photo slowly turns from sunset to the city at night, and the headline changes. Everything after it stays calm.</div>
+  <div class="note only2"><strong>2 · Stone reveal.</strong> The page opens on a Jerusalem-stone wall that lifts away to show the photo. Property photos are uncovered the same way as they come into view.</div>
+  <div class="note only3"><strong>3 · Golden skyline.</strong> A gold Jerusalem skyline (walls, Tower of David, the Dome, YMCA tower, Chords Bridge) draws itself on the photo. Then a thin skyline at the top of the screen fills in as you scroll, showing how far down the page you are.</div>
+</div></section>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const body = document.body;
+  let mode = new URLSearchParams(location.search).get('m') || '1';
+
+  // ---------- Jerusalem skyline drawn as one line (viewBox 1200 × 90, ground at y=84) ----------
+  const skyline = () => {
+    const G = 84; let d = `M0 ${G}`; let x = 0;
+    const L = (nx, ny) => { d += ` L${nx} ${ny}`; x = nx; };
+    const block = (w, h) => { L(x, G - h); L(x + w, G - h); L(x, G); };
+    const houses = (to) => { const hs = [14, 22, 18, 26, 16, 20]; let i = 0; while (x < to - 12) { block(Math.min(18 + (i % 3) * 6, to - x), hs[i++ % hs.length]); } L(to, G); };
+    const wall = (to, h) => { L(x, G - h); while (x < to - 8) { L(x + 6, G - h); L(x, G - h - 6); L(x + 6, G - h - 6); L(x, G - h); } L(to, G - h); L(to, G); };
+    const davidTower = () => { const b = x; L(b, G - 34); L(b + 6, G - 34); L(b + 6, G - 58); L(b + 4, G - 58); L(b + 4, G - 62); L(b + 7, G - 66); L(b + 10, G - 62); L(b + 10, G - 58); L(b + 8, G - 58); L(b + 8, G - 34); L(b + 14, G - 34); L(b + 14, G); };
+    const dome = () => { const b = x; L(b, G - 20); L(b + 6, G - 26); L(b + 54, G - 26); L(b + 60, G - 20); L(b + 60, G); d += ` M${b + 14} ${G - 26} L${b + 14} ${G - 34} A16 16 0 0 1 ${b + 46} ${G - 34} L${b + 46} ${G - 26}`; d += ` M${b + 30} ${G - 50} L${b + 30} ${G - 56}`; d += ` M${b + 60} ${G}`; x = b + 60; };
+    const cypress = () => { const b = x; L(b + 4, G - 30); L(b + 6, G - 36); L(b + 8, G - 30); L(b + 12, G); };
+    const ymca = () => { const b = x; L(b, G - 22); L(b + 10, G - 22); L(b + 10, G - 66); d += ` A6 6 0 0 1 ${b + 22} ${G - 66}`; x = b + 22; L(b + 22, G - 22); L(b + 32, G - 22); L(b + 32, G); };
+    const bridge = () => { const b = x; L(b + 120, G - 4); d += ` M${b + 40} ${G} L${b + 52} ${G - 78}`; for (let i = 0; i < 7; i++) d += ` M${b + 52} ${G - 78 + i * 3} L${b + 64 + i * 9} ${G - 4}`; for (let i = 0; i < 5; i++) d += ` M${b + 52} ${G - 74 + i * 4} L${b + 40 - i * 7} ${G - 4}`; d += ` M${b + 120} ${G - 4} L${b + 120} ${G}`; x = b + 120; };
+    const towers = (to) => { const hs = [44, 58, 38, 50]; let i = 0; while (x < to - 20) { const h = hs[i++ % hs.length]; L(x, G - h); L(x + 16, G - h); L(x + 16, G); L(x + 8, G); } L(to, G); };
+    houses(120); wall(260, 30); davidTower(); wall(420, 30); houses(450); dome(); houses(560); cypress(); houses(600); cypress(); houses(650); ymca(); houses(760); bridge(); towers(1060); houses(1200);
+    return d;
+  };
+  const D = skyline();
+  document.querySelectorAll('#sky-hero, #sky-prog, .sky-prog .base, .divider path').forEach((p) => p.setAttribute('d', D));
+  const prep = (p) => { const n = p.getTotalLength(); p.style.strokeDasharray = n; p.style.strokeDashoffset = n; return n; };
+
+  // ---------- Switcher ----------
+  const setMode = (m) => {
+    mode = m; body.className = 'm' + m;
+    document.querySelectorAll('.demo-bar button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.m === m)));
+    history.replaceState(null, '', '?m=' + m);
+    scrollTo(0, 0);
+    start();
+  };
+  document.querySelectorAll('.demo-bar button').forEach((b) => b.addEventListener('click', () => setMode(b.dataset.m)));
+
+  // ---------- 1 · Dusk to night ----------
+  const h1 = document.getElementById('h1');
+  const night = h1.querySelector('.night'), day = h1.querySelector('.day');
+  const la = h1.querySelector('.line-a'), lb = h1.querySelector('.line-b'), dot = h1.querySelector('.clock b');
+  const ss = (a, b, v) => { const t = Math.min(1, Math.max(0, (v - a) / (b - a))); return t * t * (3 - 2 * t); };
+  const dusk = () => {
+    const r = h1.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight)));
+    const n = ss(.12, .8, p);
+    night.style.opacity = n;
+    day.style.transform = `scale(${1.06 - p * .06})`;
+    night.style.transform = `scale(${1.06 - p * .06})`;
+    const swap = p > .55;
+    la.style.opacity = swap ? 0 : 1; la.style.translate = swap ? '0 -14px' : '0 0';
+    lb.style.opacity = swap ? 1 : 0; lb.style.translate = swap ? '0 0' : '0 14px';
+    dot.style.top = `${p * 131}px`;
+  };
+
+  // ---------- 2 · Stone reveal ----------
+  let io2;
+  const stones = () => {
+    document.querySelectorAll('.stone-wrap').forEach((el) => el.classList.remove('open'));
+    io2?.disconnect();
+    const hero = document.getElementById('h2');
+    setTimeout(() => hero.classList.add('open'), reduce ? 0 : 700);
+    io2 = new IntersectionObserver((es) => es.forEach((e) => {
+      if (!e.isIntersecting) return;
+      const i = [...document.querySelectorAll('.cards .stone-wrap')].indexOf(e.target);
+      setTimeout(() => e.target.classList.add('open'), Math.max(0, i) * 160);
+      io2.unobserve(e.target);
+    }), { threshold: .35 });
+    document.querySelectorAll('.cards .stone-wrap, .band.stone-wrap').forEach((el) => io2.observe(el));
+  };
+
+  // ---------- 3 · Golden skyline ----------
+  const heroSky = document.getElementById('sky-hero');
+  const prog = document.getElementById('sky-prog');
+  const div = document.querySelector('.divider path');
+  let progLen = 0, divLen = 0;
+  const skyStart = () => {
+    const n = prep(heroSky);
+    heroSky.style.transition = 'none';
+    heroSky.getBoundingClientRect();
+    setTimeout(() => {
+      heroSky.style.transition = reduce ? 'none' : 'stroke-dashoffset 3.2s cubic-bezier(.45,0,.2,1) .3s';
+      heroSky.style.strokeDashoffset = 0;
+    }, 60);
+    progLen = prep(prog); divLen = prep(div);
+  };
+  const skyScroll = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    prog.style.strokeDashoffset = progLen * (1 - (max > 0 ? scrollY / max : 0));
+    const r = div.ownerSVGElement.getBoundingClientRect();
+    const t = Math.min(1, Math.max(0, (innerHeight - r.top) / (innerHeight * .7)));
+    div.style.strokeDashoffset = divLen * (1 - t);
+  };
+
+  const onScroll = () => { if (mode === '1') dusk(); if (mode === '3') skyScroll(); };
+  addEventListener('scroll', () => requestAnimationFrame(onScroll), { passive: true });
+  addEventListener('resize', onScroll);
+  const start = () => { if (mode === '2') stones(); if (mode === '3') skyStart(); onScroll(); };
+  setMode(mode);
+})();
+</script>
+</body>
+</html>
