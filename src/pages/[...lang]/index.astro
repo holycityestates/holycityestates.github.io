@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Services from '../../components/Services.astro';
 import PropertyCard from '../../components/PropertyCard.astro';
-import { t, getLang, langPaths, href, L, active, visible, sold, projects, testimonial, waLink, site, img } from '../../lib/i18n.js';
+import { t, getLang, langPaths, href, L, active, visible, projects, testimonial, waLink, site, img } from '../../lib/i18n.js';
 
 export const getStaticPaths = langPaths;
 const lang = getLang(Astro.params.lang);
@@ -129,22 +129,8 @@ const hoodOpts = uniq(active.map((p) => p.neighborhood).filter((x) => x.en));
     </div>
   </section>
 
-  {sold.length > 0 && (
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <h2>{s.soldTitle}</h2>
-            <p class="muted">{s.soldSub}</p>
-          </div>
-          <a class="link-arrow" href={href(lang, '/properties/#sold')}>{s.viewAll}</a>
-        </div>
-        <div class="grid grid-4">{sold.slice(0, 4).map((p) => <PropertyCard p={p} lang={lang} />)}</div>
-      </div>
-    </section>
-  )}
 
-  <Services lang={lang} tint />
+  <Services lang={lang} />
 
   <section class="duo duo-night">
     <img class="duo-bg" src="/img/night-2000.webp" srcset="/img/night-1000.webp 1000w, /img/night-2000.webp 2000w" sizes="100vw" alt="" loading="lazy" />
