@@ -79,7 +79,7 @@ if (!reduce) {
       if (!shown) { shown = true; rx = x; ry = y; dot.classList.add('on'); }
       const t = !e.target.closest?.('.cs-btn') && e.target.closest?.('.card, .project, .hood, .mosaic-item, .pop');
       const a = e.target.closest?.('a, button, select, label, input, textarea');
-      const dark = e.target.closest?.('.hero, .duo, .cta, .site-footer, .section-tint:has(.projects), .site-header.transparent');
+      const dark = e.target.closest?.('.hero, .sky-hero, .search-band, .duo, .cta, .site-footer, .section-tint:has(.projects), .site-header.transparent');
       dot.classList.toggle('view', !!t);
       dot.classList.toggle('link', !t && !!a);
       dot.classList.toggle('on-dark', !!dark);

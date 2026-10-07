@@ -1,0 +1,29 @@
+---
+// Homepage opener: Aryeh's sunset photo in layers (sky · gold word · city). The word rises from behind
+// the rooftops on load, keeps rising as you scroll, and the same view fades into his night photo.
+import '@fontsource/cinzel/latin-500.css';
+import SearchBox from './SearchBox.astro';
+import { t, href } from '../lib/i18n.js';
+const { lang } = Astro.props;
+const s = t[lang];
+const set = (n) => `/img/sky/${n}-1280.webp 1280w, /img/sky/${n}-1688.webp 1688w`;
+const sizes = '(max-aspect-ratio: 1688/932) 181svh, 100vw';
+---
+<section class="sky-hero" data-sky-hero>
+  <div class="sh-stage">
+    <img class="sh-l" src="/img/sky/day-1688.webp" srcset={set('day')} sizes={sizes} alt={lang === 'he' ? 'ירושלים בשקיעה מהר הזיתים' : 'Jerusalem at sunset from the Mount of Olives'} fetchpriority="high" />
+    <img class="sh-l sh-n" src="/img/sky/night-1688.webp" srcset={set('night')} sizes={sizes} alt="" loading="lazy" />
+    <div class="sh-word" aria-hidden="true"><span>{lang === 'he' ? 'ירושלים' : 'Jerusalem'}</span></div>
+    <img class="sh-l sh-city" src="/img/sky/city-1688.webp" srcset={set('city')} sizes={sizes} alt="" fetchpriority="high" />
+    <img class="sh-l sh-city sh-n" src="/img/sky/citynight-1688.webp" srcset={set('citynight')} sizes={sizes} alt="" loading="lazy" />
+    <div class="sh-shade"></div>
+    <div class="wrap sh-content">
+      <h1 class="sh-title">{s.heroTitle}</h1>
+      <p class="sh-sub">{s.heroSub}</p>
+      <SearchBox lang={lang} action={href(lang, '/properties/')} />
+    </div>
+  </div>
+</section>
+<script>
+  import '../lib/skyhero.js';
+</script>

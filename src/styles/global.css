@@ -649,3 +649,45 @@ html[dir='rtl'] .proj-link em { letter-spacing: 0; font-size: .8rem; }
 .proj-link-go { font-size: .88rem; font-weight: 600; color: var(--gold-dark, #8a6a2c); white-space: nowrap; }
 .proj-link:hover .proj-link-go b { display: inline-block; transform: translateX(4px); }
 @media (max-width: 640px) { .unit-meta span + span::before { display: none; } .unit-meta { gap: 2px 12px; } }
+
+/* ---------- v17: homepage opener (sunset → night, gold word behind the skyline) ---------- */
+.sky-hero { position: relative; height: 240vh; height: 240svh; background: #05070d; color: #fff; }
+.sh-stage { position: sticky; top: 0; height: 100vh; height: 100svh; min-height: 560px; overflow: hidden; }
+.sh-l { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+.sh-n { opacity: 0; will-change: opacity; }
+.sh-city { z-index: 2; }
+.sh-word { position: absolute; z-index: 1; left: 0; right: 0; text-align: center; white-space: nowrap; font-family: 'Cinzel', var(--serif); font-weight: 500; line-height: .82; font-size: clamp(2.6rem, 12.4vw, 12.5rem); letter-spacing: .07em; padding-inline-start: .07em; filter: drop-shadow(0 8px 34px rgba(40,20,0,.35)); transition: transform 2.4s cubic-bezier(.16,.84,.3,1), opacity 1.6s ease; will-change: transform; pointer-events: none; }
+.sh-word.sh-hidden { transform: translateY(60%); opacity: 0; transition: none; }
+.sh-word.sh-risen { transition: none; }
+.sh-word span { background: linear-gradient(90deg, #8a612b 0%, #b8904a 18%, #e9d48f 42%, #f6eab0 50%, #e2c77e 60%, #b08a45 80%, #8a612b 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: sh-sheen 9s ease-in-out infinite; }
+html[lang='he'] .sh-word { font-family: 'Frank Ruhl Libre', var(--serif); font-weight: 500; letter-spacing: 0; padding: 0; font-size: clamp(3.4rem, 13vw, 11rem); }
+@keyframes sh-sheen { 0%, 100% { background-position: 0% 0; } 50% { background-position: 100% 0; } }
+.sh-shade { position: absolute; inset: 0; z-index: 3; pointer-events: none; background: linear-gradient(180deg, rgba(8,9,14,.38) 0%, rgba(8,9,14,0) 30%, rgba(8,9,14,0) 52%, rgba(8,9,14,.62) 100%); }
+.sh-content { position: absolute; z-index: 4; left: 0; right: 0; bottom: 7vh; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; }
+.sh-title { font-size: clamp(1.5rem, 2.6vw, 2.2rem); max-width: 30ch; margin: 0; color: #fff; text-shadow: 0 2px 22px rgba(0,0,0,.5); }
+.sh-sub { margin: 0 0 14px; max-width: 58ch; color: rgba(255,255,255,.88); text-shadow: 0 2px 18px rgba(0,0,0,.5); }
+.sh-content .search { width: 100%; }
+@media (max-width: 760px) {
+  .sky-hero { height: 200vh; height: 200svh; }
+  .sh-word { font-size: 12.6vw; letter-spacing: .035em; padding-inline-start: .035em; }
+  html[lang='he'] .sh-word { font-size: 19vw; }
+  .sh-content { bottom: 4vh; gap: 6px; }
+  .sh-title { font-size: 1.35rem; }
+  .sh-sub { display: none; }
+  .sh-title { margin-bottom: 8px; }
+}
+@media (max-height: 640px) and (min-width: 761px) { .sh-sub { display: none; } }
+@media (prefers-reduced-motion: reduce) { .sh-word span { animation: none; } }
+
+/* ---------- v17: the logo's skyline drawn under the Properties and Map search ---------- */
+.logo-skyline { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; width: 100%; height: 92px; pointer-events: none; overflow: visible; filter: drop-shadow(0 0 5px rgba(201,169,92,.55)); }
+.logo-skyline path { fill: none; stroke: var(--gold-2); stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.search-band:has(.logo-skyline) { padding-bottom: 128px; }
+.search-band-map .logo-skyline { height: 58px; }
+.search-band-map:has(.logo-skyline) { padding-bottom: 82px; }
+@media (max-width: 760px) {
+  .logo-skyline { height: 64px; }
+  .search-band:has(.logo-skyline) { padding-bottom: 92px; }
+  .search-band-map .logo-skyline { height: 46px; }
+  .search-band-map:has(.logo-skyline) { padding-bottom: 66px; }
+}

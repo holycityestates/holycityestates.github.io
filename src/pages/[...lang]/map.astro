@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import PropertyCard from '../../components/PropertyCard.astro';
+import LogoSkyline from '../../components/LogoSkyline.astro';
 import SearchBox from '../../components/SearchBox.astro';
 import { t, getLang, langPaths, href, L, active, img, ils, fxDefault } from '../../lib/i18n.js';
 export const getStaticPaths = langPaths;
@@ -36,6 +37,7 @@ const pins = list.map((p) => ({
       <h1>{s.nav.map}</h1>
       <SearchBox lang={lang} id="map-filters" />
     </div>
+    <LogoSkyline />
   </section>
   <section class="map-page">
     <aside class="map-list">

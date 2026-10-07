@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Services from '../../components/Services.astro';
-import SearchBox from '../../components/SearchBox.astro';
+import SkyHero from '../../components/SkyHero.astro';
 import Reviews from '../../components/Reviews.astro';
 import PropertyCard from '../../components/PropertyCard.astro';
 import { t, getLang, langPaths, href, L, active, visible, projects, projectTiles, waLink, site, img } from '../../lib/i18n.js';
@@ -24,16 +24,7 @@ const hoods = Object.values(
 const uniq = (arr) => [...new Map(arr.map((x) => [x.en, x])).values()];
 ---
 <Base lang={lang} transparent>
-  <section class="hero">
-    <div class="hero-media"><img src="/img/hero-1920.webp" srcset="/img/hero-1280.webp 1280w, /img/hero-1920.webp 1920w, /img/hero-2880.webp 2880w, /img/hero-3840.webp 3840w" sizes="(max-aspect-ratio: 181/100) 181vh, 100vw" alt="" fetchpriority="high" /></div>
-    <div class="hero-shade"></div>
-    <div class="wrap hero-content">
-      <p class="kicker hero-kicker">{s.heroKicker}</p>
-      <h1>{s.heroTitle}</h1>
-      <p class="lead">{s.heroSub}</p>
-      <SearchBox lang={lang} action={href(lang, '/properties/')} />
-    </div>
-  </section>
+  <SkyHero lang={lang} />
 
   <section class="section">
     <div class="wrap">

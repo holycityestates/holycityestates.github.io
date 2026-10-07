@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import PropertyCard from '../../../components/PropertyCard.astro';
+import LogoSkyline from '../../../components/LogoSkyline.astro';
 import SearchBox from '../../../components/SearchBox.astro';
 import { t, getLang, langPaths, L, visible, href, sold } from '../../../lib/i18n.js';
 
@@ -19,6 +20,7 @@ const list = visible.filter((p) => !p.offMarket);
       <h1>{s.nav.properties}</h1>
       <SearchBox lang={lang} id="filters" />
     </div>
+    <LogoSkyline />
   </section>
   <section class="section section-tight" id="results">
     <div class="wrap">
