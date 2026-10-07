@@ -10,8 +10,8 @@ const properties = imported.map((p) => {
   return { ...p, ...fields, description: description ? { en: description.en || p.description.en, he: description.he || p.description.he } : p.description };
 });
 
-// Property numbers are shown with a "20" prefix (#16 → 2016); the internal id and page addresses stay the same.
-export const propNo = (id) => `20${id}`;
+// Property numbers are shown with a "300" prefix (#16 → 30016); the internal id and page addresses stay the same.
+export const propNo = (id) => `300${id}`;
 
 export const THEME = process.env.SITE_THEME || 'signature';
 
