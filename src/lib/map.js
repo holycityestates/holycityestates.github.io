@@ -37,10 +37,13 @@ export function mountMap() {
     const label = items.length > 1 ? `${items.length} · ${first.label}` : first.label;
     const icon = L.divIcon({ className: 'pin-wrap', html: `<span class="pin">${esc(label)}</span>`, iconSize: null });
     const m = L.marker([first.lat, first.lng], { icon, riseOnHover: true }).addTo(map);
-    const html = items
-      .map((p) => `<a class="pop" href="${p.url}">${p.photo ? `<img src="${esc(p.photo)}" alt="">` : ''}<span><em>${esc(p.hood)}</em><strong>${esc(p.title)}</strong><b>${esc(p.price)}</b></span></a>`)
-      .join('');
-    m.bindPopup(`<div class="pops">${html}</div>`, { maxWidth: 300, minWidth: 240, closeButton: false, offset: [0, -6] });
+    const view = document.documentElement.lang === 'he' ? 'לצפייה בנכס' : 'View property';
+    // One listing: a small property card. Several in one building: a compact list.
+    const html = items.length === 1
+      ? items.map((p) => `<a class="pop-card" href="${p.url}">${p.photo ? `<span class="pop-ph"><img src="${esc(p.photo)}" alt=""></span>` : ''}<span class="pop-bd"><em>${esc(p.hood)}</em><strong>${esc(p.title)}</strong><span class="pop-ft"><b>${esc(p.price)}</b><i>${view}</i></span></span></a>`).join('')
+      : `<div class="pops">${items.map((p) => `<a class="pop" href="${p.url}">${p.photo ? `<img src="${esc(p.photo)}" alt="">` : ''}<span><em>${esc(p.hood)}</em><strong>${esc(p.title)}</strong><b>${esc(p.price)}</b></span></a>`).join('')}</div>`;
+    // The pin is drawn above its point, so the pop-up opens above the pin rather than on top of it.
+    m.bindPopup(html, { className: 'hc-pop', maxWidth: 290, minWidth: 290, closeButton: true, autoPanPadding: [40, 60], offset: [0, -34] });
     m.items = items;
     markers.push(m);
   }
