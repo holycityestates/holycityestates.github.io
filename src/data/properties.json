@@ -1,5 +1,240 @@
 [
   {
+    "id": 14,
+    "slug": "penthouse-with-terrace-on-shmuel-hanagid-14",
+    "display": true,
+    "offMarket": false,
+    "newProject": true,
+    "featured": false,
+    "date": "2026-10-07",
+    "status": "sale",
+    "price": 15370000,
+    "bedrooms": 4,
+    "rooms": 5,
+    "sizeSqm": 219,
+    "balconySqm": 35,
+    "floor": 5,
+    "type": {
+      "en": "Penthouse",
+      "he": "פנטהאוז"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "15 Shmuel Hanagid Street",
+      "he": "רחוב שמואל הנגיד 15"
+    },
+    "title": {
+      "en": "Penthouse with a 35 m² Terrace on Shmuel HaNagid",
+      "he": "פנטהאוז עם מרפסת 35 מ״ר ברחוב שמואל הנגיד"
+    },
+    "description": {
+      "en": "<p class=\"lead\">The penthouse of a boutique TAMA building on Shmuel HaNagid: 219 m² on the top floor, open on all four sides, with a 35 m² sukkah terrace.</p><p>A master suite, three more bedrooms (one of them the safe room) and a family room that can serve as a guest room, with three bathrooms and a guest toilet. A large open living, dining and kitchen space runs the full width of the apartment and opens onto the terrace.</p><p>Includes one parking space and two storage rooms. Expected delivery around March 2027. The penthouse is delivered as a shell; finishes are negotiable with the developer.</p><p class=\"note\">Viewings and full plans by appointment.</p>",
+      "he": "<p class=\"lead\">הפנטהאוז של בניין בוטיק בפרויקט תמ״א ברחוב שמואל הנגיד: 219 מ״ר בקומה העליונה, ארבעה כיווני אוויר ומרפסת סוכה של 35 מ״ר.</p><p>יחידת הורים, שלושה חדרי שינה נוספים (אחד מהם ממ״ד) וחדר משפחה שיכול לשמש כחדר אורחים, שלושה חדרי רחצה ושירותי אורחים. חלל מגורים, אוכל ומטבח גדול ופתוח לכל רוחב הדירה, היוצא אל המרפסת.</p><p>כולל חניה ושני מחסנים. מסירה צפויה בסביבות מרץ 2027. הפנטהאוז נמסר במצב מעטפת, וניתן לסכם גימור מול היזם.</p><p class=\"note\">ביקור ותוכניות מלאות בתיאום מראש.</p>"
+    },
+    "features": [
+      {
+        "en": "New Project",
+        "he": "פרויקט חדש"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      },
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "Safe Room",
+        "he": "ממ״ד"
+      },
+      {
+        "en": "Storage",
+        "he": "מחסן"
+      }
+    ],
+    "cover": "/photos/4726e380e688",
+    "gallery": [
+      "/photos/4726e380e688",
+      "/photos/d5f0e19aac97"
+    ],
+    "video": null,
+    "geo": {
+      "approx": false,
+      "lat": 31.7789,
+      "lng": 35.21484
+    }
+  },
+  {
+    "id": 34,
+    "slug": "new-4-bedroom-apartment-on-shmuel-hanagid-34",
+    "display": true,
+    "offMarket": false,
+    "newProject": true,
+    "featured": false,
+    "date": "2026-10-07",
+    "status": "sale",
+    "price": 7000000,
+    "bedrooms": 4,
+    "rooms": 5,
+    "sizeSqm": 119,
+    "balconySqm": 22.5,
+    "floor": 4,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "15 Shmuel Hanagid Street",
+      "he": "רחוב שמואל הנגיד 15"
+    },
+    "title": {
+      "en": "New 4-Bedroom Apartment on Shmuel HaNagid",
+      "he": "דירת 5 חדרים חדשה ברחוב שמואל הנגיד"
+    },
+    "description": {
+      "en": "<p class=\"lead\">A new four-bedroom apartment on the 4th floor of a boutique TAMA building on Shmuel HaNagid, between the City Center and Rehavia, with light from the east, south and west.</p><p>119 m² with a master suite, three more bedrooms (one of them the safe room), two bathrooms and a guest toilet with a laundry room. The living and dining space opens onto a 17 m² covered balcony, and there is a separate 5.5 m² sukkah balcony.</p><p>The apartment comes with a storage room, and parking is available for purchase. Expected delivery around March 2027. The apartments are delivered as a shell; finishes are negotiable with the developer.</p><p class=\"note\">Viewings and full plans by appointment.</p>",
+      "he": "<p class=\"lead\">דירת 5 חדרים חדשה בקומה 4 בבניין בוטיק בפרויקט תמ״א ברחוב שמואל הנגיד, בין מרכז העיר לרחביה, עם כיווני אוויר מזרח, דרום ומערב.</p><p>119 מ״ר: יחידת הורים, שלושה חדרי שינה נוספים (אחד מהם ממ״ד), שני חדרי רחצה ושירותי אורחים עם חדר כביסה. הסלון ופינת האוכל יוצאים למרפסת מקורה של 17 מ״ר, ובנוסף מרפסת סוכה של 5.5 מ״ר.</p><p>לדירה צמוד מחסן, וניתן לרכוש חניה. מסירה צפויה בסביבות מרץ 2027. הדירות נמסרות במצב מעטפת, וניתן לסכם גימור מול היזם.</p><p class=\"note\">ביקור ותוכניות מלאות בתיאום מראש.</p>"
+    },
+    "features": [
+      {
+        "en": "New Project",
+        "he": "פרויקט חדש"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      },
+      {
+        "en": "Balcony",
+        "he": "מרפסת"
+      },
+      {
+        "en": "Safe Room",
+        "he": "ממ״ד"
+      },
+      {
+        "en": "Storage",
+        "he": "מחסן"
+      }
+    ],
+    "cover": "/photos/4726e380e688",
+    "gallery": [
+      "/photos/4726e380e688",
+      "/photos/d9b8bde4506b"
+    ],
+    "video": null,
+    "geo": {
+      "approx": false,
+      "lat": 31.7789,
+      "lng": 35.21484
+    }
+  },
+  {
+    "id": 35,
+    "slug": "new-3-bedroom-apartment-on-shmuel-hanagid-35",
+    "display": true,
+    "offMarket": false,
+    "newProject": true,
+    "featured": false,
+    "date": "2026-10-07",
+    "status": "sale",
+    "price": 6250000,
+    "bedrooms": 3,
+    "rooms": 4,
+    "sizeSqm": 106,
+    "balconySqm": 20.5,
+    "floor": 4,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "15 Shmuel Hanagid Street",
+      "he": "רחוב שמואל הנגיד 15"
+    },
+    "title": {
+      "en": "New 3-Bedroom Apartment on Shmuel HaNagid",
+      "he": "דירת 4 חדרים חדשה ברחוב שמואל הנגיד"
+    },
+    "description": {
+      "en": "<p class=\"lead\">A new three-bedroom apartment on the 4th floor of a boutique TAMA building on Shmuel HaNagid, open to the east, north and west.</p><p>106 m² with a master suite, two more bedrooms (one of them the safe room), two bathrooms and a guest toilet. The living and dining space opens onto a 15.5 m² covered balcony, with a separate 5 m² sukkah balcony.</p><p>The apartment comes with a storage room, and parking is available for purchase. Expected delivery around March 2027. The apartments are delivered as a shell; finishes are negotiable with the developer.</p><p class=\"note\">Viewings and full plans by appointment.</p>",
+      "he": "<p class=\"lead\">דירת 4 חדרים חדשה בקומה 4 בבניין בוטיק בפרויקט תמ״א ברחוב שמואל הנגיד, עם כיווני אוויר מזרח, צפון ומערב.</p><p>106 מ״ר: יחידת הורים, שני חדרי שינה נוספים (אחד מהם ממ״ד), שני חדרי רחצה ושירותי אורחים. הסלון ופינת האוכל יוצאים למרפסת מקורה של 15.5 מ״ר, ובנוסף מרפסת סוכה של 5 מ״ר.</p><p>לדירה צמוד מחסן, וניתן לרכוש חניה. מסירה צפויה בסביבות מרץ 2027. הדירות נמסרות במצב מעטפת, וניתן לסכם גימור מול היזם.</p><p class=\"note\">ביקור ותוכניות מלאות בתיאום מראש.</p>"
+    },
+    "features": [
+      {
+        "en": "New Project",
+        "he": "פרויקט חדש"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      },
+      {
+        "en": "Balcony",
+        "he": "מרפסת"
+      },
+      {
+        "en": "Safe Room",
+        "he": "ממ״ד"
+      },
+      {
+        "en": "Storage",
+        "he": "מחסן"
+      }
+    ],
+    "cover": "/photos/4726e380e688",
+    "gallery": [
+      "/photos/4726e380e688",
+      "/photos/d1a332b69e2a"
+    ],
+    "video": null,
+    "geo": {
+      "approx": false,
+      "lat": 31.7789,
+      "lng": 35.21484
+    }
+  },
+  {
     "id": 27,
     "slug": "new-luxury-1-bedroom-old-city-view-27",
     "display": true,
@@ -109,7 +344,7 @@
     "featured": true,
     "date": "2025-01-21",
     "status": "sale",
-    "price": 34000000,
+    "price": 30000000,
     "bedrooms": 3,
     "rooms": 4,
     "sizeSqm": 300,
@@ -141,24 +376,24 @@
         "he": "נוף פתוח"
       },
       {
-        "en": "Rooftop",
-        "he": "גג פרטי"
-      },
-      {
-        "en": "Luxury",
-        "he": "סטנדרט יוקרה"
-      },
-      {
-        "en": "Smart Home",
-        "he": "בית חכם"
+        "en": "Storage",
+        "he": "מחסן"
       },
       {
         "en": "Parking",
         "he": "חנייה"
       },
       {
-        "en": "Storage",
-        "he": "מחסן"
+        "en": "Luxury",
+        "he": "סטנדרט יוקרה"
+      },
+      {
+        "en": "Rooftop",
+        "he": "גג פרטי"
+      },
+      {
+        "en": "Smart Home",
+        "he": "בית חכם"
       }
     ],
     "cover": "/photos/93d6210207e7",
@@ -192,7 +427,7 @@
   {
     "id": 33,
     "slug": "new-3-bedroom-for-sale-33",
-    "display": true,
+    "display": false,
     "offMarket": false,
     "newProject": false,
     "featured": false,
@@ -1802,75 +2037,6 @@
       "approx": false,
       "lat": 31.78468,
       "lng": 35.21771
-    }
-  },
-  {
-    "id": 14,
-    "slug": "new-duplex-penthouse-in-new-tama-project-14",
-    "display": true,
-    "offMarket": false,
-    "newProject": true,
-    "featured": false,
-    "date": "2024-12-18",
-    "status": "sale",
-    "price": null,
-    "bedrooms": 5,
-    "rooms": 6,
-    "sizeSqm": 260,
-    "balconySqm": null,
-    "floor": 6,
-    "type": {
-      "en": "Duplex Penthouse",
-      "he": "פנטהאוז דופלקס"
-    },
-    "neighborhood": {
-      "en": "City Center",
-      "he": "מרכז העיר"
-    },
-    "street": {
-      "en": "15 Shmuel Hanagid Street",
-      "he": "רחוב שמואל הנגיד 15"
-    },
-    "title": {
-      "en": "New Duplex Penthouse In New Tama Project",
-      "he": "פנטהאוז דופלקס חדש בפרויקט תמ\"א חדש"
-    },
-    "description": {
-      "en": "<p class=\"lead\">A five-bedroom duplex penthouse on the top floors of a new TAMA project on Shmuel HaNagid Street, between the City Center and Rehavia.</p><p>Six rooms over 260 m², with a rooftop terrace, a sukkah balcony and open views. The apartment comes with parking.</p><p>Shmuel HaNagid is a quiet street minutes from King George Street and the Great Synagogue.</p><p class=\"note\">Floor plans and price list on request.</p>",
-      "he": "<p class=\"lead\">פנטהאוז דופלקס של חמישה חדרי שינה בקומות העליונות של פרויקט תמ״א חדש ברחוב שמואל הנגיד, בין מרכז העיר לרחביה.</p><p>6 חדרים על פני 260 מ״ר, עם מרפסת גג, מרפסת סוכה ונוף פתוח. לדירה צמודה חניה.</p><p>שמואל הנגיד הוא רחוב שקט, דקות מרחוב המלך ג׳ורג׳ ומבית הכנסת הגדול.</p><p class=\"note\">תוכניות ומחירון לפי פנייה.</p>"
-    },
-    "features": [
-      {
-        "en": "Great View",
-        "he": "נוף פתוח"
-      },
-      {
-        "en": "Parking",
-        "he": "חנייה"
-      },
-      {
-        "en": "Rooftop",
-        "he": "גג פרטי"
-      },
-      {
-        "en": "Sukkah Balcony",
-        "he": "מרפסת סוכה"
-      },
-      {
-        "en": "New Project",
-        "he": "פרויקט חדש"
-      }
-    ],
-    "cover": "/photos/4726e380e688",
-    "gallery": [
-      "/photos/4726e380e688",
-      "/photos/8d1a1472513e"
-    ],
-    "video": null,
-    "geo": {
-      "approx": false,
-      "lat": 31.7789,
-      "lng": 35.21484
     }
   },
   {
