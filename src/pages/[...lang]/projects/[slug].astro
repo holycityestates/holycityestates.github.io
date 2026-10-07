@@ -2,6 +2,7 @@
 // A new-project building: description, key facts, and every apartment in it with a link to its own page.
 import Base from '../../../layouts/Base.astro';
 import Price from '../../../components/Price.astro';
+import BuildingExplorer from '../../../components/BuildingExplorer.astro';
 import { t, getLang, href, L, waLink, site, img, propNo, projectGroups } from '../../../lib/i18n.js';
 
 export function getStaticPaths() {
@@ -52,6 +53,8 @@ const unitName = (u) => (u.unit ? L(u.unit, lang) : L(u.title, lang));
       </div>
     )}
   </section>
+
+  <BuildingExplorer g={g} lang={lang} />
 
   <section class="wrap detail-body">
     <div class="detail-main">

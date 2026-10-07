@@ -1,0 +1,73 @@
+---
+// Top of New Projects: full-width slideshow of the projects with a slow camera drift,
+// name, short line and starting price. Gold bars fill as each slide plays; click one to jump.
+import { t, href, L, img, ils } from '../lib/i18n.js';
+const { tiles, lang } = Astro.props;
+const s = t[lang];
+const plain = (h) => (h || '').replace(/<p class="note">.*?<\/p>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+const first = (h) => { const m = plain(h).match(/^.{20,170}?[.!?](\s|$)/); return m ? m[0].trim() : plain(h).slice(0, 150); };
+const slides = tiles.map(({ group: g, p }) => {
+  const x = g || p;
+  return {
+    href: href(lang, g ? `/projects/${g.slug}/` : `/properties/${p.slug}/`),
+    photo: x.cover,
+    hood: L(x.neighborhood, lang),
+    name: g ? L(g.name, lang) : L(p.title, lang),
+    line: first(L(x.description, lang)),
+    price: g ? (g.from ? ils({ price: g.from, status: 'sale' }, lang) : null) : p.price ? ils(p, lang) : null,
+    units: g ? s.projUnits(g.forSale.length) : null,
+  };
+}).filter((x) => x.photo);
+---
+{slides.length > 0 && (
+  <section class="pshow" data-pshow aria-roledescription="carousel" aria-label={s.projectsTitle}>
+    {slides.map((x, i) => (
+      <a class:list={['ps-slide', { on: i === 0 }]} href={x.href} aria-hidden={i === 0 ? undefined : 'true'} tabindex={i === 0 ? undefined : -1}>
+        <img src={img(x.photo, 1600)} alt="" loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} />
+      </a>
+    ))}
+    <div class="wrap ps-copy">
+      <p class="ps-kicker">{s.projectsTitle}</p>
+      {slides.map((x, i) => (
+        <div class:list={['ps-text', { on: i === 0 }]} aria-hidden={i === 0 ? undefined : 'true'}>
+          <small>{x.hood}</small>
+          <h1 class="ps-name">{x.name}</h1>
+          {x.line && <p>{x.line}</p>}
+          <div class="ps-from">
+            {x.price ? <>{x.units && <span>{x.units} · </span>}{x.units ? s.priceFrom : ""} <b>{x.price}</b></> : <span>{s.priceOnRequest}</span>}
+            <a class="ps-go" href={x.href} tabindex={i === 0 ? undefined : -1}>{s.viewUnit} <span aria-hidden="true">{lang === 'he' ? '←' : '→'}</span></a>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="wrap ps-bars">
+      {slides.map((x, i) => <button type="button" class:list={{ on: i === 0 }} data-i={i}><i></i><span>{x.name}</span></button>)}
+    </div>
+  </section>
+)}
+<script>
+  document.querySelectorAll<HTMLElement>('[data-pshow]').forEach((box) => {
+    const slides = [...box.querySelectorAll<HTMLElement>('.ps-slide')];
+    const texts = [...box.querySelectorAll<HTMLElement>('.ps-text')];
+    const bars = [...box.querySelectorAll<HTMLButtonElement>('.ps-bars button')];
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let cur = 0, timer = 0;
+    const restart = (el: Element | null) => { if (!el) return; (el as HTMLElement).style.animation = 'none'; void (el as HTMLElement).offsetWidth; (el as HTMLElement).style.animation = ''; };
+    const go = (i: number) => {
+      cur = (i + slides.length) % slides.length;
+      [slides, texts, bars].forEach((list) => list.forEach((el, k) => {
+        el.classList.toggle('on', k === cur);
+        if (list !== bars) { k === cur ? el.removeAttribute('aria-hidden') : el.setAttribute('aria-hidden', 'true'); }
+      }));
+      slides.forEach((el, k) => el.tabIndex = k === cur ? 0 : -1);
+      texts.forEach((el, k) => el.querySelector('a')!.tabIndex = k === cur ? 0 : -1);
+      restart(slides[cur].querySelector('img')); restart(bars[cur].querySelector('i'));
+      clearTimeout(timer);
+      if (!reduce && slides.length > 1) timer = window.setTimeout(() => go(cur + 1), 6500);
+    };
+    bars.forEach((b) => b.addEventListener('click', () => go(+b.dataset.i!)));
+    box.addEventListener('mouseenter', () => clearTimeout(timer));
+    box.addEventListener('mouseleave', () => go(cur));
+    go(0);
+  });
+</script>

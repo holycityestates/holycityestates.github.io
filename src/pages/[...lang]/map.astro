@@ -46,7 +46,7 @@ const pins = list.map((p) => ({
       </div>
       <p class="muted empty" id="map-empty" hidden>{s.noResults}</p>
       <div class="map-cards" id="map-cards">
-        {list.map((p) => <div class="map-card-wrap" data-id={p.id} data-status={p.status}><PropertyCard p={p} lang={lang} /></div>)}
+        {list.map((p) => <div class="map-card-wrap" data-id={p.id} data-status={p.status}><PropertyCard p={p} lang={lang} lux={false} /></div>)}
       </div>
     </aside>
     <div class="map-canvas" id="map" aria-label={s.nav.map}></div>

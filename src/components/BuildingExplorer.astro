@@ -1,0 +1,70 @@
+---
+// Project page: the building render becomes the menu. Floors with homes for sale glow gold;
+// hover or tap one and its apartments light up beside it with size and price.
+import Price from './Price.astro';
+import { t, href, L, img, propNo } from '../lib/i18n.js';
+const { g, lang } = Astro.props;
+const s = t[lang];
+const he = lang === 'he';
+const ex = g.explorer;
+const unitName = (u) => (u.unit ? L(u.unit, lang) : L(u.title, lang));
+const floors = (ex?.floors || []).map((f) => {
+  const units = g.forSale.filter((u) => u.floor === f.n);
+  const label = units.length === 1 ? `${s.floor} ${f.n} · ${unitName(units[0])}` : `${s.floor} ${f.n} · ${s.projUnits(units.length)}`;
+  return { ...f, units, label };
+});
+const list = g.forSale.filter((u) => floors.some((f) => f.n === u.floor));
+---
+{ex && list.length > 0 && (
+  <section class="bx" data-bx>
+    <div class="bx-pic">
+      <img src={img(ex.photo, 1600)} alt={L(g.name, lang)} loading="lazy" />
+      {floors.map((f) => (
+        f.units.length
+          ? <button type="button" class="bx-floor avail" data-f={f.n} style={`top:${f.top}%;height:${f.height}%;left:${ex.left}%;width:${ex.width}%`} aria-label={f.label}><span>{f.label}</span></button>
+          : <span class="bx-floor" aria-hidden="true" style={`top:${f.top}%;height:${f.height}%;left:${ex.left}%;width:${ex.width}%`}></span>
+      ))}
+    </div>
+    <div class="bx-panel">
+      <p class="bx-kicker">{L(g.name, lang)} · {L(g.neighborhood, lang)}</p>
+      <h2 class="bx-title" data-default={s.exChoose}>{s.exChoose}</h2>
+      <p class="bx-hint">{s.exHint}{L(g.delivery, lang) && ` ${s.delivery}: ${L(g.delivery, lang)}.`}</p>
+      <div class="bx-units">
+        {list.map((u) => (
+          <a class="bx-unit" href={href(lang, `/properties/${u.slug}/`)} data-f={u.floor} data-label={floors.find((f) => f.n === u.floor)?.label}>
+            <span class="bx-u-main">
+              <strong>{unitName(u)}</strong>
+              <span>{u.sizeSqm} {s.sqm}{u.balconySqm ? ` · ${s.balcony} ${u.balconySqm} ${s.sqm}` : ''} · {he ? `${u.rooms} חדרים` : `${u.bedrooms} ${u.bedrooms === 1 ? 'Bedroom' : 'Bedrooms'}`}</span>
+              <em>{s.propertyNo} {propNo(u.id)}</em>
+            </span>
+            <Price p={u} lang={lang} cls="bx-price" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+<script>
+  document.querySelectorAll<HTMLElement>('[data-bx]').forEach((box) => {
+    const title = box.querySelector<HTMLElement>('.bx-title')!;
+    const floors = [...box.querySelectorAll<HTMLElement>('.bx-floor.avail')];
+    const units = [...box.querySelectorAll<HTMLElement>('.bx-unit')];
+    let user = false;
+    const pick = (f: string) => {
+      floors.forEach((b) => b.classList.toggle('on', b.dataset.f === f));
+      units.forEach((u) => u.classList.toggle('on', u.dataset.f === f));
+      const u = units.find((x) => x.dataset.f === f);
+      title.textContent = u ? u.dataset.label! : title.dataset.default!;
+    };
+    floors.forEach((b) => ['mouseenter', 'focus', 'click'].forEach((ev) => b.addEventListener(ev, () => { user = true; pick(b.dataset.f!); })));
+    units.forEach((u) => ['mouseenter', 'focus'].forEach((ev) => u.addEventListener(ev, () => { user = true; pick(u.dataset.f!); })));
+    // A short tour of the available floors the first time the section comes into view.
+    const io = new IntersectionObserver((es) => {
+      if (!es.some((e) => e.isIntersecting)) return;
+      io.disconnect();
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      floors.forEach((b, i) => setTimeout(() => { if (!user) pick(b.dataset.f!); }, 500 + i * 1500));
+    }, { threshold: 0.4 });
+    io.observe(box);
+  });
+</script>

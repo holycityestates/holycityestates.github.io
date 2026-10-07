@@ -1,13 +1,13 @@
 ---
 import { t, href, L, sizeLine, img } from '../lib/i18n.js';
 import Price from './Price.astro';
-const { p, lang } = Astro.props;
+const { p, lang, lux = true } = Astro.props;   // lux: tall photo card with details over the photo
 const s = t[lang];
 const shots = (p.gallery || []).slice(0, 8).map((g) => img(g, 800));
 const chip = p.offMarket ? s.offMarket[p.status] : p.newProject ? s.newProject : s.status[p.status];
 ---
 <a
-  class:list={['card', { 'is-off': p.offMarket }]}
+  class:list={['card', { 'is-off': p.offMarket, lux }]}
   href={href(lang, `/properties/${p.slug}/`)}
   data-status={p.status}
   data-neighborhood={p.neighborhood.en}
@@ -26,6 +26,7 @@ const chip = p.offMarket ? s.offMarket[p.status] : p.newProject ? s.newProject :
         <span class="cs-dots" aria-hidden="true">{shots.map((_, i) => <i class={i === 0 ? 'on' : ''}></i>)}</span>
       </>
     )}
+    {lux && <span class="lux-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" /></svg></span>}
     <span class:list={['chip', p.offMarket ? 'chip-dark' : 'chip-light']}>{chip}</span>
   </div>
   <div class="card-body">

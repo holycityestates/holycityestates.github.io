@@ -8,7 +8,7 @@ const sizes = g.forSale.map((u) => u.sizeSqm).filter(Boolean);
 const range = sizes.length ? (Math.min(...sizes) === Math.max(...sizes) ? `${sizes[0]}` : `${Math.min(...sizes)}–${Math.max(...sizes)}`) : '';
 const shots = [...g.gallery, ...g.units.map((u) => u.cover)].filter((x, i, a) => x && a.indexOf(x) === i).slice(0, 8).map((x) => img(x, 800));
 ---
-<a class="card card-project" href={href(lang, `/projects/${g.slug}/`)}>
+<a class="card card-project lux" href={href(lang, `/projects/${g.slug}/`)}>
   <div class="card-media">
     {shots[0] && <><img class="media-bg" src={shots[0]} alt="" aria-hidden="true" loading="lazy" decoding="async" /><img class="media-main" src={shots[0]} alt={L(g.name, lang)} loading="lazy" decoding="async" /></>}
     {shots.length > 1 && (
@@ -18,6 +18,7 @@ const shots = [...g.gallery, ...g.units.map((u) => u.cover)].filter((x, i, a) =>
         <span class="cs-dots" aria-hidden="true">{shots.map((_, i) => <i class={i === 0 ? 'on' : ''}></i>)}</span>
       </>
     )}
+    <span class="lux-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" /></svg></span>
     <span class="chip chip-light">{s.newProject}</span>
   </div>
   <div class="card-body">

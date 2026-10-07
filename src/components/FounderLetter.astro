@@ -1,0 +1,28 @@
+---
+// About page: a personal note on cream stationery. Lines fade in one by one, then the signature writes itself.
+import '@fontsource/allura/latin-400.css';
+import { t, L, site } from '../lib/i18n.js';
+const { lang } = Astro.props;
+const s = t[lang];
+---
+<section class="fl-wrap">
+  <div class="fl" data-letter>
+    <img src="/img/logo.png" alt="" width="112" height="72" />
+    {s.letter.map((line) => <p>{line}</p>)}
+    <div class="fl-sig" lang="en">Aryeh</div>
+    <div class="fl-role">{L(site.name, lang)}</div>
+  </div>
+</section>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-letter]').forEach((el) => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.classList.add('in'); return; }
+    el.classList.add('fl-ready');
+    const go = () => { el.classList.add('in'); io.disconnect(); removeEventListener('scroll', check); };
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) go(); }, { threshold: 0.12 });
+    io.observe(el);
+    // Safety net: start as soon as the letter is on screen, even if the observer is late.
+    const check = () => { if (el.getBoundingClientRect().top < innerHeight * 0.85) go(); };
+    addEventListener('scroll', check, { passive: true });
+    setTimeout(check, 400);
+  });
+</script>

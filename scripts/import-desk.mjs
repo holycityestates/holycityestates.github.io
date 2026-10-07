@@ -106,6 +106,8 @@ for (const f of pfiles) {
     cover: photos[0] || null,
     gallery: photos,
     geo: d.geo || null,
+    // Building explorer: the render with clickable floor bands (positions in % of the photo).
+    explorer: d.explorer?.photo ? { ...d.explorer, photo: await photoPath(d.explorer.photo) } : null,
   });
 }
 await fs.writeFile(path.join(ROOT, 'src/data/projects.json'), JSON.stringify(projects, null, 2));
