@@ -14,7 +14,7 @@ Astro static site (EN + HE/RTL), "Signature" design: dark cinematic hero + glass
 
 ## Hosting
 - Demo: https://holycityestates.github.io — repo `holycityestates/holycityestates.github.io` (Aryeh's account). Branch `main` = built static files (served by Pages; keep `.nojekyll`). Branch `source` = this code.
-- Demo build: `node scripts/import-grist.mjs --file data/grist-export.json --no-photos && PREVIEW=1 npx astro build && touch dist/.nojekyll && printf 'User-agent: *\nDisallow: /\n' > dist/robots.txt`, then push `dist` to `main`.
+- Demo build: `node scripts/import-grist.mjs --file data/grist-export.json --no-photos && PREVIEW=1 npx astro build && touch dist/.nojekyll && printf 'User-agent: *\nDisallow: /\n' > dist/robots.txt && rm -rf dist/_demos dist/CNAME`, then push `dist` to `main`. (`public/_demos/` holds the temporary background comparison page — never ship it.)
 - Real domain holycity-realestate.com is still served from `ajdorfman93/holy-city` (another person's account). Go-live = domain released there (or verified on Aryeh's account) → add custom domain + `public/CNAME`, remove PREVIEW.
 
 ## Decisions
