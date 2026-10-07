@@ -1,0 +1,39 @@
+[
+  {
+    "slug": "shmuel-hanagid-15",
+    "name": {
+      "en": "Shmuel HaNagid 15",
+      "he": "שמואל הנגיד 15"
+    },
+    "neighborhood": {
+      "en": "City Center",
+      "he": "מרכז העיר"
+    },
+    "street": {
+      "en": "15 Shmuel Hanagid Street",
+      "he": "רחוב שמואל הנגיד 15"
+    },
+    "delivery": {
+      "en": "Around March 2027",
+      "he": "בסביבות מרץ 2027"
+    },
+    "condition": {
+      "en": "Shell, finishes negotiable",
+      "he": "מעטפת, גימור בהתאמה מול היזם"
+    },
+    "description": {
+      "en": "<p class=\"lead\">A boutique TAMA building at 15 Shmuel HaNagid Street, between the City Center and Rehavia.</p><p>Three new homes are available: two apartments on the 4th floor and a 219 m² penthouse on the top floor with a 35 m² sukkah terrace. Every apartment has a safe room, a sukkah balcony and a storage room, and the building has an elevator.</p><p>The apartments are delivered as a shell, so finishes can be agreed with the developer. Expected delivery around March 2027.</p><p class=\"note\">Viewings and full plans by appointment.</p>",
+      "he": "<p class=\"lead\">בניין בוטיק בפרויקט תמ״א ברחוב שמואל הנגיד 15, בין מרכז העיר לרחביה.</p><p>שלוש דירות חדשות זמינות: שתי דירות בקומה 4 ופנטהאוז של 219 מ״ר בקומה העליונה עם מרפסת סוכה של 35 מ״ר. בכל דירה ממ״ד, מרפסת סוכה ומחסן, ובבניין מעלית.</p><p>הדירות נמסרות במצב מעטפת, וניתן לסכם גימור מול היזם. מסירה צפויה בסביבות מרץ 2027.</p><p class=\"note\">ביקור ותוכניות מלאות בתיאום מראש.</p>"
+    },
+    "cover": "/photos/4726e380e688",
+    "gallery": [
+      "/photos/4726e380e688",
+      "/photos/da809bd9a024"
+    ],
+    "geo": {
+      "approx": false,
+      "lat": 31.7789,
+      "lng": 35.21484
+    }
+  }
+]

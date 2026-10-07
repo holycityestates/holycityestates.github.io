@@ -1,0 +1,15 @@
+---
+import Base from '../../../layouts/Base.astro';
+import PropertyCard from '../../../components/PropertyCard.astro';
+import ProjectCard from '../../../components/ProjectCard.astro';
+import { t, getLang, langPaths, projectTiles } from '../../../lib/i18n.js';
+export const getStaticPaths = langPaths;
+const lang = getLang(Astro.params.lang);
+const s = t[lang];
+---
+<Base lang={lang} title={s.projectsTitle}>
+  <section class="page-head"><div class="wrap"><h1>{s.projectsTitle}</h1><p class="muted">{s.projectsSub}</p></div></section>
+  <section class="section section-tight">
+    <div class="wrap"><div class="grid">{projectTiles.map((x) => (x.group ? <ProjectCard g={x.group} lang={lang} /> : <PropertyCard p={x.p} lang={lang} />))}</div></div>
+  </section>
+</Base>

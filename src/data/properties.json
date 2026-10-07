@@ -75,6 +75,11 @@
       "/photos/da809bd9a024"
     ],
     "video": null,
+    "project": "shmuel-hanagid-15",
+    "unit": {
+      "en": "Penthouse (apartments 11–12)",
+      "he": "פנטהאוז (דירות 11–12)"
+    },
     "geo": {
       "approx": false,
       "lat": 31.7789,
@@ -153,6 +158,11 @@
       "/photos/da809bd9a024"
     ],
     "video": null,
+    "project": "shmuel-hanagid-15",
+    "unit": {
+      "en": "Apartment 9",
+      "he": "דירה 9"
+    },
     "geo": {
       "approx": false,
       "lat": 31.7789,
@@ -196,32 +206,32 @@
     },
     "features": [
       {
-        "en": "New Project",
-        "he": "פרויקט חדש"
-      },
-      {
-        "en": "New Building",
-        "he": "בניין חדש"
-      },
-      {
         "en": "Elevator",
         "he": "מעלית"
+      },
+      {
+        "en": "Storage",
+        "he": "מחסן"
       },
       {
         "en": "Sukkah Balcony",
         "he": "מרפסת סוכה"
       },
       {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
         "en": "Balcony",
         "he": "מרפסת"
       },
       {
-        "en": "Safe Room",
-        "he": "ממ״ד"
+        "en": "New Project",
+        "he": "פרויקט חדש"
       },
       {
-        "en": "Storage",
-        "he": "מחסן"
+        "en": "Safe Room",
+        "he": "ממ״ד"
       }
     ],
     "cover": "/photos/4726e380e688",
@@ -231,6 +241,11 @@
       "/photos/da809bd9a024"
     ],
     "video": null,
+    "project": "shmuel-hanagid-15",
+    "unit": {
+      "en": "Apartment 10",
+      "he": "דירה 10"
+    },
     "geo": {
       "approx": false,
       "lat": 31.7789,
@@ -332,6 +347,8 @@
       "/photos/03dd312249fc"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.78468,
@@ -421,6 +438,8 @@
       "/photos/a8cfc184dbc4"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.77683,
@@ -497,6 +516,8 @@
       "/photos/b6493f8db556"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.78373,
@@ -589,6 +610,8 @@
       "/photos/72559d6a8efa"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": true,
       "lat": 31.78197,
@@ -665,6 +688,8 @@
       "/photos/2447d615368d"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.77496,
@@ -718,6 +743,8 @@
       "/photos/17485f989c74"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": true,
       "lat": 31.77082,
@@ -771,6 +798,8 @@
       "/photos/fd2ce45f60e2"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": true,
       "lat": 31.7748,
@@ -819,6 +848,8 @@
       "/photos/520db025be42"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": true,
       "lat": 31.77819,
@@ -888,6 +919,8 @@
       "/photos/2add8542109f"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.77927,
@@ -956,6 +989,8 @@
       "/photos/e603bcbc4bec"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.77927,
@@ -1033,6 +1068,8 @@
       "/photos/e9726cc7bbae"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.77945,
@@ -1114,6 +1151,8 @@
       "/photos/a2fb7a9a21f1"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.77966,
@@ -1192,6 +1231,8 @@
       "/photos/a58cebab6c9c"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.77883,
@@ -1286,6 +1327,8 @@
       "/photos/1b592f33f3cd"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.78237,
@@ -1366,6 +1409,8 @@
       "/photos/a6c28b805655"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.77273,
@@ -1444,6 +1489,8 @@
       "/photos/24640fc8625c"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.78755,
@@ -1522,6 +1569,8 @@
       "/photos/8d79c8be23bc"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.77564,
@@ -1609,6 +1658,8 @@
       "/photos/da1d54fa6ffb"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.78373,
@@ -1698,6 +1749,8 @@
       "/photos/39b2d9944619"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.78373,
@@ -1769,6 +1822,8 @@
       "/photos/a2e7fef1c500"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.78148,
@@ -1855,6 +1910,8 @@
       "/photos/c525e0bf262e"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.78468,
@@ -1947,6 +2004,8 @@
       "/photos/72559d6a8efa"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": true,
       "lat": 31.78197,
@@ -1962,7 +2021,7 @@
     "featured": true,
     "date": "2024-12-18",
     "status": "sale",
-    "price": 2870000,
+    "price": 2850000,
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 47,
@@ -1990,10 +2049,6 @@
     },
     "features": [
       {
-        "en": "New Building",
-        "he": "בניין חדש"
-      },
-      {
         "en": "Great View",
         "he": "נוף פתוח"
       },
@@ -2006,16 +2061,20 @@
         "he": "מעלית שבת"
       },
       {
-        "en": "Balcony",
-        "he": "מרפסת"
-      },
-      {
         "en": "Concierge",
         "he": "שירותי קונסיירז׳"
       },
       {
         "en": "Pre-sale",
         "he": "מכירה מוקדמת (פריסייל)"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Balcony",
+        "he": "מרפסת"
       }
     ],
     "cover": "/photos/b7daac8827a9",
@@ -2036,6 +2095,8 @@
       "/photos/5076be376a13"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.78468,
@@ -2127,6 +2188,8 @@
       "/photos/966973b4f2bf"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.78468,
@@ -2204,6 +2267,8 @@
       "/photos/a3a3c7e12199"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.77866,
@@ -2292,6 +2357,8 @@
       "/photos/971b9b6cfafc"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": false,
       "lat": 31.78755,
@@ -2351,6 +2418,8 @@
       "/photos/13aab40b620f"
     ],
     "video": null,
+    "project": null,
+    "unit": null,
     "geo": {
       "approx": true,
       "lat": 31.78197,

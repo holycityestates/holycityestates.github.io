@@ -3,7 +3,7 @@ import { ils, fxDefault, t } from '../lib/i18n.js';
 const { p, lang, cls = '' } = Astro.props;
 ---
 <div class:list={['price', cls]} data-ils={p.price || ''} data-kind={p.status}>
-  <span class="p-main">{ils(p, lang)}</span>
+  <span class="p-main">{cls.includes('price-from') && <small class="p-from">{t[lang].priceFrom} </small>}{ils(p, lang)}</span>
   {p.price && (
     <span class="p-fx">
       <span class="p-fx-val">{fxDefault(p)}</span>

@@ -1,0 +1,32 @@
+---
+// One tile for a whole new-project building: opens the project page that lists its apartments.
+import { t, href, L, img } from '../lib/i18n.js';
+import Price from './Price.astro';
+const { g, lang } = Astro.props;
+const s = t[lang];
+const sizes = g.forSale.map((u) => u.sizeSqm).filter(Boolean);
+const range = sizes.length ? (Math.min(...sizes) === Math.max(...sizes) ? `${sizes[0]}` : `${Math.min(...sizes)}–${Math.max(...sizes)}`) : '';
+const shots = [...g.gallery, ...g.units.map((u) => u.cover)].filter((x, i, a) => x && a.indexOf(x) === i).slice(0, 8).map((x) => img(x, 800));
+---
+<a class="card card-project" href={href(lang, `/projects/${g.slug}/`)}>
+  <div class="card-media">
+    {shots[0] && <><img class="media-bg" src={shots[0]} alt="" aria-hidden="true" loading="lazy" decoding="async" /><img class="media-main" src={shots[0]} alt={L(g.name, lang)} loading="lazy" decoding="async" /></>}
+    {shots.length > 1 && (
+      <>
+        <span class="cs-btn cs-prev" role="button" tabindex="0" aria-label={lang === 'he' ? 'תמונה קודמת' : 'Previous photo'} data-shots={JSON.stringify(shots)}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg></span>
+        <span class="cs-btn cs-next" role="button" tabindex="0" aria-label={lang === 'he' ? 'תמונה הבאה' : 'Next photo'}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg></span>
+        <span class="cs-dots" aria-hidden="true">{shots.map((_, i) => <i class={i === 0 ? 'on' : ''}></i>)}</span>
+      </>
+    )}
+    <span class="chip chip-light">{s.newProject}</span>
+  </div>
+  <div class="card-body">
+    <div class="card-loc">{L(g.neighborhood, lang)}</div>
+    <h3 class="card-title">{L(g.name, lang)}</h3>
+    <div class="card-meta">
+      <span>{s.projUnits(g.forSale.length)}</span>
+      {range && <span>{range} {s.sqm}</span>}
+    </div>
+    {g.from && <Price p={{ price: g.from, status: 'sale' }} lang={lang} cls="card-price price-from" />}
+  </div>
+</a>

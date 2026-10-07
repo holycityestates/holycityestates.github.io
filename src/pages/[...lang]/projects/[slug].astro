@@ -1,0 +1,142 @@
+---
+// A new-project building: description, key facts, and every apartment in it with a link to its own page.
+import Base from '../../../layouts/Base.astro';
+import Price from '../../../components/Price.astro';
+import { t, getLang, href, L, waLink, site, img, propNo, projectGroups } from '../../../lib/i18n.js';
+
+export function getStaticPaths() {
+  return projectGroups.flatMap((g) => [
+    { params: { lang: undefined, slug: g.slug }, props: { g } },
+    { params: { lang: 'he', slug: g.slug }, props: { g } },
+  ]);
+}
+const { g } = Astro.props;
+const lang = getLang(Astro.params.lang);
+const s = t[lang];
+const he = lang === 'he';
+const name = L(g.name, lang);
+const desc = L(g.description, lang);
+const plain = desc.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+// Project photos first, then each apartment's photos (floor plans etc.), without repeats.
+const all = [...g.gallery, ...g.units.flatMap((u) => u.gallery)].filter((x, i, a) => x && a.indexOf(x) === i);
+const photos = all.map((x) => img(x, 1600));
+const thumbs = all.map((x, i) => img(x, i ? 800 : 1600));
+const facts = [
+  [s.unitsLabel, s.projUnits(g.forSale.length)],
+  [s.priceFrom.replace(/[\s־]+$/, ''), g.from && `₪${new Intl.NumberFormat('en-US').format(g.from)}`],
+  [s.delivery, L(g.delivery, lang)],
+  [s.condition, L(g.condition, lang)],
+].filter(([, v]) => v);
+const unitName = (u) => (u.unit ? L(u.unit, lang) : L(u.title, lang));
+---
+<Base lang={lang} title={name} description={plain.slice(0, 155)} image={g.cover && `https://holycity-realestate.com${img(g.cover, 1600)}`}>
+  <section class="wrap detail-top">
+    <a class="back" href={href(lang, '/projects/')}>{s.allProjects}</a>
+    <div class="detail-head">
+      <div>
+        <p class="kicker">{s.newProject} · {L(g.neighborhood, lang)}</p>
+        <h1>{name}</h1>
+        <p class="muted">{L(g.street, lang)}{L(g.street, lang) ? ', ' : ''}{he ? 'ירושלים' : 'Jerusalem'}</p>
+      </div>
+      {g.from && <Price p={{ price: g.from, status: 'sale' }} lang={lang} cls="detail-price price-from" />}
+    </div>
+
+    {photos.length > 0 && (
+      <div class:list={['mosaic', `n${Math.min(photos.length, 5)}`]}>
+        {thumbs.slice(0, 5).map((src, i) => (
+          <button type="button" class="mosaic-item" data-i={i} aria-label={`${s.gallery} ${i + 1}`}>
+            <img class="media-bg" src={src} alt="" aria-hidden="true" loading={i ? 'lazy' : 'eager'} /><img class="media-main" src={src} alt="" loading={i ? 'lazy' : 'eager'} />
+            {i === 4 && photos.length > 5 && <span class="more">+{photos.length - 5}</span>}
+          </button>
+        ))}
+      </div>
+    )}
+  </section>
+
+  <section class="wrap detail-body">
+    <div class="detail-main">
+      <ul class="facts">
+        {facts.map(([k, v]) => <li><span>{k}</span><strong>{v}</strong></li>)}
+      </ul>
+
+      <div class="block">
+        <h2>{s.projAvailable}</h2>
+        <div class="units">
+          {g.units.map((u) => (
+            <a class:list={['unit', { 'is-off': u.offMarket }]} href={href(lang, `/properties/${u.slug}/`)}>
+              <span class="unit-img">{u.gallery[1] || u.cover ? <img src={img(u.gallery[1] || u.cover, 800)} alt="" loading="lazy" /> : null}</span>
+              <span class="unit-main">
+                <strong>{unitName(u)}</strong>
+                <span class="unit-meta">
+                  {he ? <span>{u.rooms} חדרים</span> : <span>{u.bedrooms} {u.bedrooms === 1 ? 'Bedroom' : 'Bedrooms'}</span>}
+                  {u.sizeSqm && <span>{u.sizeSqm} {s.sqm}</span>}
+                  {u.balconySqm && <span>{s.balcony} {u.balconySqm} {s.sqm}</span>}
+                  {u.floor != null && <span>{s.floor} {u.floor}</span>}
+                </span>
+                <span class="unit-no">{s.propertyNo} {propNo(u.id)}</span>
+              </span>
+              <span class="unit-end">
+                {u.offMarket ? <span class="unit-sold">{s.offMarket[u.status]}</span> : <Price p={u} lang={lang} cls="unit-price" />}
+                <span class="unit-go">{s.viewUnit} <b aria-hidden="true">{he ? '←' : '→'}</b></span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {desc && (
+        <div class="block">
+          <h2>{s.projAbout}</h2>
+          <div class="prose" set:html={desc} />
+        </div>
+      )}
+
+      <div class="block">
+        <h2>{s.location}</h2>
+        {g.geo ? (
+          <>
+            <div class="minimap" id="minimap" data-lat={g.geo.lat} data-lng={g.geo.lng} data-approx={String(g.geo.approx)}></div>
+            <p class="muted small">{s.approxArea} · <a href={href(lang, '/map/')}>{s.nav.map}</a></p>
+          </>
+        ) : <p class="muted">{L(g.neighborhood, lang)}, {he ? 'ירושלים' : 'Jerusalem'}</p>}
+      </div>
+    </div>
+    <aside class="contact-card">
+      <img src="/img/logo.png" alt="" class="agent-logo" />
+      <h3>{s.interested}</h3>
+      <a class="btn btn-gold btn-block" href={waLink(s.waProject(g))} target="_blank" rel="noopener">{s.book}</a>
+      <a class="btn btn-outline btn-block" href={`tel:${site.phoneIntl}`}>{s.call} <span dir="ltr">{site.phone}</span></a>
+      <a class="share" href={waLink(`${name} – https://holycity-realestate.com${Astro.url.pathname}`)} target="_blank" rel="noopener">{s.share} ↗</a>
+    </aside>
+  </section>
+
+  <script>
+    import { mountMiniMap } from '../../../lib/map.js';
+    mountMiniMap(document.getElementById('minimap'));
+  </script>
+
+  <dialog class="lightbox" id="lightbox">
+    <button class="lb-close" aria-label="Close">×</button>
+    <button class="lb-prev" aria-label="Previous">‹</button>
+    <img id="lb-img" alt="" />
+    <button class="lb-next" aria-label="Next">›</button>
+    <div class="lb-count" id="lb-count"></div>
+  </dialog>
+  <script is:inline define:vars={{ photos }}>
+    const dlg = document.getElementById('lightbox');
+    const img = document.getElementById('lb-img');
+    const cnt = document.getElementById('lb-count');
+    let i = 0;
+    const show = (n) => { i = (n + photos.length) % photos.length; img.src = photos[i]; cnt.textContent = `${i + 1} / ${photos.length}`; };
+    document.querySelectorAll('.mosaic-item').forEach((b) => b.addEventListener('click', () => { show(+b.dataset.i); dlg.showModal(); }));
+    dlg.querySelector('.lb-close').onclick = () => dlg.close();
+    dlg.querySelector('.lb-prev').onclick = () => show(i - 1);
+    dlg.querySelector('.lb-next').onclick = () => show(i + 1);
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    document.addEventListener('keydown', (e) => {
+      if (!dlg.open) return;
+      if (e.key === 'ArrowRight') show(i + 1);
+      if (e.key === 'ArrowLeft') show(i - 1);
+    });
+  </script>
+</Base>

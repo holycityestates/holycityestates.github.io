@@ -2,6 +2,7 @@ import imported from '../data/properties.json';
 // Corrections and rewritten copy (src/data/overrides.json) layered over the Grist import:
 // any field set there replaces the imported one; `display: false` hides a listing.
 import overrides from '../data/overrides.json';
+import projectData from '../data/projects.json';
 
 const properties = imported.map((p) => {
   const o = overrides[p.id];
@@ -40,6 +41,21 @@ export const visible = properties.filter((p) => p.display);
 export const active = visible.filter((p) => !p.offMarket);
 export const sold = visible.filter((p) => p.offMarket);
 export const projects = active.filter((p) => p.newProject);
+// A project groups several apartments in one building. On New Projects it shows as one tile with its own
+// page; apartments that aren't part of a project still show on their own. Properties lists every apartment.
+export const projectGroups = projectData
+  .map((g) => {
+    const units = visible.filter((p) => p.project === g.slug).sort((a, b) => a.offMarket - b.offMarket || (a.price || 0) - (b.price || 0));
+    const forSale = units.filter((p) => !p.offMarket);
+    const prices = forSale.map((p) => p.price).filter(Boolean);
+    return { ...g, units, forSale, from: prices.length ? Math.min(...prices) : null };
+  })
+  .filter((g) => g.forSale.length);
+export const projectOf = (p) => projectGroups.find((g) => g.slug === p.project) || null;
+export const projectTiles = [
+  ...projectGroups.map((g) => ({ group: g })),
+  ...projects.filter((p) => !projectOf(p)).map((p) => ({ p })),
+];
 
 const nf = new Intl.NumberFormat('en-US');
 const suffix = (p, lang) => (p.status === 'rent' ? t[lang].perMonth : p.status === 'short-term' ? t[lang].perNight : '');
@@ -99,6 +115,19 @@ export const t = {
     featured: 'Featured Properties',
     featuredSub: 'A curated selection of current listings.',
     projectsTitle: 'New Projects',
+    projUnits: (n) => `${n} ${n === 1 ? 'home' : 'homes'} available`,
+    priceFrom: 'From',
+    projAvailable: 'Available in this project',
+    projAbout: 'About the project',
+    delivery: 'Expected delivery',
+    condition: 'Condition',
+    unitsLabel: 'Available',
+    unitCol: 'Home',
+    viewUnit: 'View',
+    partOf: 'Part of a new project',
+    seeProject: 'See all homes in this project',
+    allProjects: 'All projects',
+    waProject: (g) => `Hi, I'm interested in the ${g.name.en} project on your website.`,
     projectsSub: 'Boutique developments and pre-sale opportunities across Jerusalem.',
     viewAll: 'View all properties',
     mapView: 'Map view',
@@ -150,7 +179,7 @@ export const t = {
     book: 'Book a viewing',
     video: 'Video call tour',
     share: 'Share',
-    waProperty: (p) => `Hi, I'm interested in "${p.title.en}" (No. ${p.id}) on your website.`,
+    waProperty: (p) => `Hi, I'm interested in "${p.title.en}" (No. ${propNo(p.id)}) on your website.`,
     similar: 'You may also like',
     back: 'All properties',
     contactTitle: 'Contact us',
@@ -196,6 +225,19 @@ export const t = {
     featured: 'נכסים נבחרים',
     featuredSub: 'מבחר נכסים עדכניים מתוך המאגר שלנו.',
     projectsTitle: 'פרויקטים חדשים',
+    projUnits: (n) => (n === 1 ? 'דירה אחת זמינה' : `${n} דירות זמינות`),
+    priceFrom: 'החל מ־',
+    projAvailable: 'הדירות בפרויקט',
+    projAbout: 'על הפרויקט',
+    delivery: 'מסירה צפויה',
+    condition: 'מצב',
+    unitsLabel: 'זמינות',
+    unitCol: 'דירה',
+    viewUnit: 'לצפייה',
+    partOf: 'חלק מפרויקט חדש',
+    seeProject: 'לכל הדירות בפרויקט',
+    allProjects: 'לכל הפרויקטים',
+    waProject: (g) => `שלום, אשמח לפרטים על פרויקט ${g.name.he} שראיתי באתר.`,
     projectsSub: 'פרויקטי בוטיק והזדמנויות בשלב המכירה המוקדמת ברחבי ירושלים.',
     viewAll: 'לכל הנכסים',
     mapView: 'תצוגת מפה',
@@ -247,7 +289,7 @@ export const t = {
     book: 'תיאום סיור בנכס',
     video: 'סיור בשיחת וידאו',
     share: 'שיתוף',
-    waProperty: (p) => `שלום, אשמח לפרטים נוספים על הנכס "${p.title.he || p.title.en}" (מס׳ ${p.id}) שראיתי באתר.`,
+    waProperty: (p) => `שלום, אשמח לפרטים נוספים על הנכס "${p.title.he || p.title.en}" (מס׳ ${propNo(p.id)}) שראיתי באתר.`,
     similar: 'נכסים נוספים שעשויים לעניין אותך',
     back: 'לכל הנכסים',
     contactTitle: 'צור קשר',

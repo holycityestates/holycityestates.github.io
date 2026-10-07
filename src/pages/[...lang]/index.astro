@@ -4,7 +4,7 @@ import Services from '../../components/Services.astro';
 import SearchBox from '../../components/SearchBox.astro';
 import Reviews from '../../components/Reviews.astro';
 import PropertyCard from '../../components/PropertyCard.astro';
-import { t, getLang, langPaths, href, L, active, visible, projects, waLink, site, img } from '../../lib/i18n.js';
+import { t, getLang, langPaths, href, L, active, visible, projects, projectTiles, waLink, site, img } from '../../lib/i18n.js';
 
 export const getStaticPaths = langPaths;
 const lang = getLang(Astro.params.lang);
@@ -59,15 +59,19 @@ const uniq = (arr) => [...new Map(arr.map((x) => [x.en, x])).values()];
           <a class="link-arrow" href={href(lang, '/projects/')}>{s.nav.projects}</a>
         </div>
         <div class="projects">
-          {projects.slice(0, 4).map((p, i) => (
-            <a class:list={['project', { big: i === 0 }]} href={href(lang, `/properties/${p.slug}/`)}>
-              {p.cover && <><img class="media-bg" src={img(p.cover, i === 0 ? 1600 : 800)} alt="" aria-hidden="true" loading="lazy" /><img class="media-main" src={img(p.cover, i === 0 ? 1600 : 800)} alt="" loading="lazy" /></>}
-              <div class="project-label">
-                <span class="kicker">{L(p.neighborhood, lang)}</span>
-                <strong>{L(p.title, lang)}</strong>
-              </div>
-            </a>
-          ))}
+          {projectTiles.slice(0, 4).map(({ group: g, p }, i) => {
+            const x = g || p;
+            return (
+              <a class:list={['project', { big: i === 0 }]} href={href(lang, g ? `/projects/${g.slug}/` : `/properties/${p.slug}/`)}>
+                {x.cover && <><img class="media-bg" src={img(x.cover, i === 0 ? 1600 : 800)} alt="" aria-hidden="true" loading="lazy" /><img class="media-main" src={img(x.cover, i === 0 ? 1600 : 800)} alt="" loading="lazy" /></>}
+                <div class="project-label">
+                  <span class="kicker">{L(x.neighborhood, lang)}</span>
+                  <strong>{g ? L(g.name, lang) : L(p.title, lang)}</strong>
+                  {g && <span class="project-sub">{s.projUnits(g.forSale.length)}</span>}
+                </div>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>

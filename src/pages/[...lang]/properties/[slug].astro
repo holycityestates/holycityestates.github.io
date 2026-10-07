@@ -1,7 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import PropertyCard from '../../../components/PropertyCard.astro';
-import { t, getLang, href, L, visible, active, waLink, site, img, propNo } from '../../../lib/i18n.js';
+import { t, getLang, href, L, visible, active, waLink, site, img, propNo, projectOf } from '../../../lib/i18n.js';
 import Price from '../../../components/Price.astro';
 
 export function getStaticPaths() {
@@ -48,6 +48,7 @@ const ld = {
     address: { '@type': 'PostalAddress', streetAddress: p.street.en || undefined, addressLocality: 'Jerusalem', addressCountry: 'IL' },
   },
 };
+const proj = projectOf(p);
 const statusLabel = p.offMarket ? s.offMarket[p.status] : s.status[p.status];
 ---
 <Base lang={lang} title={title} jsonld={ld} description={plain.slice(0, 155)} image={p.cover && (p.cover.startsWith('/') ? `https://holycity-realestate.com${img(p.cover, 1600)}` : p.cover)}>
@@ -78,6 +79,12 @@ const statusLabel = p.offMarket ? s.offMarket[p.status] : s.status[p.status];
 
   <section class="wrap detail-body">
     <div class="detail-main">
+      {proj && (
+        <a class="proj-link" href={href(lang, `/projects/${proj.slug}/`)}>
+          <span><em>{s.partOf}</em><strong>{L(proj.name, lang)}</strong></span>
+          <span class="proj-link-go">{s.seeProject} <b aria-hidden="true">{lang === 'he' ? '←' : '→'}</b></span>
+        </a>
+      )}
       <ul class="facts">
         {facts.map(([k, v, hint]) => <li title={hint}><span>{k}</span><strong>{v}</strong>{hint && <em>{hint}</em>}</li>)}
       </ul>

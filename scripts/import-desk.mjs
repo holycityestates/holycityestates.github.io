@@ -82,9 +82,34 @@ for (const f of files) {
     cover: photos[0] || null,
     gallery: photos,
     video: d.video || null,
+    project: d.project || null,
+    unit: d.unit ? { en: d.unit.en || '', he: d.unit.he || d.unit.en || '' } : null,
     geo: d.geo || geo[id] || null,
   });
 }
+// New-project buildings: one page per project, listing its apartments.
+const projects = [];
+let pfiles = [];
+try { pfiles = (await fs.readdir(path.join(DIR, 'projects'))).filter((f) => f.endsWith('.json')); } catch {}
+for (const f of pfiles) {
+  const d = JSON.parse(await fs.readFile(path.join(DIR, 'projects', f), 'utf8'));
+  if (d.show === false) continue;
+  const photos = (await Promise.all((d.photos || []).map(photoPath))).filter(Boolean);
+  projects.push({
+    slug: d.slug || f.replace(/\.json$/, ''),
+    name: { en: d.name?.en || '', he: d.name?.he || d.name?.en || '' },
+    neighborhood: { en: d.neighborhood || '', he: neighborhoodHe[d.neighborhood] || '' },
+    street: { en: d.street?.en || '', he: d.street?.he || '' },
+    delivery: { en: d.delivery?.en || '', he: d.delivery?.he || '' },
+    condition: { en: d.condition?.en || '', he: d.condition?.he || '' },
+    description: { en: toHtml(d.description?.en), he: toHtml(d.description?.he) },
+    cover: photos[0] || null,
+    gallery: photos,
+    geo: d.geo || null,
+  });
+}
+await fs.writeFile(path.join(ROOT, 'src/data/projects.json'), JSON.stringify(projects, null, 2));
+
 props.sort((a, b) => (b.date || '').localeCompare(a.date || '') || a.id - b.id);
 await fs.writeFile(OUT, JSON.stringify(props, null, 2));
 // The desk now holds the corrections, so nothing is layered on top any more.
@@ -93,5 +118,5 @@ const map = Object.fromEntries(props.filter((p) => p.display).map((p) => [p.id, 
 await fs.writeFile(path.join(ROOT, 'public/property_details.html'), `<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Redirecting</title>
 <script>var m=${JSON.stringify(map)};var q=new URLSearchParams(location.search);var s=m[q.get('id')];location.replace(s?'/properties/'+s+'/':'/properties/');</script></head><body><a href="/properties/">Properties</a></body></html>\n`);
 const missing = props.filter((p) => p.display && !p.geo).map((p) => p.id);
-console.log(`Wrote ${props.length} properties (${props.filter((p) => p.display).length} visible) → src/data/properties.json`);
+console.log(`Wrote ${props.length} properties, ${projects.length} project(s) (${props.filter((p) => p.display).length} visible) → src/data/properties.json`);
 if (missing.length) console.log(`  Not on the map yet (add to data/geocode.json): ${missing.join(', ')}`);
