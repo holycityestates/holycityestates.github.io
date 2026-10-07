@@ -1,0 +1,35 @@
+---
+// "Our Services" band: five gold-ringed icons with a title and a line each (modelled on the live site's section).
+import { t } from '../lib/i18n.js';
+const { lang, tint = false } = Astro.props;
+const s = t[lang];
+const icons = {
+  sale: '<text x="24" y="33.5" text-anchor="middle" font-size="30" font-family="Heebo, Arial, sans-serif" font-weight="400" fill="currentColor" stroke="none">₪</text>',
+  rent: '<path d="M12 18h22l-5-5M36 30H14l5 5"/>',
+  manage: '<path d="M6 24s7-11 18-11 18 11 18 11-7 11-18 11S6 24 6 24z"/><circle cx="24" cy="24" r="5"/>',
+  projects: '<path d="M14 38V10h20v28M10 38h28M19 15h3M26 15h3M19 21h3M26 21h3M19 27h3M26 27h3M22 38v-5h4v5"/>',
+  renewal: '<path d="M9 38h30M13 38V27M20 38V20M27 38V24M34 38V14M12 21l8-7 7 5 9-9M31 10h5v5"/>',
+};
+---
+<section class:list={['section', 'svc-band', { 'section-tint': tint }]}>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker">{s.svcKicker}</p>
+        <h2>{s.svcTitle}</h2>
+        <p class="muted">{s.svcSub}</p>
+      </div>
+    </div>
+    <div class="svc-grid">
+      {s.services.map(([key, title, text]) => (
+        <article class="svc">
+          <span class="svc-ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[key]} />
+          </span>
+          <h3>{title}</h3>
+          <p>{text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

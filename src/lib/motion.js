@@ -25,7 +25,7 @@ if (!reduce) {
   // Whatever comes into view together follows in reading order, 90ms apart,
   // so a row of cards always flows the same way instead of popping at random.
   const targets = [...document.querySelectorAll(
-    '.section-head, .section > .wrap > h2, .page-head h1, .card, .project, .hood, .service, .quote, .duo-card, .about-split > div, .facts, .block, .contact-card, .filters, .map-filters, .cta-inner > *, .detail-head > div > :not(h1), .detail-head .detail-price, .mosaic-item:not(:first-child)'
+    '.section-head, .section > .wrap > h2, .page-head h1, .card, .project, .hood, .service, .svc, .quote, .duo-card, .about-split > div, .facts, .block, .contact-card, .filters, .map-filters, .cta-inner > *, .detail-head > div > :not(h1), .detail-head .detail-price, .mosaic-item:not(:first-child)'
   )].filter((el, i, all) => !all.some((o) => o !== el && o.contains(el)));
   const STEP = 90, MAX = 5;
   const show = (els) => {

@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Services from '../../components/Services.astro';
 import PropertyCard from '../../components/PropertyCard.astro';
 import { t, getLang, langPaths, href, L, active, visible, sold, projects, testimonial, waLink, site, img } from '../../lib/i18n.js';
 
@@ -119,11 +120,6 @@ const hoodOpts = uniq(active.map((p) => p.neighborhood).filter((x) => x.en));
         <p class="kicker">{s.aboutKicker}</p>
         <h2>{s.aboutTitle}</h2>
         <p class="lead-dark">{s.aboutBody}</p>
-        <div class="services">
-          {s.services.map(([h, d]) => (
-            <div class="service"><h3>{h}</h3><p>{d}</p></div>
-          ))}
-        </div>
       </div>
       <blockquote class="quote">
         <p class="kicker">{s.testimonialTitle}</p>
@@ -147,6 +143,8 @@ const hoodOpts = uniq(active.map((p) => p.neighborhood).filter((x) => x.en));
       </div>
     </section>
   )}
+
+  <Services lang={lang} tint />
 
   <section class="duo duo-night">
     <img class="duo-bg" src="/img/night-2000.webp" srcset="/img/night-1000.webp 1000w, /img/night-2000.webp 2000w" sizes="100vw" alt="" loading="lazy" />
