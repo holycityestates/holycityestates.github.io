@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import PropertyCard from '../../components/PropertyCard.astro';
+import SearchBox from '../../components/SearchBox.astro';
 import { t, getLang, langPaths, href, L, active, img, ils, fxDefault } from '../../lib/i18n.js';
 export const getStaticPaths = langPaths;
 const lang = getLang(Astro.params.lang);
@@ -8,7 +9,6 @@ const s = t[lang];
 const list = active.filter((p) => p.geo);
 const uniq = (arr) => [...new Map(arr.filter((x) => x.en).map((x) => [x.en, x])).values()];
 const hoods = uniq(list.map((p) => p.neighborhood)).sort((a, b) => L(a, lang).localeCompare(L(b, lang), lang));
-const types = uniq(list.map((p) => p.type));
 // Short price for map pins: ₪34M / ₪6.45M / ₪8.2K
 const short = (p) => {
   if (!p.price) return lang === 'he' ? 'לפי דרישה' : 'On request';
@@ -30,31 +30,18 @@ const pins = list.map((p) => ({
 }));
 ---
 <Base lang={lang} title={s.nav.map}>
+  <section class="search-band search-band-map">
+    <img src="/img/hero-1200.webp" alt="" />
+    <div class="wrap">
+      <h1>{s.nav.map}</h1>
+      <SearchBox lang={lang} id="map-filters" />
+    </div>
+  </section>
   <section class="map-page">
     <aside class="map-list">
       <div class="map-list-head">
-        <h1>{s.nav.map}</h1>
         <p class="muted count"><span id="map-count">{list.length}</span> {s.results}</p>
       </div>
-      <form class="filters map-filters" id="map-filters">
-        <div class="seg seg-sm" role="radiogroup" aria-label={s.dealType}>
-          {['', 'sale', 'rent', 'short-term'].map((v) => (
-            <label><input type="radio" name="status" value={v} checked={v === ''} /><span>{v ? s.status[v] : s.any}</span></label>
-          ))}
-        </div>
-        <select name="neighborhood" aria-label={s.neighborhood}>
-          <option value="">{s.neighborhood}: {s.any}</option>
-          {hoods.map((n) => <option value={n.en}>{L(n, lang)}</option>)}
-        </select>
-        <select name="type" aria-label={s.type}>
-          <option value="">{s.type}: {s.any}</option>
-          {types.map((n) => <option value={n.en}>{L(n, lang)}</option>)}
-        </select>
-        <select name="beds" aria-label={s.bedrooms}>
-          <option value="">{lang === 'he' ? s.rooms : s.bedrooms}: {s.any}</option>
-          {[1, 2, 3, 4].map((b) => <option value={b}>{lang === 'he' ? b + 1 : b}+</option>)}
-        </select>
-      </form>
       <p class="muted empty" id="map-empty" hidden>{s.noResults}</p>
       <div class="map-cards" id="map-cards">
         {list.map((p) => <div class="map-card-wrap" data-id={p.id} data-status={p.status}><PropertyCard p={p} lang={lang} /></div>)}

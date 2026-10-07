@@ -15,6 +15,9 @@ function baseMap(el, opts = {}) {
   return map;
 }
 
+// A pin's label: the price, or "count · lowest-listed price" when several listings share a building.
+const pinIcon = (items) => L.divIcon({ className: 'pin-wrap', html: `<span class="pin">${esc(items.length > 1 ? `${items.length} · ${items[0].label}` : items[0].label)}</span>`, iconSize: null });
+
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 
 /** Full map page: price pins, grouped when several listings share a building. */
@@ -34,8 +37,7 @@ export function mountMap() {
   const markers = [];
   for (const items of groups.values()) {
     const first = items[0];
-    const label = items.length > 1 ? `${items.length} · ${first.label}` : first.label;
-    const icon = L.divIcon({ className: 'pin-wrap', html: `<span class="pin">${esc(label)}</span>`, iconSize: null });
+    const icon = pinIcon(items);
     const m = L.marker([first.lat, first.lng], { icon, riseOnHover: true }).addTo(map);
     const view = document.documentElement.lang === 'he' ? 'לצפייה בנכס' : 'View property';
     // One listing: a small property card. Several in one building: a compact list.
@@ -73,20 +75,27 @@ export function mountMap() {
     const shown = new Set();
     cards.forEach((c) => {
       const d = c.querySelector('.card').dataset;
+      const [bDeal, bMax] = (f.budget || '').split(':');
       const ok = (!f.status || d.status === f.status) &&
         (!f.neighborhood || d.neighborhood === f.neighborhood) &&
-        (!f.type || d.type === f.type) &&
-        (!f.beds || +d.beds >= +f.beds);
+        (!f.beds || +d.beds >= +f.beds) &&
+        (!f.budget || (d.status === bDeal && +d.price > 0 && +d.price <= +bMax));
       c.hidden = !ok;
       if (ok) shown.add(+c.dataset.id);
     });
     const visible = markers.filter((m) => m.items.some((p) => shown.has(p.id)));
-    markers.forEach((m) => (visible.includes(m) ? m.addTo(map) : m.remove()));
+    markers.forEach((m) => {
+      if (!visible.includes(m)) { m.remove(); return; }
+      // a shared building's pin counts and prices only the listings that match the search
+      const match = m.items.filter((p) => shown.has(p.id));
+      m.setIcon(pinIcon(match)); m.addTo(map);
+    });
     document.getElementById('map-count').textContent = shown.size;
     document.getElementById('map-empty').hidden = shown.size > 0;
     if (visible.length) map.flyToBounds(L.latLngBounds(visible.map((m) => m.getLatLng())).pad(0.2), { maxZoom: 16, duration: 0.6 });
   };
   form?.addEventListener('change', apply);
+  form?.querySelector('[data-search-go]')?.addEventListener('click', () => document.querySelector('.map-page').scrollIntoView({ behavior: 'smooth' }));
 }
 
 /** Small map on a property page: a soft circle for the area, not the exact door. */

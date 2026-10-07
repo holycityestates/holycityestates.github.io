@@ -1,0 +1,63 @@
+---
+// The one search box used across the site: deal type, neighborhood, bedrooms, budget.
+// variant "glass" sits on dark photos (homepage hero); "light" sits on the light pages.
+// With `action` it sends the visitor to Properties; without it, the page filters live (id="filters").
+import { t, L, active } from '../lib/i18n.js';
+const { lang, variant = 'glass', action = null, id = null, values = {} } = Astro.props;
+const s = t[lang];
+const he = lang === 'he';
+const hoods = [...new Map(active.filter((p) => p.neighborhood?.en).map((p) => [p.neighborhood.en, p.neighborhood])).values()];
+const nis = (n) => (n >= 1e6 ? `₪${+(n / 1e6).toFixed(1)}M` : `₪${(n / 1e3).toLocaleString('en-US')}K`);
+const budgets = [
+  ['sale', s.budgetBuy, [2e6, 3e6, 4e6, 6e6, 8e6, 12e6]],
+  ['rent', s.budgetRent, [5000, 7000, 9000, 12000, 15000, 20000]],
+  ['short-term', s.budgetStay, [500, 800, 1200, 2000]],
+];
+---
+<form class:list={['search', 'search-4', { 'search-light': variant === 'light' }]} id={id} action={action} method="get" role="search">
+  <label>
+    <span>{s.dealType}</span>
+    <select name="status">
+      <option value="">{s.any}</option>
+      {['sale', 'rent', 'short-term'].map((v) => <option value={v} selected={values.status === v}>{s.status[v]}</option>)}
+    </select>
+  </label>
+  <label>
+    <span>{s.neighborhood}</span>
+    <select name="neighborhood">
+      <option value="">{s.any}</option>
+      {hoods.map((n) => <option value={n.en}>{L(n, lang)}</option>)}
+    </select>
+  </label>
+  <label>
+    <span>{he ? s.rooms : s.bedrooms}</span>
+    <select name="beds">
+      <option value="">{s.any}</option>
+      {[1, 2, 3, 4].map((b) => <option value={b}>{he ? `${b + 1}+` : `${b}+`}</option>)}
+    </select>
+  </label>
+  <label>
+    <span>{s.budget}</span>
+    <select name="budget">
+      <option value="">{s.any}</option>
+      {budgets.map(([deal, label, steps]) => (
+        <optgroup label={label} data-deal={deal}>
+          {steps.map((n) => <option value={`${deal}:${n}`}>{`${s.upTo} ${nis(n)}`}</option>)}
+        </optgroup>
+      ))}
+    </select>
+  </label>
+  <button class="btn btn-gold" type={action ? 'submit' : 'button'} data-search-go>{s.search}</button>
+</form>
+<script>
+  // Budget follows the deal type: only the matching price ranges are offered.
+  document.querySelectorAll('form.search-4').forEach((f) => {
+    const deal = f.elements.status, budget = f.elements.budget;
+    const sync = () => {
+      const d = deal.value;
+      budget.querySelectorAll('optgroup').forEach((g) => { g.hidden = !!d && g.dataset.deal !== d; g.disabled = g.hidden; });
+      if (budget.value && d && !budget.value.startsWith(d + ':')) budget.value = '';
+    };
+    deal.addEventListener('change', sync); sync();
+  });
+</script>

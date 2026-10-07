@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Services from '../../components/Services.astro';
+import SearchBox from '../../components/SearchBox.astro';
 import Reviews from '../../components/Reviews.astro';
 import PropertyCard from '../../components/PropertyCard.astro';
 import { t, getLang, langPaths, href, L, active, visible, projects, waLink, site, img } from '../../lib/i18n.js';
@@ -21,7 +22,6 @@ const hoods = Object.values(
   }, {})
 ).sort((a, b) => b.count - a.count).slice(0, 6);
 const uniq = (arr) => [...new Map(arr.map((x) => [x.en, x])).values()];
-const hoodOpts = uniq(active.map((p) => p.neighborhood).filter((x) => x.en));
 ---
 <Base lang={lang} transparent>
   <section class="hero">
@@ -31,32 +31,7 @@ const hoodOpts = uniq(active.map((p) => p.neighborhood).filter((x) => x.en));
       <p class="kicker hero-kicker">{s.heroKicker}</p>
       <h1>{s.heroTitle}</h1>
       <p class="lead">{s.heroSub}</p>
-      <form class="search" action={href(lang, '/properties/')} method="get">
-        <label>
-          <span>{s.dealType}</span>
-          <select name="status">
-            <option value="">{s.any}</option>
-            <option value="sale">{s.status.sale}</option>
-            <option value="rent">{s.status.rent}</option>
-            <option value="short-term">{s.status['short-term']}</option>
-          </select>
-        </label>
-        <label>
-          <span>{s.neighborhood}</span>
-          <select name="neighborhood">
-            <option value="">{s.any}</option>
-            {hoodOpts.map((n) => <option value={n.en}>{L(n, lang)}</option>)}
-          </select>
-        </label>
-        <label>
-          <span>{lang === 'he' ? s.rooms : s.bedrooms}</span>
-          <select name="beds">
-            <option value="">{s.any}</option>
-            {[1, 2, 3, 4].map((b) => <option value={b}>{lang === 'he' ? `${b + 1}+` : `${b}+`}</option>)}
-          </select>
-        </label>
-        <button class="btn btn-gold" type="submit">{s.search}</button>
-      </form>
+      <SearchBox lang={lang} action={href(lang, '/properties/')} />
     </div>
   </section>
 
