@@ -680,14 +680,16 @@ html[lang='he'] .sh-word { font-family: 'Frank Ruhl Libre', var(--serif); font-w
 @media (prefers-reduced-motion: reduce) { .sh-word span { animation: none; } }
 
 /* ---------- v17: the logo's skyline drawn under the Properties and Map search ---------- */
-.logo-skyline { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; width: 100%; height: 92px; pointer-events: none; overflow: visible; filter: drop-shadow(0 0 5px rgba(201,169,92,.55)); }
-.logo-skyline path { fill: none; stroke: var(--gold-2); stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
-.search-band:has(.logo-skyline) { padding-bottom: 128px; }
-.search-band-map .logo-skyline { height: 58px; }
-.search-band-map:has(.logo-skyline) { padding-bottom: 82px; }
+.logo-skyline { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; height: 150px; pointer-events: none; -webkit-clip-path: inset(-20px 0 -20px 0); clip-path: inset(-20px 0 -20px 0); transition: clip-path 3.2s cubic-bezier(.45,0,.2,1) .25s, -webkit-clip-path 3.2s cubic-bezier(.45,0,.2,1) .25s; }
+.logo-skyline.ls-hidden { -webkit-clip-path: inset(-20px 100% -20px 0); clip-path: inset(-20px 100% -20px 0); transition: none; }
+.logo-skyline svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 0 5px rgba(201,169,92,.55)); }
+.logo-skyline path { fill: none; stroke: var(--gold-2); stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
+.search-band:has(.logo-skyline) { padding-bottom: 176px; }
+.search-band-map .logo-skyline { height: 96px; }
+.search-band-map:has(.logo-skyline) { padding-bottom: 116px; }
 @media (max-width: 760px) {
-  .logo-skyline { height: 64px; }
-  .search-band:has(.logo-skyline) { padding-bottom: 92px; }
-  .search-band-map .logo-skyline { height: 46px; }
-  .search-band-map:has(.logo-skyline) { padding-bottom: 66px; }
+  .logo-skyline { height: 84px; }
+  .search-band:has(.logo-skyline) { padding-bottom: 104px; }
+  .search-band-map .logo-skyline { height: 60px; }
+  .search-band-map:has(.logo-skyline) { padding-bottom: 76px; }
 }

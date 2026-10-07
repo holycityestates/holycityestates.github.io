@@ -1,31 +1,33 @@
 ---
-// Gold line along the bottom of a dark band: runs in, draws the skyline from the Holy City logo, runs out.
+// Gold line along the bottom of a dark band: runs in from the left, draws the skyline from the
+// Holy City logo, runs out. Revealed with a clip that slides left to right (same in every browser).
 ---
-<svg class="logo-skyline" data-logo-skyline aria-hidden="true"><path /></svg>
+<div class="logo-skyline" data-logo-skyline aria-hidden="true"><svg><path /></svg></div>
 <script>
   // Skyline traced from the logo artwork: 1505 × 410 units, ground at y = 410.
   const LOGO = 'M0 410 L11 410 L11 402 L17 402 L18 400 L18 344 L24 344 L32 337 L38 337 L38 284 L48 284 L50 260 L57 253 L66 260 L68 284 L78 284 L78 338 L87 337 L94 344 L99 344 L99 360 L104 357 L105 201 L107 201 L115 220 L135 247 L169 282 L191 299 L232 324 L254 335 L256 334 L264 340 L267 339 L267 342 L271 341 L275 345 L279 344 L279 347 L283 346 L283 348 L288 349 L289 149 L296 147 L323 148 L323 130 L332 129 L333 126 L337 130 L372 129 L373 167 L407 168 L407 387 L416 388 L416 305 L420 299 L427 295 L428 283 L432 283 L433 295 L438 297 L444 304 L444 401 L451 402 L452 260 L455 260 L456 244 L457 240 L460 239 L461 221 L468 213 L468 203 L471 202 L471 211 L478 219 L480 239 L484 246 L487 265 L488 322 L491 326 L495 323 L495 278 L500 265 L504 268 L505 274 L509 275 L520 262 L520 257 L526 255 L535 244 L538 236 L538 242 L542 248 L548 255 L553 255 L554 262 L563 273 L568 275 L570 265 L573 263 L579 277 L580 322 L582 323 L582 402 L588 401 L588 345 L590 341 L598 337 L598 325 L604 323 L610 314 L621 309 L622 297 L624 298 L625 309 L636 314 L643 323 L648 324 L648 339 L659 343 L660 393 L665 393 L665 112 L676 93 L683 93 L684 91 L694 93 L696 90 L708 90 L709 12 L711 13 L711 90 L728 92 L728 88 L730 88 L731 93 L745 93 L758 109 L759 369 L764 369 L765 331 L791 331 L804 327 L804 305 L808 305 L808 294 L813 281 L828 266 L843 260 L843 247 L845 246 L846 260 L863 267 L878 284 L882 305 L886 306 L886 327 L901 331 L925 331 L925 402 L930 402 L931 317 L939 317 L940 308 L941 211 L949 201 L951 190 L955 186 L961 185 L967 191 L969 202 L971 202 L972 207 L975 207 L977 214 L978 317 L987 317 L987 401 L994 402 L996 309 L1014 304 L1016 297 L1018 297 L1020 304 L1037 308 L1041 344 L1041 392 L1046 392 L1046 159 L1047 141 L1050 140 L1050 117 L1063 117 L1063 111 L1105 111 L1105 135 L1108 136 L1108 151 L1113 149 L1122 151 L1125 209 L1125 393 L1130 393 L1131 211 L1138 203 L1148 151 L1148 162 L1153 175 L1153 185 L1155 186 L1158 205 L1163 208 L1164 212 L1166 402 L1174 402 L1174 262 L1178 267 L1183 267 L1184 272 L1193 262 L1197 272 L1200 272 L1200 268 L1203 267 L1205 262 L1212 271 L1213 267 L1217 267 L1220 260 L1223 259 L1226 269 L1230 270 L1233 265 L1233 269 L1238 272 L1242 268 L1245 277 L1248 274 L1251 280 L1255 279 L1256 274 L1262 275 L1263 282 L1266 282 L1270 273 L1272 278 L1276 279 L1276 282 L1279 281 L1281 274 L1286 274 L1288 280 L1291 279 L1291 274 L1300 274 L1301 276 L1310 274 L1312 284 L1314 284 L1318 274 L1321 274 L1324 280 L1328 279 L1329 274 L1335 274 L1335 279 L1339 280 L1342 273 L1343 275 L1348 273 L1348 267 L1352 272 L1355 272 L1358 264 L1358 267 L1363 270 L1367 264 L1367 259 L1370 259 L1370 264 L1373 267 L1379 269 L1385 262 L1391 271 L1394 267 L1397 267 L1398 262 L1403 267 L1403 272 L1407 272 L1407 267 L1412 267 L1415 262 L1417 263 L1417 403 L1421 402 L1421 327 L1423 315 L1431 301 L1444 294 L1446 289 L1454 285 L1456 288 L1461 289 L1463 294 L1474 299 L1483 311 L1487 327 L1487 402 L1494 402 L1495 410 L1505 410';
   const pts = LOGO.slice(1).split(' L').map((q) => q.split(' ').map(Number));
+  const STRETCH = 1.33;   // a little wider than the logo itself (Aryeh's sweet spot, option B)
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const build = (svg: SVGSVGElement) => {
-    const line = svg.querySelector('path')!;
-    const w = svg.clientWidth, h = svg.clientHeight, ground = h - 2;
-    const ky = (h - 10) / 410, lw = Math.min(w * (w < 700 ? 0.94 : 0.88), 1500), kx = lw / 1505;
-    const ox = (w - lw) / 2, oy = ground - 410 * ky;
+  const build = (box: HTMLElement) => {
+    const svg = box.querySelector('svg')!;
+    const w = box.clientWidth, h = box.clientHeight, ground = h - 2;
+    let lh = h - 8, lw = lh * (1505 / 410) * STRETCH;
+    if (lw > w * 0.94) { lw = w * 0.94; lh = Math.min(lh, lw / ((1505 / 410) * 1.05)); }
+    const kx = lw / 1505, ky = lh / 410, ox = (w - lw) / 2, oy = ground - 410 * ky;
     let d = `M0 ${ground}`;
     for (const [x, y] of pts) d += ` L${(ox + x * kx).toFixed(1)} ${(oy + y * ky).toFixed(1)}`;
     svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
-    line.setAttribute('d', d + ` L${w} ${ground}`);
-    return line;
+    svg.querySelector('path')!.setAttribute('d', d + ` L${w} ${ground}`);
   };
-  document.querySelectorAll<SVGSVGElement>('[data-logo-skyline]').forEach((svg) => {
-    const line = build(svg);
-    const n = line.getTotalLength();
-    line.style.strokeDasharray = String(n);
-    line.style.strokeDashoffset = reduce ? '0' : String(n);
-    line.getBoundingClientRect();
-    if (!reduce) setTimeout(() => { line.style.transition = 'stroke-dashoffset 3.4s cubic-bezier(.45,0,.2,1)'; line.style.strokeDashoffset = '0'; }, 300);
+  document.querySelectorAll<HTMLElement>('[data-logo-skyline]').forEach((box) => {
+    build(box);
+    if (!reduce) {
+      box.classList.add('ls-hidden');
+      box.getBoundingClientRect();
+      requestAnimationFrame(() => requestAnimationFrame(() => box.classList.remove('ls-hidden')));
+    }
     let t = 0;
-    addEventListener('resize', () => { clearTimeout(t); t = window.setTimeout(() => { const l = build(svg); l.style.transition = 'none'; l.style.strokeDasharray = String(l.getTotalLength()); l.style.strokeDashoffset = '0'; }, 120); });
+    addEventListener('resize', () => { clearTimeout(t); t = window.setTimeout(() => build(box), 120); });
   });
 </script>
