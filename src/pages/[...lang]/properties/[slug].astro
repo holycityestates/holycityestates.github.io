@@ -1,7 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import PropertyCard from '../../../components/PropertyCard.astro';
-import { t, getLang, href, L, visible, active, waLink, site, img } from '../../../lib/i18n.js';
+import { t, getLang, href, L, visible, active, waLink, site, img, propNo } from '../../../lib/i18n.js';
 import Price from '../../../components/Price.astro';
 
 export function getStaticPaths() {
@@ -23,7 +23,7 @@ const facts = [
   [s.size, p.sizeSqm && `${p.sizeSqm} ${s.sqm}`],
   [s.balcony, p.balconySqm && `${p.balconySqm} ${s.sqm}`],
   [s.floor, p.floor === 0 ? s.ground : p.floor],
-  [s.propertyNo, p.id],
+  [s.propertyNo, propNo(p.id)],
 ].filter(([, v]) => v !== null && v !== undefined && v !== '');
 const similar = active
   .filter((x) => x.id !== p.id && (x.status === p.status || x.neighborhood.en === p.neighborhood.en))
