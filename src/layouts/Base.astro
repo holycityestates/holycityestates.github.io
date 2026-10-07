@@ -17,14 +17,14 @@ const path = Astro.url.pathname.startsWith('/404') ? '/' : Astro.url.pathname.re
 const otherLang = lang === 'he' ? 'en' : 'he';
 const pageTitle = title ? `${title} | ${L(site.name, lang)}` : L(site.name, lang);
 const nav = [
+  ['/', s.nav.home],
   ['/properties/', s.nav.properties],
   ['/projects/', s.nav.projects],
   ['/map/', s.nav.map],
-  ['/sold/', s.nav.sold],
   ['/about/', s.nav.about],
   ['/contact/', s.nav.contact],
 ];
-const isActive = (p) => path.startsWith(p);
+const isActive = (p) => (p === '/' ? path === '/' : path.startsWith(p));
 ---
 <!doctype html>
 <html lang={lang} dir={s.dir} data-theme={THEME}>
@@ -61,12 +61,6 @@ const isActive = (p) => path.startsWith(p);
             <a href={href(lang, p)} class:list={{ active: isActive(p) }}>{label}</a>
           ))}
           <div class="tools">
-            <label class="fx-pick" title={s.fxLabel}>
-              <span>₪ +</span>
-              <select class="fx-select" aria-label={s.fxLabel}>
-                {currencies.map(([c]) => <option value={c}>{c}</option>)}
-              </select>
-            </label>
             <a href={href(otherLang, path)} class="lang" hreflang={otherLang}>{s.switchLang}</a>
           </div>
           <a href={waLink('')} class="btn btn-gold btn-sm" target="_blank" rel="noopener">{s.whatsapp}</a>
@@ -108,26 +102,57 @@ const isActive = (p) => path.startsWith(p);
     <script>
       import '../lib/motion.js';
     </script>
+    <div class="fx-menu" id="fx-menu" role="listbox" aria-label={s.fxLabel} hidden>
+      <p>{s.fxLabel}</p>
+      {currencies.map(([c, sym]) => <button type="button" role="option" data-cur={c}><b>{sym.trim()}</b>{c}</button>)}
+    </div>
     <script is:inline define:vars={{ currencies, fxFallback }}>
       (() => {
+        // Second currency beside every ₪ price. The choice is made from the small tag next to
+        // any price, applies site-wide, and is remembered for the next visit.
         const sym = Object.fromEntries(currencies);
         let cur = 'USD';
         try { cur = localStorage.getItem('fx') || 'USD'; } catch (e) {}
+        if (!sym[cur]) cur = 'USD';
         let rates = fxFallback;
         const nf = new Intl.NumberFormat('en-US');
+        const menu = document.getElementById('fx-menu');
         const paint = () => {
-          document.querySelectorAll('.fx-select').forEach((s) => (s.value = cur));
+          document.querySelectorAll('.fx-code').forEach((el) => (el.textContent = cur));
+          menu.querySelectorAll('[data-cur]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.cur === cur)));
           document.querySelectorAll('.price[data-ils]').forEach((el) => {
-            const v = +el.dataset.ils; const fx = el.querySelector('.p-fx');
+            const v = +el.dataset.ils; const fx = el.querySelector('.p-fx-val');
             if (!v || !fx || !rates[cur]) return;
             const raw = v * rates[cur];
             const r = el.dataset.kind === 'sale' ? Math.round(raw / 1000) * 1000 : Math.round(raw / 10) * 10;
             fx.textContent = `≈ ${sym[cur]}${nf.format(r)}`;
           });
         };
-        document.querySelectorAll('.fx-select').forEach((s) => s.addEventListener('change', () => {
-          cur = s.value; try { localStorage.setItem('fx', cur); } catch (e) {} paint();
-        }));
+        let opener = null;
+        const close = () => { menu.hidden = true; opener?.setAttribute('aria-expanded', 'false'); opener = null; };
+        const open = (chip) => {
+          opener = chip; chip.setAttribute('aria-expanded', 'true');
+          menu.hidden = false;
+          const r = chip.getBoundingClientRect(), mw = menu.offsetWidth, mh = menu.offsetHeight;
+          const left = Math.min(Math.max(8, document.dir === 'rtl' ? r.right - mw : r.left), innerWidth - mw - 8);
+          const top = r.bottom + 6 + mh > innerHeight ? r.top - mh - 6 : r.bottom + 6;
+          menu.style.left = `${left}px`; menu.style.top = `${top}px`;
+          menu.querySelector('[aria-selected="true"]')?.focus();
+        };
+        // Capture phase: a tag inside a property card must not open the property.
+        document.addEventListener('click', (e) => {
+          const chip = e.target.closest('.fx-chip');
+          if (chip) { e.preventDefault(); e.stopPropagation(); opener === chip ? close() : open(chip); return; }
+          const pick = e.target.closest('#fx-menu [data-cur]');
+          if (pick) { cur = pick.dataset.cur; try { localStorage.setItem('fx', cur); } catch (err) {} paint(); const o = opener; close(); o?.focus(); return; }
+          if (!menu.hidden && !e.target.closest('#fx-menu')) close();
+        }, true);
+        document.addEventListener('keydown', (e) => {
+          const chip = e.target.closest?.('.fx-chip');
+          if (chip && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); e.stopPropagation(); open(chip); }
+          if (e.key === 'Escape' && !menu.hidden) { const o = opener; close(); o?.focus(); }
+        }, true);
+        window.addEventListener('scroll', () => !menu.hidden && close(), { passive: true });
         paint();
         // Live rates, cached for the browsing session
         let cached = null;

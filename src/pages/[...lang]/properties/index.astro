@@ -1,7 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import PropertyCard from '../../../components/PropertyCard.astro';
-import { t, getLang, langPaths, L, visible, href } from '../../../lib/i18n.js';
+import { t, getLang, langPaths, L, visible, href, sold } from '../../../lib/i18n.js';
 
 export const getStaticPaths = langPaths;
 const lang = getLang(Astro.params.lang);
@@ -47,6 +47,20 @@ const list = visible.filter((p) => !p.offMarket);
       <p class="muted empty" id="empty" hidden>{s.noResults}</p>
     </div>
   </section>
+
+  {sold.length > 0 && (
+    <section class="section section-tint" id="sold">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>{s.soldTitle}</h2>
+            <p class="muted">{s.soldSub}</p>
+          </div>
+        </div>
+        <div class="grid">{sold.map((p) => <PropertyCard p={p} lang={lang} />)}</div>
+      </div>
+    </section>
+  )}
 
   <script is:inline>
     (() => {

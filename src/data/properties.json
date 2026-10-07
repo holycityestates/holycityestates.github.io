@@ -12,6 +12,7 @@
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 50,
+    "balconySqm": null,
     "floor": 22,
     "type": {
       "en": "Apartment",
@@ -30,8 +31,8 @@
       "he": "דירת יוקרה חדשה עם חדר שינה אחד ונוף לעיר העתיקה"
     },
     "description": {
-      "en": "**Brand-New 1-Bedroom Apartment for Rent in Savyon View**<br> \n\nLocated in an amazing central location, this gorgeous, fully furnished 1-bedroom apartment offers modern living in one of Jerusalem’s most sought-after high-end buildings. With 47 square meters of space, a cozy living room, and a 5-meter private balcony, this apartment is perfect for those seeking style and convenience.<br>   \n\nThe building features 24/7 security, 4 fast elevators, and exclusive tenant access to two spacious shared balconies on the 10th and 21st floors.<br>   \n\n**Rent:** ₪8,200 month (Agent Fee Applies)<br>   \n\nFor more details or to schedule a viewing, contact Aryeh at **+972-52-678-3539**.",
-      "he": "דירת 1 חדר שינה חדשה להשכרה בנוף סביון \n\nממוקמת במיקום מרכזי מדהים, דירת 1 חדר שינה זו מציעה מגורים מודרניים באחד הבניינים היוקרתיים המבוקשים ביותר בירושלים. עם 47 מטרים רבועים של שטח, סלון נעים ומרפסת פרטית בגודל 5 מטרים, דירה זו מושלמת עבור מי שמחפש סגנון ונוחות.\n\nהבניין כולל אבטחה 24/7, 4 מעליות מהירות וגישה בלעדית לדיירים לשני מרפסות משותפות בקומות 10 ו-21.\n\nשכירות: ₪8,200 לחודש (דמי תיווך יש לשלם בנפרד)\n\nלפרטים נוספים או לתיאום פגישה, ניתן לפנות לאריה ב-+972-52-678-3539."
+      "en": "<p class=\"lead\">A brand-new, fully furnished one-bedroom on the 22nd floor of Savyon View, one of the most sought-after new towers in the City Center, with open views toward the Old City.</p><p>A comfortable living room opens onto a private balcony that also works as a sukkah. The apartment comes furnished, with a parking space.</p><p>The building has 24/7 security and a concierge, four fast elevators including a Shabbat elevator, a gym, and two shared terraces for residents on the 10th and 21st floors.</p><p class=\"note\">Agent's fee applies. Viewings by appointment.</p>",
+      "he": "<p class=\"lead\">דירת 2 חדרים חדשה ומרוהטת קומפלט בקומה ה-22 בסביון ויו, מהמגדלים החדשים והמבוקשים במרכז העיר, עם נוף פתוח לעבר העיר העתיקה.</p><p>סלון נעים שיוצא למרפסת פרטית, המתאימה גם לסוכה. הדירה מושכרת מרוהטת, עם חניה.</p><p>בבניין שמירה וקונסיירז׳ 24/7, ארבע מעליות מהירות כולל מעלית שבת, חדר כושר ושתי מרפסות משותפות לדיירים בקומות 10 ו-21.</p><p class=\"note\">דמי תיווך. ביקור בתיאום מראש.</p>"
     },
     "features": [
       {
@@ -94,9 +95,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.78468,
-      "lng": 35.21771,
-      "approx": false
+      "lng": 35.21771
     }
   },
   {
@@ -112,6 +113,7 @@
     "bedrooms": 3,
     "rooms": 4,
     "sizeSqm": 300,
+    "balconySqm": null,
     "floor": 4,
     "type": {
       "en": "Penthouse",
@@ -130,8 +132,8 @@
       "he": "פנטהאוז חדש בכפר דוד"
     },
     "description": {
-      "en": "Please call for more information",
-      "he": "תתקשרו לפרטים נוספים"
+      "en": "<p class=\"lead\">A 300 m² penthouse in Kfar David, the prestigious compound in Mamilla facing the walls of the Old City.</p><p>Three bedrooms over 300 m², with a private roof terrace and open views. The home is fitted as a smart home and comes with parking and a storage room.</p><p>Kfar David sits steps from Mamilla, the Jaffa Gate and the King David Hotel.</p><p class=\"note\">Shown privately, by appointment only.</p>",
+      "he": "<p class=\"lead\">פנטהאוז של 300 מ״ר בכפר דוד, המתחם היוקרתי בממילא מול חומות העיר העתיקה.</p><p>שלושה חדרי שינה על פני 300 מ״ר, עם מרפסת גג פרטית ונוף פתוח. הדירה מאובזרת כבית חכם, וכוללת חניה ומחסן.</p><p>כפר דוד נמצא במרחק צעדים מממילא, שער יפו ומלון המלך דוד.</p><p class=\"note\">הצגה פרטית בתיאום מראש בלבד.</p>"
     },
     "features": [
       {
@@ -182,9 +184,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.77683,
-      "lng": 35.22462,
-      "approx": false
+      "lng": 35.22462
     }
   },
   {
@@ -200,6 +202,7 @@
     "bedrooms": 3,
     "rooms": 4,
     "sizeSqm": 155,
+    "balconySqm": null,
     "floor": 6,
     "type": {
       "en": "Apartment",
@@ -218,8 +221,8 @@
       "he": "דירת 4 חדרים בבניין חדש למכירה"
     },
     "description": {
-      "en": "Please call for more information",
-      "he": "תתקשרו לפרטים נוספים"
+      "en": "<p class=\"lead\">A new four-room apartment on the 6th floor of a new building on HaNevi'im Street, with open views over the city.</p><p>155 m² with three bedrooms and a sukkah balcony. The apartment comes with parking.</p><p>The building has a Shabbat elevator. HaNevi'im Street runs between the City Center and the Old City, a short walk from both.</p><p class=\"note\">Viewings by appointment.</p>",
+      "he": "<p class=\"lead\">דירת 4 חדרים חדשה בקומה 6 בבניין חדש ברחוב הנביאים, עם נוף פתוח על העיר.</p><p>155 מ״ר, שלושה חדרי שינה ומרפסת סוכה. לדירה צמודה חניה.</p><p>בבניין מעלית שבת. רחוב הנביאים עובר בין מרכז העיר לעיר העתיקה, במרחק הליכה קצר משניהם.</p><p class=\"note\">ביקור בתיאום מראש.</p>"
     },
     "features": [
       {
@@ -257,15 +260,15 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.78373,
-      "lng": 35.22213,
-      "approx": false
+      "lng": 35.22213
     }
   },
   {
     "id": 17,
     "slug": "new-luxury-penthouse-for-rent-17",
-    "display": true,
+    "display": false,
     "offMarket": false,
     "newProject": false,
     "featured": true,
@@ -275,6 +278,7 @@
     "bedrooms": 4,
     "rooms": 5,
     "sizeSqm": 250,
+    "balconySqm": null,
     "floor": 11,
     "type": {
       "en": "Penthouse",
@@ -285,7 +289,7 @@
       "he": "מרכז העיר"
     },
     "street": {
-      "en": "-",
+      "en": "",
       "he": ""
     },
     "title": {
@@ -293,8 +297,8 @@
       "he": "פנטהאוז יוקרה חדש למכירה"
     },
     "description": {
-      "en": "**A rare opportunity to own a luxurious penthouse in the heart of Jerusalem's City Center**<br>. This newly listed, meticulously designed property boasts 4 spacious bedrooms, 3 modern bathrooms, and 160 sqm of elegant living space. The highlight of this home is the expansive 140 sqm open balcony, offering panoramic, breathtaking views of the entire city**Rare Luxury Penthouse in Jerusalem's City Center – A Must-See!<br>\n\nThis is your chance to own a **luxurious penthouse** in one of the most coveted locations in Jerusalem. Nestled in the heart of the City Center, this newly listed property is a true masterpiece, featuring **4 spacious bedrooms**, **3 sleek bathrooms**, and **160 sqm** of sophisticated living space. The standout feature? A **140 sqm open balcony** offering **panoramic, jaw-dropping views** of the entire city — an entertainer's dream or the perfect spot to relax and take in the breathtaking scenery.<br>\n\nWith its **prime location**, stunning design, and **top-tier finishes**, this penthouse is the ultimate blend of **style**, **comfort**, and **convenience**. Priced at ₪10,800,000, this is a rare opportunity for those seeking an exclusive and prestigious home in one of the world’s most iconic cities.<br>\n\n**For more details or to schedule a private tour**, contact Aryeh at **+972-678-3539**. With its prime location and top-tier finishes, this penthouse provides the perfect blend of comfort, style, and convenience. <br>Priced at ₪10,800,000, it’s an exceptional investment for those seeking a unique and prestigious property in one of the world’s most sought-after cities.<br> For more information or to schedule a private viewing, please contact Aryeh at +972-678-3539.",
-      "he": "פנטהאוז יוקרתי נדיר למכירה במרכז העיר ירושלים<br>\n\nהזדמנות חד-פעמית לרכוש פנטהאוז מעוצב בקפידה במיקום הנחשק ביותר בירושלים. דירה זו כוללת 4 חדרי שינה מרווחים, 3 חדרי רחצה מודרניים ו-160 מ\"ר של שטח מגורים אלגנטי. הדובדבן שבקצפת? מרפסת פתוחה בגודל 140 מ\"ר עם נוף עוצר נשימה של כל העיר.<br>\n\nמחיר: 10,800,000 ש\"ח<br>\n\nלפרטים נוספים או לתיאום סיור פרטי, צרו קשר עם אריה בטלפון +972-52-678-3539."
+      "en": "<p>A rare opportunity to own a luxurious penthouse in the heart of Jerusalem's City Center<br>. This newly listed, meticulously designed property boasts 4 spacious bedrooms, 3 modern bathrooms, and 160 sqm of elegant living space. The highlight of this home is the expansive 140 sqm open balcony, offering panoramic, breathtaking views of the entire cityRare Luxury Penthouse in Jerusalem's City Center – A Must-See!</p><p>This is your chance to own a luxurious penthouse in one of the most coveted locations in Jerusalem. Nestled in the heart of the City Center, this newly listed property is a true masterpiece, featuring 4 spacious bedrooms, 3 sleek bathrooms, and 160 sqm of sophisticated living space. The standout feature? A 140 sqm open balcony offering panoramic, jaw-dropping views of the entire city — an entertainer's dream or the perfect spot to relax and take in the breathtaking scenery.</p><p>With its prime location, stunning design, and top-tier finishes, this penthouse is the ultimate blend of style, comfort, and convenience. Priced at ₪10,800,000, this is a rare opportunity for those seeking an exclusive and prestigious home in one of the world’s most iconic cities.</p><p>For more details or to schedule a private tour, contact Aryeh at +972-678-3539. With its prime location and top-tier finishes, this penthouse provides the perfect blend of comfort, style, and convenience. <br>Priced at ₪10,800,000, it’s an exceptional investment for those seeking a unique and prestigious property in one of the world’s most sought-after cities.<br> For more information or to schedule a private viewing, please contact Aryeh at +972-678-3539.</p>",
+      "he": "<p>פנטהאוז יוקרתי נדיר למכירה במרכז העיר ירושלים</p><p>הזדמנות חד-פעמית לרכוש פנטהאוז מעוצב בקפידה במיקום הנחשק ביותר בירושלים. דירה זו כוללת 4 חדרי שינה מרווחים, 3 חדרי רחצה מודרניים ו-160 מ&quot;ר של שטח מגורים אלגנטי. הדובדבן שבקצפת? מרפסת פתוחה בגודל 140 מ&quot;ר עם נוף עוצר נשימה של כל העיר.</p><p>מחיר: 10,800,000 ש&quot;ח</p><p>לפרטים נוספים או לתיאום סיור פרטי, צרו קשר עם אריה בטלפון +972-52-678-3539.</p>"
     },
     "features": [
       {
@@ -348,9 +352,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": true,
       "lat": 31.78197,
-      "lng": 35.21957,
-      "approx": true
+      "lng": 35.21957
     }
   },
   {
@@ -366,14 +370,15 @@
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 85,
+    "balconySqm": null,
     "floor": 4,
     "type": {
       "en": "Apartment",
       "he": "דירה"
     },
     "neighborhood": {
-      "en": "City Center",
-      "he": "מרכז העיר"
+      "en": "Talbiya",
+      "he": "טלביה"
     },
     "street": {
       "en": "Lincoln Street",
@@ -384,8 +389,8 @@
       "he": "דירת 2 חדרי שינה יוקרתית חדשה"
     },
     "description": {
-      "en": "**Luxury 2-Bedroom Apartment for Rent in Talbiya**<br>\n\n📍 Located in Jerusalem’s Talbiya neighborhood, this exquisite apartment boasts private parking and a Shabbat elevator. With 2 spacious bedrooms, 2 bathrooms, and the possibility of furnished interiors, this residence is ideal for those seeking both comfort and elegance in a prestigious neighbourhood.<br>\n\nThe building offers top-notch amenities, ensuring a secure and stylish living experience.<br>\n\nRent: ₪9,500/month + utilities (Agent Fee Applies)<br>\n\n📩 For more details or to schedule a viewing, contact Aryeh at +972-52-678-3539.",
-      "he": "**דירת יוקרה 2 חדרי שינה להשכרה בטלביה**<br>  \n\n📍 ממוקמת בשכונת טלביה היוקרתית בירושלים, דירה מרשימה זו כוללת חניה פרטית ומעלית שבת. עם 2 חדרי שינה מרווחים, 2 חדרי רחצה ואפשרות לריהוט מלא, הדירה מושלמת למי שמחפש נוחות ואלגנטיות בשכונה נחשבת.<br>  \n\nהבניין מציע שירותים ברמה גבוהה, המבטיחים חווית מגורים בטוחה ומסוגננת.<br>  \n\nשכ\"ד: ₪9,500 לחודש + הוצאות (חל עלות דמי תיווך)<br>  \n\n📩 למידע נוסף או לתיאום צפייה, צרו קשר עם אריה בטל׳ +972-52-678-3539."
+      "en": "<p class=\"lead\">A luxury two-bedroom on Lincoln Street in Talbiya, one of Jerusalem's most elegant neighborhoods.</p><p>Two bedrooms and two bathrooms on the 4th floor, with a balcony and open views. It can be rented furnished or unfurnished.</p><p>The building has a Shabbat elevator, and the apartment comes with private parking.</p><p class=\"note\">Utilities not included. Agent's fee applies. Viewings by appointment.</p>",
+      "he": "<p class=\"lead\">דירת 3 חדרים יוקרתית ברחוב לינקולן בטלביה, מהשכונות היוקרתיות בירושלים.</p><p>שני חדרי שינה ושני חדרי רחצה בקומה 4, עם מרפסת ונוף פתוח. אפשרות להשכרה מרוהטת או לא מרוהטת.</p><p>בבניין מעלית שבת, ולדירה חניה פרטית.</p><p class=\"note\">לא כולל חשבונות. דמי תיווך. ביקור בתיאום מראש.</p>"
     },
     "features": [
       {
@@ -423,9 +428,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.77496,
-      "lng": 35.21928,
-      "approx": false
+      "lng": 35.21928
     }
   },
   {
@@ -441,6 +446,7 @@
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 85,
+    "balconySqm": null,
     "floor": 3,
     "type": {
       "en": "New project",
@@ -459,8 +465,8 @@
       "he": "פרויקט חדש בטלביה"
     },
     "description": {
-      "en": "Please call for more information",
-      "he": "תתקשרו לפרטים נוספים"
+      "en": "<p class=\"lead\">A new boutique project in Talbiya, one of Jerusalem's most elegant neighborhoods, now on pre-sale.</p><p>Apartments include three-room homes of around 85 m², on quiet streets close to the German Colony, Emek Refaim and the city center.</p><p>Buying on pre-sale secures the best choice of floors and layouts.</p><p class=\"note\">Floor plans and price list on request.</p>",
+      "he": "<p class=\"lead\">פרויקט בוטיק חדש בטלביה, מהשכונות היוקרתיות בירושלים, כעת בפרה-סייל.</p><p>בפרויקט דירות של 3 חדרים בשטח של כ-85 מ״ר, ברחובות שקטים בקרבת המושבה הגרמנית, עמק רפאים ומרכז העיר.</p><p>רכישה בשלב הפרה-סייל מאפשרת את הבחירה הטובה ביותר של קומות ותכנונים.</p><p class=\"note\">תוכניות ומחירון לפי פנייה.</p>"
     },
     "features": [
       {
@@ -475,9 +481,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": true,
       "lat": 31.77082,
-      "lng": 35.21768,
-      "approx": true
+      "lng": 35.21768
     }
   },
   {
@@ -493,6 +499,7 @@
     "bedrooms": 3,
     "rooms": 4,
     "sizeSqm": 200,
+    "balconySqm": null,
     "floor": 4,
     "type": {
       "en": "Penthouse",
@@ -511,8 +518,8 @@
       "he": "פרויקט חדש ברחביה"
     },
     "description": {
-      "en": "Please call for more information",
-      "he": "תתקשרו לפרטים נוספים"
+      "en": "<p class=\"lead\">A new boutique project in Rehavia, now on pre-sale, including a 200 m² penthouse.</p><p>The penthouse offers four rooms over 200 m² on the top floor, in the heart of one of Jerusalem's most prestigious neighborhoods.</p><p>Rehavia's quiet streets are a short walk from the City Center and Gaza Street.</p><p class=\"note\">Floor plans and price list on request.</p>",
+      "he": "<p class=\"lead\">פרויקט בוטיק חדש ברחביה, כעת בפרה-סייל, כולל פנטהאוז של 200 מ״ר.</p><p>הפנטהאוז כולל 4 חדרים על פני 200 מ״ר בקומה העליונה, בלב אחת השכונות היוקרתיות בירושלים.</p><p>הרחובות השקטים של רחביה נמצאים במרחק הליכה קצר ממרכז העיר ומרחוב עזה.</p><p class=\"note\">תוכניות ומחירון לפי פנייה.</p>"
     },
     "features": [
       {
@@ -527,9 +534,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": true,
       "lat": 31.7748,
-      "lng": 35.21208,
-      "approx": true
+      "lng": 35.21208
     }
   },
   {
@@ -545,6 +552,7 @@
     "bedrooms": null,
     "rooms": null,
     "sizeSqm": 1300,
+    "balconySqm": null,
     "floor": 0,
     "type": {
       "en": "Building",
@@ -563,8 +571,8 @@
       "he": "בניין למכירה להתחדשות עירונית"
     },
     "description": {
-      "en": "Please call for more information",
-      "he": "תתקשרו לפרטים נוספים"
+      "en": "<p class=\"lead\">A whole building in Shaarei Chesed, about 1,300 m², offered for sale as an urban-renewal opportunity.</p><p>Shaarei Chesed is one of the most sought-after small neighborhoods in Jerusalem, between Rehavia and the Knesset, where new supply is rare.</p><p>Suited to developers and investors planning a TAMA or rebuild project.</p><p class=\"note\">Full details shared with qualified buyers on request.</p>",
+      "he": "<p class=\"lead\">בניין שלם בשערי חסד, כ-1,300 מ״ר, למכירה כהזדמנות להתחדשות עירונית.</p><p>שערי חסד היא מהשכונות הקטנות והמבוקשות בירושלים, בין רחביה לכנסת, והיצע חדש בה נדיר.</p><p>מתאים ליזמים ולמשקיעים המתכננים פרויקט תמ״א או הריסה ובנייה.</p><p class=\"note\">פרטים מלאים יימסרו לרוכשים רציניים לפי פנייה.</p>"
     },
     "features": [],
     "cover": "/photos/999253e05d6d",
@@ -574,9 +582,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": true,
       "lat": 31.77819,
-      "lng": 35.21087,
-      "approx": true
+      "lng": 35.21087
     }
   },
   {
@@ -589,13 +597,14 @@
     "date": "2025-01-16",
     "status": "short-term",
     "price": 350,
-    "bedrooms": 1,
-    "rooms": 2,
+    "bedrooms": null,
+    "rooms": 1,
     "sizeSqm": null,
+    "balconySqm": null,
     "floor": 1,
     "type": {
-      "en": "Apartment",
-      "he": "דירה"
+      "en": "Studio Apartment",
+      "he": "דירת סטודיו"
     },
     "neighborhood": {
       "en": "City Center",
@@ -610,8 +619,8 @@
       "he": "דירת יוקרה חדשה מרכז העיר"
     },
     "description": {
-      "en": "This stunning 1-bedroom apartment offers a comfortable and luxurious stay in a fantastic central location. It’s just a short walk to the Old City, Machne Yehuda Market, Rehavia, and Ben Yehuda Street, putting you close to all the best spots in Jerusalem. The apartment features a spacious room, modern amenities, and a warm atmosphere for a relaxing stay. It’s perfect for couples looking to experience the city in style. Enjoy a peaceful retreat while being close to vibrant attractions. A great place to stay during your visit to Jerusalem!",
-      "he": "הדירה המהממת הזו עם חדר שינה אחד מציעה שהות נוחה ויוקרתית במיקום מרכזי מצוין. היא נמצאת במרחק הליכה קצרה מהעיר העתיקה, שוק מחנה יהודה, רחביה ורחוב בן יהודה, קרוב לכל המקומות הכי טובים בירושלים. הדירה כוללת חדר מרווח, מתקנים מודרניים ואווירה חמימה לנופש נעים. היא מושלמת לזוגות שרוצים לחוות את העיר בסטייל. תהנו מהשקט בזמן שאתם קרובים לאטרקציות תוססות. מקום נהדר לשהות בו במהלך הביקור שלכם בירושלים!"
+      "en": "<p class=\"lead\">A newly finished, fully furnished studio on King George Street, in the middle of everything. Ideal for a couple.</p><p>Stylish and comfortable, with air conditioning and a washer-dryer.</p><p>The Old City, Machane Yehuda market, Rehavia and Ben Yehuda Street are all within walking distance.</p><p class=\"note\">Dates, minimum stay and rates on request.</p>",
+      "he": "<p class=\"lead\">דירת סטודיו חדשה ומרוהטת קומפלט ברחוב המלך ג׳ורג׳, בלב העניינים. מושלמת לזוג.</p><p>מעוצבת ונוחה, עם מיזוג ומכונת כביסה ומייבש.</p><p>העיר העתיקה, שוק מחנה יהודה, רחביה ומדרחוב בן יהודה – הכול במרחק הליכה.</p><p class=\"note\">תאריכים, מינימום לילות ומחירים לפי פנייה.</p>"
     },
     "features": [
       {
@@ -642,9 +651,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.77927,
-      "lng": 35.21529,
-      "approx": false
+      "lng": 35.21529
     }
   },
   {
@@ -657,13 +666,14 @@
     "date": "2025-01-16",
     "status": "short-term",
     "price": 350,
-    "bedrooms": 1,
-    "rooms": 2,
+    "bedrooms": null,
+    "rooms": 1,
     "sizeSqm": null,
+    "balconySqm": null,
     "floor": 1,
     "type": {
-      "en": "Apartment",
-      "he": "דירה"
+      "en": "Studio Apartment",
+      "he": "דירת סטודיו"
     },
     "neighborhood": {
       "en": "City Center",
@@ -678,8 +688,8 @@
       "he": "דירת יוקרה חדשה מרכז העיר"
     },
     "description": {
-      "en": "This stunning 1-bedroom apartment offers a comfortable and luxurious stay in a fantastic central location. It’s just a short walk to the Old City, Machne Yehuda Market, Rehavia, and Ben Yehuda Street, putting you close to all the best spots in Jerusalem. The apartment features a spacious room, modern amenities, and a warm atmosphere for a relaxing stay. It’s perfect for couples looking to experience the city in style. Enjoy a peaceful retreat while being close to vibrant attractions. A great place to stay during your visit to Jerusalem!",
-      "he": "הדירה המהממת הזו עם חדר שינה אחד מציעה שהות נוחה ויוקרתית במיקום מרכזי מצוין. היא נמצאת במרחק הליכה קצרה מהעיר העתיקה, שוק מחנה יהודה, רחביה ורחוב בן יהודה, קרוב לכל המקומות הכי טובים בירושלים. הדירה כוללת חדר מרווח, מתקנים מודרניים ואווירה חמימה לנופש נעים. היא מושלמת לזוגות שרוצים לחוות את העיר בסטייל. תהנו מהשקט בזמן שאתם קרובים לאטרקציות תוססות. מקום נהדר לשהות בו במהלך הביקור שלכם בירושלים!"
+      "en": "<p class=\"lead\">A second newly finished, fully furnished studio in the same building on King George Street. Ideal for a couple.</p><p>Stylish and comfortable, with air conditioning and a washer-dryer.</p><p>The Old City, Machane Yehuda market, Rehavia and Ben Yehuda Street are all within walking distance.</p><p class=\"note\">Dates, minimum stay and rates on request.</p>",
+      "he": "<p class=\"lead\">דירת סטודיו נוספת, חדשה ומרוהטת קומפלט, באותו בניין ברחוב המלך ג׳ורג׳. מושלמת לזוג.</p><p>מעוצבת ונוחה, עם מיזוג ומכונת כביסה ומייבש.</p><p>העיר העתיקה, שוק מחנה יהודה, רחביה ומדרחוב בן יהודה – הכול במרחק הליכה.</p><p class=\"note\">תאריכים, מינימום לילות ומחירים לפי פנייה.</p>"
     },
     "features": [
       {
@@ -709,9 +719,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.77927,
-      "lng": 35.21529,
-      "approx": false
+      "lng": 35.21529
     }
   },
   {
@@ -727,6 +737,7 @@
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 75,
+    "balconySqm": null,
     "floor": 2,
     "type": {
       "en": "Apartment",
@@ -745,8 +756,8 @@
       "he": "דירת יוקרה חדשה עם 2 חדרי שינה"
     },
     "description": {
-      "en": "This stylish 2-bedroom apartment is 70 sqm and offers a comfortable, luxurious stay in a fantastic central location. It’s just a short walk to the Old City, Machne Yehuda Market, Rehavia, and Ben Yehuda Street, putting you close to all the best spots in Jerusalem. The apartment features spacious rooms, modern amenities, and a cozy atmosphere, with the added luxury of a bathtub jacuzzi for ultimate relaxation. It’s perfect for couples or small groups looking to experience the city in style. Enjoy a peaceful retreat while being near lively attractions. A great place to stay during your visit to Jerusalem!",
-      "he": "הדירה המהממת הזו עם 2 חדרי שינה בשטח של 70 מ\"ר מציעה שהות נוחה ויוקרתית במיקום מרכזי מצוין. היא נמצאת במרחק הליכה קצרה מהעיר העתיקה, שוק מחנה יהודה, רחביה ורחוב בן יהודה, קרוב לכל המקומות הכי טובים בירושלים. הדירה כוללת חדרים מרווחים, מתקנים מודרניים ואווירה חמימה, עם תוספת של ג'קוזי אמבטיה לנופש מושלם ומרגיע. היא מושלמת לזוגות או קבוצות קטנות שרוצות לחוות את העיר בסטייל. תהנו מהשקט בזמן שאתם קרובים לאטרקציות תוססות. מקום נהדר לשהות בו במהלך הביקור שלכם בירושלים!"
+      "en": "<p class=\"lead\">A stylish two-bedroom on King George Street with a jacuzzi bathtub, for couples and small families.</p><p>Fully furnished, with air conditioning, a washer-dryer and an elevator in the building.</p><p>The Old City, Machane Yehuda market, Rehavia and Ben Yehuda Street are all within walking distance.</p><p class=\"note\">Dates, minimum stay and rates on request.</p>",
+      "he": "<p class=\"lead\">דירת 3 חדרים מעוצבת ברחוב המלך ג׳ורג׳ עם אמבט ג׳קוזי, לזוגות ולמשפחות קטנות.</p><p>מרוהטת קומפלט, עם מיזוג, מכונת כביסה ומייבש ומעלית בבניין.</p><p>העיר העתיקה, שוק מחנה יהודה, רחביה ומדרחוב בן יהודה – הכול במרחק הליכה.</p><p class=\"note\">תאריכים, מינימום לילות ומחירים לפי פנייה.</p>"
     },
     "features": [
       {
@@ -785,9 +796,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.77945,
-      "lng": 35.21591,
-      "approx": false
+      "lng": 35.21591
     }
   },
   {
@@ -803,6 +814,7 @@
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 70,
+    "balconySqm": null,
     "floor": 2,
     "type": {
       "en": "Apartment",
@@ -821,8 +833,8 @@
       "he": "דירת 2 חדרי שינה חדשה"
     },
     "description": {
-      "en": "This stunning 2-bedroom apartment, covering 70 sqm, offers a comfortable and luxurious stay in a fantastic central location. It’s just a short walk to the Old City, Machne Yehuda Market, Rehavia, and Ben Yehuda Street, putting you close to all the best spots in Jerusalem. The apartment features spacious rooms, modern amenities, and a warm atmosphere for a relaxing stay. It’s perfect for couples or small groups looking to experience the city in style. Enjoy a peaceful retreat while being near lively attractions. A great place to stay during your visit to Jerusalem!",
-      "he": "הדירה המהממת הזו עם 2 חדרי שינה בשטח של 70 מ\"ר מציעה שהות נוחה ויוקרתית במיקום מרכזי מצוין. היא נמצאת במרחק הליכה קצרה מהעיר העתיקה, שוק מחנה יהודה, רחביה ורחוב בן יהודה, קרוב לכל המקומות הכי טובים בירושלים. הדירה כוללת חדרים מרווחים, מתקנים מודרניים ואווירה חמימה לנופש נעים. היא מושלמת לזוגות או קבוצות קטנות שרוצות לחוות את העיר בסטייל. תהנו מהשקט בזמן שאתם קרובים לאטרקציות תוססות. מקום נהדר לשהות בו במהלך הביקור שלכם בירושלים!"
+      "en": "<p class=\"lead\">A comfortable two-bedroom of 70 m² on King George Street, for couples and small families.</p><p>Fully furnished, with air conditioning, a washer-dryer and an elevator in the building.</p><p>The Old City, Machane Yehuda market, Rehavia and Ben Yehuda Street are all within walking distance.</p><p class=\"note\">Dates, minimum stay and rates on request.</p>",
+      "he": "<p class=\"lead\">דירת 3 חדרים נוחה של 70 מ״ר ברחוב המלך ג׳ורג׳, לזוגות ולמשפחות קטנות.</p><p>מרוהטת קומפלט, עם מיזוג, מכונת כביסה ומייבש ומעלית בבניין.</p><p>העיר העתיקה, שוק מחנה יהודה, רחביה ומדרחוב בן יהודה – הכול במרחק הליכה.</p><p class=\"note\">תאריכים, מינימום לילות ומחירים לפי פנייה.</p>"
     },
     "features": [
       {
@@ -865,9 +877,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.77966,
-      "lng": 35.21586,
-      "approx": false
+      "lng": 35.21586
     }
   },
   {
@@ -883,6 +895,7 @@
     "bedrooms": 4,
     "rooms": 5,
     "sizeSqm": 140,
+    "balconySqm": null,
     "floor": 0,
     "type": {
       "en": "Apartment",
@@ -901,8 +914,8 @@
       "he": "דירת 4 חדרי שינה חדשה במרכז ירושלים"
     },
     "description": {
-      "en": "New luxury apartment in Central Jerusalem<br>\nThis stylish 4-bedroom apartment is 140 sqm and offers a comfortable, luxurious stay in a great central location. It’s just a short walk to the Old City, Machne Yehuda Market, Rehavia, and Ben Yehuda Street, putting you close to all the best spots in Jerusalem. The apartment features spacious rooms, modern amenities, and a cozy atmosphere for a relaxing stay. It’s perfect for families or groups who want to experience the city in style. Enjoy a peaceful retreat while being near lively attractions. A great place to stay during your visit to Jerusalem!",
-      "he": "דירת 4 חדרי שינה מעוצבת בשטח של 140 מ\"ר, מציעה שהות נוחה ויוקרתית במיקום מרכזי מעולה. היא נמצאת במרחק הליכה קצרה מהעיר העתיקה, שוק מחנה יהודה, רחביה ורחוב בן יהודה, מה שקרוב לכל המקומות הכי טובים בירושלים. הדירה כוללת חדרים מרווחים, מתקנים מודרניים ואווירה חמימה לנופש נעים. מושלמת למשפחות או קבוצות שרוצות לחוות את העיר בסטייל. תהנו מהשקט בזמן שאתם קרובים לאטרקציות תוססות. מקום נהדר לשהות בו במהלך הביקור שלכם בירושלים!"
+      "en": "<p class=\"lead\">A spacious four-bedroom of 140 m² on HaMa'alot Street, made for families and groups.</p><p>Fully furnished, with air conditioning and a washer-dryer, on a street just off King George.</p><p>The Old City, Machane Yehuda market, Rehavia and Ben Yehuda Street are all within walking distance.</p><p class=\"note\">Dates, minimum stay and rates on request.</p>",
+      "he": "<p class=\"lead\">דירת 5 חדרים מרווחת של 140 מ״ר ברחוב המעלות, מותאמת למשפחות ולקבוצות.</p><p>מרוהטת קומפלט, עם מיזוג ומכונת כביסה ומייבש, ברחוב סמוך למלך ג׳ורג׳.</p><p>העיר העתיקה, שוק מחנה יהודה, רחביה ומדרחוב בן יהודה – הכול במרחק הליכה.</p><p class=\"note\">תאריכים, מינימום לילות ומחירים לפי פנייה.</p>"
     },
     "features": [
       {
@@ -942,9 +955,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.77883,
-      "lng": 35.21517,
-      "approx": false
+      "lng": 35.21517
     }
   },
   {
@@ -960,6 +973,7 @@
     "bedrooms": 3,
     "rooms": 4,
     "sizeSqm": 250,
+    "balconySqm": null,
     "floor": 6,
     "type": {
       "en": "Penthouse",
@@ -978,8 +992,8 @@
       "he": "פנטהאוז יוקרתי חדש מרכז העיר"
     },
     "description": {
-      "en": "This luxurious penthouse spans an impressive 250 sqm and offers an exquisite stay in a prime central location. It’s just a short walk to the Old City, Machne Yehuda Market, Rehavia, and Ben Yehuda Street, placing you near all the best attractions in Jerusalem. The penthouse features three spacious bedrooms, modern amenities, and a warm atmosphere for an enjoyable and relaxing experience. Additionally, you can unwind by your private pool, making it perfect for families or groups looking to explore the city in style. Enjoy a tranquil retreat with the luxury of a pool while being close to vibrant cultural hotspots. A superb choice for your visit to Jerusalem!",
-      "he": "הפנטהאוז המפואר הזה משתרע על פני 250 מ\"ר ומציע שהות יוצאת דופן במיקום מרכזי, הוא נמצא במרחק הליכה קצרה מהעיר העתיקה, שוק מחנה יהודה, רחוב רהביה ורחוב בן יהודה, וממקם אתכם קרוב לכל האטרקציות הטובות בירושלים. הפנטהאוז כולל שלושה חדרי שינה מרווחים, מתקנים מודרניים ואווירה חמימה לשהות מהנה ומרגיעה. בנוסף, תוכלו להירגע ליד בריכת השחייה הפרטית שלכם, מה שהופך אותו למושלם עבור משפחות או קבוצות שמעוניינות לחקור את העיר בסטייל. תיהנו מאווירת נחת עם luxurious שלבריכה תוך כדי קרבה לאטרקציות תרבותיות תוססות. בחירה מצוינת לביקור שלכם בירושלים!"
+      "en": "<p class=\"lead\">A 250 m² penthouse on Mordechai Eliash Street with a private rooftop pool and views over the city.</p><p>Three bedrooms, a rooftop terrace with a barbecue area, and the pool for your own use. Fully furnished, with parking and an elevator.</p><p>The Old City, Machane Yehuda market, Rehavia and Ben Yehuda Street are all within walking distance.</p><p class=\"note\">Dates, minimum stay and rates on request.</p>",
+      "he": "<p class=\"lead\">פנטהאוז של 250 מ״ר ברחוב מרדכי אליאש עם בריכה פרטית על הגג ונוף על העיר.</p><p>שלושה חדרי שינה, מרפסת גג עם פינת מנגל, והבריכה לשימושכם בלבד. מרוהט קומפלט, עם חניה ומעלית.</p><p>העיר העתיקה, שוק מחנה יהודה, רחביה ומדרחוב בן יהודה – הכול במרחק הליכה.</p><p class=\"note\">תאריכים, מינימום לילות ומחירים לפי פנייה.</p>"
     },
     "features": [
       {
@@ -1035,9 +1049,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.78237,
-      "lng": 35.21573,
-      "approx": false
+      "lng": 35.21573
     }
   },
   {
@@ -1053,6 +1067,7 @@
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 85,
+    "balconySqm": null,
     "floor": 3,
     "type": {
       "en": "Apartment",
@@ -1071,8 +1086,8 @@
       "he": "דירת 2 חדרי שינה גדולה (שיפוץ יוקרתי)"
     },
     "description": {
-      "en": "**Newly Renovated 2-Bedroom Apartment in Talbiyeh**<br> \n\nLocated on Mapu/King David Street, this beautifully renovated and fully furnished 2-bedroom apartment offers modern luxury in the heart of Jerusalem. Featuring 3 rooms, 2 full bathrooms, a closed balcony, and private parking, this property combines elegance with convenience. The high-end renovation ensures a comfortable and stylish living experience in one of the city’s most desirable neighborhoods.<br>  \n\n**Rent:** ₪8,700/month (Agent Fee Applies)<br>   \n\nFor more details, contact Aryeh at **+972-52-678-3539**.",
-      "he": "דירה חדשה ומשופצת בטלביה<br>\n\nממוקמת ברחוב מאפו/קינג דיוויד, דירה זו כוללת 2 חדרי שינה, 3 חדרים, 2 חדרי רחצה מלאים, מרפסת סגורה וחניה פרטית. השיפוץ היוקרתי מבטיח חוויית מגורים נוחה ואלגנטית באחת השכונות המבוקשות בירושלים.<br>\n\nשכירות: 8,700 ש\"ח לחודש (דמי תיווך חלים)<br>\n\nלפרטים נוספים, צרו קשר עם אריה בטלפון +972-52-678-3539."
+      "en": "<p class=\"lead\">A newly renovated two-bedroom on Mapu Street in Talbiya, steps from King David Street.</p><p>Three rooms with two full bathrooms, a closed balcony and open views, renovated to a high standard and fully furnished.</p><p>The building has an elevator, and the apartment comes with private parking.</p><p class=\"note\">This apartment has been rented. Ask us about similar homes.</p>",
+      "he": "<p class=\"lead\">דירת 3 חדרים משופצת ברחוב מאפו בטלביה, צעדים מרחוב המלך דוד.</p><p>שני חדרי שינה ושני חדרי רחצה, מרפסת סגורה ונוף פתוח, בשיפוץ ברמה גבוהה ומרוהטת קומפלט.</p><p>בבניין מעלית, ולדירה חניה פרטית.</p><p class=\"note\">הדירה הושכרה. פנו אלינו לדירות דומות.</p>"
     },
     "features": [
       {
@@ -1114,9 +1129,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.77273,
-      "lng": 35.22227,
-      "approx": false
+      "lng": 35.22227
     }
   },
   {
@@ -1132,6 +1147,7 @@
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 20,
+    "balconySqm": null,
     "floor": 5,
     "type": {
       "en": "Studio Apartment",
@@ -1150,8 +1166,8 @@
       "he": "סטודיו חדש לגמרי"
     },
     "description": {
-      "en": "**Brand New Luxury Studio for Rent in Jerusalem's City Center**\n\nDiscover the perfect blend of comfort, style, and convenience with this **brand new, fully furnished studio** in the heart of Jerusalem’s **City Center**. Situated in an **amazing location** that’s both vibrant and **quiet**, this studio is ideal for those looking for a peaceful retreat with everything you need right at your doorstep.\n\nEnjoy modern living in a newly built, **luxury space** with all the essentials included – **everything** is covered except for electricity.\n\n**Rent:** ₪4,200/month (includes everything except electricity)  \n**Agent Fee** applies.\n\nFor more details or to schedule a viewing, contact Aryeh at **+972-52-678-3539**.",
-      "he": "סטודיו יוקרתי חדש להשכרה במרכז העיר ירושלים<br>\n\nבואו ליהנות משילוב מושלם של נוחות, סטייל ונוחות בדירת סטודיו חדשה לחלוטין במיקום מעולה במרכז העיר. הדירה כוללת ריהוט מלא ועיצוב יוקרתי, עם כל הציוד הדרוש, פרט לחשמל.<br>\n\nשכירות: 4,200 ש\"ח לחודש (כולל הכל פרט לחשמל) (דמי תיווך חלים)<br>\n\nלפרטים נוספים או לתיאום צפייה, צרו קשר עם אריה בטלפון +972-52-678-3539."
+      "en": "<p class=\"lead\">A brand-new, furnished studio in a new building on Navon Street, by the Machane Yehuda market.</p><p>Compact and well designed, with air conditioning and a storage room. Rent included everything except electricity.</p><p>The building has an elevator with a Shabbat setting.</p><p class=\"note\">This studio has been rented. Ask us about similar homes.</p>",
+      "he": "<p class=\"lead\">סטודיו חדש ומרוהט בבניין חדש ברחוב נבון, צמוד לשוק מחנה יהודה.</p><p>קומפקטי ומתוכנן היטב, עם מיזוג ומחסן. שכר הדירה כלל הכול מלבד חשמל.</p><p>בבניין מעלית שבת.</p><p class=\"note\">הסטודיו הושכר. פנו אלינו לדירות דומות.</p>"
     },
     "features": [
       {
@@ -1191,9 +1207,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.78755,
-      "lng": 35.21185,
-      "approx": false
+      "lng": 35.21185
     }
   },
   {
@@ -1209,6 +1225,7 @@
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 85,
+    "balconySqm": null,
     "floor": 0,
     "type": {
       "en": "Garden Apartment",
@@ -1227,8 +1244,8 @@
       "he": "דירת גן אותנטית חדשה"
     },
     "description": {
-      "en": "Discover this charming garden apartment for rent in the desirable Talbiyah neighborhood on Hess Street<br> \nThis spacious 2.5-room unit features a large private garden, perfect for outdoor relaxation and entertaining. Recently renovated, it boasts a modern kitchen and bathroom, combining comfort with style. With its generous space and unique character, this apartment is a must-see!<br>\n\nAsking Price: 8,900/month.<br> \n\nContact us to schedule a viewing today!",
-      "he": "דירת גן מקסימה להשכרה בטלביה ברחוב הס<br>\n\nדירה מרווחת זו, בעלת 2.5 חדרים, כוללת גינה פרטית גדולה, מושלמת להרפיה ובילויים חיצוניים. הדירה עברה שיפוץ לאחרונה וכוללת מטבח וחדר רחצה מודרניים. עם עיצוב ייחודי ושטח נדיב, זוהי דירה שחובה לראות!<br>\n\nשכירות: 8,900 ש\"ח לחודש<br>\n\nצרו קשר לתיאום צפייה."
+      "en": "<p class=\"lead\">A charming garden apartment on Moshe Hess Street in Talbiya, with a large private garden and its own entrance.</p><p>Two and a half rooms with high ceilings, a renovated kitchen and bathroom, air conditioning and a sukkah space.</p><p>A quiet street in one of Jerusalem's most desirable neighborhoods.</p><p class=\"note\">This apartment has been rented. Ask us about similar homes.</p>",
+      "he": "<p class=\"lead\">דירת גן מקסימה ברחוב משה הס בטלביה, עם גינה פרטית גדולה וכניסה נפרדת.</p><p>2.5 חדרים עם תקרות גבוהות, מטבח וחדר רחצה משופצים, מיזוג ומקום לסוכה.</p><p>רחוב שקט באחת השכונות המבוקשות בירושלים.</p><p class=\"note\">הדירה הושכרה. פנו אלינו לדירות דומות.</p>"
     },
     "features": [
       {
@@ -1268,9 +1285,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.77564,
-      "lng": 35.22081,
-      "approx": false
+      "lng": 35.22081
     }
   },
   {
@@ -1286,6 +1303,7 @@
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 70,
+    "balconySqm": null,
     "floor": 0,
     "type": {
       "en": "Garden",
@@ -1304,8 +1322,8 @@
       "he": "דירת גן חדשה לגמרי עם בריכה פרטית"
     },
     "description": {
-      "en": "A brand new 1-bedroom apartment in the heart of the City Center, featuring top-of-the-line furnishings and luxury amenities. This modern 2-room unit includes a private garden with a heated pool, providing a perfect retreat for relaxation. Enjoy the convenience of private parking and a dedicated storage unit. Don't miss the opportunity to live in this exquisite space!\n\nContact us for more information or to schedule a viewing!",
-      "he": "דירת חדר חדשה לגמרי בלב מרכז העיר<br>\n\nדירה זו כוללת ריהוט יוקרתי ומודרני, עם 2 חדרים ובריכת שחייה מחוממת בגינה פרטית. הדירה מציעה גם חניה פרטית ויחידת אחסון נפרדת. הזדמנות לגור במרחב יוקרתי ונעים!\n\nצרו קשר לפרטים נוספים או לתיאום צפייה."
+      "en": "<p class=\"lead\">A brand-new garden apartment on HaNevi'im Street with a private garden and a heated pool.</p><p>One bedroom with luxury furnishings, step-free access, private parking and a storage room, in a new building with an elevator.</p><p>A short walk to the City Center and the Old City.</p><p class=\"note\">Dates, minimum stay and rates on request.</p>",
+      "he": "<p class=\"lead\">דירת גן חדשה ברחוב הנביאים עם גינה פרטית ובריכה מחוממת.</p><p>חדר שינה עם ריהוט יוקרתי, גישה ללא מדרגות, חניה פרטית ומחסן, בבניין חדש עם מעלית.</p><p>במרחק הליכה קצר ממרכז העיר ומהעיר העתיקה.</p><p class=\"note\">תאריכים, מינימום לילות ומחירים לפי פנייה.</p>"
     },
     "features": [
       {
@@ -1354,9 +1372,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.78373,
-      "lng": 35.22213,
-      "approx": false
+      "lng": 35.22213
     }
   },
   {
@@ -1372,6 +1390,7 @@
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 55,
+    "balconySqm": null,
     "floor": 1,
     "type": {
       "en": "Apartment",
@@ -1390,8 +1409,8 @@
       "he": "דירת חדר חדשה עם חניה פרטית"
     },
     "description": {
-      "en": "**Brand-New 1-Bedroom Apartment with Parking in Jerusalem’s City Center**<br> \n\nDiscover modern living in this stylish and fully furnished 1-bedroom apartment located in a prime location in Jerusalem’s City Center. Featuring a spacious 2-room layout and the convenience of private parking, this property offers the perfect combination of comfort and practicality.<br> \n\n**Rent:** ₪7,000/month + bills<br>\n**Agent Fee** applies.<br>  \n\nFor more details or to schedule a viewing, contact Aryeh at **+972-52-678-3539**.",
-      "he": "דירת חדר חדשה עם חניה במרכז העיר ירושלים<br>\n\nדירה מודרנית ומרוהטת לחלוטין זו מציעה עיצוב חכם עם 2 חדרים מרווחים, כולל חדר שינה אחד, במיקום מרכזי ונוח במרכז העיר ירושלים. הדירה כוללת חניה פרטית לנוחות מירבית.<br>\n\nשכירות: 7,000 ש\"ח לחודש + הוצאות (דמי תיווך חלים)<br>\n\nלפרטים נוספים או לתיאום צפייה, צרו קשר עם אריה בטלפון +972-52-678-3539."
+      "en": "<p class=\"lead\">A brand-new, furnished one-bedroom with private parking, in a new building on HaNevi'im Street.</p><p>Two rooms with a balcony and open views, air conditioning throughout and step-free access.</p><p>The building has an elevator with a Shabbat setting, a short walk from the City Center and the Old City.</p><p class=\"note\">Bills not included. Agent's fee applies. Viewings by appointment.</p>",
+      "he": "<p class=\"lead\">דירת 2 חדרים חדשה ומרוהטת עם חניה פרטית, בבניין חדש ברחוב הנביאים.</p><p>סלון וחדר שינה עם מרפסת ונוף פתוח, מיזוג בכל הדירה וגישה נגישה ללא מדרגות.</p><p>בבניין מעלית שבת, במרחק הליכה קצר ממרכז העיר ומהעיר העתיקה.</p><p class=\"note\">לא כולל חשבונות. דמי תיווך. ביקור בתיאום מראש.</p>"
     },
     "features": [
       {
@@ -1442,9 +1461,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.78373,
-      "lng": 35.22213,
-      "approx": false
+      "lng": 35.22213
     }
   },
   {
@@ -1456,10 +1475,11 @@
     "featured": false,
     "date": "2024-12-18",
     "status": "rent",
-    "price": 6200,
+    "price": 6500,
     "bedrooms": 1,
     "rooms": 2,
-    "sizeSqm": 68,
+    "sizeSqm": 55,
+    "balconySqm": null,
     "floor": 1,
     "type": {
       "en": "Apartment",
@@ -1478,8 +1498,8 @@
       "he": "דירת חדר חדשה במרכז העיר"
     },
     "description": {
-      "en": "**Brand-New 1-Bedroom Apartment for Rent in Jerusalem’s City Center**<br>\n\nThis modern and fully furnished apartment is located in a luxury new building in the heart of Jerusalem’s City Center. With a spacious layout featuring 2 rooms (1 bedroom and a large living room), 2 balconies—including an option for a sukkah balcony—and 55 square meters of living space, it’s the perfect blend of style and practicality. The building also includes an elevator for added convenience.<br> \n\n**Rent:** ₪6,500/month (Agent Fee Applies)<br>  \n\nFor more details, contact Aryeh at **+972-52-678-3539**.",
-      "he": "דירת חדר חדשה בלב מרכז העיר ירושלים<br>\n\nדירה חדשה לחלוטין ומרוהטת בעיצוב יוקרתי בלב מרכז העיר ירושלים. כוללת 2 חדרים (חדר שינה וסלון), 2 מרפסות (כולל אפשרות למרפסת סוכה) ו-55 מ\"ר של שטח מגורים מודרני ונעים.<br>\n\nשכירות: 6,500 ש\"ח לחודש (דמי תיווך חלים)<br>\n\nלפרטים נוספים צרו קשר עם אריה בטלפון +972-52-678-3539."
+      "en": "<p class=\"lead\">A brand-new, furnished one-bedroom in a new luxury building on Histadrut Street, in the heart of the City Center.</p><p>A spacious living room and bedroom with two balconies, one of them suitable for a sukkah.</p><p>The building has an elevator. Ben Yehuda Street and King George are around the corner.</p><p class=\"note\">Agent's fee applies. Viewings by appointment.</p>",
+      "he": "<p class=\"lead\">דירת 2 חדרים חדשה ומרוהטת בבניין יוקרה חדש ברחוב ההסתדרות, בלב מרכז העיר.</p><p>סלון מרווח וחדר שינה עם שתי מרפסות, אחת מהן מתאימה לסוכה.</p><p>בבניין מעלית. מדרחוב בן יהודה ורחוב המלך ג׳ורג׳ ממש מעבר לפינה.</p><p class=\"note\">דמי תיווך. ביקור בתיאום מראש.</p>"
     },
     "features": [
       {
@@ -1512,9 +1532,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.78148,
-      "lng": 35.21703,
-      "approx": false
+      "lng": 35.21703
     }
   },
   {
@@ -1530,6 +1550,7 @@
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 55,
+    "balconySqm": null,
     "floor": 14,
     "type": {
       "en": "Apartment",
@@ -1548,8 +1569,8 @@
       "he": "דירת חדר חדשה בסביון ויו בקומה 14"
     },
     "description": {
-      "en": "**Brand-New 1-Bedroom Apartment for Rent in Savyon View**<br> \n\nLocated in an amazing central location, this gorgeous, fully furnished 1-bedroom apartment offers modern living in one of Jerusalem’s most sought-after high-end buildings. With 47 square meters of space, a cozy living room, and a 5-meter private balcony, this apartment is perfect for those seeking style and convenience.<br>   \n\nThe building features 24/7 security, 4 fast elevators, and exclusive tenant access to two spacious shared balconies on the 10th and 21st floors.<br>   \n\n**Rent:** ₪6,500/month (Agent Fee Applies)<br>   \n\nFor more details or to schedule a viewing, contact Aryeh at **+972-52-678-3539**.",
-      "he": "דירת חדר יוקרתית חדשה להשכרה בסביון ויו<br>\n\nבמיקום מרכזי מעולה, דירת חדר מפוארת זו כוללת ריהוט מלא, 47 מ\"ר של שטח מגורים מעוצב, סלון נעים ומרפסת פרטית בגודל 5 מ\"ר.<br>\n\nבניין סביון ויו מציע אבטחה 24/7, 4 מעליות מהירות ושתי מרפסות משותפות בקומות 10 ו-21.<br>\n\nשכירות: 6,500 ש\"ח לחודש (דמי תיווך חלים)<br>\n\nלפרטים נוספים או לתיאום צפייה, צרו קשר עם אריה בטלפון +972-52-678-3539."
+      "en": "<p class=\"lead\">A brand-new, furnished one-bedroom on the 14th floor of Savyon View, with open city views.</p><p>A comfortable living room opens onto a private balcony, with air conditioning throughout.</p><p>Savyon View has 24/7 security and a concierge, four fast elevators including a Shabbat elevator, and two shared terraces for residents on the 10th and 21st floors.</p><p class=\"note\">Agent's fee applies. Viewings by appointment.</p>",
+      "he": "<p class=\"lead\">דירת 2 חדרים חדשה ומרוהטת בקומה 14 בסביון ויו, עם נוף פתוח על העיר.</p><p>סלון נעים שיוצא למרפסת פרטית, ומיזוג אוויר בכל הדירה.</p><p>בסביון ויו שמירה וקונסיירז׳ 24/7, ארבע מעליות מהירות כולל מעלית שבת ושתי מרפסות משותפות לדיירים בקומות 10 ו-21.</p><p class=\"note\">דמי תיווך. ביקור בתיאום מראש.</p>"
     },
     "features": [
       {
@@ -1597,9 +1618,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.78468,
-      "lng": 35.21771,
-      "approx": false
+      "lng": 35.21771
     }
   },
   {
@@ -1611,10 +1632,11 @@
     "featured": false,
     "date": "2024-12-18",
     "status": "sale",
-    "price": 10800000,
+    "price": 11800000,
     "bedrooms": 4,
     "rooms": 5,
-    "sizeSqm": 250,
+    "sizeSqm": 160,
+    "balconySqm": 140,
     "floor": 11,
     "type": {
       "en": "Penthouse",
@@ -1625,7 +1647,7 @@
       "he": "מרכז העיר"
     },
     "street": {
-      "en": "-",
+      "en": "",
       "he": ""
     },
     "title": {
@@ -1633,8 +1655,8 @@
       "he": "פנטהאוז יוקרה חדש למכירה"
     },
     "description": {
-      "en": "**A rare opportunity to own a luxurious penthouse in the heart of Jerusalem's City Center**<br>. This newly listed, meticulously designed property boasts 4 spacious bedrooms, 3 modern bathrooms, and 160 sqm of elegant living space. The highlight of this home is the expansive 140 sqm open balcony, offering panoramic, breathtaking views of the entire city**Rare Luxury Penthouse in Jerusalem's City Center – A Must-See!<br>\n\nThis is your chance to own a **luxurious penthouse** in one of the most coveted locations in Jerusalem. Nestled in the heart of the City Center, this newly listed property is a true masterpiece, featuring **4 spacious bedrooms**, **3 sleek bathrooms**, and **160 sqm** of sophisticated living space. The standout feature? A **140 sqm open balcony** offering **panoramic, jaw-dropping views** of the entire city — an entertainer's dream or the perfect spot to relax and take in the breathtaking scenery.<br>\n\nWith its **prime location**, stunning design, and **top-tier finishes**, this penthouse is the ultimate blend of **style**, **comfort**, and **convenience**. Priced at ₪10,800,000, this is a rare opportunity for those seeking an exclusive and prestigious home in one of the world’s most iconic cities.<br>\n\n**For more details or to schedule a private tour**, contact Aryeh at **+972-678-3539**. With its prime location and top-tier finishes, this penthouse provides the perfect blend of comfort, style, and convenience. <br>Priced at ₪10,800,000, it’s an exceptional investment for those seeking a unique and prestigious property in one of the world’s most sought-after cities.<br> For more information or to schedule a private viewing, please contact Aryeh at +972-678-3539.",
-      "he": "פנטהאוז יוקרתי נדיר למכירה במרכז העיר ירושלים<br>\n\nהזדמנות חד-פעמית לרכוש פנטהאוז מעוצב בקפידה במיקום הנחשק ביותר בירושלים. דירה זו כוללת 4 חדרי שינה מרווחים, 3 חדרי רחצה מודרניים ו-160 מ\"ר של שטח מגורים אלגנטי. הדובדבן שבקצפת? מרפסת פתוחה בגודל 140 מ\"ר עם נוף עוצר נשימה של כל העיר.<br>\n\nמחיר: 10,800,000 ש\"ח<br>\n\nלפרטים נוספים או לתיאום סיור פרטי, צרו קשר עם אריה בטלפון +972-52-678-3539."
+      "en": "<p class=\"lead\">A penthouse on the 11th floor in the heart of the City Center: 160 m² of living space and a 140 m² sukkah balcony with panoramic views across Jerusalem.</p><p>The apartment has four bedrooms and three bathrooms, finished to a high standard after a full renovation. The balcony is large enough for entertaining and a family sukkah.</p><p>The building has an elevator with a Shabbat setting, and the apartment comes with parking.</p><p class=\"note\">Viewings by appointment.</p>",
+      "he": "<p class=\"lead\">פנטהאוז בקומה ה-11 בלב מרכז העיר: 160 מ״ר בנוי ומרפסת סוכה של 140 מ״ר עם נוף פנורמי על ירושלים.</p><p>בדירה ארבעה חדרי שינה ושלושה חדרי רחצה, בגימור גבוה לאחר שיפוץ מלא. המרפסת גדולה דיה לאירוח ולסוכה משפחתית.</p><p>בבניין מעלית עם מצב שבת, ולדירה צמודה חניה.</p><p class=\"note\">ביקור בתיאום מראש.</p>"
     },
     "features": [
       {
@@ -1688,9 +1710,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": true,
       "lat": 31.78197,
-      "lng": 35.21957,
-      "approx": true
+      "lng": 35.21957
     }
   },
   {
@@ -1703,9 +1725,10 @@
     "date": "2024-12-18",
     "status": "sale",
     "price": 2870000,
-    "bedrooms": 2,
-    "rooms": 3,
-    "sizeSqm": 52,
+    "bedrooms": 1,
+    "rooms": 2,
+    "sizeSqm": 47,
+    "balconySqm": 5,
     "floor": 16,
     "type": {
       "en": "Apartment",
@@ -1724,8 +1747,8 @@
       "he": "דירת חדר יוקרתית חדשה למכירה (מושלמת ל-Airbnb)"
     },
     "description": {
-      "en": "**New Luxury Apartment for Sale in Savyon View – Breathtaking Views Await!**<br>\n\nLooking for modern elegance with stunning views? This newly listed apartment on a **high floor** in the prestigious **Savyon View** building offers just that and more. With **1 spacious bedroom**, a sleek **bathroom**, and **47 sqm** of beautifully designed living space, this apartment is perfect for those seeking comfort and style.<br>\n\nEnjoy **amazing panoramic views** from your windows, and take advantage of the **two large balconies** available to all tenants on the 21st and 10th floors – perfect for relaxing or entertaining.<br>\n\nThe **Savyon View** building is a gem, offering **24/7 security**, **4 high-speed elevators**, and an exceptional level of luxury and convenience. <br>\n\n**Asking Price:** ₪2,870,000<br>\n\nFor more information or to schedule a private viewing, contact us today!",
-      "he": "דירה חדשה למכירה בסביון ויו – נופים עוצרי נשימה מחכים לכם!<br>\n\nממוקמת בקומה גבוהה בבניין היוקרתי סביון ויו, דירה זו כוללת חדר שינה מרווח, חדר רחצה מעוצב ו-47 מ\"ר של שטח מגורים מודרני ומעוצב.\n\nמחיר מבוקש: 2,870,000 ש\"ח<br>\n\nלפרטים נוספים או לתיאום סיור, צרו קשר היום!"
+      "en": "<p class=\"lead\">A brand-new one-bedroom on the 16th floor of Savyon View, with wide views over the city. A strong choice as a pied-à-terre or a short-term rental.</p><p>47 m² with a bright living room, a bedroom and a 5 m² private balcony, in one of the most sought-after new towers in the City Center.</p><p>Savyon View has 24/7 security and a concierge, four fast elevators including a Shabbat elevator, and two shared terraces for residents on the 10th and 21st floors.</p><p class=\"note\">Offered on pre-sale terms. Viewings by appointment.</p>",
+      "he": "<p class=\"lead\">דירת 2 חדרים חדשה בקומה 16 בסביון ויו, עם נוף רחב על העיר. מתאימה כדירת נופש או להשכרה לטווח קצר.</p><p>47 מ״ר עם סלון מואר, חדר שינה ומרפסת פרטית של 5 מ״ר, באחד המגדלים החדשים והמבוקשים במרכז העיר.</p><p>בסביון ויו שמירה וקונסיירז׳ 24/7, ארבע מעליות מהירות כולל מעלית שבת ושתי מרפסות משותפות לדיירים בקומות 10 ו-21.</p><p class=\"note\">מכירה בתנאי פרה-סייל. ביקור בתיאום מראש.</p>"
     },
     "features": [
       {
@@ -1776,9 +1799,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.78468,
-      "lng": 35.21771,
-      "approx": false
+      "lng": 35.21771
     }
   },
   {
@@ -1794,6 +1817,7 @@
     "bedrooms": 5,
     "rooms": 6,
     "sizeSqm": 260,
+    "balconySqm": null,
     "floor": 6,
     "type": {
       "en": "Duplex Penthouse",
@@ -1812,8 +1836,8 @@
       "he": "פנטהאוז דופלקס חדש בפרויקט תמ\"א חדש"
     },
     "description": {
-      "en": "Please call for more information",
-      "he": "תתקשרו לפרטים נוספים"
+      "en": "<p class=\"lead\">A five-bedroom duplex penthouse on the top floors of a new TAMA project on Shmuel HaNagid Street, between the City Center and Rehavia.</p><p>Six rooms over 260 m², with a rooftop terrace, a sukkah balcony and open views. The apartment comes with parking.</p><p>Shmuel HaNagid is a quiet street minutes from King George Street and the Great Synagogue.</p><p class=\"note\">Floor plans and price list on request.</p>",
+      "he": "<p class=\"lead\">פנטהאוז דופלקס של חמישה חדרי שינה בקומות העליונות של פרויקט תמ״א חדש ברחוב שמואל הנגיד, בין מרכז העיר לרחביה.</p><p>6 חדרים על פני 260 מ״ר, עם מרפסת גג, מרפסת סוכה ונוף פתוח. לדירה צמודה חניה.</p><p>שמואל הנגיד הוא רחוב שקט, דקות מרחוב המלך ג׳ורג׳ ומבית הכנסת הגדול.</p><p class=\"note\">תוכניות ומחירון לפי פנייה.</p>"
     },
     "features": [
       {
@@ -1844,9 +1868,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.7789,
-      "lng": 35.21484,
-      "approx": false
+      "lng": 35.21484
     }
   },
   {
@@ -1857,12 +1881,13 @@
     "newProject": false,
     "featured": false,
     "date": "2024-12-18",
-    "status": "rent",
-    "price": 13500,
+    "status": "sale",
+    "price": 6200000,
     "bedrooms": 2,
     "rooms": 3,
-    "sizeSqm": 90,
-    "floor": 20,
+    "sizeSqm": 85,
+    "balconySqm": 12,
+    "floor": 19,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -1880,8 +1905,8 @@
       "he": "דירת יוקרה חדשה עם 2 חדרי שינה בסביון ויו"
     },
     "description": {
-      "en": "Luxury 2-Bedroom Apartment for Rent in Savyon View<br> \n\n📍 Located in Jerusalem’s City Center, this stunning high-floor apartment offers breathtaking views and a sleek, modern design. With 2 spacious bedrooms, 2 bathrooms, and a fully furnished interior, this home is perfect for those seeking comfort and style in a prestigious setting.<br> \n\nThe Savyon View building features 24/7 security, 4 high-speed elevators, and two expansive sukkah balconies for tenants to enjoy on the 10th and 21st floors.<br>  \n\n**Rent:** ₪13,500/month + utilities (Agent Fee Applies)<br> \n\n📩 For more details or to schedule a viewing, contact Aryeh at **+972-52-678-3539**.<br>",
-      "he": "דירת יוקרה עם 2 חדרי שינה להשכרה בסביון ויו<br>\n\n📍 מיקום: במרכז העיר ירושלים, דירה מהממת זו בקומה גבוהה מציעה נוף עוצר נשימה ועיצוב מודרני ואלגנטי. עם 2 חדרי שינה מרווחים, 2 חדרי רחצה, וריהוט מלא, דירה זו מושלמת למי שמחפש נוחות וסטייל בסביבה יוקרתית.<br>\n\nבניין סביון ויו כולל אבטחה 24/7, 4 מעליות מהירות ושתי מרפסות סוכה גדולות בקומות 10 ו-21.<br>\n\nשכירות: 13,500 ש\"ח לחודש + הוצאות (דמי תיווך חלים)<br>\n\n📩 לפרטים נוספים או לתיאום צפייה, צרו קשר עם אריה בטלפון +972-52-678-3539<br>"
+      "en": "<p class=\"lead\">A luxury two-bedroom on the 20th floor of Savyon View, fully furnished, with sweeping views across Jerusalem.</p><p>Two bedrooms and two bathrooms with a modern open living space. The apartment comes with parking and air conditioning throughout.</p><p>Savyon View has 24/7 security and a concierge, four fast elevators including a Shabbat elevator, and two shared terraces for residents on the 10th and 21st floors.</p><p class=\"note\">Agent's fee applies. Viewings by appointment.</p>",
+      "he": "<p class=\"lead\">דירת 3 חדרים יוקרתית בקומה ה-20 בסביון ויו, מרוהטת קומפלט, עם נוף רחב על ירושלים.</p><p>שני חדרי שינה ושני חדרי רחצה עם חלל מגורים פתוח ומודרני. לדירה צמודה חניה ומיזוג בכל החדרים.</p><p>בסביון ויו שמירה וקונסיירז׳ 24/7, ארבע מעליות מהירות כולל מעלית שבת ושתי מרפסות משותפות לדיירים בקומות 10 ו-21.</p><p class=\"note\">דמי תיווך. ביקור בתיאום מראש.</p>"
     },
     "features": [
       {
@@ -1934,9 +1959,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.78468,
-      "lng": 35.21771,
-      "approx": false
+      "lng": 35.21771
     }
   },
   {
@@ -1952,6 +1977,7 @@
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 100,
+    "balconySqm": null,
     "floor": 1,
     "type": {
       "en": "Apartment",
@@ -1970,8 +1996,8 @@
       "he": "דירת 2 חדרי שינה גדולה חדשה במרכז העיר"
     },
     "description": {
-      "en": "Spacious 2-Bedroom Apartment for Rent in Jerusalem’s City Center<br>\n\nThis large and charming apartment offers over 100 square meters of living space, featuring 3.5 rooms, 2 generously sized bedrooms, and 2 full bathrooms. Located on the first floor, it also boasts a 25-meter sukkah balcony, perfect for outdoor relaxation. With its unique character and fully furnished interior, this apartment is ideal for those looking for comfort and style in a prime City Center location.<br>\n**Rent:** ₪11,500/month (Agent Fee Applies)  <br>\n\nFor more details or to schedule a viewing, contact Aryeh at **+972-52-678-3539**.",
-      "he": "דירה מרווחת עם 2 חדרי שינה להשכרה במרכז העיר ירושלים<br>\n\nדירה גדולה ומקסימה זו מציעה מעל 100 מ\"ר של שטח מגורים, עם 3.5 חדרים, 2 חדרי שינה מרווחים ו-2 חדרי רחצה מלאים. ממוקמת בקומה הראשונה, הדירה כוללת גם מרפסת סוכה בגודל 25 מ\"ר, מושלמת להרפיה חיצונית. עם עיצוב ייחודי וריהוט מלא, דירה זו אידיאלית למי שמחפש נוחות וסטייל במיקום פריים במרכז העיר.<br>\n\nשכירות: 11,500 ש\"ח לחודש (דמי תיווך חלים)<br>\n\nלפרטים נוספים או לתיאום צפייה, צרו קשר עם אריה בטלפון +972-52-678-3539"
+      "en": "<p class=\"lead\">A large, characterful two-bedroom of over 100 m² on Ben Sira Street, in the middle of the City Center.</p><p>Three and a half rooms with two bathrooms, high ceilings and a 25 m² sukkah balcony. Renovated and fully furnished.</p><p>Ben Sira is a quiet street next to Mamilla and the Independence Park, minutes from Ben Yehuda and King George.</p><p class=\"note\">Agent's fee applies. Viewings by appointment.</p>",
+      "he": "<p class=\"lead\">דירת 3.5 חדרים גדולה ומיוחדת של יותר מ-100 מ״ר ברחוב בן סירא, בלב מרכז העיר.</p><p>שני חדרי שינה ושני חדרי רחצה, תקרות גבוהות ומרפסת סוכה של 25 מ״ר. משופצת ומרוהטת קומפלט.</p><p>בן סירא הוא רחוב שקט ליד ממילא וגן העצמאות, דקות מבן יהודה ומהמלך ג׳ורג׳.</p><p class=\"note\">דמי תיווך. ביקור בתיאום מראש.</p>"
     },
     "features": [
       {
@@ -2010,9 +2036,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.77866,
-      "lng": 35.22226,
-      "approx": false
+      "lng": 35.22226
     }
   },
   {
@@ -2028,6 +2054,7 @@
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 45,
+    "balconySqm": null,
     "floor": 9,
     "type": {
       "en": "Apartment",
@@ -2046,8 +2073,8 @@
       "he": "דירת חדר חדשה להשכרה בבניין חדש"
     },
     "description": {
-      "en": "**For Rent – Brand New 1-Bedroom Apartment in Machne Yehuda**<br>\n\nLooking for a stylish, fully furnished apartment in one of Jerusalem's most vibrant neighborhoods? This brand-new **1-bedroom apartment** on **Navon Street** in **Machne Yehuda** is the perfect place to call home.<br>\n\nFeaturing **2 rooms** (including 1 spacious bedroom), a modern **bathroom**, and stunning **views**, this apartment offers both comfort and convenience. Located in a **new building**, it’s perfect for anyone seeking a fresh, contemporary space with easy access to the excitement of the Machne Yehuda market and surrounding areas.<br>\n\n**Rent:** ₪5,800/month<br>\n**Agent Fee** applicable.<br>\n\n**For more details or to schedule a viewing**, contact Aryeh at **+972-52-678-3539** or send a DM!",
-      "he": "להשכרה – דירת חדר חדשה בשוק מחנה יהודה<br>\n\nמחפשים דירה מסוגננת ומרוהטת בלב שכונת מחנה יהודה התוססת? דירת חדר זו ברחוב נבון בבניין חדש מציעה נוחות ועיצוב מודרני במרחק נגיעה מהשוק ומהסביבה.<br>\n\nשכירות: 5,800 ש\"ח לחודש (דמי תיווך חלים)<br>\n\nלפרטים נוספים או לתיאום צפייה, צרו קשר עם אריה בטלפון +972-52-678-3539 או שלחו הודעה פרטית!"
+      "en": "<p class=\"lead\">A brand-new one-bedroom on the 9th floor of a new building on Navon Street, by the Machane Yehuda market.</p><p>Two rooms with a modern bathroom, air conditioning and open views over the city.</p><p>Residents enjoy a concierge, a pool, a sauna, a garden and a rooftop terrace. The building is fully accessible.</p><p class=\"note\">Agent's fee applies. Viewings by appointment.</p>",
+      "he": "<p class=\"lead\">דירת 2 חדרים חדשה בקומה 9 בבניין חדש ברחוב נבון, צמוד לשוק מחנה יהודה.</p><p>סלון וחדר שינה עם חדר רחצה מודרני, מיזוג ונוף פתוח על העיר.</p><p>לדיירים קונסיירז׳, בריכה, סאונה, גינה ומרפסת גג. הבניין נגיש.</p><p class=\"note\">דמי תיווך. ביקור בתיאום מראש.</p>"
     },
     "features": [
       {
@@ -2097,9 +2124,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": false,
       "lat": 31.78755,
-      "lng": 35.21185,
-      "approx": false
+      "lng": 35.21185
     }
   },
   {
@@ -2115,6 +2142,7 @@
     "bedrooms": 3,
     "rooms": 4,
     "sizeSqm": 110,
+    "balconySqm": null,
     "floor": 0,
     "type": {
       "en": "New project",
@@ -2133,8 +2161,8 @@
       "he": "פרויקט חדש במרכז העיר"
     },
     "description": {
-      "en": "Please call for more information",
-      "he": "תתקשרו לפרטים נוספים"
+      "en": "<p class=\"lead\">A new boutique project in the City Center, now on pre-sale.</p><p>Apartments include four-room homes of around 110 m², designed for modern family living in the middle of town.</p><p>Buying on pre-sale secures the best choice of floors and layouts.</p><p class=\"note\">Floor plans and price list on request.</p>",
+      "he": "<p class=\"lead\">פרויקט בוטיק חדש במרכז העיר, כעת בפרה-סייל.</p><p>בפרויקט דירות של 4 חדרים בשטח של כ-110 מ״ר, המתוכננות למגורי משפחה מודרניים בלב העיר.</p><p>רכישה בשלב הפרה-סייל מאפשרת את הבחירה הטובה ביותר של קומות ותכנונים.</p><p class=\"note\">תוכניות ומחירון לפי פנייה.</p>"
     },
     "features": [
       {
@@ -2155,9 +2183,9 @@
     ],
     "video": null,
     "geo": {
+      "approx": true,
       "lat": 31.78197,
-      "lng": 35.21957,
-      "approx": true
+      "lng": 35.21957
     }
   }
 ]

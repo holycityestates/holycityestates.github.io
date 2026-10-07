@@ -1,17 +1,9 @@
 ---
-import Base from '../../layouts/Base.astro';
-import PropertyCard from '../../components/PropertyCard.astro';
-import { t, getLang, langPaths, sold } from '../../lib/i18n.js';
+// The Sold page was folded into the bottom of Properties; this keeps old links working.
+import { getLang, langPaths, href } from '../../lib/i18n.js';
 export const getStaticPaths = langPaths;
-const lang = getLang(Astro.params.lang);
-const s = t[lang];
-const KIND = 'sold';
-const heading = KIND === 'projects' ? s.projectsTitle : s.soldTitle;
-const sub = KIND === 'projects' ? s.projectsSub : s.soldSub;
+const to = href(getLang(Astro.params.lang), '/properties/#sold');
 ---
-<Base lang={lang} title={heading}>
-  <section class="page-head"><div class="wrap"><h1>{heading}</h1><p class="muted">{sub}</p></div></section>
-  <section class="section section-tight">
-    <div class="wrap"><div class="grid">{sold.map((p) => <PropertyCard p={p} lang={lang} />)}</div></div>
-  </section>
-</Base>
+<!doctype html>
+<html><head><meta charset="utf-8" /><meta name="robots" content="noindex" /><meta http-equiv="refresh" content={`0; url=${to}`} /><link rel="canonical" href={to} /></head>
+<body><a href={to}>Recently sold &amp; rented</a></body></html>

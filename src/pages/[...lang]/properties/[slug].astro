@@ -21,6 +21,7 @@ const facts = [
   [s.rooms, p.rooms, s.roomsHint],
   [s.bedrooms, p.bedrooms],
   [s.size, p.sizeSqm && `${p.sizeSqm} ${s.sqm}`],
+  [s.balcony, p.balconySqm && `${p.balconySqm} ${s.sqm}`],
   [s.floor, p.floor === 0 ? s.ground : p.floor],
   [s.propertyNo, p.id],
 ].filter(([, v]) => v !== null && v !== undefined && v !== '');

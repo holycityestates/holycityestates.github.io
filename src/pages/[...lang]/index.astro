@@ -141,7 +141,7 @@ const hoodOpts = uniq(active.map((p) => p.neighborhood).filter((x) => x.en));
             <h2>{s.soldTitle}</h2>
             <p class="muted">{s.soldSub}</p>
           </div>
-          <a class="link-arrow" href={href(lang, '/sold/')}>{s.nav.sold}</a>
+          <a class="link-arrow" href={href(lang, '/properties/#sold')}>{s.viewAll}</a>
         </div>
         <div class="grid grid-4">{sold.slice(0, 4).map((p) => <PropertyCard p={p} lang={lang} />)}</div>
       </div>

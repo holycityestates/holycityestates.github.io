@@ -1,8 +1,13 @@
 ---
-import { ils, fxDefault } from '../lib/i18n.js';
+import { ils, fxDefault, t } from '../lib/i18n.js';
 const { p, lang, cls = '' } = Astro.props;
 ---
 <div class:list={['price', cls]} data-ils={p.price || ''} data-kind={p.status}>
   <span class="p-main">{ils(p, lang)}</span>
-  {p.price && <span class="p-fx">{fxDefault(p)}</span>}
+  {p.price && (
+    <span class="p-fx">
+      <span class="p-fx-val">{fxDefault(p)}</span>
+      <span class="fx-chip" role="button" tabindex="0" aria-haspopup="listbox" aria-label={t[lang].fxLabel}><span class="fx-code">USD</span><svg viewBox="0 0 10 6" width="8" height="5" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
+    </span>
+  )}
 </div>

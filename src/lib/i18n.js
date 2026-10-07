@@ -1,4 +1,14 @@
-import properties from '../data/properties.json';
+import imported from '../data/properties.json';
+// Corrections and rewritten copy (src/data/overrides.json) layered over the Grist import:
+// any field set there replaces the imported one; `display: false` hides a listing.
+import overrides from '../data/overrides.json';
+
+const properties = imported.map((p) => {
+  const o = overrides[p.id];
+  if (!o) return p;
+  const { description, why, ...fields } = o;
+  return { ...p, ...fields, description: description ? { en: description.en || p.description.en, he: description.he || p.description.he } : p.description };
+});
 
 export const THEME = process.env.SITE_THEME || 'signature';
 
@@ -42,7 +52,7 @@ export const fxDefault = (p) => {
 // Hebrew readers expect "rooms" (חדרים); English readers expect bedrooms.
 export const sizeLine = (p, lang) =>
   lang === 'he'
-    ? [p.rooms && `${p.rooms} חדרים`, p.sizeSqm && `${p.sizeSqm} מ״ר`].filter(Boolean)
+    ? [p.rooms && (p.rooms === 1 ? 'חדר אחד' : `${p.rooms} חדרים`), p.sizeSqm && `${p.sizeSqm} מ״ר`].filter(Boolean)
     : [p.bedrooms && `${p.bedrooms} ${p.bedrooms > 1 ? 'Bedrooms' : 'Bedroom'}`, p.sizeSqm && `${p.sizeSqm} m²`].filter(Boolean);
 
 export const waLink = (text) => `https://wa.me/${site.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ''}`;
@@ -67,6 +77,7 @@ export const t = {
     roomsHint: 'Israeli count: bedrooms + living room',
     fxLabel: 'Show prices also in',
     size: 'Size',
+    balcony: 'Balcony',
     sqm: 'm²',
     floor: 'Floor',
     ground: 'Ground',
@@ -151,6 +162,7 @@ export const t = {
     roomsHint: 'כולל סלון',
     fxLabel: 'הצגת מחירים גם ב-',
     size: 'שטח',
+    balcony: 'מרפסת',
     sqm: 'מ״ר',
     floor: 'קומה',
     ground: 'קרקע',
