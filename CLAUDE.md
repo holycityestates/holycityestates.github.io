@@ -52,6 +52,8 @@ Astro static site (EN + HE/RTL), "Signature" design: dark cinematic hero + glass
 
 - Property numbers are DISPLAYED with a "300" prefix (`propNo(id)` in i18n.js and the desk: #16 → 30016, #2 → 3002), per Aryeh 2026-10-08. Stored ids, slugs and URLs are unchanged.
 
+- "Our Services" band (`src/components/Services.astro`, strings `svcKicker/svcTitle/svcSub/services` in i18n.js): 5 gold-icon cards modelled on the live site (Sales, Rentals, Management, New Projects, Urban Renewal), on the homepage above the night band and at the bottom of About; replaced the old 3-item list in the about blocks. Phones: compact rows.
+
 ## Holy City Desk = the website back end (since 2026-10-08) — listings are edited HERE, not in Grist
 - Artifact: https://claude.ai/artifact/H1YNsibWYML7FPVQQpxUR7 — source `../holy-city-desk/index.html` (term lists from glossary.js are inlined as `S.vocab` — a fetch of vocab.json failed in the live desk and blanked the type field; keep them inline — `photos/<hash>-800.webp` copies of existing site photos). Capabilities db + assets. Aryeh asked for "not even a CRM, just a back end"; the old CRM collections were emptied.
 - db: `properties/<id>` = one doc per listing {id, slug, show, deal(sale|rent|short-term), state(available|sold|rented), featured, newProject, title{en,he}, price, rooms, bedrooms, sizeSqm, balconySqm, floor, type, neighborhood (English; Hebrew from glossary or neighborhoodHe), street{en,he}, features[en], description{en,he}{lead,body,note}, photos[{src:"photos/<hash>"}|{asset:"<id>"}], geo, date, updatedAt}. `meta/publish` {lastPublishedAt, requestedAt, removed[]}.
