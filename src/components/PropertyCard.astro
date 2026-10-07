@@ -4,6 +4,9 @@ import Price from './Price.astro';
 const { p, lang, lux = true } = Astro.props;   // lux: tall photo card with details over the photo
 const s = t[lang];
 const shots = (p.gallery || []).slice(0, 8).map((g) => img(g, 800));
+// "New" for two weeks after listing; "Price reduced" when the back end has a higher previous price.
+const isNew = !p.offMarket && p.date && (Date.now() - new Date(p.date).getTime()) < 14 * 864e5;
+const reduced = !p.offMarket && p.prevPrice && p.price && p.prevPrice > p.price;
 const chip = p.offMarket ? s.offMarket[p.status] : p.newProject ? s.newProject : s.status[p.status];
 ---
 <a
@@ -27,6 +30,8 @@ const chip = p.offMarket ? s.offMarket[p.status] : p.newProject ? s.newProject :
       </>
     )}
     {lux && <span class="lux-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" /></svg></span>}
+    {isNew && <span class="ribbon-new">{s.tools.isNew}</span>}
+    {reduced && <span class="badge-drop">{s.tools.reduced}</span>}
     <span class:list={['chip', p.offMarket ? 'chip-dark' : 'chip-light']}>{chip}</span>
   </div>
   <div class="card-body">
@@ -37,7 +42,7 @@ const chip = p.offMarket ? s.offMarket[p.status] : p.newProject ? s.newProject :
       {p.type.en && <span>{L(p.type, lang)}</span>}
     </div>
     {!p.offMarket && (
-      <Price p={p} lang={lang} cls="card-price" />
+      <Price p={p} lang={lang} cls="card-price" was={reduced ? p.prevPrice : null} />
     )}
   </div>
 </a>

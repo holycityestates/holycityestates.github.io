@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "topic": { "en": "Planning", "he": "תכנון" },
+      "title": { "en": "Jerusalem changes how construction plans get approved", "he": "ירושלים משנה את אופן אישור תוכניות הבנייה" },
+      "text": { "en": "From 2026 the city attaches a pre-planning agreement to every plan, so developers know their public obligations before they submit.", "he": "מ־2026 העירייה מצרפת הסכם טרום־תכנון לכל תוכנית, כך שהיזמים יודעים מראש מה נדרש מהם." },
+      "source": "The Jerusalem Post",
+      "url": "https://www.jpost.com/business-and-innovation/real-estate/article-883089",
+      "lang": "en"
+    },
+    {
+      "topic": { "en": "Market", "he": "שוק" },
+      "title": { "en": "Agents expect a housing-market reset in 2026", "he": "מתווכים צופים התאוששות בשוק הדיור ב־2026" },
+      "text": { "en": "After the wartime slowdown, agents describe buyers returning and a more balanced market.", "he": "אחרי ההאטה בזמן המלחמה, מתווכים מתארים חזרה של קונים ושוק מאוזן יותר." },
+      "source": "The Times of Israel",
+      "url": "https://www.timesofisrael.com/after-wartime-slump-israels-housing-market-is-ready-for-a-reset-in-2026-agents-say/",
+      "lang": "en"
+    },
+    {
+      "topic": { "en": "Mortgages", "he": "משכנתאות" },
+      "title": { "en": "Bank of Israel cuts the interest rate again", "he": "בנק ישראל הוריד שוב את הריבית" },
+      "text": { "en": "The rate is down to 3.25% and prime to 4.75%, the fourth cut this year, which lowers prime-track mortgage payments.", "he": "הריבית ירדה ל־3.25% והפריים ל־4.75%, ההורדה הרביעית השנה, וההחזר במסלול הפריים קטן." },
+      "source": "Globes",
+      "url": "https://en.globes.co.il/en/article-1001547993",
+      "lang": "en"
+    }
+  ],
+  "ticker": {
+    "en": ["Record year for building permits in Jerusalem", "Prime rate now 4.75%", "Pre-planning agreements now required for every plan", "Light-rail Green Line works continue across the city"],
+    "he": ["שנת שיא בהיתרי בנייה בירושלים", "הפריים עומד כעת על 4.75%", "הסכם טרום־תכנון נדרש כעת לכל תוכנית", "עבודות הקו הירוק של הרכבת הקלה נמשכות ברחבי העיר"]
+  }
+}

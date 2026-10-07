@@ -1,0 +1,60 @@
+---
+// Homepage: Jerusalem market band — latest news (src/data/news.json) and real price per m² by neighborhood (deals.json).
+import news from '../data/news.json';
+import deals from '../data/deals.json';
+import { t, L } from '../lib/i18n.js';
+const { lang } = Astro.props;
+const T = t[lang].tools;
+const he = lang === 'he';
+const areas = (deals.areas || []).slice(0, 9);
+const max = Math.max(...areas.map((a) => a.ppm), 1);
+const total = areas.reduce((n, a) => n + a.count, 0);
+const nf = new Intl.NumberFormat('en-US');
+const ticker = news.ticker?.[lang] || [];
+---
+<section class="section market">
+  <div class="wrap">
+    <div class="section-head"><div><h2>{T.marketTitle}</h2><p class="muted">{T.marketSub}</p></div></div>
+    <div class="mk-grid">
+      <div class="mk-news">
+        <h3 class="mk-h">{T.newsTitle}</h3>
+        {news.items.map((n) => (
+          <a class="nc" href={n.url} target="_blank" rel="noopener" hreflang={n.lang}>
+            <span class="nc-k">{L(n.topic, lang)}</span>
+            <strong>{L(n.title, lang)}</strong>
+            <span class="nc-t">{L(n.text, lang)}</span>
+            <span class="nc-f"><b>{n.source}</b>{he && n.lang === 'en' && <em> (באנגלית)</em>}<span aria-hidden="true">{he ? '←' : '→'}</span></span>
+          </a>
+        ))}
+      </div>
+      {areas.length > 0 && (
+        <div class="mk-ppm" data-ppm>
+          <h3 class="mk-h">{T.ppmTitle}</h3>
+          <div class="ppm">
+            {areas.map((a, i) => (
+              <div class="ppm-row" style={`--w:${(a.ppm / max) * 100}%;--i:${i}`}>
+                <span>{he ? a.he : a.en}</span>
+                <span class="ppm-bar"><i></i></span>
+                <b>₪{nf.format(a.ppm)}</b>
+              </div>
+            ))}
+          </div>
+          <p class="muted small">{T.ppmSub(nf.format(total))}</p>
+        </div>
+      )}
+    </div>
+  </div>
+  {ticker.length > 0 && (
+    <div class="ticker" aria-hidden="true"><b>{he ? 'ירושלים' : 'JERUSALEM'}</b><div class="tk-run"><div>{[...ticker, ...ticker].map((x) => <span>{x}</span>)}</div></div></div>
+  )}
+</section>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-ppm]').forEach((el) => {
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { el.classList.add('in'); io.disconnect(); } }, { threshold: 0.25 });
+    io.observe(el);
+    const check = () => { if (el.getBoundingClientRect().top < innerHeight * 0.9) { el.classList.add('in'); io.disconnect(); removeEventListener('scroll', check); } };
+    addEventListener('scroll', check, { passive: true });
+    setTimeout(check, 400);
+    setTimeout(() => el.classList.add('in'), 8000);
+  });
+</script>

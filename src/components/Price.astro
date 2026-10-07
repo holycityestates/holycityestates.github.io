@@ -1,8 +1,10 @@
 ---
 import { ils, fxDefault, t } from '../lib/i18n.js';
-const { p, lang, cls = '' } = Astro.props;
+const { p, lang, cls = '', was = null } = Astro.props;
+const nfw = new Intl.NumberFormat('en-US');
 ---
 <div class:list={['price', cls]} data-ils={p.price || ''} data-kind={p.status}>
+  {was && <s class="p-was" aria-label={`${t[lang].tools.was} ₪${nfw.format(was)}`}>₪{nfw.format(was)}</s>}
   <span class="p-main">{cls.includes('price-from') && <small class="p-from">{t[lang].priceFrom} </small>}{ils(p, lang)}</span>
   {p.price && (
     <span class="p-fx">

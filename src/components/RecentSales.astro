@@ -1,0 +1,52 @@
+---
+// Sale listings: real recent apartment sales nearby (Israel Tax Authority via GovMap, see scripts/fetch-deals.mjs)
+// and the typical price per m² in the neighborhood.
+import deals from '../data/deals.json';
+import { t } from '../lib/i18n.js';
+const { p, lang } = Astro.props;
+const T = t[lang].tools;
+const he = lang === 'he';
+const data = deals.listings?.[p.id];
+const rows = (data?.deals || []).slice(0, 6);
+const area = deals.areas?.find((a) => a.key === data?.hood);
+const nf = new Intl.NumberFormat('en-US');
+const ILS = (v) => `₪${nf.format(Math.round(v))}`;
+const month = new Intl.DateTimeFormat(he ? 'he-IL' : 'en-GB', { month: 'short', year: 'numeric' });
+const updated = new Intl.DateTimeFormat(he ? 'he-IL' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(deals.updated));
+---
+{p.status === 'sale' && !p.offMarket && rows.length >= 3 && (
+  <div class="block sales-block" data-sales>
+    <h2>{T.salesTitle}</h2>
+    <p class="muted small">{T.salesSub(updated)}</p>
+    <div class="sales-wrap">
+      <table class="sales">
+        <thead><tr><th>{T.cDate}</th><th class="r">{T.cRooms}</th><th class="r">{T.cSize}</th><th class="r">{T.cFloor}</th><th class="r">{T.cPrice}</th><th class="r">{T.cPpm}</th></tr></thead>
+        <tbody>
+          {rows.map((d, i) => (
+            <tr style={`--i:${i}`}>
+              <td>{month.format(new Date(d.date))}{d.street && <span class="sales-st">{he ? d.street.he : d.street.en || d.street.he}</span>}</td>
+              <td class="r">{d.rooms ?? '—'}</td>
+              <td class="r">{d.m2}</td>
+              <td class="r">{d.floor === 0 ? T.ground : d.floor ?? '—'}</td>
+              <td class="r">{ILS(d.price)}</td>
+              <td class="r">{ILS(d.price / d.m2)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    {area && <p class="sales-hood">{T.hoodMedian(he ? area.he : area.en, ILS(area.ppm), area.count)}</p>}
+  </div>
+)}
+<script>
+  document.querySelectorAll<HTMLElement>('[data-sales]').forEach((el) => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return el.classList.add('in');
+    el.classList.add('sales-ready');
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { el.classList.add('in'); io.disconnect(); } }, { threshold: 0.2 });
+    io.observe(el);
+    const check = () => { if (el.getBoundingClientRect().top < innerHeight * 0.9) { el.classList.add('in'); io.disconnect(); removeEventListener('scroll', check); } };
+    addEventListener('scroll', check, { passive: true });
+    setTimeout(check, 400);
+    setTimeout(() => el.classList.add('in'), 6000);
+  });
+</script>

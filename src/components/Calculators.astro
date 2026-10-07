@@ -1,0 +1,182 @@
+---
+// Sale listings: mortgage, purchase-tax and (quietly, as a third tab) investor-return estimates,
+// pre-filled with this home's price. Bank of Israel financing limits and 2026 purchase-tax brackets.
+import { t, fxFallback, currencies } from '../lib/i18n.js';
+const { p, lang } = Astro.props;
+const T = t[lang].tools;
+const nf = new Intl.NumberFormat('en-US');
+const uid = `calc-${p.id}`;
+---
+{p.price && p.status === 'sale' && (
+  <div class="block calc-block" data-calc data-price={p.price} data-lang={lang} data-fx={JSON.stringify(fxFallback)} data-syms={JSON.stringify(Object.fromEntries(currencies))}>
+    <h2>{T.calcTitle}</h2>
+    <p class="muted calc-sub">{T.calcSub}</p>
+    <div class="calc-tabs" role="tablist">
+      <button type="button" role="tab" id={`${uid}-t1`} aria-controls={`${uid}-p1`} aria-selected="true">{T.tabMortgage}</button>
+      <button type="button" role="tab" id={`${uid}-t2`} aria-controls={`${uid}-p2`} aria-selected="false" tabindex="-1">{T.tabTax}</button>
+      <button type="button" role="tab" id={`${uid}-t3`} aria-controls={`${uid}-p3`} aria-selected="false" tabindex="-1">{T.tabYield}</button>
+    </div>
+
+    <!-- Mortgage -->
+    <div class="calc-panel" role="tabpanel" id={`${uid}-p1`} aria-labelledby={`${uid}-t1`} data-k="mort">
+      <form onsubmit="return false">
+        <div class="cf"><label for={`${uid}-mp`}>{T.price}</label><div class="cmoney"><span>₪</span><input id={`${uid}-mp`} data-f="price" inputmode="numeric" value={nf.format(p.price)} /></div></div>
+        <div class="cf"><span class="cl">{T.buyer}</span><div class="cseg">
+          <label><input type="radio" name={`${uid}-who`} value="75" checked /><span>{T.first}</span></label>
+          <label><input type="radio" name={`${uid}-who`} value="70" /><span>{T.replace}</span></label>
+          <label><input type="radio" name={`${uid}-who`} value="50" /><span>{T.invest}</span></label>
+          <label><input type="radio" name={`${uid}-who`} value="50" /><span>{T.foreign}</span></label>
+        </div></div>
+        <div class="cf"><div class="crow"><label for={`${uid}-md`}>{T.down}</label><output data-o="down"></output></div><input type="range" id={`${uid}-md`} data-f="down" min="25" max="90" step="1" value="30" /><small class="cmin" data-o="min"></small></div>
+        <div class="cf"><div class="crow"><label for={`${uid}-my`}>{T.years}</label><output data-o="years"></output></div><input type="range" id={`${uid}-my`} data-f="years" min="5" max="30" step="1" value="25" /></div>
+        <div class="cf"><div class="crow"><label for={`${uid}-mr`}>{T.rate}</label><output data-o="rate"></output></div><input type="range" id={`${uid}-mr`} data-f="rate" min="2" max="7" step="0.05" value="4.6" /></div>
+      </form>
+      <div class="cres">
+        <small>{T.monthly}</small>
+        <div class="cbig"><span data-o="pay">—</span><em>{T.perMonth}</em></div>
+        <div class="cfx" data-o="payfx"></div>
+        <div class="cstack" aria-hidden="true"><i data-o="s1"></i><i data-o="s2"></i></div>
+        <div class="clegend"><span class="l1">{T.loanL}</span><span class="l2">{T.interestL}</span></div>
+        <dl class="ckv"><div><dt>{T.cash}</dt><dd data-o="cash"></dd></div><div><dt>{T.loan}</dt><dd data-o="loan"></dd></div><div><dt>{T.interest}</dt><dd data-o="int"></dd></div></dl>
+        <p class="cnote">{T.mortNote}</p>
+      </div>
+    </div>
+
+    <!-- Purchase tax -->
+    <div class="calc-panel" role="tabpanel" id={`${uid}-p2`} aria-labelledby={`${uid}-t2`} data-k="tax" hidden>
+      <form onsubmit="return false">
+        <div class="cf"><label for={`${uid}-tp`}>{T.price}</label><div class="cmoney"><span>₪</span><input id={`${uid}-tp`} data-f="price" inputmode="numeric" value={nf.format(p.price)} /></div></div>
+        <div class="cf"><span class="cl">{T.status}</span><div class="cseg">
+          <label><input type="radio" name={`${uid}-tw`} value="single" checked /><span>{T.only}</span></label>
+          <label><input type="radio" name={`${uid}-tw`} value="extra" /><span>{T.extra}</span></label>
+        </div></div>
+        <div class="cf"><div class="crow"><label for={`${uid}-tl`}>{T.lawyer}</label><output data-o="law"></output></div><input type="range" id={`${uid}-tl`} data-f="law" min="0.3" max="1.5" step="0.05" value="0.5" /></div>
+      </form>
+      <div class="cres">
+        <small>{T.taxL}</small>
+        <div class="cbig"><span data-o="tax">—</span></div>
+        <div class="cfx" data-o="eff"></div>
+        <div class="cbr" data-o="br"></div>
+        <dl class="ckv"><div><dt>{T.price}</dt><dd data-o="p"></dd></div><div><dt>{T.taxL}</dt><dd data-o="t"></dd></div><div><dt>{T.lawyerVat}</dt><dd data-o="l"></dd></div><div><dt>{T.allIn}</dt><dd data-o="all"></dd></div></dl>
+        <p class="cnote">{T.taxNote}</p>
+      </div>
+    </div>
+
+    <!-- Investor return -->
+    <div class="calc-panel" role="tabpanel" id={`${uid}-p3`} aria-labelledby={`${uid}-t3`} data-k="yield" hidden>
+      <form onsubmit="return false">
+        <div class="cf"><label for={`${uid}-yp`}>{T.price}</label><div class="cmoney"><span>₪</span><input id={`${uid}-yp`} data-f="price" inputmode="numeric" value={nf.format(p.price)} /></div></div>
+        <div class="cf"><label for={`${uid}-yr`}>{T.rent}</label><div class="cmoney"><span>₪</span><input id={`${uid}-yr`} data-f="rent" inputmode="numeric" value={nf.format(Math.round(p.price * 0.0025 / 100) * 100)} /></div></div>
+        <div class="cf"><div class="crow"><label for={`${uid}-ym`}>{T.mgmt}</label><output data-o="mgmt"></output></div><input type="range" id={`${uid}-ym`} data-f="mgmt" min="0" max="12" step="0.5" value="8" /></div>
+        <div class="cf"><div class="crow"><label for={`${uid}-yv`}>{T.vacancy}</label><output data-o="vac"></output></div><input type="range" id={`${uid}-yv`} data-f="vac" min="0" max="3" step="0.5" value="0.5" /></div>
+        <div class="cf"><label for={`${uid}-yo`}>{T.other}</label><div class="cmoney"><span>₪</span><input id={`${uid}-yo`} data-f="other" inputmode="numeric" value="6,000" /></div></div>
+      </form>
+      <div class="cres">
+        <small>{T.netReturn}</small>
+        <div class="cbig"><span data-o="net">—</span></div>
+        <div class="cfx" data-o="gross"></div>
+        <dl class="ckv"><div><dt>{T.rentYear}</dt><dd data-o="ry"></dd></div><div><dt>{T.costsYear}</dt><dd data-o="cy"></dd></div><div><dt>{T.netYear}</dt><dd data-o="ny"></dd></div></dl>
+        <p class="cnote">{T.yieldNote}</p>
+      </div>
+    </div>
+  </div>
+)}
+<script>
+  // 2026 purchase-tax brackets (single-home thresholds frozen until 15 Jan 2028; additional-home rates through 2026).
+  const SINGLE: [number, number][] = [[1978745, 0], [2347040, 0.035], [6055070, 0.05], [20183565, 0.08], [Infinity, 0.1]];
+  const EXTRA: [number, number][] = [[6055070, 0.08], [Infinity, 0.1]];
+  const nf = new Intl.NumberFormat('en-US');
+  const ILS = (v: number) => `₪${nf.format(Math.round(v))}`;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const he = (el: HTMLElement) => el.dataset.lang === 'he';
+
+  document.querySelectorAll<HTMLElement>('[data-calc]').forEach((box) => {
+    const L = he(box);
+    const fx = () => {
+      let cur = 'USD', rates = JSON.parse(box.dataset.fx!);
+      try { cur = localStorage.getItem('fx') || 'USD'; } catch {}
+      try { rates = JSON.parse(sessionStorage.getItem('fxRates') || 'null') || rates; } catch {}
+      const sym = JSON.parse(box.dataset.syms!)[cur] || '$';
+      return (v: number) => (rates[cur] ? `≈ ${sym.trim()}${nf.format(Math.round(v * rates[cur] / 10) * 10)}` : '');
+    };
+    const num = (el: HTMLInputElement | null) => +String(el?.value || '').replace(/[^\d.]/g, '') || 0;
+    const out = (panel: Element, k: string) => panel.querySelector<HTMLElement>(`[data-o="${k}"]`)!;
+    const tween = (el: HTMLElement, to: number, fmt: (v: number) => string) => {
+      const from = +(el.dataset.v || to * 0.92); el.dataset.v = String(to);
+      if (reduce) { el.textContent = fmt(to); return; }
+      const t0 = performance.now();
+      const step = (now: number) => { const q = Math.min(1, (now - t0) / 450); el.textContent = fmt(from + (to - from) * (1 - (1 - q) ** 3)); if (q < 1) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
+    };
+    const f = (panel: Element, k: string) => panel.querySelector<HTMLInputElement>(`[data-f="${k}"]`)!;
+
+    // Mortgage
+    const pm = box.querySelector('[data-k="mort"]')!;
+    const mort = () => {
+      const price = num(f(pm, 'price')), ltv = +(pm.querySelector<HTMLInputElement>('input[type=radio]:checked')!.value), minDown = 100 - ltv;
+      const dEl = f(pm, 'down'); dEl.min = String(minDown); if (+dEl.value < minDown) dEl.value = String(minDown);
+      out(pm, 'min').textContent = L ? `מינימום לרוכש זה: ${minDown}% (בנק ישראל)` : `Minimum for this buyer: ${minDown}% (Bank of Israel)`;
+      const down = price * +dEl.value / 100, loan = price - down, n = +f(pm, 'years').value * 12, r = +f(pm, 'rate').value / 1200;
+      const pay = r ? loan * r / (1 - (1 + r) ** -n) : loan / n, interest = pay * n - loan;
+      out(pm, 'down').textContent = `${dEl.value}% · ${ILS(down)}`;
+      out(pm, 'years').textContent = L ? `${f(pm, 'years').value} שנים` : `${f(pm, 'years').value} years`;
+      out(pm, 'rate').textContent = `${(+f(pm, 'rate').value).toFixed(2)}%`;
+      tween(out(pm, 'pay'), pay, ILS);
+      out(pm, 'payfx').textContent = fx()(pay);
+      out(pm, 'cash').textContent = ILS(down); out(pm, 'loan').textContent = ILS(loan); out(pm, 'int').textContent = ILS(interest);
+      const tot = loan + interest || 1;
+      out(pm, 's1').style.width = `${(loan / tot) * 100}%`; out(pm, 's2').style.width = `${(interest / tot) * 100}%`;
+    };
+
+    // Purchase tax
+    const pt = box.querySelector('[data-k="tax"]')!;
+    const tax = () => {
+      const price = num(f(pt, 'price')), sched = pt.querySelector<HTMLInputElement>('input[type=radio]:checked')!.value === 'single' ? SINGLE : EXTRA;
+      let prev = 0, total = 0, rows = '';
+      for (const [cap, rate] of sched) {
+        const part = Math.max(0, Math.min(price, cap) - prev), tx = part * rate; total += tx;
+        const pct = String(+(rate * 100).toFixed(1));
+        rows += `<div class="cb-row"><span>${L ? `מדרגת ${pct}%` : `${pct}% band`}</span><span class="cb-bar"><i style="width:${price ? Math.min(100, (part / price) * 100) : 0}%"></i></span><b>${ILS(tx)}</b></div>`;
+        prev = cap;
+      }
+      out(pt, 'br').innerHTML = rows;
+      tween(out(pt, 'tax'), total, ILS);
+      out(pt, 'eff').textContent = price ? (L ? `${(total / price * 100).toFixed(2)}% מהמחיר` : `${(total / price * 100).toFixed(2)}% of the price`) : '';
+      const lawP = +f(pt, 'law').value, law = price * lawP / 100 * 1.18;
+      out(pt, 'law').textContent = L ? `${lawP.toFixed(2)}% + מע״מ` : `${lawP.toFixed(2)}% + VAT`;
+      out(pt, 'p').textContent = ILS(price); out(pt, 't').textContent = ILS(total); out(pt, 'l').textContent = ILS(law); out(pt, 'all').textContent = ILS(price + total + law);
+    };
+
+    // Investor return
+    const py = box.querySelector('[data-k="yield"]')!;
+    const yld = () => {
+      const price = num(f(py, 'price')), rent = num(f(py, 'rent')), months = 12 - +f(py, 'vac').value;
+      const ry = rent * months, cost = ry * +f(py, 'mgmt').value / 100 + num(f(py, 'other')), net = ry - cost;
+      out(py, 'mgmt').textContent = `${f(py, 'mgmt').value}%`; out(py, 'vac').textContent = f(py, 'vac').value;
+      tween(out(py, 'net'), price ? (net / price) * 100 : 0, (v) => `${v.toFixed(2)}%`);
+      out(py, 'gross').textContent = price ? (L ? `${(rent * 12 / price * 100).toFixed(2)}% ברוטו לפני הוצאות` : `Gross ${(rent * 12 / price * 100).toFixed(2)}% before costs`) : '';
+      out(py, 'ry').textContent = ILS(ry); out(py, 'cy').textContent = ILS(cost); out(py, 'ny').textContent = ILS(net);
+    };
+
+    const run: Record<string, () => void> = { mort, tax, yield: yld };
+    box.querySelectorAll<HTMLElement>('.calc-panel').forEach((panel) => {
+      const k = panel.dataset.k!;
+      panel.addEventListener('input', run[k]);
+      panel.querySelectorAll<HTMLInputElement>('[inputmode=numeric]').forEach((inp) => inp.addEventListener('blur', () => { const v = num(inp); inp.value = v ? nf.format(v) : ''; run[k](); }));
+      run[k]();
+    });
+    // Tabs (arrow keys move between them)
+    const tabs = [...box.querySelectorAll<HTMLButtonElement>('[role=tab]')];
+    const select = (i: number) => tabs.forEach((tb, k) => {
+      const on = k === i; tb.setAttribute('aria-selected', String(on)); tb.tabIndex = on ? 0 : -1;
+      const panel = document.getElementById(tb.getAttribute('aria-controls')!)!; panel.hidden = !on;
+      if (on) { panel.classList.remove('calc-in'); void panel.offsetWidth; panel.classList.add('calc-in'); run[panel.dataset.k!](); }
+    });
+    tabs.forEach((tb, i) => {
+      tb.addEventListener('click', () => select(i));
+      tb.addEventListener('keydown', (e) => { const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (d) { const n = (i + (L ? -d : d) + tabs.length) % tabs.length; select(n); tabs[n].focus(); } });
+    });
+    // Second currency follows the site-wide currency choice.
+    document.addEventListener('click', (e) => { if ((e.target as Element).closest?.('#fx-menu [data-cur]')) setTimeout(() => Object.values(run).forEach((fn) => fn()), 50); });
+  });
+</script>

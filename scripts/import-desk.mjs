@@ -68,6 +68,7 @@ for (const f of files) {
     date: d.date || new Date().toISOString().slice(0, 10),
     status: d.deal || 'sale',
     price: d.price || null,
+    prevPrice: d.prevPrice && d.price && d.prevPrice > d.price ? d.prevPrice : null,   // shows a "Price reduced" badge
     bedrooms: d.bedrooms ?? null,
     rooms: d.rooms ?? (d.bedrooms ? d.bedrooms + 1 : null),
     sizeSqm: d.sizeSqm ?? null,

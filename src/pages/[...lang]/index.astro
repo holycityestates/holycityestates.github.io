@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Services from '../../components/Services.astro';
+import MarketBand from '../../components/MarketBand.astro';
 import SkyHero from '../../components/SkyHero.astro';
 import Reviews from '../../components/Reviews.astro';
 import PropertyCard from '../../components/PropertyCard.astro';
@@ -67,6 +68,8 @@ const uniq = (arr) => [...new Map(arr.map((x) => [x.en, x])).values()];
       </div>
     </section>
   )}
+
+  <MarketBand lang={lang} />
 
   <section class="section">
     <div class="wrap">

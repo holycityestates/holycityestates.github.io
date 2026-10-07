@@ -3,6 +3,8 @@ import Base from '../../../layouts/Base.astro';
 import PropertyCard from '../../../components/PropertyCard.astro';
 import { t, getLang, href, L, visible, active, waLink, site, img, propNo, projectOf } from '../../../lib/i18n.js';
 import Price from '../../../components/Price.astro';
+import Calculators from '../../../components/Calculators.astro';
+import RecentSales from '../../../components/RecentSales.astro';
 
 export function getStaticPaths() {
   return visible.flatMap((p) => [
@@ -61,7 +63,7 @@ const statusLabel = p.offMarket ? s.offMarket[p.status] : s.status[p.status];
         <p class="muted">{L(p.street, lang)}{L(p.street, lang) ? ', ' : ''}{lang === 'he' ? 'ירושלים' : 'Jerusalem'}</p>
       </div>
       {!p.offMarket && (
-        <Price p={p} lang={lang} cls="detail-price" />
+        <Price p={p} lang={lang} cls="detail-price" was={p.prevPrice && p.prevPrice > p.price ? p.prevPrice : null} />
       )}
     </div>
 
@@ -100,6 +102,8 @@ const statusLabel = p.offMarket ? s.offMarket[p.status] : s.status[p.status];
           <ul class="features">{p.features.map((f) => <li>{L(f, lang)}</li>)}</ul>
         </div>
       )}
+      <Calculators p={p} lang={lang} />
+      <RecentSales p={p} lang={lang} />
       <div class="block">
         <h2>{s.location}</h2>
         {p.geo ? (
