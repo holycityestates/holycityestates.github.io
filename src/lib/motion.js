@@ -77,7 +77,7 @@ if (!reduce) {
     window.addEventListener('pointermove', (e) => {
       x = e.clientX; y = e.clientY;
       if (!shown) { shown = true; rx = x; ry = y; dot.classList.add('on'); }
-      const t = e.target.closest?.('.card, .project, .hood, .mosaic-item, .pop');
+      const t = !e.target.closest?.('.cs-btn') && e.target.closest?.('.card, .project, .hood, .mosaic-item, .pop');
       const a = e.target.closest?.('a, button, select, label, input, textarea');
       const dark = e.target.closest?.('.hero, .duo, .cta, .site-footer, .section-tint:has(.projects), .site-header.transparent');
       dot.classList.toggle('view', !!t);
@@ -147,3 +147,58 @@ if (!reduce) {
     im.addEventListener('error', () => im.classList.remove('loading'), { once: true });
   });
 }
+
+// ---------- Property cards: flip through photos without opening the property ----------
+const cardShot = (btn, dir) => {
+  const media = btn.closest('.card-media');
+  const shots = JSON.parse(media.querySelector('[data-shots]').dataset.shots);
+  const n = shots.length;
+  const i = ((+(media.dataset.i || 0) + dir) % n + n) % n;
+  media.dataset.i = i;
+  const pre = new Image();
+  pre.src = shots[i];
+  media.classList.add('cs-swap');
+  const apply = () => {
+    media.querySelectorAll('.media-main, .media-bg').forEach((im) => { im.removeAttribute('srcset'); im.src = shots[i]; });
+    media.classList.remove('cs-swap');
+  };
+  pre.complete ? apply() : (pre.onload = pre.onerror = apply);
+  media.querySelectorAll('.cs-dots i').forEach((d, k) => d.classList.toggle('on', k === i));
+  // Warm the next photo so the following tap is instant
+  new Image().src = shots[(i + dir + n) % n];
+};
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest?.('.cs-btn');
+  if (!btn) return;
+  e.preventDefault(); e.stopPropagation();
+  cardShot(btn, btn.classList.contains('cs-next') ? 1 : -1);
+}, true);
+document.addEventListener('keydown', (e) => {
+  const btn = e.target.closest?.('.cs-btn');
+  if (btn && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); e.stopPropagation(); cardShot(btn, btn.classList.contains('cs-next') ? 1 : -1); }
+}, true);
+// Swipe on phones
+let sx = null, sy = null;
+document.addEventListener('touchstart', (e) => {
+  const m = e.target.closest?.('.card-media');
+  sx = m && m.querySelector('.cs-btn') ? e.touches[0].clientX : null; sy = e.touches[0].clientY;
+}, { passive: true });
+document.addEventListener('touchend', (e) => {
+  if (sx === null) return;
+  const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+  const m = e.target.closest?.('.card-media');
+  sx = null;
+  if (!m || Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+  const fwd = dx < 0 ? 1 : -1;
+  cardShot(m.querySelector('.cs-btn'), fwd);
+  m.closest('a')?.addEventListener('click', (ev) => ev.preventDefault(), { once: true, capture: true });
+}, { passive: true });
+
+// ---------- Language switch: knob slides, then the page changes ----------
+document.addEventListener('click', (e) => {
+  const sw = e.target.closest?.('.lang-switch');
+  if (!sw || reduce || e.metaKey || e.ctrlKey) return;
+  e.preventDefault();
+  sw.classList.add('flip');
+  setTimeout(() => (location.href = sw.href), 260);
+});

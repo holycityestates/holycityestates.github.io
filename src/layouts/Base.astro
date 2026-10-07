@@ -54,6 +54,9 @@ const isActive = (p) => (p === '/' ? path === '/' : path.startsWith(p));
         <a href={href(lang, '/')} class="brand" aria-label={L(site.name, lang)}>
           <img src="/img/logo.png" alt="" width="112" height="72" />
         </a>
+        <a href={href(otherLang, path)} class="lang-switch lang-switch-m" hreflang={otherLang} lang={otherLang} aria-label={s.switchLang} data-on={lang}>
+          <span lang="en">EN</span><span lang="he">עב</span><i aria-hidden="true"></i>
+        </a>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menu" />
         <label for="nav-toggle" class="burger"><span></span></label>
         <nav class="main-nav">
@@ -61,7 +64,9 @@ const isActive = (p) => (p === '/' ? path === '/' : path.startsWith(p));
             <a href={href(lang, p)} class:list={{ active: isActive(p) }}>{label}</a>
           ))}
           <div class="tools">
-            <a href={href(otherLang, path)} class="lang" hreflang={otherLang}>{s.switchLang}</a>
+            <a href={href(otherLang, path)} class="lang lang-switch" hreflang={otherLang} lang={otherLang} aria-label={s.switchLang} data-on={lang}>
+              <span lang="en">EN</span><span lang="he">עב</span><i aria-hidden="true"></i>
+            </a>
           </div>
           <a href={waLink('')} class="btn btn-gold btn-sm" target="_blank" rel="noopener">{s.whatsapp}</a>
         </nav>

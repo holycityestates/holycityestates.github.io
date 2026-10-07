@@ -3,6 +3,7 @@ import { t, href, L, sizeLine, img } from '../lib/i18n.js';
 import Price from './Price.astro';
 const { p, lang } = Astro.props;
 const s = t[lang];
+const shots = (p.gallery || []).slice(0, 8).map((g) => img(g, 800));
 const chip = p.offMarket ? s.offMarket[p.status] : p.newProject ? s.newProject : s.status[p.status];
 ---
 <a
@@ -18,6 +19,13 @@ const chip = p.offMarket ? s.offMarket[p.status] : p.newProject ? s.newProject :
 >
   <div class="card-media">
     {p.cover ? <><img class="media-bg" src={img(p.cover, 800)} alt="" aria-hidden="true" loading="lazy" decoding="async" /><img class="media-main" src={img(p.cover, 800)} alt={L(p.title, lang)} loading="lazy" decoding="async" /></> : <div class="ph"></div>}
+    {shots.length > 1 && (
+      <>
+        <span class="cs-btn cs-prev" role="button" tabindex="0" aria-label={lang === 'he' ? 'תמונה קודמת' : 'Previous photo'} data-shots={JSON.stringify(shots)}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg></span>
+        <span class="cs-btn cs-next" role="button" tabindex="0" aria-label={lang === 'he' ? 'תמונה הבאה' : 'Next photo'}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg></span>
+        <span class="cs-dots" aria-hidden="true">{shots.map((_, i) => <i class={i === 0 ? 'on' : ''}></i>)}</span>
+      </>
+    )}
     <span class:list={['chip', p.offMarket ? 'chip-dark' : 'chip-light']}>{chip}</span>
   </div>
   <div class="card-body">
