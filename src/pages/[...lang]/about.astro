@@ -1,7 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Services from '../../components/Services.astro';
-import { t, getLang, langPaths, L, testimonial } from '../../lib/i18n.js';
+import Reviews from '../../components/Reviews.astro';
+import { t, getLang, langPaths, L } from '../../lib/i18n.js';
 export const getStaticPaths = langPaths;
 const lang = getLang(Astro.params.lang);
 const s = t[lang];
@@ -15,11 +16,7 @@ const s = t[lang];
         <h2>{s.aboutTitle}</h2>
         <p class="lead-dark">{s.aboutBody}</p>
       </div>
-      <blockquote class="quote">
-        <p class="kicker">{s.testimonialTitle}</p>
-        <p class="quote-text">“{L(testimonial.text, lang)}”</p>
-        <footer>— {L(testimonial.name, lang)}</footer>
-      </blockquote>
+      <Reviews lang={lang} />
     </div>
   </section>
 

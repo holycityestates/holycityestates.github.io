@@ -122,6 +122,8 @@ export const t = {
       ['renewal', 'Urban Renewal', 'Helping owners navigate and benefit from urban-renewal projects across the city.'],
     ],
     testimonialTitle: 'What clients say',
+    prevReview: 'Previous review',
+    nextReview: 'Next review',
     sellTitle: 'Thinking of selling or renting out?',
     sellSub: 'Get a professional valuation and a tailored marketing plan for your property.',
     sellCta: 'Request a valuation',
@@ -212,6 +214,8 @@ export const t = {
       ['renewal', 'התחדשות עירונית', 'מלווים בעלי נכסים בפרויקטים של התחדשות עירונית ברחבי העיר.'],
     ],
     testimonialTitle: 'לקוחות ממליצים',
+    prevReview: 'ההמלצה הקודמת',
+    nextReview: 'ההמלצה הבאה',
     sellTitle: 'מעוניינים למכור או להשכיר נכס?',
     sellSub: 'קבלו הערכת שווי מקצועית ותוכנית שיווק מותאמת לנכס שלכם.',
     sellCta: 'לקבלת הערכת שווי',
@@ -243,13 +247,45 @@ export const t = {
   },
 };
 
-export const testimonial = {
-  name: { en: 'Shula M.', he: 'שולה מ.' },
-  text: {
-    en: 'I would highly recommend Aryeh. He is responsive, reliable and patient. No question is too big or too small. I really felt that Aryeh wanted to help me find the right home, and the experience from start to finish was pleasant and smooth.',
-    he: 'ממליצה בחום על אריה. זמין, אמין וסבלני – אין שאלה גדולה או קטנה מדי. הרגשתי שאריה באמת רוצה לעזור לי למצוא את הבית הנכון, והתהליך כולו, מההתחלה ועד הסוף, היה נעים וחלק.',
+// Client reviews (all real, confirmed by Aryeh 2026-10-08). Shown in a rotating quote box.
+export const testimonials = [
+  {
+    name: { en: 'Shula M.', he: 'שולה מ.' },
+    text: {
+      en: 'I would highly recommend Aryeh. He is responsive, reliable and patient. No question is too big or too small. I really felt that Aryeh wanted to help me find the right home, and the experience from start to finish was pleasant and smooth.',
+      he: 'ממליצה בחום על אריה. זמין, אמין וסבלני – אין שאלה גדולה או קטנה מדי. הרגשתי שאריה באמת רוצה לעזור לי למצוא את הבית הנכון, והתהליך כולו, מההתחלה ועד הסוף, היה נעים וחלק.',
+    },
   },
-};
+  {
+    name: { en: 'Daniel K.', he: 'דניאל ק.' },
+    text: {
+      en: 'Honestly expected the usual broker runaround. Instead we got straight answers, including being told one place was overpriced. That’s why we trusted him on the one we bought.',
+      he: 'האמת שציפיתי לסחרור הרגיל של מתווכים. במקום זה קיבלנו תשובות ישירות – כולל שאמרו לנו שדירה אחת מתומחרת ביוקר. בגלל זה סמכנו עליו בדירה שקנינו.',
+    },
+  },
+  {
+    name: { en: 'Chaim R.', he: 'חיים ר.' },
+    text: {
+      en: 'Sold our parents’ apartment after they made aliyah to the kids. Aryeh was patient with all of us, which was not easy. Got a better price than we expected.',
+      he: 'מכרנו את הדירה של ההורים אחרי שהם עלו ארצה אל הילדים. אריה היה סבלני עם כולנו, וזה לא היה פשוט. קיבלנו מחיר טוב יותר ממה שציפינו.',
+    },
+  },
+  {
+    name: { en: 'Shira S.', he: 'שירה ש.' },
+    text: {
+      en: 'Quick, responsive, knows the buildings. Found us a rental with a sukkah balcony in under two weeks.',
+      he: 'מהיר, זמין ומכיר את הבניינים. מצא לנו דירה להשכרה עם מרפסת סוכה בפחות משבועיים.',
+    },
+  },
+  {
+    name: { en: 'Yair K.', he: 'יאיר ק.' },
+    text: {
+      en: 'Second time using Holy City. The first time they helped us rent when we were new in the city, and when we were ready to buy, there was no question who we’d call. They remembered what we liked and didn’t waste our time on places that didn’t fit. Wouldn’t go anywhere else in Jerusalem.',
+      he: 'זו הפעם השנייה שלנו עם העיר הקדושה. בפעם הראשונה הם עזרו לנו לשכור כשהיינו חדשים בעיר, וכשהיינו מוכנים לקנות – לא הייתה שאלה למי נתקשר. הם זכרו מה אהבנו ולא בזבזו לנו זמן על דירות שלא התאימו. לא הייתי הולך לאף אחד אחר בירושלים.',
+    },
+  },
+];
+export const testimonial = testimonials[0];
 
 // Optimized photos are stored as "/photos/<id>" → pick a size. External links pass through.
 export const img = (src, size = 800) => (src && src.startsWith('/photos/') ? `${src}-${size}.webp` : src);

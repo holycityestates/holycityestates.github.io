@@ -1,8 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Services from '../../components/Services.astro';
+import Reviews from '../../components/Reviews.astro';
 import PropertyCard from '../../components/PropertyCard.astro';
-import { t, getLang, langPaths, href, L, active, visible, projects, testimonial, waLink, site, img } from '../../lib/i18n.js';
+import { t, getLang, langPaths, href, L, active, visible, projects, waLink, site, img } from '../../lib/i18n.js';
 
 export const getStaticPaths = langPaths;
 const lang = getLang(Astro.params.lang);
@@ -121,11 +122,7 @@ const hoodOpts = uniq(active.map((p) => p.neighborhood).filter((x) => x.en));
         <h2>{s.aboutTitle}</h2>
         <p class="lead-dark">{s.aboutBody}</p>
       </div>
-      <blockquote class="quote">
-        <p class="kicker">{s.testimonialTitle}</p>
-        <p class="quote-text">“{L(testimonial.text, lang)}”</p>
-        <footer>— {L(testimonial.name, lang)}</footer>
-      </blockquote>
+      <Reviews lang={lang} />
     </div>
   </section>
 

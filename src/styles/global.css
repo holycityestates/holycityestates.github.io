@@ -519,3 +519,18 @@ html[dir='rtl'] .fx-menu p { letter-spacing: 0; font-size: .8rem; }
   .svc h3 { font-size: 1.2rem; margin: 0 0 2px; align-self: end; }
   .svc p { align-self: start; font-size: .88rem; }
 }
+
+/* ---- v12: rotating client reviews ---- */
+.tq-stack { display: grid; }
+.tq-item { grid-area: 1 / 1; margin: 0; opacity: 0; transform: translateY(8px); transition: opacity .7s var(--m-ease, ease), transform .7s var(--m-ease, ease); pointer-events: none; }
+.tq-item.on { opacity: 1; transform: none; pointer-events: auto; }
+.tq-nav { display: flex; align-items: center; gap: 14px; margin-top: 22px; }
+.tq-arrow { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--ink-2); display: grid; place-items: center; cursor: pointer; transition: border-color .2s, color .2s; }
+.tq-arrow:hover { border-color: var(--gold); color: var(--gold-dark); }
+html[dir='rtl'] .tq-arrow svg { transform: scaleX(-1); }
+.tq-dots { display: flex; gap: 8px; }
+.tq-dots button { width: 8px; height: 8px; padding: 0; border-radius: 50%; border: 0; background: var(--line); cursor: pointer; transition: background .3s, transform .3s; }
+.tq-dots button[aria-current='true'] { background: var(--gold); transform: scale(1.25); }
+@media (prefers-reduced-motion: reduce) { .tq-item { transition: none; transform: none; } }
+.tq-item { align-self: center; }
+@media (max-width: 600px) { .tq .quote-text { font-size: 1.2rem; } .tq-nav { margin-top: 16px; } }

@@ -1,0 +1,46 @@
+---
+// "What clients say": every review in one quote box, shown one at a time with a soft fade.
+// All reviews share one grid cell, so the box keeps the height of the longest and nothing jumps.
+import { t, L, testimonials } from '../lib/i18n.js';
+const { lang } = Astro.props;
+const s = t[lang];
+---
+<blockquote class="quote tq" data-tq>
+  <p class="kicker">{s.testimonialTitle}</p>
+  <div class="tq-stack" aria-live="polite">
+    {testimonials.map((r, i) => (
+      <figure class:list={['tq-item', { on: i === 0 }]} aria-hidden={i === 0 ? 'false' : 'true'}>
+        <p class="quote-text">“{L(r.text, lang)}”</p>
+        <footer>— {L(r.name, lang)}</footer>
+      </figure>
+    ))}
+  </div>
+  {testimonials.length > 1 && (
+    <div class="tq-nav">
+      <button type="button" class="tq-arrow" data-tq-prev aria-label={s.prevReview}><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+      <div class="tq-dots">{testimonials.map((r, i) => <button type="button" data-tq-dot={i} aria-label={L(r.name, lang)} aria-current={i === 0 ? 'true' : 'false'} />)}</div>
+      <button type="button" class="tq-arrow" data-tq-next aria-label={s.nextReview}><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+    </div>
+  )}
+</blockquote>
+<script>
+  document.querySelectorAll('[data-tq]').forEach((box) => {
+    const items = [...box.querySelectorAll('.tq-item')], dots = [...box.querySelectorAll('[data-tq-dot]')];
+    if (items.length < 2) return;
+    let i = 0, timer = null;
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const show = (n) => {
+      i = (n + items.length) % items.length;
+      items.forEach((el, k) => { el.classList.toggle('on', k === i); el.setAttribute('aria-hidden', String(k !== i)); });
+      dots.forEach((d, k) => d.setAttribute('aria-current', String(k === i)));
+    };
+    const start = () => { if (!still) { clearInterval(timer); timer = setInterval(() => show(i + 1), 8000); } };
+    const stop = () => clearInterval(timer);
+    box.querySelector('[data-tq-prev]').addEventListener('click', () => { show(i - 1); start(); });
+    box.querySelector('[data-tq-next]').addEventListener('click', () => { show(i + 1); start(); });
+    dots.forEach((d, k) => d.addEventListener('click', () => { show(k); start(); }));
+    box.addEventListener('pointerenter', stop); box.addEventListener('pointerleave', start);
+    box.addEventListener('focusin', stop); box.addEventListener('focusout', start);
+    start();
+  });
+</script>
