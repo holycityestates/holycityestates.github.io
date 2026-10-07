@@ -72,3 +72,5 @@ Astro static site (EN + HE/RTL), "Signature" design: dark cinematic hero + glass
 
 ## Backlog Aryeh liked
 Listing brochures / social images, lead forms to Gmail, price-reduced badge, favorites, video/3D tours, mortgage & purchase-tax calculator, neighborhood guides, visitor stats, WordPress/Houzez trial site.
+
+- Shmuel HaNagid 15 (new TAMA project, 2026-10-08): old #14 split into 3 listings — #14 penthouse (apts 11+12, ₪15,370,000, 219 m² + 35 m² terrace, 3 baths + guest WC), #34 apt 9 (₪7,000,000, 119 m²), #35 apt 10 (₪6,250,000, 106 m²). Photos = building render + each one's own floor plan (cropped from Aryeh's PDFs; the old duplex plan 8d1a1472513e was removed). Wording: delivered as a shell, finishes negotiable with developer, expected ~March 2027.
