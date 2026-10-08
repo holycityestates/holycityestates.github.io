@@ -1,17 +1,17 @@
 [
   {
-    "slug": "kapach-14",
+    "slug": "kapach",
     "name": {
-      "en": "Kapach 14",
-      "he": "קאפח 14"
+      "en": "Kapach",
+      "he": "קאפח"
     },
     "neighborhood": {
       "en": "Nachalat Achim",
       "he": "נחלת אחים"
     },
     "street": {
-      "en": "14 HaRav Kapach Street",
-      "he": "רחוב הרב קאפח 14"
+      "en": "HaRav Kapach Street",
+      "he": "רחוב הרב קאפח"
     },
     "delivery": {
       "en": "",
@@ -25,14 +25,15 @@
       "en": "<p class=\"lead\">A new boutique building in Nachalat Achim with only a handful of private homes, one per floor, beside Sacher Park and a few minutes' walk from Rehavia and Shaarei Chesed.</p><p>Every floor is a single private home with four air directions, from garden apartments to a 325 m² duplex penthouse overlooking the park. Each home has private parking, a storage room, an elevator and sukkah balconies.</p><p>The location combines the calm of a quiet residential street with the heart of the city: King George and Bezalel streets, the Kahal Chassidim synagogue and all community services are close by.</p><p class=\"note\">Prices include VAT. Viewings and full plans by appointment.</p>",
       "he": "<p class=\"lead\">בניין בוטיק חדש בנחלת אחים עם מספר מצומצם של דירות פרטיות, דירה אחת בכל קומה, ליד גן סאקר ובמרחק הליכה קצר מרחביה ומשערי חסד.</p><p>כל קומה היא דירה פרטית אחת עם ארבעה כיווני אוויר, מדירות גן ועד פנטהאוז דופלקס של 325 מ״ר הצופה לגן. לכל דירה חניה פרטית, מחסן, מעלית ומרפסות סוכה.</p><p>המיקום משלב שקט של רחוב מגורים פנימי עם לב העיר: רחוב המלך ג׳ורג׳ ורחוב בצלאל, בית הכנסת קהל חסידים וכל שירותי הקהילה בקרבת מקום.</p><p class=\"note\">המחירים כוללים מע״מ. ביקור ותוכניות מלאות בתיאום מראש.</p>"
     },
-    "cover": "/photos/dc1ef16734e0",
+    "cover": "/photos/520db025be42",
     "gallery": [
-      "/photos/dc1ef16734e0",
+      "/photos/520db025be42",
+      "/photos/999253e05d6d",
       "/photos/d061be34304b",
       "/photos/dc751a2d873c"
     ],
     "geo": {
-      "approx": false,
+      "approx": true,
       "lat": 31.78059,
       "lng": 35.20967
     },
@@ -105,18 +106,18 @@
     }
   },
   {
-    "slug": "shmuel-hanagid-15",
+    "slug": "shmuel-hanagid",
     "name": {
-      "en": "Shmuel HaNagid 15",
-      "he": "שמואל הנגיד 15"
+      "en": "Shmuel HaNagid",
+      "he": "שמואל הנגיד"
     },
     "neighborhood": {
       "en": "City Center",
       "he": "מרכז העיר"
     },
     "street": {
-      "en": "15 Shmuel Hanagid Street",
-      "he": "רחוב שמואל הנגיד 15"
+      "en": "Shmuel HaNagid Street",
+      "he": "רחוב שמואל הנגיד"
     },
     "delivery": {
       "en": "Around March 2027",
@@ -127,8 +128,8 @@
       "he": "מעטפת, גימור בהתאמה מול היזם"
     },
     "description": {
-      "en": "<p class=\"lead\">A boutique TAMA building at 15 Shmuel HaNagid Street, between the City Center and Rehavia.</p><p>Three new homes are available: two apartments on the 4th floor and a 219 m² penthouse on the top floor with a 35 m² sukkah terrace. Every apartment has a safe room, a sukkah balcony and a storage room, and the building has an elevator.</p><p>The apartments are delivered as a shell, so finishes can be agreed with the developer. Expected delivery around March 2027.</p><p class=\"note\">Viewings and full plans by appointment.</p>",
-      "he": "<p class=\"lead\">בניין בוטיק בפרויקט תמ״א ברחוב שמואל הנגיד 15, בין מרכז העיר לרחביה.</p><p>שלוש דירות חדשות זמינות: שתי דירות בקומה 4 ופנטהאוז של 219 מ״ר בקומה העליונה עם מרפסת סוכה של 35 מ״ר. בכל דירה ממ״ד, מרפסת סוכה ומחסן, ובבניין מעלית.</p><p>הדירות נמסרות במצב מעטפת, וניתן לסכם גימור מול היזם. מסירה צפויה בסביבות מרץ 2027.</p><p class=\"note\">ביקור ותוכניות מלאות בתיאום מראש.</p>"
+      "en": "<p class=\"lead\">A boutique TAMA building on Shmuel HaNagid Street, between the City Center and Rehavia.</p><p>Three new homes are available: two apartments on the 4th floor and a 219 m² penthouse on the top floor with a 35 m² sukkah terrace. Every apartment has a safe room, a sukkah balcony and a storage room, and the building has an elevator.</p><p>The apartments are delivered as a shell, so finishes can be agreed with the developer. Expected delivery around March 2027.</p><p class=\"note\">Viewings and full plans by appointment.</p>",
+      "he": "<p class=\"lead\">בניין בוטיק בפרויקט תמ״א ברחוב שמואל הנגיד, בין מרכז העיר לרחביה.</p><p>שלוש דירות חדשות זמינות: שתי דירות בקומה 4 ופנטהאוז של 219 מ״ר בקומה העליונה עם מרפסת סוכה של 35 מ״ר. בכל דירה ממ״ד, מרפסת סוכה ומחסן, ובבניין מעלית.</p><p>הדירות נמסרות במצב מעטפת, וניתן לסכם גימור מול היזם. מסירה צפויה בסביבות מרץ 2027.</p><p class=\"note\">ביקור ותוכניות מלאות בתיאום מראש.</p>"
     },
     "cover": "/photos/4726e380e688",
     "gallery": [
@@ -136,7 +137,7 @@
       "/photos/da809bd9a024"
     ],
     "geo": {
-      "approx": false,
+      "approx": true,
       "lat": 31.7789,
       "lng": 35.21484
     },

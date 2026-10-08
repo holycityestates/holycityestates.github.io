@@ -1,7 +1,7 @@
 [
   {
     "id": 36,
-    "slug": "garden-home-with-75m-garden-kapach-14-36",
+    "slug": "garden-home-with-75m-garden-kapach-36",
     "display": true,
     "offMarket": false,
     "newProject": true,
@@ -25,12 +25,12 @@
       "he": "נחלת אחים"
     },
     "street": {
-      "en": "14 HaRav Kapach Street",
-      "he": "רחוב הרב קאפח 14"
+      "en": "HaRav Kapach Street",
+      "he": "רחוב הרב קאפח"
     },
     "title": {
-      "en": "6.5-Room Garden Home with a 75 m² Garden, Kapach 14",
-      "he": "דירת גן 6.5 חדרים עם גינה של 75 מ״ר, קאפח 14"
+      "en": "6.5-Room Garden Home with a 75 m² Garden, Kapach",
+      "he": "דירת גן 6.5 חדרים עם גינה של 75 מ״ר, קאפח"
     },
     "description": {
       "en": "<p class=\"lead\">A rare 218 m² garden home on the lower ground floor of a new boutique building in Nachalat Achim, with a 75 m² private garden.</p><p>6.5 rooms with three air directions, two parking spaces and a storage room. The home is offered as one large garden apartment, created by joining apartments 1, 2 and 3 of the building; the plans shown are those three original apartments, and we can show you the combined layout.</p><p>Finished to a luxury specification: underfloor heating, full VRF air conditioning with smart control, smart-home lighting and blinds, a smart entrance door with Shabbat mode, and premium kitchen and bathroom finishes.</p><p class=\"note\">Prices include VAT. Viewings and full plans by appointment.</p>",
@@ -82,9 +82,10 @@
         "he": "גינה פרטית"
       }
     ],
-    "cover": "/photos/dc1ef16734e0",
+    "cover": "/photos/520db025be42",
     "gallery": [
-      "/photos/dc1ef16734e0",
+      "/photos/520db025be42",
+      "/photos/999253e05d6d",
       "/photos/d061be34304b",
       "/photos/dc751a2d873c",
       "/photos/d0ef466cf9c4",
@@ -92,20 +93,20 @@
       "/photos/d846f82cf4aa"
     ],
     "video": null,
-    "project": "kapach-14",
+    "project": "kapach",
     "unit": {
       "en": "Garden home (apartments 1–3)",
       "he": "דירת גן (דירות 1–3)"
     },
     "geo": {
-      "approx": false,
+      "approx": true,
       "lat": 31.78059,
       "lng": 35.20967
     }
   },
   {
     "id": 37,
-    "slug": "garden-apartment-with-66m-garden-kapach-14-37",
+    "slug": "garden-apartment-with-66m-garden-kapach-37",
     "display": true,
     "offMarket": false,
     "newProject": true,
@@ -129,12 +130,12 @@
       "he": "נחלת אחים"
     },
     "street": {
-      "en": "14 HaRav Kapach Street",
-      "he": "רחוב הרב קאפח 14"
+      "en": "HaRav Kapach Street",
+      "he": "רחוב הרב קאפח"
     },
     "title": {
-      "en": "6.5-Room Garden Apartment with Garden, Kapach 14",
-      "he": "דירת גן 6.5 חדרים עם גינה, קאפח 14"
+      "en": "6.5-Room Garden Apartment with Garden, Kapach",
+      "he": "דירת גן 6.5 חדרים עם גינה, קאפח"
     },
     "description": {
       "en": "<p class=\"lead\">A 184 m² garden apartment with four air directions, in a new boutique building of only a few homes beside Sacher Park.</p><p>6.5 rooms, with 66 m² of garden and balconies, one parking space and a storage room.</p><p>Finished to a luxury specification: underfloor heating, full VRF air conditioning with smart control, smart-home lighting and blinds, a smart entrance door with Shabbat mode, and premium kitchen and bathroom finishes.</p><p class=\"note\">Prices include VAT. Viewings and full plans by appointment.</p>",
@@ -186,28 +187,29 @@
         "he": "גינה פרטית"
       }
     ],
-    "cover": "/photos/dc1ef16734e0",
+    "cover": "/photos/520db025be42",
     "gallery": [
-      "/photos/dc1ef16734e0",
+      "/photos/520db025be42",
+      "/photos/999253e05d6d",
       "/photos/ddb1ca231889",
       "/photos/d061be34304b",
       "/photos/dc751a2d873c"
     ],
     "video": null,
-    "project": "kapach-14",
+    "project": "kapach",
     "unit": {
       "en": "Garden apartment 4",
       "he": "דירת גן 4"
     },
     "geo": {
-      "approx": false,
+      "approx": true,
       "lat": 31.78059,
       "lng": 35.20967
     }
   },
   {
     "id": 38,
-    "slug": "6-room-apartment-kapach-14-38",
+    "slug": "6-room-apartment-kapach-38",
     "display": true,
     "offMarket": false,
     "newProject": true,
@@ -231,12 +233,12 @@
       "he": "נחלת אחים"
     },
     "street": {
-      "en": "14 HaRav Kapach Street",
-      "he": "רחוב הרב קאפח 14"
+      "en": "HaRav Kapach Street",
+      "he": "רחוב הרב קאפח"
     },
     "title": {
-      "en": "6-Room Apartment with Sukkah Balcony, Kapach 14",
-      "he": "דירת 6 חדרים עם מרפסת סוכה, קאפח 14"
+      "en": "6-Room Apartment with Sukkah Balcony, Kapach",
+      "he": "דירת 6 חדרים עם מרפסת סוכה, קאפח"
     },
     "description": {
       "en": "<p class=\"lead\">A whole floor to yourself: a 180 m² apartment with four air directions in a new boutique building in Nachalat Achim.</p><p>6 rooms including a master suite and a safe room, an open living, dining and kitchen space, and 30 m² of balconies including a large sukkah balcony. One parking space and a storage room.</p><p>Finished to a luxury specification: underfloor heating, full VRF air conditioning with smart control, smart-home lighting and blinds, a smart entrance door with Shabbat mode, and premium kitchen and bathroom finishes.</p><p class=\"note\">Prices include VAT. Viewings and full plans by appointment.</p>",
@@ -288,28 +290,29 @@
         "he": "יחידת הורים"
       }
     ],
-    "cover": "/photos/dc1ef16734e0",
+    "cover": "/photos/520db025be42",
     "gallery": [
-      "/photos/dc1ef16734e0",
+      "/photos/520db025be42",
+      "/photos/999253e05d6d",
       "/photos/dba14eb7ea7b",
       "/photos/d061be34304b",
       "/photos/dc751a2d873c"
     ],
     "video": null,
-    "project": "kapach-14",
+    "project": "kapach",
     "unit": {
       "en": "Apartment 5",
       "he": "דירה 5"
     },
     "geo": {
-      "approx": false,
+      "approx": true,
       "lat": 31.78059,
       "lng": 35.20967
     }
   },
   {
     "id": 39,
-    "slug": "mini-penthouse-park-view-kapach-14-39",
+    "slug": "mini-penthouse-park-view-kapach-39",
     "display": true,
     "offMarket": false,
     "newProject": true,
@@ -333,12 +336,12 @@
       "he": "נחלת אחים"
     },
     "street": {
-      "en": "14 HaRav Kapach Street",
-      "he": "רחוב הרב קאפח 14"
+      "en": "HaRav Kapach Street",
+      "he": "רחוב הרב קאפח"
     },
     "title": {
-      "en": "6-Room Mini Penthouse with Park Views, Kapach 14",
-      "he": "מיני פנטהאוז 6 חדרים עם נוף לגן, קאפח 14"
+      "en": "6-Room Mini Penthouse with Park Views, Kapach",
+      "he": "מיני פנטהאוז 6 חדרים עם נוף לגן, קאפח"
     },
     "description": {
       "en": "<p class=\"lead\">A 169 m² mini penthouse taking the whole floor, with four air directions and views over Sacher Park.</p><p>6 rooms including a master suite and a safe room, with 39 m² of balconies including a sukkah balcony. One parking space and a storage room.</p><p>Finished to a luxury specification: underfloor heating, full VRF air conditioning with smart control, smart-home lighting and blinds, a smart entrance door with Shabbat mode, and premium kitchen and bathroom finishes.</p><p class=\"note\">Prices include VAT. Viewings and full plans by appointment.</p>",
@@ -394,28 +397,29 @@
         "he": "יחידת הורים"
       }
     ],
-    "cover": "/photos/dc1ef16734e0",
+    "cover": "/photos/520db025be42",
     "gallery": [
-      "/photos/dc1ef16734e0",
+      "/photos/520db025be42",
+      "/photos/999253e05d6d",
       "/photos/d301174a098c",
       "/photos/d061be34304b",
       "/photos/dc751a2d873c"
     ],
     "video": null,
-    "project": "kapach-14",
+    "project": "kapach",
     "unit": {
       "en": "Apartment 6 · mini penthouse",
       "he": "דירה 6 · מיני פנטהאוז"
     },
     "geo": {
-      "approx": false,
+      "approx": true,
       "lat": 31.78059,
       "lng": 35.20967
     }
   },
   {
     "id": 40,
-    "slug": "duplex-penthouse-8-rooms-kapach-14-40",
+    "slug": "duplex-penthouse-8-rooms-kapach-40",
     "display": true,
     "offMarket": false,
     "newProject": true,
@@ -439,12 +443,12 @@
       "he": "נחלת אחים"
     },
     "street": {
-      "en": "14 HaRav Kapach Street",
-      "he": "רחוב הרב קאפח 14"
+      "en": "HaRav Kapach Street",
+      "he": "רחוב הרב קאפח"
     },
     "title": {
-      "en": "8-Room Duplex Penthouse, Kapach 14",
-      "he": "פנטהאוז דופלקס 8 חדרים, קאפח 14"
+      "en": "8-Room Duplex Penthouse, Kapach",
+      "he": "פנטהאוז דופלקס 8 חדרים, קאפח"
     },
     "description": {
       "en": "<p class=\"lead\">The crown of the building: a 325 m² duplex penthouse on the top two floors, with four air directions and wide views over Sacher Park.</p><p>8 rooms over two levels, with 57 m² of terraces, three parking spaces and a storage room. The lower level holds the main living spaces and bedrooms; the upper level adds two more bedrooms and a private terrace.</p><p>Finished to a luxury specification: underfloor heating, full VRF air conditioning with smart control, smart-home lighting and blinds, a smart entrance door with Shabbat mode, and premium kitchen and bathroom finishes.</p><p class=\"note\">Prices include VAT. Viewings and full plans by appointment.</p>",
@@ -504,22 +508,23 @@
         "he": "גג פרטי"
       }
     ],
-    "cover": "/photos/dc1ef16734e0",
+    "cover": "/photos/520db025be42",
     "gallery": [
-      "/photos/dc1ef16734e0",
+      "/photos/520db025be42",
+      "/photos/999253e05d6d",
       "/photos/dd98d395e3e3",
       "/photos/dd249f739d49",
       "/photos/d061be34304b",
       "/photos/dc751a2d873c"
     ],
     "video": null,
-    "project": "kapach-14",
+    "project": "kapach",
     "unit": {
       "en": "Apartment 7 · duplex penthouse",
       "he": "דירה 7 · פנטהאוז דופלקס"
     },
     "geo": {
-      "approx": false,
+      "approx": true,
       "lat": 31.78059,
       "lng": 35.20967
     }
@@ -550,8 +555,8 @@
       "he": "מרכז העיר"
     },
     "street": {
-      "en": "15 Shmuel Hanagid Street",
-      "he": "רחוב שמואל הנגיד 15"
+      "en": "Shmuel HaNagid Street",
+      "he": "רחוב שמואל הנגיד"
     },
     "title": {
       "en": "Penthouse with a 35 m² Terrace on Shmuel HaNagid",
@@ -602,13 +607,13 @@
       "/photos/da809bd9a024"
     ],
     "video": null,
-    "project": "shmuel-hanagid-15",
+    "project": "shmuel-hanagid",
     "unit": {
       "en": "Penthouse (apartments 11–12)",
       "he": "פנטהאוז (דירות 11–12)"
     },
     "geo": {
-      "approx": false,
+      "approx": true,
       "lat": 31.7789,
       "lng": 35.21484
     }
@@ -639,8 +644,8 @@
       "he": "מרכז העיר"
     },
     "street": {
-      "en": "15 Shmuel Hanagid Street",
-      "he": "רחוב שמואל הנגיד 15"
+      "en": "Shmuel HaNagid Street",
+      "he": "רחוב שמואל הנגיד"
     },
     "title": {
       "en": "New 4-Bedroom Apartment on Shmuel HaNagid",
@@ -687,13 +692,13 @@
       "/photos/da809bd9a024"
     ],
     "video": null,
-    "project": "shmuel-hanagid-15",
+    "project": "shmuel-hanagid",
     "unit": {
       "en": "Apartment 9",
       "he": "דירה 9"
     },
     "geo": {
-      "approx": false,
+      "approx": true,
       "lat": 31.7789,
       "lng": 35.21484
     }
@@ -724,8 +729,8 @@
       "he": "מרכז העיר"
     },
     "street": {
-      "en": "15 Shmuel Hanagid Street",
-      "he": "רחוב שמואל הנגיד 15"
+      "en": "Shmuel HaNagid Street",
+      "he": "רחוב שמואל הנגיד"
     },
     "title": {
       "en": "New 3-Bedroom Apartment on Shmuel HaNagid",
@@ -772,13 +777,13 @@
       "/photos/da809bd9a024"
     ],
     "video": null,
-    "project": "shmuel-hanagid-15",
+    "project": "shmuel-hanagid",
     "unit": {
       "en": "Apartment 10",
       "he": "דירה 10"
     },
     "geo": {
-      "approx": false,
+      "approx": true,
       "lat": 31.7789,
       "lng": 35.21484
     }
@@ -1354,7 +1359,7 @@
   {
     "id": 31,
     "slug": "building-for-sale-for-urban-renewal-31",
-    "display": true,
+    "display": false,
     "offMarket": false,
     "newProject": true,
     "featured": false,
