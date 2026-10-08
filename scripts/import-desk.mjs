@@ -74,6 +74,7 @@ for (const f of files) {
     sizeSqm: d.sizeSqm ?? null,
     balconySqm: d.balconySqm ?? null,
     floor: d.floor ?? null,
+    floorTo: d.floorTo ?? null,   // duplexes: top floor (shown as "3–4")
     type: { en: d.type || '', he: typeHe[d.type] || '' },
     neighborhood: { en: d.neighborhood || '', he: neighborhoodHe[d.neighborhood] || d.neighborhoodHe || '' },
     street: { en: d.street?.en || '', he: d.street?.he || '' },

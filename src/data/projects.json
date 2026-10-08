@@ -1,5 +1,110 @@
 [
   {
+    "slug": "kapach-14",
+    "name": {
+      "en": "Kapach 14",
+      "he": "קאפח 14"
+    },
+    "neighborhood": {
+      "en": "Nachalat Achim",
+      "he": "נחלת אחים"
+    },
+    "street": {
+      "en": "14 HaRav Kapach Street",
+      "he": "רחוב הרב קאפח 14"
+    },
+    "delivery": {
+      "en": "",
+      "he": ""
+    },
+    "condition": {
+      "en": "Fully finished, luxury specification",
+      "he": "גמר מלא, מפרט יוקרתי"
+    },
+    "description": {
+      "en": "<p class=\"lead\">A new boutique building in Nachalat Achim with only a handful of private homes, one per floor, beside Sacher Park and a few minutes' walk from Rehavia and Shaarei Chesed.</p><p>Every floor is a single private home with four air directions, from garden apartments to a 325 m² duplex penthouse overlooking the park. Each home has private parking, a storage room, an elevator and sukkah balconies.</p><p>The location combines the calm of a quiet residential street with the heart of the city: King George and Bezalel streets, the Kahal Chassidim synagogue and all community services are close by.</p><p class=\"note\">Prices include VAT. Viewings and full plans by appointment.</p>",
+      "he": "<p class=\"lead\">בניין בוטיק חדש בנחלת אחים עם מספר מצומצם של דירות פרטיות, דירה אחת בכל קומה, ליד גן סאקר ובמרחק הליכה קצר מרחביה ומשערי חסד.</p><p>כל קומה היא דירה פרטית אחת עם ארבעה כיווני אוויר, מדירות גן ועד פנטהאוז דופלקס של 325 מ״ר הצופה לגן. לכל דירה חניה פרטית, מחסן, מעלית ומרפסות סוכה.</p><p>המיקום משלב שקט של רחוב מגורים פנימי עם לב העיר: רחוב המלך ג׳ורג׳ ורחוב בצלאל, בית הכנסת קהל חסידים וכל שירותי הקהילה בקרבת מקום.</p><p class=\"note\">המחירים כוללים מע״מ. ביקור ותוכניות מלאות בתיאום מראש.</p>"
+    },
+    "cover": "/photos/dc1ef16734e0",
+    "gallery": [
+      "/photos/dc1ef16734e0",
+      "/photos/d061be34304b",
+      "/photos/dc751a2d873c"
+    ],
+    "geo": {
+      "approx": false,
+      "lat": 31.78059,
+      "lng": 35.20967
+    },
+    "explorer": {
+      "floors": [
+        {
+          "height": 18.5,
+          "label": {
+            "en": "Floors 3–4 · Duplex penthouse",
+            "he": "קומות 3–4 · פנטהאוז דופלקס"
+          },
+          "n": 3,
+          "top": 13,
+          "units": [
+            40
+          ]
+        },
+        {
+          "height": 13.5,
+          "label": {
+            "en": "Floor 2 · Mini penthouse",
+            "he": "קומה 2 · מיני פנטהאוז"
+          },
+          "n": 2,
+          "top": 32.5,
+          "units": [
+            39
+          ]
+        },
+        {
+          "height": 15,
+          "label": {
+            "en": "Floor 1 · 6 rooms",
+            "he": "קומה 1 · 6 חדרים"
+          },
+          "n": 1,
+          "top": 46,
+          "units": [
+            38
+          ]
+        },
+        {
+          "height": 14,
+          "label": {
+            "en": "Ground · Garden apartment",
+            "he": "קרקע · דירת גן"
+          },
+          "n": 0,
+          "top": 61,
+          "units": [
+            37
+          ]
+        },
+        {
+          "height": 7.5,
+          "label": {
+            "en": "Garden level · Garden home",
+            "he": "קומת הגן · דירת גן"
+          },
+          "n": -1,
+          "top": 75,
+          "units": [
+            36
+          ]
+        }
+      ],
+      "left": 9.5,
+      "photo": "/photos/dc1ef16734e0",
+      "width": 86
+    }
+  },
+  {
     "slug": "shmuel-hanagid-15",
     "name": {
       "en": "Shmuel HaNagid 15",

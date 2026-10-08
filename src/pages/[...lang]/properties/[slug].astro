@@ -1,7 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import PropertyCard from '../../../components/PropertyCard.astro';
-import { t, getLang, href, L, visible, active, waLink, site, img, propNo, projectOf } from '../../../lib/i18n.js';
+import { t, getLang, href, L, visible, active, waLink, site, img, propNo, projectOf, floorText } from '../../../lib/i18n.js';
 import Price from '../../../components/Price.astro';
 import Calculators from '../../../components/Calculators.astro';
 import RecentSales from '../../../components/RecentSales.astro';
@@ -24,7 +24,7 @@ const facts = [
   [s.bedrooms, p.bedrooms],
   [s.size, p.sizeSqm && `${p.sizeSqm} ${s.sqm}`],
   [s.balcony, p.balconySqm && `${p.balconySqm} ${s.sqm}`],
-  [s.floor, p.floor === 0 ? s.ground : p.floor],
+  [s.floor, floorText(p, lang)],
   [s.propertyNo, propNo(p.id)],
 ].filter(([, v]) => v !== null && v !== undefined && v !== '');
 const similar = active

@@ -3,7 +3,7 @@
 import Base from '../../../layouts/Base.astro';
 import Price from '../../../components/Price.astro';
 import BuildingExplorer from '../../../components/BuildingExplorer.astro';
-import { t, getLang, href, L, waLink, site, img, propNo, projectGroups } from '../../../lib/i18n.js';
+import { t, getLang, href, L, waLink, site, img, propNo, projectGroups, floorText } from '../../../lib/i18n.js';
 
 export function getStaticPaths() {
   return projectGroups.flatMap((g) => [
@@ -74,7 +74,7 @@ const unitName = (u) => (u.unit ? L(u.unit, lang) : L(u.title, lang));
                   {he ? <span>{u.rooms} חדרים</span> : <span>{u.bedrooms} {u.bedrooms === 1 ? 'Bedroom' : 'Bedrooms'}</span>}
                   {u.sizeSqm && <span>{u.sizeSqm} {s.sqm}</span>}
                   {u.balconySqm && <span>{s.balcony} {u.balconySqm} {s.sqm}</span>}
-                  {u.floor != null && <span>{s.floor} {u.floor}</span>}
+                  {u.floor != null && <span>{s.floor} {floorText(u, lang)}</span>}
                 </span>
                 <span class="unit-no">{s.propertyNo} {propNo(u.id)}</span>
               </span>

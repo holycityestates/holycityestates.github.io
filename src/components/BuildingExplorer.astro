@@ -8,12 +8,15 @@ const s = t[lang];
 const he = lang === 'he';
 const ex = g.explorer;
 const unitName = (u) => (u.unit ? L(u.unit, lang) : L(u.title, lang));
-const floors = (ex?.floors || []).map((f) => {
-  const units = g.forSale.filter((u) => u.floor === f.n);
-  const label = units.length === 1 ? `${s.floor} ${f.n} · ${unitName(units[0])}` : `${s.floor} ${f.n} · ${s.projUnits(units.length)}`;
-  return { ...f, units, label };
+// A band lists its homes by id (f.units) or, failing that, takes every home on that floor number.
+const floors = (ex?.floors || []).map((f, i) => {
+  const units = f.units ? g.forSale.filter((u) => f.units.includes(u.id)) : g.forSale.filter((u) => u.floor === f.n);
+  const label = f.label ? L(f.label, lang)
+    : units.length === 1 ? `${s.floor} ${f.n} · ${unitName(units[0])}` : `${s.floor} ${f.n} · ${s.projUnits(units.length)}`;
+  return { ...f, key: String(i), units, label };
 });
-const list = g.forSale.filter((u) => floors.some((f) => f.n === u.floor));
+const bandOf = (u) => floors.find((f) => f.units.includes(u));
+const list = g.forSale.filter((u) => bandOf(u)).sort((a, b) => floors.indexOf(bandOf(a)) - floors.indexOf(bandOf(b)));   // top floor first, like the building
 ---
 {ex && list.length > 0 && (
   <section class="bx" data-bx>
@@ -21,7 +24,7 @@ const list = g.forSale.filter((u) => floors.some((f) => f.n === u.floor));
       <img src={img(ex.photo, 1600)} alt={L(g.name, lang)} loading="lazy" />
       {floors.map((f) => (
         f.units.length
-          ? <button type="button" class="bx-floor avail" data-f={f.n} style={`top:${f.top}%;height:${f.height}%;left:${ex.left}%;width:${ex.width}%`} aria-label={f.label}><span>{f.label}</span></button>
+          ? <button type="button" class="bx-floor avail" data-f={f.key} style={`top:${f.top}%;height:${f.height}%;left:${ex.left}%;width:${ex.width}%`} aria-label={f.label}><span>{f.label}</span></button>
           : <span class="bx-floor" aria-hidden="true" style={`top:${f.top}%;height:${f.height}%;left:${ex.left}%;width:${ex.width}%`}></span>
       ))}
     </div>
@@ -31,7 +34,7 @@ const list = g.forSale.filter((u) => floors.some((f) => f.n === u.floor));
       <p class="bx-hint">{s.exHint}{L(g.delivery, lang) && ` ${s.delivery}: ${L(g.delivery, lang)}.`}</p>
       <div class="bx-units">
         {list.map((u) => (
-          <a class="bx-unit" href={href(lang, `/properties/${u.slug}/`)} data-f={u.floor} data-label={floors.find((f) => f.n === u.floor)?.label}>
+          <a class="bx-unit" href={href(lang, `/properties/${u.slug}/`)} data-f={bandOf(u).key} data-label={bandOf(u).label}>
             <span class="bx-u-main">
               <strong>{unitName(u)}</strong>
               <span>{u.sizeSqm} {s.sqm}{u.balconySqm ? ` · ${s.balcony} ${u.balconySqm} ${s.sqm}` : ''} · {he ? `${u.rooms} חדרים` : `${u.bedrooms} ${u.bedrooms === 1 ? 'Bedroom' : 'Bedrooms'}`}</span>

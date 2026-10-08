@@ -68,6 +68,7 @@ export const neighborhoodHe = {
   'Arnona': 'ארנונה',
   'Nachlaot': 'נחלאות',
   'Yemin Moshe': 'ימין משה',
+  'Nachalat Achim': 'נחלת אחים',
 };
 
 // Common misspellings in Hebrew street names coming from Grist.

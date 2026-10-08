@@ -1,5 +1,530 @@
 [
   {
+    "id": 36,
+    "slug": "garden-home-with-75m-garden-kapach-14-36",
+    "display": true,
+    "offMarket": false,
+    "newProject": true,
+    "featured": false,
+    "date": "2026-10-08",
+    "status": "sale",
+    "price": 16500000,
+    "prevPrice": null,
+    "bedrooms": 5,
+    "rooms": 6.5,
+    "sizeSqm": 218,
+    "balconySqm": null,
+    "floor": 0,
+    "floorTo": null,
+    "type": {
+      "en": "Garden Apartment",
+      "he": "דירת גן"
+    },
+    "neighborhood": {
+      "en": "Nachalat Achim",
+      "he": "נחלת אחים"
+    },
+    "street": {
+      "en": "14 HaRav Kapach Street",
+      "he": "רחוב הרב קאפח 14"
+    },
+    "title": {
+      "en": "6.5-Room Garden Home with a 75 m² Garden, Kapach 14",
+      "he": "דירת גן 6.5 חדרים עם גינה של 75 מ״ר, קאפח 14"
+    },
+    "description": {
+      "en": "<p class=\"lead\">A rare 218 m² garden home on the garden level of a new boutique building in Nachalat Achim, with a 75 m² private garden.</p><p>6.5 rooms with three air directions, two parking spaces and a storage room. The home is offered as one large garden apartment, created by joining apartments 1, 2 and 3 of the building; the plans shown are those three original apartments, and we can show you the combined layout.</p><p>Finished to a luxury specification: underfloor heating, full VRF air conditioning with smart control, smart-home lighting and blinds, a smart entrance door with Shabbat mode, and premium kitchen and bathroom finishes.</p><p class=\"note\">Prices include VAT. Viewings and full plans by appointment.</p>",
+      "he": "<p class=\"lead\">דירת גן נדירה של 218 מ״ר בקומת הגן של בניין בוטיק חדש בנחלת אחים, עם גינה פרטית של 75 מ״ר.</p><p>6.5 חדרים בשלושה כיווני אוויר, שתי חניות ומחסן. הדירה מוצעת כדירת גן אחת גדולה, שנוצרה מחיבור דירות 1, 2 ו־3 בבניין; התוכניות המוצגות הן של שלוש הדירות המקוריות, ונשמח להציג את התכנון המאוחד.</p><p>גמר בסטנדרט יוקרתי: חימום תת־רצפתי, מיזוג VRF מלא עם שליטה חכמה, בית חכם לתאורה ולתריסים, דלת כניסה חכמה עם מצב שבת, ומטבח וחדרי רחצה ברמת גימור גבוהה.</p><p class=\"note\">המחירים כוללים מע״מ. ביקור ותוכניות מלאות בתיאום מראש.</p>"
+    },
+    "features": [
+      {
+        "en": "New Project",
+        "he": "פרויקט חדש"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "Storage",
+        "he": "מחסן"
+      },
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      },
+      {
+        "en": "Safe Room",
+        "he": "ממ״ד"
+      },
+      {
+        "en": "Underfloor Heating",
+        "he": "חימום תת-רצפתי"
+      },
+      {
+        "en": "Smart Home",
+        "he": "בית חכם"
+      },
+      {
+        "en": "Air Directions",
+        "he": "כיווני אוויר"
+      },
+      {
+        "en": "Private Garden",
+        "he": "גינה פרטית"
+      }
+    ],
+    "cover": "/photos/dc1ef16734e0",
+    "gallery": [
+      "/photos/dc1ef16734e0",
+      "/photos/d061be34304b",
+      "/photos/dc751a2d873c",
+      "/photos/d0ef466cf9c4",
+      "/photos/d41151ac6aea",
+      "/photos/d846f82cf4aa"
+    ],
+    "video": null,
+    "project": "kapach-14",
+    "unit": {
+      "en": "Garden home (apartments 1–3)",
+      "he": "דירת גן (דירות 1–3)"
+    },
+    "geo": {
+      "approx": false,
+      "lat": 31.78059,
+      "lng": 35.20967
+    }
+  },
+  {
+    "id": 37,
+    "slug": "garden-apartment-with-66m-garden-kapach-14-37",
+    "display": true,
+    "offMarket": false,
+    "newProject": true,
+    "featured": false,
+    "date": "2026-10-08",
+    "status": "sale",
+    "price": 14000000,
+    "prevPrice": null,
+    "bedrooms": 5,
+    "rooms": 6.5,
+    "sizeSqm": 184,
+    "balconySqm": 66,
+    "floor": 0,
+    "floorTo": null,
+    "type": {
+      "en": "Garden Apartment",
+      "he": "דירת גן"
+    },
+    "neighborhood": {
+      "en": "Nachalat Achim",
+      "he": "נחלת אחים"
+    },
+    "street": {
+      "en": "14 HaRav Kapach Street",
+      "he": "רחוב הרב קאפח 14"
+    },
+    "title": {
+      "en": "6.5-Room Garden Apartment with Garden, Kapach 14",
+      "he": "דירת גן 6.5 חדרים עם גינה, קאפח 14"
+    },
+    "description": {
+      "en": "<p class=\"lead\">A 184 m² garden apartment with four air directions, in a new boutique building of only a few homes beside Sacher Park.</p><p>6.5 rooms, with 66 m² of garden and balconies, one parking space and a storage room.</p><p>Finished to a luxury specification: underfloor heating, full VRF air conditioning with smart control, smart-home lighting and blinds, a smart entrance door with Shabbat mode, and premium kitchen and bathroom finishes.</p><p class=\"note\">Prices include VAT. Viewings and full plans by appointment.</p>",
+      "he": "<p class=\"lead\">דירת גן של 184 מ״ר עם ארבעה כיווני אוויר, בבניין בוטיק חדש עם מספר דירות מצומצם ליד גן סאקר.</p><p>6.5 חדרים, 66 מ״ר של גינה ומרפסות, חניה ומחסן.</p><p>גמר בסטנדרט יוקרתי: חימום תת־רצפתי, מיזוג VRF מלא עם שליטה חכמה, בית חכם לתאורה ולתריסים, דלת כניסה חכמה עם מצב שבת, ומטבח וחדרי רחצה ברמת גימור גבוהה.</p><p class=\"note\">המחירים כוללים מע״מ. ביקור ותוכניות מלאות בתיאום מראש.</p>"
+    },
+    "features": [
+      {
+        "en": "New Project",
+        "he": "פרויקט חדש"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "Storage",
+        "he": "מחסן"
+      },
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      },
+      {
+        "en": "Safe Room",
+        "he": "ממ״ד"
+      },
+      {
+        "en": "Underfloor Heating",
+        "he": "חימום תת-רצפתי"
+      },
+      {
+        "en": "Smart Home",
+        "he": "בית חכם"
+      },
+      {
+        "en": "Air Directions",
+        "he": "כיווני אוויר"
+      },
+      {
+        "en": "Private Garden",
+        "he": "גינה פרטית"
+      }
+    ],
+    "cover": "/photos/dc1ef16734e0",
+    "gallery": [
+      "/photos/dc1ef16734e0",
+      "/photos/ddb1ca231889",
+      "/photos/d061be34304b",
+      "/photos/dc751a2d873c"
+    ],
+    "video": null,
+    "project": "kapach-14",
+    "unit": {
+      "en": "Garden apartment 4",
+      "he": "דירת גן 4"
+    },
+    "geo": {
+      "approx": false,
+      "lat": 31.78059,
+      "lng": 35.20967
+    }
+  },
+  {
+    "id": 38,
+    "slug": "6-room-apartment-kapach-14-38",
+    "display": true,
+    "offMarket": false,
+    "newProject": true,
+    "featured": false,
+    "date": "2026-10-08",
+    "status": "sale",
+    "price": 12500000,
+    "prevPrice": null,
+    "bedrooms": 5,
+    "rooms": 6,
+    "sizeSqm": 180,
+    "balconySqm": 30,
+    "floor": 1,
+    "floorTo": null,
+    "type": {
+      "en": "Apartment",
+      "he": "דירה"
+    },
+    "neighborhood": {
+      "en": "Nachalat Achim",
+      "he": "נחלת אחים"
+    },
+    "street": {
+      "en": "14 HaRav Kapach Street",
+      "he": "רחוב הרב קאפח 14"
+    },
+    "title": {
+      "en": "6-Room Apartment with Sukkah Balcony, Kapach 14",
+      "he": "דירת 6 חדרים עם מרפסת סוכה, קאפח 14"
+    },
+    "description": {
+      "en": "<p class=\"lead\">A whole floor to yourself: a 180 m² apartment with four air directions in a new boutique building in Nachalat Achim.</p><p>6 rooms including a master suite and a safe room, an open living, dining and kitchen space, and 30 m² of balconies including a large sukkah balcony. One parking space and a storage room.</p><p>Finished to a luxury specification: underfloor heating, full VRF air conditioning with smart control, smart-home lighting and blinds, a smart entrance door with Shabbat mode, and premium kitchen and bathroom finishes.</p><p class=\"note\">Prices include VAT. Viewings and full plans by appointment.</p>",
+      "he": "<p class=\"lead\">קומה שלמה לכם: דירה של 180 מ״ר עם ארבעה כיווני אוויר בבניין בוטיק חדש בנחלת אחים.</p><p>6 חדרים כולל יחידת הורים וממ״ד, חלל מגורים, פינת אוכל ומטבח פתוחים, ו־30 מ״ר מרפסות כולל מרפסת סוכה גדולה. חניה ומחסן.</p><p>גמר בסטנדרט יוקרתי: חימום תת־רצפתי, מיזוג VRF מלא עם שליטה חכמה, בית חכם לתאורה ולתריסים, דלת כניסה חכמה עם מצב שבת, ומטבח וחדרי רחצה ברמת גימור גבוהה.</p><p class=\"note\">המחירים כוללים מע״מ. ביקור ותוכניות מלאות בתיאום מראש.</p>"
+    },
+    "features": [
+      {
+        "en": "New Project",
+        "he": "פרויקט חדש"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "Storage",
+        "he": "מחסן"
+      },
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      },
+      {
+        "en": "Safe Room",
+        "he": "ממ״ד"
+      },
+      {
+        "en": "Underfloor Heating",
+        "he": "חימום תת-רצפתי"
+      },
+      {
+        "en": "Smart Home",
+        "he": "בית חכם"
+      },
+      {
+        "en": "Air Directions",
+        "he": "כיווני אוויר"
+      },
+      {
+        "en": "Master Suite",
+        "he": "יחידת הורים"
+      }
+    ],
+    "cover": "/photos/dc1ef16734e0",
+    "gallery": [
+      "/photos/dc1ef16734e0",
+      "/photos/dba14eb7ea7b",
+      "/photos/d061be34304b",
+      "/photos/dc751a2d873c"
+    ],
+    "video": null,
+    "project": "kapach-14",
+    "unit": {
+      "en": "Apartment 5",
+      "he": "דירה 5"
+    },
+    "geo": {
+      "approx": false,
+      "lat": 31.78059,
+      "lng": 35.20967
+    }
+  },
+  {
+    "id": 39,
+    "slug": "mini-penthouse-park-view-kapach-14-39",
+    "display": true,
+    "offMarket": false,
+    "newProject": true,
+    "featured": false,
+    "date": "2026-10-08",
+    "status": "sale",
+    "price": 13500000,
+    "prevPrice": null,
+    "bedrooms": 5,
+    "rooms": 6,
+    "sizeSqm": 169,
+    "balconySqm": 39,
+    "floor": 2,
+    "floorTo": null,
+    "type": {
+      "en": "Penthouse",
+      "he": "פנטהאוז"
+    },
+    "neighborhood": {
+      "en": "Nachalat Achim",
+      "he": "נחלת אחים"
+    },
+    "street": {
+      "en": "14 HaRav Kapach Street",
+      "he": "רחוב הרב קאפח 14"
+    },
+    "title": {
+      "en": "6-Room Mini Penthouse with Park Views, Kapach 14",
+      "he": "מיני פנטהאוז 6 חדרים עם נוף לגן, קאפח 14"
+    },
+    "description": {
+      "en": "<p class=\"lead\">A 169 m² mini penthouse taking the whole floor, with four air directions and views over Sacher Park.</p><p>6 rooms including a master suite and a safe room, with 39 m² of balconies including a sukkah balcony. One parking space and a storage room.</p><p>Finished to a luxury specification: underfloor heating, full VRF air conditioning with smart control, smart-home lighting and blinds, a smart entrance door with Shabbat mode, and premium kitchen and bathroom finishes.</p><p class=\"note\">Prices include VAT. Viewings and full plans by appointment.</p>",
+      "he": "<p class=\"lead\">מיני פנטהאוז של 169 מ״ר על פני קומה שלמה, עם ארבעה כיווני אוויר ונוף לגן סאקר.</p><p>6 חדרים כולל יחידת הורים וממ״ד, ו־39 מ״ר מרפסות כולל מרפסת סוכה. חניה ומחסן.</p><p>גמר בסטנדרט יוקרתי: חימום תת־רצפתי, מיזוג VRF מלא עם שליטה חכמה, בית חכם לתאורה ולתריסים, דלת כניסה חכמה עם מצב שבת, ומטבח וחדרי רחצה ברמת גימור גבוהה.</p><p class=\"note\">המחירים כוללים מע״מ. ביקור ותוכניות מלאות בתיאום מראש.</p>"
+    },
+    "features": [
+      {
+        "en": "New Project",
+        "he": "פרויקט חדש"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "Storage",
+        "he": "מחסן"
+      },
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      },
+      {
+        "en": "Safe Room",
+        "he": "ממ״ד"
+      },
+      {
+        "en": "Underfloor Heating",
+        "he": "חימום תת-רצפתי"
+      },
+      {
+        "en": "Smart Home",
+        "he": "בית חכם"
+      },
+      {
+        "en": "Air Directions",
+        "he": "כיווני אוויר"
+      },
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "Master Suite",
+        "he": "יחידת הורים"
+      }
+    ],
+    "cover": "/photos/dc1ef16734e0",
+    "gallery": [
+      "/photos/dc1ef16734e0",
+      "/photos/d301174a098c",
+      "/photos/d061be34304b",
+      "/photos/dc751a2d873c"
+    ],
+    "video": null,
+    "project": "kapach-14",
+    "unit": {
+      "en": "Apartment 6 · mini penthouse",
+      "he": "דירה 6 · מיני פנטהאוז"
+    },
+    "geo": {
+      "approx": false,
+      "lat": 31.78059,
+      "lng": 35.20967
+    }
+  },
+  {
+    "id": 40,
+    "slug": "duplex-penthouse-8-rooms-kapach-14-40",
+    "display": true,
+    "offMarket": false,
+    "newProject": true,
+    "featured": false,
+    "date": "2026-10-08",
+    "status": "sale",
+    "price": 26500000,
+    "prevPrice": null,
+    "bedrooms": 7,
+    "rooms": 8,
+    "sizeSqm": 325,
+    "balconySqm": 57,
+    "floor": 3,
+    "floorTo": 4,
+    "type": {
+      "en": "Duplex Penthouse",
+      "he": "פנטהאוז דופלקס"
+    },
+    "neighborhood": {
+      "en": "Nachalat Achim",
+      "he": "נחלת אחים"
+    },
+    "street": {
+      "en": "14 HaRav Kapach Street",
+      "he": "רחוב הרב קאפח 14"
+    },
+    "title": {
+      "en": "8-Room Duplex Penthouse, Kapach 14",
+      "he": "פנטהאוז דופלקס 8 חדרים, קאפח 14"
+    },
+    "description": {
+      "en": "<p class=\"lead\">The crown of the building: a 325 m² duplex penthouse on the top two floors, with four air directions and wide views over Sacher Park.</p><p>8 rooms over two levels, with 57 m² of terraces, three parking spaces and a storage room. The lower level holds the main living spaces and bedrooms; the upper level adds two more bedrooms and a private terrace.</p><p>Finished to a luxury specification: underfloor heating, full VRF air conditioning with smart control, smart-home lighting and blinds, a smart entrance door with Shabbat mode, and premium kitchen and bathroom finishes.</p><p class=\"note\">Prices include VAT. Viewings and full plans by appointment.</p>",
+      "he": "<p class=\"lead\">גולת הכותרת של הבניין: פנטהאוז דופלקס של 325 מ״ר בשתי הקומות העליונות, עם ארבעה כיווני אוויר ונוף רחב לגן סאקר.</p><p>8 חדרים בשני מפלסים, 57 מ״ר מרפסות, שלוש חניות ומחסן. במפלס התחתון חללי המגורים וחדרי השינה, ובמפלס העליון שני חדרי שינה נוספים ומרפסת פרטית.</p><p>גמר בסטנדרט יוקרתי: חימום תת־רצפתי, מיזוג VRF מלא עם שליטה חכמה, בית חכם לתאורה ולתריסים, דלת כניסה חכמה עם מצב שבת, ומטבח וחדרי רחצה ברמת גימור גבוהה.</p><p class=\"note\">המחירים כוללים מע״מ. ביקור ותוכניות מלאות בתיאום מראש.</p>"
+    },
+    "features": [
+      {
+        "en": "New Project",
+        "he": "פרויקט חדש"
+      },
+      {
+        "en": "New Building",
+        "he": "בניין חדש"
+      },
+      {
+        "en": "Elevator",
+        "he": "מעלית"
+      },
+      {
+        "en": "Parking",
+        "he": "חנייה"
+      },
+      {
+        "en": "Storage",
+        "he": "מחסן"
+      },
+      {
+        "en": "Sukkah Balcony",
+        "he": "מרפסת סוכה"
+      },
+      {
+        "en": "Safe Room",
+        "he": "ממ״ד"
+      },
+      {
+        "en": "Underfloor Heating",
+        "he": "חימום תת-רצפתי"
+      },
+      {
+        "en": "Smart Home",
+        "he": "בית חכם"
+      },
+      {
+        "en": "Air Directions",
+        "he": "כיווני אוויר"
+      },
+      {
+        "en": "Great View",
+        "he": "נוף פתוח"
+      },
+      {
+        "en": "Master Suite",
+        "he": "יחידת הורים"
+      },
+      {
+        "en": "Rooftop",
+        "he": "גג פרטי"
+      }
+    ],
+    "cover": "/photos/dc1ef16734e0",
+    "gallery": [
+      "/photos/dc1ef16734e0",
+      "/photos/dd98d395e3e3",
+      "/photos/dd249f739d49",
+      "/photos/d061be34304b",
+      "/photos/dc751a2d873c"
+    ],
+    "video": null,
+    "project": "kapach-14",
+    "unit": {
+      "en": "Apartment 7 · duplex penthouse",
+      "he": "דירה 7 · פנטהאוז דופלקס"
+    },
+    "geo": {
+      "approx": false,
+      "lat": 31.78059,
+      "lng": 35.20967
+    }
+  },
+  {
     "id": 14,
     "slug": "penthouse-with-terrace-on-shmuel-hanagid-14",
     "display": true,
@@ -9,11 +534,13 @@
     "date": "2026-10-07",
     "status": "sale",
     "price": 15370000,
+    "prevPrice": null,
     "bedrooms": 4,
     "rooms": 5,
     "sizeSqm": 219,
     "balconySqm": 35,
     "floor": 5,
+    "floorTo": null,
     "type": {
       "en": "Penthouse",
       "he": "פנטהאוז"
@@ -96,11 +623,13 @@
     "date": "2026-10-07",
     "status": "sale",
     "price": 7000000,
+    "prevPrice": null,
     "bedrooms": 4,
     "rooms": 5,
     "sizeSqm": 119,
     "balconySqm": 22.5,
     "floor": 4,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -179,11 +708,13 @@
     "date": "2026-10-07",
     "status": "sale",
     "price": 6250000,
+    "prevPrice": null,
     "bedrooms": 3,
     "rooms": 4,
     "sizeSqm": 106,
     "balconySqm": 20.5,
     "floor": 4,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -262,11 +793,13 @@
     "date": "2025-01-21",
     "status": "rent",
     "price": 8200,
+    "prevPrice": null,
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 50,
     "balconySqm": null,
     "floor": 22,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -365,11 +898,13 @@
     "date": "2025-01-21",
     "status": "sale",
     "price": 30000000,
+    "prevPrice": null,
     "bedrooms": 3,
     "rooms": 4,
     "sizeSqm": 300,
     "balconySqm": null,
     "floor": 4,
+    "floorTo": null,
     "type": {
       "en": "Penthouse",
       "he": "פנטהאוז"
@@ -456,11 +991,13 @@
     "date": "2025-01-21",
     "status": "sale",
     "price": 6450000,
+    "prevPrice": null,
     "bedrooms": 3,
     "rooms": 4,
     "sizeSqm": 155,
     "balconySqm": null,
     "floor": 6,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -534,11 +1071,13 @@
     "date": "2025-01-20",
     "status": "rent",
     "price": 18000,
+    "prevPrice": null,
     "bedrooms": 4,
     "rooms": 5,
     "sizeSqm": 250,
     "balconySqm": null,
     "floor": 11,
+    "floorTo": null,
     "type": {
       "en": "Penthouse",
       "he": "פנטהאוז"
@@ -628,11 +1167,13 @@
     "date": "2025-01-20",
     "status": "rent",
     "price": 9500,
+    "prevPrice": null,
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 85,
     "balconySqm": null,
     "floor": 4,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -706,11 +1247,13 @@
     "date": "2025-01-19",
     "status": "sale",
     "price": null,
+    "prevPrice": null,
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 85,
     "balconySqm": null,
     "floor": 3,
+    "floorTo": null,
     "type": {
       "en": "New project",
       "he": "פרויקט חדש"
@@ -761,11 +1304,13 @@
     "date": "2025-01-19",
     "status": "sale",
     "price": null,
+    "prevPrice": null,
     "bedrooms": 3,
     "rooms": 4,
     "sizeSqm": 200,
     "balconySqm": null,
     "floor": 4,
+    "floorTo": null,
     "type": {
       "en": "Penthouse",
       "he": "פנטהאוז"
@@ -816,11 +1361,13 @@
     "date": "2025-01-19",
     "status": "sale",
     "price": null,
+    "prevPrice": null,
     "bedrooms": null,
     "rooms": null,
     "sizeSqm": 1300,
     "balconySqm": null,
     "floor": 0,
+    "floorTo": null,
     "type": {
       "en": "Building",
       "he": "בניין"
@@ -866,11 +1413,13 @@
     "date": "2025-01-16",
     "status": "short-term",
     "price": 350,
+    "prevPrice": null,
     "bedrooms": null,
     "rooms": 1,
     "sizeSqm": null,
     "balconySqm": null,
     "floor": 1,
+    "floorTo": null,
     "type": {
       "en": "Studio Apartment",
       "he": "דירת סטודיו"
@@ -937,11 +1486,13 @@
     "date": "2025-01-16",
     "status": "short-term",
     "price": 350,
+    "prevPrice": null,
     "bedrooms": null,
     "rooms": 1,
     "sizeSqm": null,
     "balconySqm": null,
     "floor": 1,
+    "floorTo": null,
     "type": {
       "en": "Studio Apartment",
       "he": "דירת סטודיו"
@@ -1007,11 +1558,13 @@
     "date": "2025-01-14",
     "status": "short-term",
     "price": 850,
+    "prevPrice": null,
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 75,
     "balconySqm": null,
     "floor": 2,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -1086,11 +1639,13 @@
     "date": "2025-01-14",
     "status": "short-term",
     "price": 700,
+    "prevPrice": null,
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 70,
     "balconySqm": null,
     "floor": 2,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -1169,11 +1724,13 @@
     "date": "2025-01-13",
     "status": "short-term",
     "price": 1350,
+    "prevPrice": null,
     "bedrooms": 4,
     "rooms": 5,
     "sizeSqm": 140,
     "balconySqm": null,
     "floor": 0,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -1249,11 +1806,13 @@
     "date": "2025-01-12",
     "status": "short-term",
     "price": null,
+    "prevPrice": null,
     "bedrooms": 3,
     "rooms": 4,
     "sizeSqm": 250,
     "balconySqm": null,
     "floor": 6,
+    "floorTo": null,
     "type": {
       "en": "Penthouse",
       "he": "פנטהאוז"
@@ -1345,11 +1904,13 @@
     "date": "2025-01-02",
     "status": "rent",
     "price": 8700,
+    "prevPrice": null,
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 85,
     "balconySqm": null,
     "floor": 3,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -1427,11 +1988,13 @@
     "date": "2025-01-02",
     "status": "rent",
     "price": 4000,
+    "prevPrice": null,
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 20,
     "balconySqm": null,
     "floor": 5,
+    "floorTo": null,
     "type": {
       "en": "Studio Apartment",
       "he": "דירת סטודיו"
@@ -1507,11 +2070,13 @@
     "date": "2025-01-01",
     "status": "rent",
     "price": 8900,
+    "prevPrice": null,
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 85,
     "balconySqm": null,
     "floor": 0,
+    "floorTo": null,
     "type": {
       "en": "Garden Apartment",
       "he": "דירת גן"
@@ -1587,11 +2152,13 @@
     "date": "2024-12-22",
     "status": "short-term",
     "price": 750,
+    "prevPrice": null,
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 70,
     "balconySqm": null,
     "floor": 0,
+    "floorTo": null,
     "type": {
       "en": "Garden",
       "he": "בית עם גינה"
@@ -1676,11 +2243,13 @@
     "date": "2024-12-18",
     "status": "rent",
     "price": 7000,
+    "prevPrice": null,
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 55,
     "balconySqm": null,
     "floor": 1,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -1767,11 +2336,13 @@
     "date": "2024-12-18",
     "status": "rent",
     "price": 6500,
+    "prevPrice": null,
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 55,
     "balconySqm": null,
     "floor": 1,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -1840,11 +2411,13 @@
     "date": "2024-12-18",
     "status": "rent",
     "price": 6500,
+    "prevPrice": null,
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 55,
     "balconySqm": null,
     "floor": 14,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -1928,11 +2501,13 @@
     "date": "2024-12-18",
     "status": "sale",
     "price": 11800000,
+    "prevPrice": null,
     "bedrooms": 4,
     "rooms": 5,
     "sizeSqm": 160,
     "balconySqm": 140,
     "floor": 11,
+    "floorTo": null,
     "type": {
       "en": "Penthouse",
       "he": "פנטהאוז"
@@ -2022,11 +2597,13 @@
     "date": "2024-12-18",
     "status": "sale",
     "price": 2850000,
+    "prevPrice": null,
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 47,
     "balconySqm": 5,
     "floor": 16,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -2113,11 +2690,13 @@
     "date": "2024-12-18",
     "status": "sale",
     "price": 6200000,
+    "prevPrice": null,
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 85,
     "balconySqm": 12,
     "floor": 19,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -2206,11 +2785,13 @@
     "date": "2024-12-17",
     "status": "rent",
     "price": 11300,
+    "prevPrice": null,
     "bedrooms": 2,
     "rooms": 3,
     "sizeSqm": 100,
     "balconySqm": null,
     "floor": 1,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -2285,11 +2866,13 @@
     "date": "2024-12-11",
     "status": "rent",
     "price": 5800,
+    "prevPrice": null,
     "bedrooms": 1,
     "rooms": 2,
     "sizeSqm": 45,
     "balconySqm": null,
     "floor": 9,
+    "floorTo": null,
     "type": {
       "en": "Apartment",
       "he": "דירה"
@@ -2375,11 +2958,13 @@
     "date": "2024-12-11",
     "status": "sale",
     "price": null,
+    "prevPrice": null,
     "bedrooms": 3,
     "rooms": 4,
     "sizeSqm": 110,
     "balconySqm": null,
     "floor": 0,
+    "floorTo": null,
     "type": {
       "en": "New project",
       "he": "פרויקט חדש"
