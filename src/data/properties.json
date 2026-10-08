@@ -14,7 +14,7 @@
     "rooms": 6.5,
     "sizeSqm": 218,
     "balconySqm": null,
-    "floor": 0,
+    "floor": -1,
     "floorTo": null,
     "type": {
       "en": "Garden Apartment",
@@ -33,8 +33,8 @@
       "he": "דירת גן 6.5 חדרים עם גינה של 75 מ״ר, קאפח 14"
     },
     "description": {
-      "en": "<p class=\"lead\">A rare 218 m² garden home on the garden level of a new boutique building in Nachalat Achim, with a 75 m² private garden.</p><p>6.5 rooms with three air directions, two parking spaces and a storage room. The home is offered as one large garden apartment, created by joining apartments 1, 2 and 3 of the building; the plans shown are those three original apartments, and we can show you the combined layout.</p><p>Finished to a luxury specification: underfloor heating, full VRF air conditioning with smart control, smart-home lighting and blinds, a smart entrance door with Shabbat mode, and premium kitchen and bathroom finishes.</p><p class=\"note\">Prices include VAT. Viewings and full plans by appointment.</p>",
-      "he": "<p class=\"lead\">דירת גן נדירה של 218 מ״ר בקומת הגן של בניין בוטיק חדש בנחלת אחים, עם גינה פרטית של 75 מ״ר.</p><p>6.5 חדרים בשלושה כיווני אוויר, שתי חניות ומחסן. הדירה מוצעת כדירת גן אחת גדולה, שנוצרה מחיבור דירות 1, 2 ו־3 בבניין; התוכניות המוצגות הן של שלוש הדירות המקוריות, ונשמח להציג את התכנון המאוחד.</p><p>גמר בסטנדרט יוקרתי: חימום תת־רצפתי, מיזוג VRF מלא עם שליטה חכמה, בית חכם לתאורה ולתריסים, דלת כניסה חכמה עם מצב שבת, ומטבח וחדרי רחצה ברמת גימור גבוהה.</p><p class=\"note\">המחירים כוללים מע״מ. ביקור ותוכניות מלאות בתיאום מראש.</p>"
+      "en": "<p class=\"lead\">A rare 218 m² garden home on the lower ground floor of a new boutique building in Nachalat Achim, with a 75 m² private garden.</p><p>6.5 rooms with three air directions, two parking spaces and a storage room. The home is offered as one large garden apartment, created by joining apartments 1, 2 and 3 of the building; the plans shown are those three original apartments, and we can show you the combined layout.</p><p>Finished to a luxury specification: underfloor heating, full VRF air conditioning with smart control, smart-home lighting and blinds, a smart entrance door with Shabbat mode, and premium kitchen and bathroom finishes.</p><p class=\"note\">Prices include VAT. Viewings and full plans by appointment.</p>",
+      "he": "<p class=\"lead\">דירת גן נדירה של 218 מ״ר בקומת הקרקע התחתונה של בניין בוטיק חדש בנחלת אחים, עם גינה פרטית של 75 מ״ר.</p><p>6.5 חדרים בשלושה כיווני אוויר, שתי חניות ומחסן. הדירה מוצעת כדירת גן אחת גדולה, שנוצרה מחיבור דירות 1, 2 ו־3 בבניין; התוכניות המוצגות הן של שלוש הדירות המקוריות, ונשמח להציג את התכנון המאוחד.</p><p>גמר בסטנדרט יוקרתי: חימום תת־רצפתי, מיזוג VRF מלא עם שליטה חכמה, בית חכם לתאורה ולתריסים, דלת כניסה חכמה עם מצב שבת, ומטבח וחדרי רחצה ברמת גימור גבוהה.</p><p class=\"note\">המחירים כוללים מע״מ. ביקור ותוכניות מלאות בתיאום מראש.</p>"
     },
     "features": [
       {

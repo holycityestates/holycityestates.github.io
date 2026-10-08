@@ -14,7 +14,7 @@ const properties = imported.map((p) => {
 // Property numbers are shown with a "300" prefix (#16 → 30016); the internal id and page addresses stay the same.
 export const propNo = (id) => `300${id}`;
 // Floor as shown to visitors: "Ground" for 0, "3–4" for duplexes.
-export const floorText = (p, lang) => (p.floor == null ? null : p.floor === 0 ? t[lang].ground : p.floorTo ? `${p.floor}–${p.floorTo}` : String(p.floor));
+export const floorText = (p, lang) => (p.floor == null ? null : p.floor === 0 ? t[lang].ground : p.floor === -1 ? t[lang].lowerGround : p.floorTo ? `${p.floor}–${p.floorTo}` : String(p.floor));
 
 export const THEME = process.env.SITE_THEME || 'signature';
 
@@ -107,6 +107,7 @@ export const t = {
     sqm: 'm²',
     floor: 'Floor',
     ground: 'Ground',
+    lowerGround: 'Lower ground',
     propertyNo: 'Property No.',
     sort: 'Sort',
     sortNew: 'Newest',
@@ -245,6 +246,7 @@ export const t = {
     sqm: 'מ״ר',
     floor: 'קומה',
     ground: 'קרקע',
+    lowerGround: 'קרקע תחתונה',
     propertyNo: 'מספר נכס',
     sort: 'מיון',
     sortNew: 'החדשים ביותר',
