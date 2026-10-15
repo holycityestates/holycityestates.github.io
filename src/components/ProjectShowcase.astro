@@ -58,6 +58,8 @@ const slides = tiles.map(({ group: g, p }) => {
   // After a manual move it waits 12 seconds before playing on.
   document.querySelectorAll<HTMLElement>('[data-pshow]').forEach((box) => {
     const slides = [...box.querySelectorAll<HTMLElement>('.ps-slide')];
+    // First photo starts at its real framing too: the slow push-in begins once the page has drawn it.
+    requestAnimationFrame(() => requestAnimationFrame(() => box.classList.add('go')));
     const texts = [...box.querySelectorAll<HTMLElement>('.ps-text')];
     const bars = [...box.querySelectorAll<HTMLButtonElement>('.ps-bars button')];
     const count = box.querySelector<HTMLElement>('.ps-count b');

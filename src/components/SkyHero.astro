@@ -8,14 +8,18 @@ const { lang } = Astro.props;
 const s = t[lang];
 const set = (n) => `/img/sky/${n}-1280.webp 1280w, /img/sky/${n}-1688.webp 1688w`;
 const sizes = '(max-aspect-ratio: 1688/932) 181svh, 100vw';
+// Phones/portrait: a sharper centre crop (made from the full-size original), 1688x1864 and 1087x1200
+const PHONE = '(max-aspect-ratio: 4/5)';
+const mset = (n) => `/img/sky/${n}-m1200.webp 1087w, /img/sky/${n}-m1864.webp 1688w`;
+const msizes = '91svh';
 ---
 <section class="sky-hero" data-sky-hero>
   <div class="sh-stage">
-    <img class="sh-l" src="/img/sky/day-1688.webp" srcset={set('day')} sizes={sizes} alt={lang === 'he' ? 'ירושלים בשקיעה מהר הזיתים' : 'Jerusalem at sunset from the Mount of Olives'} fetchpriority="high" />
-    <img class="sh-l sh-n" src="/img/sky/night-1688.webp" srcset={set('night')} sizes={sizes} alt="" loading="lazy" />
+    <picture><source media={PHONE} srcset={mset('day')} sizes={msizes} /><img class="sh-l" src="/img/sky/day-1688.webp" srcset={set('day')} sizes={sizes} alt={lang === 'he' ? 'ירושלים בשקיעה מהר הזיתים' : 'Jerusalem at sunset from the Mount of Olives'} fetchpriority="high" /></picture>
+    <picture><source media={PHONE} srcset={mset('night')} sizes={msizes} /><img class="sh-l sh-n" src="/img/sky/night-1688.webp" srcset={set('night')} sizes={sizes} alt="" loading="lazy" /></picture>
     <div class="sh-word" aria-hidden="true"><span>{lang === 'he' ? 'ירושלים' : 'Jerusalem'}</span></div>
-    <img class="sh-l sh-city" src="/img/sky/city-1688.webp" srcset={set('city')} sizes={sizes} alt="" fetchpriority="high" />
-    <img class="sh-l sh-city sh-n" src="/img/sky/citynight-1688.webp" srcset={set('citynight')} sizes={sizes} alt="" loading="lazy" />
+    <picture><source media={PHONE} srcset={mset('city')} sizes={msizes} /><img class="sh-l sh-city" src="/img/sky/city-1688.webp" srcset={set('city')} sizes={sizes} alt="" fetchpriority="high" /></picture>
+    <picture><source media={PHONE} srcset={mset('citynight')} sizes={msizes} /><img class="sh-l sh-city sh-n" src="/img/sky/citynight-1688.webp" srcset={set('citynight')} sizes={sizes} alt="" loading="lazy" /></picture>
     <div class="sh-shade"></div>
     <div class="wrap sh-content">
       <h1 class="sh-title">{s.heroTitle}</h1>

@@ -653,6 +653,7 @@ html[dir='rtl'] .proj-link em { letter-spacing: 0; font-size: .8rem; }
 /* ---------- v17: homepage opener (sunset → night, gold word behind the skyline) ---------- */
 .sky-hero { position: relative; height: 240vh; height: 240svh; background: #05070d; color: #fff; }
 .sh-stage { position: sticky; top: 0; height: 100vh; height: 100svh; min-height: 560px; overflow: hidden; }
+.sky-hero picture { display: contents; }
 .sh-l { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
 .sh-n { opacity: 0; will-change: opacity; }
 .sh-city { z-index: 2; }
@@ -731,9 +732,9 @@ html[dir='rtl'] .lux-go svg { transform: scaleX(-1); }
 .pshow { position: relative; height: min(84vh, 760px); min-height: 520px; background: var(--night); color: #fff; overflow: hidden; }
 .ps-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; }
 .ps-slide.on { opacity: 1; z-index: 1; }
-.ps-slide img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.12); }
-.ps-slide.on img { animation: ps-drift 8s linear forwards; }
-@keyframes ps-drift { from { transform: scale(1.12) translateX(1.5%); } to { transform: scale(1.02) translateX(0); } }
+.ps-slide img { width: 100%; height: 100%; object-fit: cover; transform: scale(1); transition: transform 0s 1.3s; }
+/* Starts at the photo's real framing and eases in very slightly; resets only after it has faded out */
+.pshow.go .ps-slide.on img { transform: scale(1.05); transition: transform 8s cubic-bezier(.3,.1,.4,1); }
 .pshow::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(10,10,14,.8), rgba(10,10,14,.2) 62%), linear-gradient(0deg, rgba(10,10,14,.65), transparent 45%), linear-gradient(180deg, rgba(10,10,14,.45), transparent 22%); }
 html[dir='rtl'] .pshow::after { background: linear-gradient(270deg, rgba(10,10,14,.8), rgba(10,10,14,.2) 62%), linear-gradient(0deg, rgba(10,10,14,.65), transparent 45%), linear-gradient(180deg, rgba(10,10,14,.45), transparent 22%); }
 .ps-copy { position: absolute; z-index: 2; left: 0; right: 0; bottom: 104px; display: grid; pointer-events: none; }
@@ -767,7 +768,7 @@ html[lang='he'] .ps-kicker { letter-spacing: 0; font-size: .95rem; font-family: 
   .ps-bars span { display: none; }
   .ps-bars button { padding-top: 0; height: 14px; }
 }
-@media (prefers-reduced-motion: reduce) { .ps-slide.on img { animation: none; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .ps-slide img, .ps-slide.on img { transition: none; transform: none; } }
 
 /* ---------- v18: building explorer on project pages ---------- */
 .bx { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--night); color: #f2ede3; margin-block: 8px 48px; }

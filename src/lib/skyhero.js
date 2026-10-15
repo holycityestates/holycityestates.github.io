@@ -1,7 +1,9 @@
 // Homepage opener. Layers share one "cover" fit, so the word can sit exactly behind the photo's rooftops.
 const hero = document.querySelector('[data-sky-hero]');
 if (hero) {
-  const IW = 1688, IH = 932, ROOF = 0.345;          // photo size and the height of its roofline
+  const ROOF = 0.345;                                  // height of the photo's roofline (same in both crops)
+  const phone = matchMedia('(max-aspect-ratio: 4/5)'); // phones get the 1688x1864 centre crop
+  const dims = () => (phone.matches ? [1688, 1864] : [1688, 932]);
   const stage = hero.querySelector('.sh-stage');
   const word = hero.querySelector('.sh-word');
   const night = hero.querySelectorAll('.sh-n');
@@ -10,12 +12,14 @@ if (hero) {
   let rest = 0, risen = reduce, ticking = false;
 
   const place = () => {
+    const [IW, IH] = dims();
     const w = stage.clientWidth, h = stage.clientHeight, k = Math.max(w / IW, h / IH);
     const roof = (h - IH * k) / 2 + ROOF * IH * k;
     word.style.top = '0px';
     const wh = word.getBoundingClientRect().height;
     // Lower part of the letters stays behind the buildings (Hebrew letters sit higher in their line, so less is hidden).
-    rest = roof - wh * (document.documentElement.lang === 'he' ? 0.98 : 0.8);
+    // On phones the towers are tall next to the word, so it rests higher and stays readable.
+    rest = roof - wh * (document.documentElement.lang === 'he' ? 0.98 : 0.8) - (phone.matches ? wh * (document.documentElement.lang === 'he' ? 0.55 : 0.95) : 0);
     word.style.top = `${rest}px`;
   };
   const frame = () => {
