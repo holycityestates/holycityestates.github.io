@@ -1,23 +1,19 @@
 ---
 import Base from '../../layouts/Base.astro';
+import ContactHero from '../../components/ContactHero.astro';
 import { t, getLang, langPaths, L, site, waLink } from '../../lib/i18n.js';
 export const getStaticPaths = langPaths;
 const lang = getLang(Astro.params.lang);
 const s = t[lang];
 ---
-<Base lang={lang} title={s.contactTitle}>
-  <section class="page-head"><div class="wrap"><h1>{s.contactTitle}</h1></div></section>
+<Base lang={lang} title={s.contactTitle} transparent>
+  <ContactHero lang={lang} />
   <section class="section">
     <div class="wrap contact-split">
       <div>
-        <p class="lead-dark">{s.contactSub}</p>
-        <div class="contact-list">
-          <a class="btn btn-gold" href={waLink('')} target="_blank" rel="noopener">{s.whatsapp}</a>
-          <a class="btn btn-outline" href={`tel:${site.phoneIntl}`}>{s.call} {site.phone}</a>
-          <a class="btn btn-ghost" href={`mailto:${site.email}`}>{site.email}</a>
-        </div>
-        <h3>{s.office}</h3>
-        <p>{L(site.address, lang)}</p>
+        <p class="kicker">{s.office}</p>
+        <h2 class="contact-office">{L(site.address, lang)}</h2>
+        <a class="btn btn-gold" href={waLink('')} target="_blank" rel="noopener">{s.whatsapp}</a>
       </div>
       <iframe
         class="map"

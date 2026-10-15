@@ -1,0 +1,56 @@
+---
+// About opener (chosen by Aryeh 2026-10-15): his listing photos in upright columns across the whole screen,
+// gliding up and down, in black and white; every couple of seconds one of them lights up in colour with a gold
+// frame and its neighborhood. Nothing to click. A soft dark area keeps the words easy to read.
+import '@fontsource/cinzel/latin-500.css';
+import { L, visible, img, href, waLink } from '../lib/i18n.js';
+const { lang } = Astro.props;
+const he = lang === 'he';
+const live = visible.filter((p) => !p.offMarket);
+// One photo per home, no repeats (the Kapach homes share renders)
+const pics = [...new Map(live.filter((p) => p.cover).map((p) => [p.cover, p])).values()];
+const COLS = 4;
+const col = (k) => pics.filter((_, i) => i % COLS === k);
+const title = he ? 'ירושלים היא הבית שלנו. בואו נמצא את שלכם.' : 'Jerusalem is our home. Let us find yours.';
+---
+<section class="ah ah--wall" data-ah>
+  <div class="ahc" aria-hidden="true">
+    {Array.from({ length: COLS }, (_, k) => (
+      <div class:list={['ahc-col', { up: k % 2 === 0 }]} style={`--d:${56 + k * 8}s`}>
+        {[0, 1].map(() => col(k).map((p) => <figure><img src={img(p.cover, 800)} alt="" loading="lazy" /><figcaption>{L(p.neighborhood, lang)}</figcaption></figure>))}
+      </div>
+    ))}
+  </div>
+  <div class="ah-shade"></div>
+  <div class="wrap ah-content">
+    <p class="ah-kick">{he ? 'אודות הולי סיטי' : 'About Holy City'}</p>
+    <h1 class="ah-title" aria-label={title}>{title.split(' ').map((w, i) => <span style={`--i:${i}`} aria-hidden="true">{w}</span>)}</h1>
+    <p class="ah-sub">{he ? 'דירות, פנטהאוזים ופרויקטים חדשים בשכונות המבוקשות בעיר.' : 'Apartments, penthouses and new projects in the city’s most sought-after neighborhoods.'}</p>
+    <div class="ah-cta">
+      <a class="btn btn-gold" href={waLink('')} target="_blank" rel="noopener">{he ? 'דברו איתנו בוואטסאפ' : 'Talk to us on WhatsApp'}</a>
+      <a class="ah-link" href={href(lang, '/properties/')}>{he ? 'לנכסים שלנו' : 'See our homes'} <span aria-hidden="true">{he ? '←' : '→'}</span></a>
+    </div>
+  </div>
+</section>
+<script>
+  const box = document.querySelector<HTMLElement>('[data-ah]');
+  if (box && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Every 1.7s one photo that is on screen (beside the words; on phones near the top) lights up; two at most
+    const figs = [...box.querySelectorAll<HTMLElement>('.ahc figure')];
+    const rtl = document.documentElement.dir === 'rtl';
+    let lit: HTMLElement[] = [];
+    const pick = () => {
+      const b = box.getBoundingClientRect(), textEdge = b.left + b.width * (rtl ? 0.62 : 0.42);
+      const seen = figs.filter((f) => {
+        const r = f.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+        if (lit.includes(f) || cx < b.left + 20 || cx > b.right - 20) return false;
+        return innerWidth < 760 ? cy > b.top + 80 && cy < b.top + b.height * 0.42 : cy > b.top + 90 && cy < b.bottom - 60 && (rtl ? cx < textEdge : cx > textEdge);
+      });
+      if (!seen.length) return;
+      const f = seen[Math.floor(Math.random() * seen.length)];
+      f.classList.add('on'); lit.push(f);
+      if (lit.length > 2) lit.shift()!.classList.remove('on');
+    };
+    pick(); setInterval(pick, 1700);
+  }
+</script>

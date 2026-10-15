@@ -3,13 +3,14 @@ import Base from '../../layouts/Base.astro';
 import Services from '../../components/Services.astro';
 import Reviews from '../../components/Reviews.astro';
 import FounderLetter from '../../components/FounderLetter.astro';
+import AboutHero from '../../components/AboutHero.astro';
 import { t, getLang, langPaths, L } from '../../lib/i18n.js';
 export const getStaticPaths = langPaths;
 const lang = getLang(Astro.params.lang);
 const s = t[lang];
 ---
-<Base lang={lang} title={s.nav.about}>
-  <section class="page-head"><div class="wrap"><h1>{s.nav.about}</h1></div></section>
+<Base lang={lang} title={s.nav.about} transparent>
+  <AboutHero lang={lang} />
   <FounderLetter lang={lang} />
   <section class="section">
     <div class="wrap about-split">

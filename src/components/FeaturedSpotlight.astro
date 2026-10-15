@@ -57,6 +57,12 @@ const he = lang === 'he';
         const bar = el.querySelector<HTMLElement>('.spot-timer');
         if (bar) { bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; }
       });
+      // Phones: the homes sit in a strip of small photos under the big one; keep the chosen one in view (strip only, never the page)
+      const list = box.querySelector<HTMLElement>('.spot-list');
+      if (list && list.scrollWidth > list.clientWidth + 4) {
+        const r = rows[cur].closest('li')!;
+        list.scrollTo({ left: r.offsetLeft - (list.clientWidth - r.offsetWidth) / 2, behavior: auto ? 'smooth' : 'smooth' });
+      }
       clearTimeout(timer);
       if (!reduce && !held && slides.length > 1) timer = window.setTimeout(() => go(cur + 1, true), 6000);
     };
@@ -64,9 +70,21 @@ const he = lang === 'he';
       const i = +r.dataset.i!;
       if (hover) r.addEventListener('mouseenter', () => go(i));
       r.addEventListener('focus', () => go(i));
-      // Touch: first tap shows the home on the stage, second tap opens it
-      r.addEventListener('click', (e) => { if (!hover && cur !== i) { e.preventDefault(); go(i); } });
+      // Touch: tapping a small photo shows that home on the big photo; tapping the big photo opens it
+      r.addEventListener('click', (e) => { if (!hover) { e.preventDefault(); go(i); } });
     });
+    // Swipe the big photo to move through the homes
+    const stage = box.querySelector<HTMLElement>('.spot-stage')!;
+    const rtl = document.documentElement.dir === 'rtl';
+    let sx: number | null = null, sy = 0;
+    stage.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+    stage.addEventListener('touchend', (e) => {
+      if (sx === null) return;
+      const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy; sx = null;
+      if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+      go(cur + ((dx < 0) !== rtl ? 1 : -1));
+      stage.addEventListener('click', (ev) => ev.preventDefault(), { once: true, capture: true });
+    }, { passive: true });
     box.addEventListener('mouseenter', () => { held = true; clearTimeout(timer); box.classList.add('held'); });
     box.addEventListener('mouseleave', () => { held = false; box.classList.remove('held'); go(cur); });
     go(0);

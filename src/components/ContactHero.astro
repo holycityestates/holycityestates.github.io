@@ -1,0 +1,50 @@
+---
+// Contact opener: Jerusalem right now. Day photo in daytime, night photo after dark (Jerusalem time),
+// a live clock with a greeting, and the three ways to reach Aryeh right in the header.
+import '@fontsource/cinzel/latin-500.css';
+import { t, site, waLink } from '../lib/i18n.js';
+const { lang } = Astro.props;
+const s = t[lang];
+const he = lang === 'he';
+const set = (n) => `/img/sky/${n}-1280.webp 1280w, /img/sky/${n}-1688.webp 1688w`;
+const mset = (n) => `/img/sky/${n}-m1200.webp 1087w, /img/sky/${n}-m1864.webp 1688w`;
+const PHONE = '(max-aspect-ratio: 4/5)';
+const ico = {
+  wa: 'M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm4.9 12.6c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.8-.3-1.4-.5-2.5-1.1-4.1-3.6-4.2-3.8-.1-.2-1-1.3-1-2.5s.6-1.8.9-2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.1 1.4 1.8 1 .9 1.8 1.1 2 1.3.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.3z',
+  call: 'M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z',
+  mail: 'M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm8 7.2L4.6 7.5v.3L12 12.6l7.4-4.8v-.3L12 12.2z',
+};
+---
+<section class="ch" data-ch data-he={he ? '1' : ''}>
+  <picture><source media={PHONE} srcset={mset('day')} sizes="91svh" /><img class="ch-l ch-day" src="/img/sky/day-1688.webp" srcset={set('day')} sizes="100vw" alt={he ? 'ירושלים' : 'Jerusalem'} /></picture>
+  <picture><source media={PHONE} srcset={mset('night')} sizes="91svh" /><img class="ch-l ch-night" src="/img/sky/night-1688.webp" srcset={set('night')} sizes="100vw" alt="" /></picture>
+  <div class="ch-shade"></div>
+  <div class="wrap ch-content">
+    <p class="ch-now"><i aria-hidden="true"></i><span>{he ? 'ירושלים' : 'Jerusalem'}</span> · <time data-clock>--:--</time> · <span data-greet></span></p>
+    <h1 class="ch-title">{he ? 'בואו נמצא לכם בית בירושלים' : "Let's find your place in Jerusalem"}</h1>
+    <p class="ch-sub">{s.contactSub}</p>
+    <div class="ch-actions">
+      <a class="ch-btn ch-wa" href={waLink('')} target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d={ico.wa} /></svg><span><b>{s.whatsapp}</b><small>{he ? 'הכי מהיר' : 'Fastest reply'}</small></span></a>
+      <a class="ch-btn" href={`tel:${site.phoneIntl}`}><svg viewBox="0 0 24 24" aria-hidden="true"><path d={ico.call} /></svg><span><b>{s.call}</b><small dir="ltr">{site.phone}</small></span></a>
+      <a class="ch-btn" href={`mailto:${site.email}`}><svg viewBox="0 0 24 24" aria-hidden="true"><path d={ico.mail} /></svg><span><b>{he ? 'אימייל' : 'Email'}</b><small>{site.email}</small></span></a>
+    </div>
+  </div>
+</section>
+<script>
+  const box = document.querySelector<HTMLElement>('[data-ch]');
+  if (box) {
+    const he = !!box.dataset.he;
+    const clock = box.querySelector<HTMLElement>('[data-clock]')!, greet = box.querySelector<HTMLElement>('[data-greet]')!;
+    const fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Jerusalem', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+    const tick = () => {
+      const [h, m, sec] = fmt.format(new Date()).split(':').map(Number);
+      clock.textContent = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+      const g = h >= 5 && h < 12 ? 0 : h >= 12 && h < 17 ? 1 : h >= 17 && h < 21 ? 2 : 3;
+      greet.textContent = (he ? ['בוקר טוב', 'צהריים טובים', 'ערב טוב', 'לילה טוב'] : ['Good morning', 'Good afternoon', 'Good evening', 'Good night'])[g];
+      // The photo follows the real light in Jerusalem: day until sunset, the night photo after dark
+      box.classList.toggle('is-night', h >= 19 || h < 6);
+    };
+    tick(); setInterval(tick, 1000);
+    requestAnimationFrame(() => box.classList.add('ready'));
+  }
+</script>
