@@ -2,7 +2,8 @@
 // Top of New Projects: full-width slideshow of the projects with a slow camera drift,
 // name, short line and starting price. Gold bars fill as each slide plays; click one to jump.
 import { t, href, L, img, ils } from '../lib/i18n.js';
-const { tiles, lang } = Astro.props;
+const { tiles, lang, kicker = null, tag = 'h1', viewLabel = null } = Astro.props;
+const Tag = tag;
 const s = t[lang];
 const plain = (h) => (h || '').replace(/<p class="note">.*?<\/p>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 const first = (h) => { const m = plain(h).match(/^.{20,170}?[.!?](\s|$)/); return m ? m[0].trim() : plain(h).slice(0, 150); };
@@ -20,40 +21,53 @@ const slides = tiles.map(({ group: g, p }) => {
 }).filter((x) => x.photo);
 ---
 {slides.length > 0 && (
-  <section class="pshow" data-pshow aria-roledescription="carousel" aria-label={s.projectsTitle}>
+  <section class="pshow" data-pshow aria-roledescription="carousel" aria-label={kicker || s.projectsTitle}>
     {slides.map((x, i) => (
       <a class:list={['ps-slide', { on: i === 0 }]} href={x.href} aria-hidden={i === 0 ? undefined : 'true'} tabindex={i === 0 ? undefined : -1}>
         <img src={img(x.photo, 1600)} alt="" loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} />
       </a>
     ))}
     <div class="wrap ps-copy">
-      <p class="ps-kicker">{s.projectsTitle}</p>
+      <p class="ps-kicker">{kicker || s.projectsTitle}</p>
       {slides.map((x, i) => (
         <div class:list={['ps-text', { on: i === 0 }]} aria-hidden={i === 0 ? undefined : 'true'}>
           <small>{x.hood}</small>
-          <h1 class="ps-name">{x.name}</h1>
+          <Tag class="ps-name">{x.name}</Tag>
           {x.line && <p>{x.line}</p>}
           <div class="ps-from">
             {x.price ? <>{x.units && <span>{x.units} · </span>}{x.units ? s.priceFrom : ""} <b>{x.price}</b></> : <span>{s.priceOnRequest}</span>}
-            <a class="ps-go" href={x.href} tabindex={i === 0 ? undefined : -1}>{s.viewUnit} <span aria-hidden="true">{lang === 'he' ? '←' : '→'}</span></a>
+            <a class="ps-go" href={x.href} tabindex={i === 0 ? undefined : -1}>{viewLabel || s.viewUnit} <span aria-hidden="true">{lang === 'he' ? '←' : '→'}</span></a>
           </div>
         </div>
       ))}
     </div>
+    {slides.length > 1 && (
+      <div class="ps-nav">
+        <button type="button" class="ps-arrow ps-prev" data-step="-1" aria-label={lang === 'he' ? 'הפרויקט הקודם' : 'Previous project'}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg></button>
+        <span class="ps-count" aria-live="polite"><b>1</b> / {slides.length}</span>
+        <button type="button" class="ps-arrow ps-next" data-step="1" aria-label={lang === 'he' ? 'הפרויקט הבא' : 'Next project'}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg></button>
+      </div>
+    )}
     <div class="wrap ps-bars">
       {slides.map((x, i) => <button type="button" class:list={{ on: i === 0 }} data-i={i}><i></i><span>{x.name}</span></button>)}
     </div>
   </section>
 )}
 <script>
+  // Plays by itself, and the visitor can take over: arrows, the bars, swipe or drag, and the keyboard.
+  // After a manual move it waits 12 seconds before playing on.
   document.querySelectorAll<HTMLElement>('[data-pshow]').forEach((box) => {
     const slides = [...box.querySelectorAll<HTMLElement>('.ps-slide')];
     const texts = [...box.querySelectorAll<HTMLElement>('.ps-text')];
     const bars = [...box.querySelectorAll<HTMLButtonElement>('.ps-bars button')];
+    const count = box.querySelector<HTMLElement>('.ps-count b');
+    const rtl = document.documentElement.dir === 'rtl';
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let cur = 0, timer = 0;
+    const PLAY = 6500, WAIT = 12000;
+    let cur = 0, timer = 0, hovering = false;
     const restart = (el: Element | null) => { if (!el) return; (el as HTMLElement).style.animation = 'none'; void (el as HTMLElement).offsetWidth; (el as HTMLElement).style.animation = ''; };
-    const go = (i: number) => {
+    const schedule = (ms: number) => { clearTimeout(timer); if (!reduce && !hovering && slides.length > 1) timer = window.setTimeout(() => go(cur + 1), ms); };
+    const go = (i: number, manual = false) => {
       cur = (i + slides.length) % slides.length;
       [slides, texts, bars].forEach((list) => list.forEach((el, k) => {
         el.classList.toggle('on', k === cur);
@@ -61,13 +75,33 @@ const slides = tiles.map(({ group: g, p }) => {
       }));
       slides.forEach((el, k) => el.tabIndex = k === cur ? 0 : -1);
       texts.forEach((el, k) => el.querySelector('a')!.tabIndex = k === cur ? 0 : -1);
+      if (count) count.textContent = String(cur + 1);
       restart(slides[cur].querySelector('img')); restart(bars[cur].querySelector('i'));
-      clearTimeout(timer);
-      if (!reduce && slides.length > 1) timer = window.setTimeout(() => go(cur + 1), 6500);
+      box.classList.toggle('manual', manual);
+      schedule(manual ? WAIT : PLAY);
     };
-    bars.forEach((b) => b.addEventListener('click', () => go(+b.dataset.i!)));
-    box.addEventListener('mouseenter', () => clearTimeout(timer));
-    box.addEventListener('mouseleave', () => go(cur));
+    bars.forEach((b) => b.addEventListener('click', () => go(+b.dataset.i!, true)));
+    box.querySelectorAll<HTMLButtonElement>('.ps-arrow').forEach((b) => b.addEventListener('click', (e) => { e.preventDefault(); go(cur + +b.dataset.step!, true); }));
+    // Swipe (touch) and drag (mouse): a sideways move of 50px changes project; a drag never opens the link
+    let sx = 0, sy = 0, down = false, moved = false;
+    box.addEventListener('pointerdown', (e) => { if ((e.target as Element).closest('button')) return; down = true; moved = false; sx = e.clientX; sy = e.clientY; });
+    box.addEventListener('pointermove', (e) => { if (down && Math.abs(e.clientX - sx) > 10 && Math.abs(e.clientX - sx) > Math.abs(e.clientY - sy)) moved = true; });
+    box.addEventListener('pointerup', (e) => {
+      if (!down) return; down = false;
+      const dx = e.clientX - sx;
+      if (moved && Math.abs(dx) > 50) go(cur + ((dx < 0) !== rtl ? 1 : -1), true);
+    });
+    box.addEventListener('click', (e) => { if (moved) { e.preventDefault(); moved = false; } }, true);
+    box.addEventListener('dragstart', (e) => e.preventDefault());
+    // Keyboard: left/right arrows when the slideshow has focus
+    box.tabIndex = -1;
+    box.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      e.preventDefault();
+      go(cur + ((e.key === 'ArrowRight') !== rtl ? 1 : -1), true);
+    });
+    box.addEventListener('mouseenter', () => { hovering = true; clearTimeout(timer); });
+    box.addEventListener('mouseleave', () => { hovering = false; schedule(PLAY); });
     go(0);
   });
 </script>

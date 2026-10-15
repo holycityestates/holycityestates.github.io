@@ -1,0 +1,74 @@
+---
+// Featured properties, "Spotlight": one large photo stage beside a short list.
+// Moving over (or tapping) a row brings that home onto the stage; it also turns by itself.
+import { t, href, L, img, ils, sizeLine } from '../lib/i18n.js';
+const { items, lang, variant = 'glass' } = Astro.props; // glass (chosen 2026-10-15) | list
+const s = t[lang];
+const he = lang === 'he';
+---
+{items.length > 0 && (
+  <div class:list={['spot', `spot--${variant}`]} data-spot>
+    <div class="spot-stage">
+      {items.map((p, i) => (
+        <a class:list={['spot-slide', { on: i === 0 }]} href={href(lang, `/properties/${p.slug}/`)} aria-hidden={i === 0 ? undefined : 'true'} tabindex={i === 0 ? undefined : -1}>
+          {p.cover && <img src={img(p.cover, 1600)} alt={L(p.title, lang)} loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />}
+          <span class="spot-copy">
+            <span class="spot-tag">{p.newProject ? s.newProject : s.status[p.status]}</span>
+            <small>{L(p.neighborhood, lang)}</small>
+            <strong>{L(p.title, lang)}</strong>
+            <span class="spot-facts">{[...sizeLine(p, lang), L(p.type, lang)].filter(Boolean).join(' · ')}</span>
+            <span class="spot-foot">
+              <b>{ils(p, lang)}</b>
+              <em>{he ? 'לצפייה בנכס' : 'View property'} <span aria-hidden="true">{he ? '←' : '→'}</span></em>
+            </span>
+          </span>
+        </a>
+      ))}
+    </div>
+    <ol class="spot-list">
+      {items.map((p, i) => (
+        <li>
+          <a class:list={['spot-row', { on: i === 0 }]} href={href(lang, `/properties/${p.slug}/`)} data-i={i}>
+            <span class="spot-thumb">{p.cover && <img src={img(p.cover, 800)} alt="" loading="lazy" decoding="async" />}</span>
+            <span class="spot-txt">
+              <small>{L(p.neighborhood, lang)}</small>
+              <span class="spot-name">{L(p.title, lang)}</span>
+              <span class="spot-price">{ils(p, lang)}</span>
+            </span>
+            <i class="spot-timer" aria-hidden="true"></i>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </div>
+)}
+<script>
+  document.querySelectorAll<HTMLElement>('[data-spot]').forEach((box) => {
+    const slides = [...box.querySelectorAll<HTMLElement>('.spot-slide')];
+    const rows = [...box.querySelectorAll<HTMLAnchorElement>('.spot-row')];
+    const hover = matchMedia('(hover: hover)').matches;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let cur = 0, timer = 0, held = false;
+    const go = (i: number, auto = false) => {
+      cur = (i + slides.length) % slides.length;
+      slides.forEach((el, k) => { el.classList.toggle('on', k === cur); k === cur ? el.removeAttribute('aria-hidden') : el.setAttribute('aria-hidden', 'true'); el.tabIndex = k === cur ? 0 : -1; });
+      rows.forEach((el, k) => {
+        el.classList.toggle('on', k === cur);
+        const bar = el.querySelector<HTMLElement>('.spot-timer');
+        if (bar) { bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; }
+      });
+      clearTimeout(timer);
+      if (!reduce && !held && slides.length > 1) timer = window.setTimeout(() => go(cur + 1, true), 6000);
+    };
+    rows.forEach((r) => {
+      const i = +r.dataset.i!;
+      if (hover) r.addEventListener('mouseenter', () => go(i));
+      r.addEventListener('focus', () => go(i));
+      // Touch: first tap shows the home on the stage, second tap opens it
+      r.addEventListener('click', (e) => { if (!hover && cur !== i) { e.preventDefault(); go(i); } });
+    });
+    box.addEventListener('mouseenter', () => { held = true; clearTimeout(timer); box.classList.add('held'); });
+    box.addEventListener('mouseleave', () => { held = false; box.classList.remove('held'); go(cur); });
+    go(0);
+  });
+</script>

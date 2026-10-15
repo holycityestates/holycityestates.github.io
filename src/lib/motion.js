@@ -2,6 +2,13 @@
 // Also: scroll progress line, small cursor dot, tap ripples, header-on-scroll, and a
 // photo-expand transition when opening a property. Everything is skipped for reduced-motion
 // users, and content is fully visible if this script never runs.
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
+// One motion vocabulary, shared by every effect below (GSAP version of the CSS tokens).
+const M = { ease: 'power3.out', dur: 0.8, fast: 0.45, rise: 22, step: 0.09, max: 5 };
+
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 const root = document.documentElement;
@@ -21,34 +28,51 @@ if (!reduce) {
   bar.className = 'scroll-progress';
   document.body.appendChild(bar);
 
-  // ---------- Scroll reveals: one fade-up for everything ----------
-  // Whatever comes into view together follows in reading order, 90ms apart,
-  // so a row of cards always flows the same way instead of popping at random.
+  // ---------- Scroll reveals: one fade-up for everything (GSAP ScrollTrigger.batch) ----------
+  // Whatever comes into view together follows in reading order, 90ms apart.
+  // Hidden only by GSAP itself, so nothing stays invisible if scripts fail.
   const targets = [...document.querySelectorAll(
-    '.section-head, .section > .wrap > h2, .page-head h1, .card, .project, .hood, .service, .svc, .quote, .duo-card, .about-split > div, .facts, .block, .contact-card, .filters, .map-filters, .cta-inner > *, .detail-head > div > :not(h1), .detail-head .detail-price, .mosaic-item:not(:first-child)'
+    '.section-head h2, .section-head p, .section-head .link-arrow, .section > .wrap > h2, .page-head h1, .card, .project, .hood, .svc-row, .svc-intro > *, .quote, .duo-card, .about-split > div, .facts, .block, .contact-card, .filters, .map-filters, .cta-inner > *, .detail-head > div > :not(h1), .detail-head .detail-price, .mosaic-item:not(:first-child), .nc, .mk-ppm'
   )].filter((el, i, all) => !all.some((o) => o !== el && o.contains(el)));
-  const STEP = 90, MAX = 5;
-  const show = (els) => {
-    els.sort((x, y) => {
-      const a = x.getBoundingClientRect(), b = y.getBoundingClientRect();
-      if (Math.abs(a.top - b.top) > 24) return a.top - b.top;
-      return he ? b.left - a.left : a.left - b.left;
-    }).forEach((el, i) => {
-      el.style.setProperty('--d', `${Math.min(i, MAX) * STEP}ms`);
-      el.classList.add('in');
-      setTimeout(() => el.style.removeProperty('--d'), 1400);
-    });
-  };
-  const io = 'IntersectionObserver' in window
-    ? new IntersectionObserver((entries) => {
-        const batch = entries.filter((e) => e.isIntersecting).map((e) => e.target);
-        batch.forEach((el) => io.unobserve(el));
-        if (batch.length) show(batch);
-      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 })
-    : null;
-  targets.forEach((el) => { el.setAttribute('data-reveal', ''); io ? io.observe(el) : el.classList.add('in'); });
-  // Safety net: never leave anything hidden.
-  setTimeout(() => targets.forEach((el) => el.classList.add('in')), 5000);
+  const order = (els) => els.sort((x, y) => {
+    const a = x.getBoundingClientRect(), b = y.getBoundingClientRect();
+    if (Math.abs(a.top - b.top) > 24) return a.top - b.top;
+    return he ? b.left - a.left : a.left - b.left;
+  });
+  gsap.set(targets, { autoAlpha: 0, y: M.rise });
+  ScrollTrigger.batch(targets, {
+    start: 'top 90%',
+    once: true,
+    onEnter: (batch) => gsap.to(order(batch), {
+      autoAlpha: 1, y: 0, duration: M.dur, ease: M.ease, overwrite: true,
+      stagger: (i) => Math.min(i, M.max) * M.step, clearProps: 'transform,visibility',
+    }),
+  });
+  // Anything already above the fold appears straight away; safety net after 5s.
+  ScrollTrigger.refresh();
+  setTimeout(() => gsap.to(targets.filter((t) => gsap.getProperty(t, 'opacity') < 1), { autoAlpha: 1, y: 0, duration: M.fast }), 5000);
+
+  // ---------- Price per m²: bars grow and the figures count up, once ----------
+  document.querySelectorAll('[data-ppm]').forEach((box) => {
+    const rows = box.querySelectorAll('.ppm-row');
+    ScrollTrigger.create({ trigger: box, start: 'top 80%', once: true, onEnter: () => {
+      box.classList.add('in');
+      rows.forEach((r, i) => {
+        const b = r.querySelector('b'); const end = +b.textContent.replace(/[^0-9]/g, '');
+        const o = { v: 0 };
+        gsap.to(o, { v: end, duration: 1.4, delay: i * 0.06, ease: M.ease, onUpdate: () => (b.textContent = '₪' + Math.round(o.v).toLocaleString('en-US')) });
+      });
+    } });
+  });
+
+  // ---------- Cards: a soft gold light follows the cursor around the edge ----------
+  if (fine) document.addEventListener('pointermove', (e) => {
+    const c = e.target.closest?.('.card, .svc-row, .nc');
+    if (!c) return;
+    const r = c.getBoundingClientRect();
+    c.style.setProperty('--lx', `${e.clientX - r.left}px`);
+    c.style.setProperty('--ly', `${e.clientY - r.top}px`);
+  }, { passive: true });
 
   // ---------- Scroll-linked: progress line and the hero easing away ----------
   const heroImg = document.querySelector('.hero-media img');

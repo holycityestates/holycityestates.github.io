@@ -5,6 +5,7 @@ import MarketBand from '../../components/MarketBand.astro';
 import SkyHero from '../../components/SkyHero.astro';
 import Reviews from '../../components/Reviews.astro';
 import PropertyCard from '../../components/PropertyCard.astro';
+import FeaturedSpotlight from '../../components/FeaturedSpotlight.astro';
 import { t, getLang, langPaths, href, L, active, visible, projects, projectTiles, waLink, site, img } from '../../lib/i18n.js';
 
 export const getStaticPaths = langPaths;
@@ -36,7 +37,7 @@ const uniq = (arr) => [...new Map(arr.map((x) => [x.en, x])).values()];
         </div>
         <a class="link-arrow" href={href(lang, '/properties/')}>{s.viewAll}</a>
       </div>
-      <div class="grid">{featured.map((p) => <PropertyCard p={p} lang={lang} />)}</div>
+      <FeaturedSpotlight items={featured} lang={lang} variant="glass" />
     </div>
   </section>
 
@@ -73,14 +74,15 @@ const uniq = (arr) => [...new Map(arr.map((x) => [x.en, x])).values()];
 
   <section class="section">
     <div class="wrap">
-      <h2>{s.neighborhoods}</h2>
-      <div class="hoods">
+      <div class="section-head"><div><h2>{s.neighborhoods}</h2></div></div>
+      <div class="hoods hoods-x">
         {hoods.map((h) => (
           <a class="hood" href={href(lang, `/properties/?neighborhood=${encodeURIComponent(h.name.en)}`)}>
             {h.cover && <img src={img(h.cover, 800)} alt="" loading="lazy" />}
             <div class="hood-label">
               <strong>{L(h.name, lang)}</strong>
               <span>{h.count} {s.listings}</span>
+              <em class="hood-go">{lang === 'he' ? 'לנכסים באזור ←' : 'See homes →'}</em>
             </div>
           </a>
         ))}

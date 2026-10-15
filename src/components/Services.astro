@@ -12,24 +12,24 @@ const icons = {
 };
 ---
 <section class:list={['section', 'svc-band', { 'section-tint': tint }]}>
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <p class="kicker">{s.svcKicker}</p>
-        <h2>{s.svcTitle}</h2>
-        <p class="muted">{s.svcSub}</p>
-      </div>
+  <div class="wrap svc-split">
+    <div class="svc-intro">
+      <h2>{s.svcTitle}</h2>
+      <p class="lead-dark">{s.svcSub}</p>
     </div>
-    <div class="svc-grid">
+    <ul class="svc-list">
       {s.services.map(([key, title, text]) => (
-        <article class="svc">
+        <li class="svc-row">
           <span class="svc-ic" aria-hidden="true">
-            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[key]} />
+            <svg viewBox="0 0 48 48" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[key]} />
           </span>
-          <h3>{title}</h3>
-          <p>{text}</p>
-        </article>
+          <div>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </div>
+          <span class="svc-arrow" aria-hidden="true">{lang === 'he' ? '←' : '→'}</span>
+        </li>
       ))}
-    </div>
+    </ul>
   </div>
 </section>
