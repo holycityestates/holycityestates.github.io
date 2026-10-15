@@ -1,0 +1,1 @@
+import{n as e}from"./map.D-XqKO0V.js";e(document.getElementById(`minimap`));
