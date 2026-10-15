@@ -1,7 +1,7 @@
 ---
-import { t, href, L, sizeLine, img } from '../lib/i18n.js';
+import { t, href, L, sizeLine, img, propNo } from '../lib/i18n.js';
 import Price from './Price.astro';
-const { p, lang, lux = true } = Astro.props;   // lux: tall photo card with details over the photo
+const { p, lang, lux = true, save = false } = Astro.props;   // lux: tall photo card with details over the photo; save: number + ♡ shortlist (Properties page)
 const s = t[lang];
 const shots = (p.gallery || []).slice(0, 8).map((g) => img(g, 800));
 // "New" for two weeks after listing; "Price reduced" when the back end has a higher previous price.
@@ -29,13 +29,18 @@ const chip = p.offMarket ? s.offMarket[p.status] : p.newProject ? s.newProject :
         <span class="cs-dots" aria-hidden="true">{shots.map((_, i) => <i class={i === 0 ? 'on' : ''}></i>)}</span>
       </>
     )}
-    {lux && <span class="lux-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" /></svg></span>}
+    {save && !p.offMarket && (
+      <span class="pc-save" role="button" tabindex="0" data-save={propNo(p.id)} data-title={L(p.title, lang)} aria-pressed="false" aria-label={lang === 'he' ? 'שמירה לרשימה' : 'Save to shortlist'}>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg>
+      </span>
+    )}
+    {lux && !save && <span class="lux-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" /></svg></span>}
     {isNew && <span class="ribbon-new">{s.tools.isNew}</span>}
     {reduced && <span class="badge-drop">{s.tools.reduced}</span>}
     <span class:list={['chip', p.offMarket ? 'chip-dark' : 'chip-light']}>{chip}</span>
   </div>
   <div class="card-body">
-    <div class="card-loc">{L(p.neighborhood, lang)}</div>
+    <div class="card-loc">{save && <span class="pc-no">{lang === 'he' ? 'מס׳' : 'No.'} {propNo(p.id)}</span>}{L(p.neighborhood, lang)}</div>
     <h3 class="card-title">{L(p.title, lang)}</h3>
     <div class="card-meta">
       {sizeLine(p, lang).map((x) => <span>{x}</span>)}

@@ -1117,3 +1117,88 @@ html[dir='rtl'] .ps-arrow svg { transform: scaleX(-1); }
   .spot--glass .spot-list { position: static; width: auto; margin-top: 10px; background: var(--night); backdrop-filter: none; }
 }
 
+
+/* ===================== v12 — Properties page "Night" (Aryeh picked style 2, 2026-10-15) ===================== */
+/* Header: Aryeh's night photo, slowly panning, with the usual search bar and neighborhood chips */
+.pp-night { padding-top: clamp(80px, 9vw, 120px); isolation: isolate; }
+.pp-night .pp-bg { opacity: 1; object-position: center 55%; animation: pp-pan 32s ease-in-out infinite alternate; }
+@keyframes pp-pan { from { transform: scale(1.08) translateX(-1.5%); } to { transform: scale(1.08) translateX(1.5%); } }
+.pp-night::after { background: linear-gradient(180deg, rgba(10,11,15,.62) 0%, rgba(10,11,15,.38) 45%, rgba(10,11,15,.8) 100%); }
+.pp-kick { font-family: 'Cinzel', var(--serif); font-size: .78rem; letter-spacing: .32em; text-transform: uppercase; color: #e9d48f; margin: 0 0 14px; }
+html[lang='he'] .pp-kick { font-family: var(--sans); letter-spacing: .08em; font-size: .9rem; }
+.pp-night h1 { font-size: clamp(2.5rem, 5.6vw, 4.6rem); line-height: 1.02; max-width: 15ch; margin: 0 0 30px; text-shadow: 0 4px 30px rgba(0,0,0,.45); }
+.pp-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.pp-chips button { all: unset; cursor: pointer; padding: 7px 14px; border-radius: 99px; font-size: .86rem; color: #e4ddcd; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(6px); transition: border-color .3s, color .3s, background .3s; }
+.pp-chips button b { color: #d6b878; font-weight: 600; margin-inline-start: 7px; }
+.pp-chips button:hover, .pp-chips button.on { border-color: #d6b878; color: #fff; background: rgba(214,184,120,.14); }
+.pp-chips button:focus-visible { outline: 2px solid #d6b878; outline-offset: 2px; }
+.pp-hint { opacity: .8; }
+
+/* Number before the neighborhood, and the save heart */
+.pc-no { font-family: 'Cinzel', var(--serif); letter-spacing: .14em; }
+.pc-no::after { content: '·'; margin-inline: .6em; opacity: .7; }
+.pc-save { position: absolute; z-index: 4; top: 14px; inset-inline-end: 14px; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; color: #fff; background: rgba(12,13,17,.42); border: 1px solid rgba(255,255,255,.45); backdrop-filter: blur(5px); transition: background .3s, border-color .3s, color .3s, transform .35s var(--m-ease); }
+.pc-save svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+.pc-save:hover { border-color: #d6b878; }
+.pc-save.on { background: #c9a862; border-color: #c9a862; color: #14110b; }
+.pc-save.on svg { fill: currentColor; }
+.pc-save.pop { transform: scale(1.18); }
+.pc-save:focus-visible { outline: 2px solid #d6b878; outline-offset: 2px; }
+
+/* Shortlist bar */
+.pp-tray { position: fixed; z-index: 60; left: 50%; bottom: 22px; display: flex; align-items: center; gap: 14px; padding: 8px 8px 8px 22px; border-radius: 99px; background: rgba(18,19,24,.94); color: #eee7d8; border: 1px solid rgba(201,168,98,.5); box-shadow: 0 22px 50px rgba(0,0,0,.45); backdrop-filter: blur(12px); transform: translate(-50%, 160%); transition: transform .5s var(--m-ease); white-space: nowrap; }
+html[dir='rtl'] .pp-tray { padding: 8px 22px 8px 8px; }
+.pp-tray.show { transform: translate(-50%, 0); }
+.pp-tray-clear { all: unset; cursor: pointer; font-size: .82rem; color: #a49c8c; text-decoration: underline; text-underline-offset: 3px; }
+.pp-tray-go { background: #c9a862; color: #14110b; font-weight: 600; font-size: .9rem; padding: 11px 18px; border-radius: 99px; text-decoration: none; }
+.pp-tray-go:hover { background: #e2c77e; }
+@media (max-width: 640px) { .pp-tray { left: 12px; right: 84px; transform: translateY(160%); justify-content: space-between; gap: 8px; padding-inline-start: 16px; } .pp-tray.show { transform: none; } .pp-tray-clear { display: none; } .pp-tray-go { font-size: .8rem; padding: 10px 12px; } }
+
+/* --- Page backgrounds --- */
+#results.pp-dark { background: #0e0f13 linear-gradient(rgba(201,168,98,.045) 1px, transparent 1px) 0 0 / 80px 80px, #0e0f13 linear-gradient(90deg, rgba(201,168,98,.045) 1px, transparent 1px) 0 0 / 80px 80px; color: #e9e3d6; }
+#results.pp-dark .count { color: #a9a294; }
+#results.pp-dark #count { font-family: var(--serif); font-size: 1.6rem; color: #fff; }
+#results.pp-dark .sort-pick select { background: #17181d; color: #eee; border-color: #34353b; }
+#results.pp-dark .sort-pick span { color: #a9a294; }
+#results.pp-dark .link-arrow { color: #e9d48f; }
+#results.pp-dark .count-row { border-bottom: 1px solid rgba(255,255,255,.08); padding-bottom: 16px; margin-bottom: 34px; }
+#sold.pp-dark { background: #15161b; color: #e9e3d6; }
+#sold.pp-dark h2 { color: #fff; }
+#results.pp-dark.section-tight { padding-top: 56px; }
+.pp-grid { gap: 48px 30px; }
+
+/* --- 1 and 3: photo in a gold gallery frame, details underneath --- */
+
+/* --- The photo cards, set in a gold frame on the dark page --- */
+.pp-grid .card.lux { margin: 11px; overflow: visible; box-shadow: 0 0 0 11px #0e0f13, 0 0 0 12px rgba(201,168,98,.38); transition: box-shadow .6s var(--m-ease); }
+.pp-grid .card.lux .card-media { overflow: hidden; }
+.pp-grid .card.lux:hover { box-shadow: 0 0 0 5px #0e0f13, 0 0 0 6px #c9a862; }
+@media (max-width: 760px) {
+  .pp-grid { gap: 30px; }
+  .pp-grid .card.lux { margin: 8px; box-shadow: 0 0 0 8px #0e0f13, 0 0 0 9px rgba(201,168,98,.4); }
+}
+@media (prefers-reduced-motion: reduce) { .pp-night .pp-bg { animation: none; } }
+/* heart sits below the "New" ribbon */
+.pp-grid .pc-save { top: 74px; }
+
+/* Phones: two homes per row, compact cards */
+@media (max-width: 600px) {
+  .pp-grid { grid-template-columns: 1fr 1fr; gap: 16px 10px; }
+  .pp-grid .card.lux { margin: 4px; aspect-ratio: 3/4.3; box-shadow: 0 0 0 4px #0e0f13, 0 0 0 5px rgba(201,168,98,.42); }
+  .pp-grid .card.lux:hover { box-shadow: 0 0 0 4px #0e0f13, 0 0 0 5px rgba(201,168,98,.42); }
+  .pp-grid .card.lux .card-body { padding: 10px 10px 10px; }
+  .pp-grid .card.lux .card-loc { font-size: .62rem; letter-spacing: .1em; }
+  .pp-grid .pc-no { display: none; }
+  .pp-grid .card.lux .card-title { font-size: 1.02rem; line-height: 1.15; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .pp-grid .card.lux .card-meta { display: none !important; }
+  .pp-grid .card.lux .card-price { margin-top: 4px; }
+  .pp-grid .card.lux .card-price .p-main { font-size: 1.02rem; }
+  .pp-grid .card.lux .card-price .p-fx, .pp-grid .card.lux .fx-chip { display: none; }
+  .pp-grid .card.lux .chip { top: 8px; inset-inline-start: 8px; font-size: .56rem; padding: 4px 6px; letter-spacing: .06em; }
+  .pp-grid .card.lux .cs-btn { display: none; }
+  .pp-grid .card.lux .cs-dots { top: auto; bottom: 8px; display: none; }
+  .pp-grid .ribbon-new { top: 9px; inset-inline-end: -48px; width: 130px; font-size: .52rem; padding: 3px 0; }
+  .pp-grid .pc-save { width: 32px; height: 32px; top: 52px; inset-inline-end: 8px; }
+  .pp-grid .pc-save svg { width: 15px; height: 15px; }
+  .pp-grid .badge-drop { font-size: .58rem; }
+}

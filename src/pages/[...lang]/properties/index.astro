@@ -3,7 +3,7 @@ import Base from '../../../layouts/Base.astro';
 import PropertyCard from '../../../components/PropertyCard.astro';
 import LogoSkyline from '../../../components/LogoSkyline.astro';
 import SearchBox from '../../../components/SearchBox.astro';
-import { t, getLang, langPaths, L, visible, href, sold } from '../../../lib/i18n.js';
+import { t, getLang, langPaths, L, visible, href, sold, waLink } from '../../../lib/i18n.js';
 
 export const getStaticPaths = langPaths;
 const lang = getLang(Astro.params.lang);
@@ -12,20 +12,27 @@ const uniq = (arr) => [...new Map(arr.filter((x) => x.en).map((x) => [x.en, x]))
 const hoods = uniq(visible.map((p) => p.neighborhood));
 // Active listings first, then sold/rented as social proof.
 const list = visible.filter((p) => !p.offMarket);
+const he = lang === 'he';
+// Neighborhood chips under the search: busiest first, with how many homes each has.
+const chips = Object.values(list.reduce((m, p) => { const k = p.neighborhood.en; if (k) { m[k] ??= { n: p.neighborhood, c: 0 }; m[k].c++; } return m; }, {})).sort((a, b) => b.c - a.c);
 ---
 <Base lang={lang} title={s.nav.properties}>
-  <section class="search-band">
-    <img src="/img/sky/day-1688.webp" srcset="/img/sky/day-1280.webp 1280w, /img/sky/day-1688.webp 1688w" sizes="100vw" alt="" />
+  <section class="search-band pp-night">
+    <img class="pp-bg" src="/img/sky/night-1688.webp" srcset="/img/sky/night-1280.webp 1280w, /img/sky/night-1688.webp 1688w" sizes="100vw" alt="" />
     <div class="wrap">
-      <h1>{s.nav.properties}</h1>
+      <p class="pp-kick">{he ? 'הולי סיטי · נכסים נבחרים' : 'Holy City · Private collection'}</p>
+      <h1>{he ? 'מצאו את הבית שלכם בירושלים' : 'Find your home in Jerusalem'}</h1>
       <SearchBox lang={lang} id="filters" />
+      <div class="pp-chips" id="pp-chips">
+        {chips.map(({ n, c }) => <button type="button" data-h={n.en}>{L(n, lang)}<b>{c}</b></button>)}
+      </div>
     </div>
     <LogoSkyline />
   </section>
-  <section class="section section-tight" id="results">
+  <section class="section section-tight pp-dark" id="results">
     <div class="wrap">
       <div class="count-row">
-        <p class="muted count"><span id="count">{list.length}</span> {s.results}</p>
+        <p class="muted count"><span id="count">{list.length}</span> {s.results}<span class="pp-hint">{he ? ' · סמנו ♡ כדי לשמור נכסים' : ' · Tap ♡ to build a shortlist'}</span></p>
         <div class="count-tools">
           <label class="sort-pick"><span>{s.sort}</span>
             <select id="sort" aria-label={s.sort}>
@@ -37,13 +44,19 @@ const list = visible.filter((p) => !p.offMarket);
           <a class="link-arrow" href={href(lang, '/map/')}>{s.mapView}</a>
         </div>
       </div>
-      <div class="grid" id="grid">{list.map((p) => <PropertyCard p={p} lang={lang} />)}</div>
+      <div class="grid pp-grid" id="grid">{list.map((p) => <PropertyCard p={p} lang={lang} save />)}</div>
       <p class="muted empty" id="empty" hidden>{s.noResults}</p>
     </div>
   </section>
 
+  <div class="pp-tray" id="pp-tray" data-wa={waLink('')} data-he={he ? '1' : ''}>
+    <span class="pp-tray-n" id="pp-tray-n"></span>
+    <button type="button" class="pp-tray-clear" id="pp-tray-clear">{he ? 'ניקוי' : 'Clear'}</button>
+    <a class="pp-tray-go" id="pp-tray-go" href="#" target="_blank" rel="noopener">{he ? 'שליחה לאריה בוואטסאפ' : 'Send to Aryeh on WhatsApp'}</a>
+  </div>
+
   {sold.length > 0 && (
-    <section class="section section-tint" id="sold">
+    <section class="section section-tint pp-dark" id="sold">
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -97,7 +110,41 @@ const list = visible.filter((p) => !p.offMarket);
       sort.addEventListener('change', apply);
       form.querySelector('[data-search-go]')?.addEventListener('click', () => document.getElementById('results').scrollIntoView({ behavior: 'smooth' }));
       form.addEventListener('change', apply);
-      apply();
+      // Neighborhood chips mirror the neighborhood picker
+      const chipBox = document.getElementById('pp-chips');
+      const hoodSel = form.elements.neighborhood;
+      const syncChips = () => chipBox.querySelectorAll('button').forEach((b) => b.classList.toggle('on', b.dataset.h === hoodSel.value));
+      chipBox.addEventListener('click', (e) => {
+        const b = e.target.closest('button'); if (!b) return;
+        hoodSel.value = hoodSel.value === b.dataset.h ? '' : b.dataset.h;
+        form.dispatchEvent(new Event('change'));
+      });
+      form.addEventListener('change', syncChips);
+      apply(); syncChips();
+
+      // Shortlist: the heart on a card saves it; the bar at the bottom sends the list on WhatsApp
+      const tray = document.getElementById('pp-tray'), he = !!tray.dataset.he;
+      let saved = [];
+      try { saved = JSON.parse(localStorage.getItem('hc-shortlist') || '[]'); } catch (e) {}
+      const paint = () => {
+        document.querySelectorAll('.pc-save').forEach((b) => { const on = saved.some((x) => x.no === b.dataset.save); b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); });
+        tray.classList.toggle('show', saved.length > 0);
+        document.getElementById('pp-tray-n').textContent = he ? `${saved.length} נכסים שמורים` : `${saved.length} ${saved.length === 1 ? 'home' : 'homes'} saved`;
+        const msg = (he ? 'שלום, אשמח לפרטים על הנכסים האלה:\n' : "Hi, I'd like details on these homes:\n") + saved.map((x) => `• ${he ? 'מס׳' : 'No.'} ${x.no}: ${x.t}`).join('\n');
+        document.getElementById('pp-tray-go').href = tray.dataset.wa + '?text=' + encodeURIComponent(msg);
+        try { localStorage.setItem('hc-shortlist', JSON.stringify(saved)); } catch (e) {}
+      };
+      const toggle = (b) => {
+        const i = saved.findIndex((x) => x.no === b.dataset.save);
+        i > -1 ? saved.splice(i, 1) : saved.push({ no: b.dataset.save, t: b.dataset.title });
+        b.classList.add('pop'); setTimeout(() => b.classList.remove('pop'), 400);
+        paint();
+      };
+      document.addEventListener('click', (e) => { const b = e.target.closest?.('.pc-save'); if (!b) return; e.preventDefault(); e.stopPropagation(); toggle(b); }, true);
+      document.addEventListener('keydown', (e) => { const b = e.target.closest?.('.pc-save'); if (b && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); e.stopPropagation(); toggle(b); } }, true);
+      document.getElementById('pp-tray-clear').onclick = () => { saved = []; paint(); };
+      paint();
+
     })();
   </script>
 </Base>
