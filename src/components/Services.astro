@@ -1,7 +1,7 @@
 ---
 // "Our Services" band: five gold-ringed icons with a title and a line each (modelled on the live site's section).
 import { t } from '../lib/i18n.js';
-const { lang, tint = false } = Astro.props;
+const { lang, tint = false, n = null } = Astro.props;
 const s = t[lang];
 const icons = {
   sale: '<text x="24" y="33.5" text-anchor="middle" font-size="30" font-family="Heebo, Arial, sans-serif" font-weight="400" fill="currentColor" stroke="none">₪</text>',
@@ -14,6 +14,7 @@ const icons = {
 <section class:list={['section', 'svc-band', { 'section-tint': tint }]}>
   <div class="wrap svc-split">
     <div class="svc-intro">
+      {n && <span class="ed-n">{n}</span>}
       <h2>{s.svcTitle}</h2>
       <p class="lead-dark">{s.svcSub}</p>
     </div>

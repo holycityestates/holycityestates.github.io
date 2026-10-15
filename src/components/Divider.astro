@@ -1,0 +1,14 @@
+---
+// Section divider for the homepage: two thin gold lines that draw out from the middle, with the Holy City
+// skyline logo between them. `from` / `to` blend the background of the section above into the one below.
+const { from = 'bg', to = 'bg' } = Astro.props;
+---
+<div class:list={['dv', `dv-${from}-${to}`]} aria-hidden="true" data-dv>
+  <span class="dv-line"></span>
+  <img src="/img/logo.png" alt="" width="64" height="40" loading="lazy" />
+  <span class="dv-line"></span>
+</div>
+<script>
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -12% 0px' });
+  document.querySelectorAll('[data-dv]').forEach((d) => io.observe(d));
+</script>

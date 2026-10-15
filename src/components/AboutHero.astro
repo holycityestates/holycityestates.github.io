@@ -9,7 +9,7 @@ const he = lang === 'he';
 const live = visible.filter((p) => !p.offMarket);
 // One photo per home, no repeats (the Kapach homes share renders)
 const pics = [...new Map(live.filter((p) => p.cover).map((p) => [p.cover, p])).values()];
-const COLS = 4;
+const COLS = 5;   // 5 columns on computers, 3 on phones (CSS hides the rest)
 const col = (k) => pics.filter((_, i) => i % COLS === k);
 const title = he ? 'ירושלים היא הבית שלנו. בואו נמצא את שלכם.' : 'Jerusalem is our home. Let us find yours.';
 ---

@@ -3,7 +3,7 @@
 import news from '../data/news.json';
 import deals from '../data/deals.json';
 import { t, L } from '../lib/i18n.js';
-const { lang } = Astro.props;
+const { lang, n = null } = Astro.props;
 const T = t[lang].tools;
 const he = lang === 'he';
 const areas = (deals.areas || []).slice(0, 9);
@@ -14,7 +14,7 @@ const ticker = news.ticker?.[lang] || [];
 ---
 <section class="section market">
   <div class="wrap">
-    <div class="section-head"><div><h2>{T.marketTitle}</h2><p class="muted">{T.marketSub}</p></div></div>
+    <div class:list={['section-head', { num: n }]}>{n && <span class="ed-n">{n}</span>}<div><h2>{T.marketTitle}</h2><p class="muted">{T.marketSub}</p></div></div>
     <div class="mk-grid">
       <div class="mk-news">
         <h3 class="mk-h">{T.newsTitle}</h3>

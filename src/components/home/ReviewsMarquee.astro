@@ -1,0 +1,23 @@
+---
+// What clients say: the real reviews on cards gliding slowly in two rows, opposite ways. Pauses under the mouse.
+import { t, L, testimonials } from '../../lib/i18n.js';
+const { lang } = Astro.props;
+const s = t[lang];
+const rows = [testimonials, [...testimonials].reverse()];
+---
+<section class="rvm">
+  <div class="wrap"><p class="rvm-kick">{s.testimonialTitle}</p></div>
+  {rows.map((row, k) => (
+    <div class:list={['rvm-row', { back: k === 1 }]} aria-hidden={k === 1 ? 'true' : undefined}>
+      <div class="rvm-track">
+        {[0, 1].map((c) => row.map((r) => (
+          <figure class="rvm-card" aria-hidden={c === 1 ? 'true' : undefined}>
+            <span class="rvm-stars" aria-hidden="true">★★★★★</span>
+            <blockquote>“{L(r.text, lang)}”</blockquote>
+            <figcaption>{L(r.name, lang)}</figcaption>
+          </figure>
+        )))}
+      </div>
+    </div>
+  ))}
+</section>

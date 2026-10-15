@@ -3,7 +3,9 @@ import Base from '../../layouts/Base.astro';
 import Services from '../../components/Services.astro';
 import MarketBand from '../../components/MarketBand.astro';
 import SkyHero from '../../components/SkyHero.astro';
-import Reviews from '../../components/Reviews.astro';
+import Divider from '../../components/Divider.astro';
+import HomeWall from '../../components/home/HomeWall.astro';
+import ReviewsMarquee from '../../components/home/ReviewsMarquee.astro';
 import PropertyCard from '../../components/PropertyCard.astro';
 import FeaturedSpotlight from '../../components/FeaturedSpotlight.astro';
 import { t, getLang, langPaths, href, L, active, visible, projects, projectTiles, waLink, site, img } from '../../lib/i18n.js';
@@ -30,7 +32,7 @@ const uniq = (arr) => [...new Map(arr.map((x) => [x.en, x])).values()];
 
   <section class="section">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head num"><span class="ed-n">01</span>
         <div>
           <h2>{s.featured}</h2>
           <p class="muted">{s.featuredSub}</p>
@@ -41,10 +43,11 @@ const uniq = (arr) => [...new Map(arr.map((x) => [x.en, x])).values()];
     </div>
   </section>
 
+  {projects.length > 0 && <Divider to="night" />}
   {projects.length > 0 && (
     <section class="section section-tint">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head num"><span class="ed-n">02</span>
           <div>
             <h2>{s.projectsTitle}</h2>
             <p class="muted">{s.projectsSub}</p>
@@ -70,11 +73,13 @@ const uniq = (arr) => [...new Map(arr.map((x) => [x.en, x])).values()];
     </section>
   )}
 
-  <MarketBand lang={lang} />
+  <Divider from={projects.length > 0 ? 'night' : 'bg'} />
+  <MarketBand lang={lang} n="03" />
+  <Divider />
 
   <section class="section">
     <div class="wrap">
-      <div class="section-head"><div><h2>{s.neighborhoods}</h2></div></div>
+      <div class="section-head num"><span class="ed-n">04</span><div><h2>{s.neighborhoods}</h2></div></div>
       <div class="hoods hoods-x">
         {hoods.map((h) => (
           <a class="hood" href={href(lang, `/properties/?neighborhood=${encodeURIComponent(h.name.en)}`)}>
@@ -90,19 +95,18 @@ const uniq = (arr) => [...new Map(arr.map((x) => [x.en, x])).values()];
     </div>
   </section>
 
-  <section class="section section-tint">
-    <div class="wrap about-split">
-      <div>
-        <p class="kicker">{s.aboutKicker}</p>
-        <h2>{s.aboutTitle}</h2>
-        <p class="lead-dark">{s.aboutBody}</p>
-      </div>
-      <Reviews lang={lang} />
+  <HomeWall lang={lang} />
+
+  <section class="section section-tint home-about">
+    <div class="wrap">
+      <div class="section-head num"><span class="ed-n">05</span><div><p class="kicker">{s.aboutKicker}</p><h2>{s.aboutTitle}</h2></div></div>
+      <p class="lead-dark home-about-text">{s.aboutBody}</p>
     </div>
   </section>
+  <ReviewsMarquee lang={lang} />
+  <Divider from="rv" />
 
-
-  <Services lang={lang} />
+  <Services lang={lang} n="06" />
 
   <section class="duo duo-night">
     <img class="duo-bg" src="/img/sky/night-1688.webp" srcset="/img/sky/night-1280.webp 1280w, /img/sky/night-1688.webp 1688w" sizes="100vw" alt="" loading="lazy" />

@@ -1,0 +1,34 @@
+---
+// A band of the homes' photos in columns gliding up and down, black and white, one lighting up in colour at a time,
+// with a short line and buttons over it (same look as the About page, here as a homepage section).
+import { uniqPics, L, img, href } from './data.js';
+import { waLink } from '../../lib/i18n.js';
+const { lang, full = false } = Astro.props;
+const he = lang === 'he';
+const COLS = 5;
+---
+<section class:list={['hw', { 'hw-full': full }]} data-hw>
+  <div class="hw-cols" aria-hidden="true">
+    {Array.from({ length: COLS }, (_, k) => (
+      <div class:list={['hw-col', { up: k % 2 === 0 }]} style={`--d:${60 + k * 7}s`}>
+        {[0, 1].map(() => uniqPics.filter((_, i) => i % COLS === k).map((p) => <figure><img src={img(p.cover, 800)} alt="" loading="lazy" /><figcaption>{L(p.neighborhood, lang)}</figcaption></figure>))}
+      </div>
+    ))}
+  </div>
+  <div class="hw-shade"></div>
+  <div class="wrap hw-in">
+    <h2>{he ? 'ירושלים היא הבית שלנו. בואו נמצא את שלכם.' : 'Jerusalem is our home. Let us find yours.'}</h2>
+    <div class="hw-cta"><a class="btn btn-gold" href={href(lang, '/properties/')}>{he ? 'לכל הנכסים' : 'See all homes'}</a><a class="hw-link" href={waLink('')} target="_blank" rel="noopener">{he ? 'דברו איתנו בוואטסאפ' : 'Talk to us on WhatsApp'}</a></div>
+  </div>
+</section>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-hw]').forEach((box) => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const figs = [...box.querySelectorAll<HTMLElement>('figure')]; let lit: HTMLElement[] = [];
+    setInterval(() => {
+      const b = box.getBoundingClientRect(); if (b.bottom < 0 || b.top > innerHeight) return;
+      const seen = figs.filter((f) => { const r = f.getBoundingClientRect(); const cy = r.top + r.height / 2, cx = r.left + r.width / 2; return !lit.includes(f) && cy > b.top + 40 && cy < b.bottom - 40 && cx > 20 && cx < innerWidth - 20 && Math.abs(cx - innerWidth / 2) > innerWidth * 0.18; });
+      if (!seen.length) return; const f = seen[Math.floor(Math.random() * seen.length)]; f.classList.add('on'); lit.push(f); if (lit.length > 2) lit.shift()!.classList.remove('on');
+    }, 1700);
+  });
+</script>
